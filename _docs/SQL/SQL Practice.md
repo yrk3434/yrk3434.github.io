@@ -1,4 +1,4 @@
-﻿---
+---
 title: SQL practice
 category: SQL
 order: 1
