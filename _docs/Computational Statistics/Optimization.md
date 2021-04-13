@@ -1,4 +1,4 @@
-﻿---
+---
 title: Optimization
 category: Computational Statistics
 order: 1
