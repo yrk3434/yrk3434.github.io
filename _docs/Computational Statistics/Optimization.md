@@ -2,6 +2,8 @@
 title: Optimization
 category: Computational Statistics
 order: 1
+use_math: true
+comments: true
 ---
 
 Reference
