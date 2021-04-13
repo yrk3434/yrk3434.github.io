@@ -1,4 +1,10 @@
-﻿# 데이터 분석을 위한 중급 SQL 문제풀이
+﻿---
+title: SQL practice
+category: SQL
+order: 1
+---
+
+# 데이터 분석을 위한 중급 SQL 문제풀이
 
 ### REFERENCE
 SQL 함수 리스트
