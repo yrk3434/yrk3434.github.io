@@ -203,6 +203,7 @@ Given the table schemas below, write a query to print the  _company_code_,  _fou
 
 ###  JOIN & GROUPBY 동시에, DISTINCT
 내 풀이, 문제 어려워
+
 ```
 SELECT company_code, founder_name, COUNT(distinct leader_manager)
 FROM lead_manager 
@@ -213,6 +214,7 @@ GROUP BY leader_manager.company_code
 강의 풀이: Hierarchy 제대로 파악할 것(예외 케이스까지 파악하자)
 * COUNT(DISTINCT ...): 중복없이 출력하기
 * INNER JOIN vs LEFT JOIN: 출력 목적 제대로 파악
+
 ```
 # 출력물: company_code, founder, #lead_M, #senior_M, #M , #employees
 
@@ -248,7 +250,6 @@ FROM Company C
      LEFT JOIN Employee E ON M.manager_code = E.manager_code
 GROUP BY C.company_code, C.founder
 ORDER BY C.company_code
-
 ```
 
 # Set 3
@@ -259,6 +260,7 @@ ORDER BY C.company_code
 4.  Top Competitors:  [https://www.hackerrank.com/challenges/full-score/problem](https://www.hackerrank.com/challenges/full-score/problem)
 
 **[1번]**
+
 ```
 SELECT MAX(POPULATION)-MIN(POPULATION)
 FROM CITY
@@ -268,6 +270,7 @@ FROM CITY
 ###  정규표현식
 모음으로 시작하거나 끝나지 않는 값
 내 답안: 런타임 오류
+
 ```
 SELECT CITY
 WHERE NOT SUBSTRING(CITY,1) IN ('a','e','i','o','u')
@@ -278,6 +281,7 @@ FROM STATION
 
 정답
 - LEFT(string,1): 첫번째 글자
+
 ```
 SELECT DISTINCT(CITY) ` 중복 출력하지 않기!!!
 FROM station
@@ -292,6 +296,7 @@ OR RIGHT(city,1) NOT IN (‘A’, ‘E’, ‘I’, ‘O’, ‘U’)
 ### 대소 비교
 - greater than, less then은 >, < 
 - 경계값 포함하면 BETWEEN ... AND
+
 ```
 SELECT TRUNCATE(SUM(LAT_N),4)
 WHERE LAT_N>38.7880 AND LAT_N<137.2345
@@ -308,6 +313,7 @@ Julia just finished conducting a coding contest, and she needs your help assembl
 
 **내 답안**
 오답
+
 ```
 SELECT hacker_id, name
 FROM HACKERS
@@ -330,6 +336,7 @@ WHERE SUBMISSIONS.score = Difficulty.score
 |97397|90411|66730|100|6|100|
 |97397|90411|71055|30|2|30|
 - 1개 이상의 챌린지에서 만점을 받아야하므로 90411만 출력
+
 ```
 # STEP1. submission table의 challenge_id을 참조해 challenge table로부터 difficulty_level 칼럼 생성
 # STEP2. difficulty_level의 full score를 difficulty table을 참조해 score 칼럼 생성
@@ -354,6 +361,7 @@ ORDER BY COUNT(DISTINCT s.submission_id) DESC, H.hacker # 정렬순서: 만점 �
 
 **[1번]**
 **몫, 중복 없애기: DISTINCT**
+
 ```
 # ID가 짝수인 CITY를 중복 없이 출력하기
 SELECT DISTINCT CITY 
@@ -362,6 +370,7 @@ WHERE ID%2 = 0
 ```
 
 답안
+
 ```
 SELECT DISTINCT CITY # 중복 제거
 FROM station
@@ -372,11 +381,14 @@ WHERE MOD(ID,2) = 0 # even ID number
 **위/경도 최대, 최소값의 유클리디안 거리 구하기 & 소수점 4자리까지 보여주기**
 
 cf. head 기능처럼 세 줄만 보여주고 싶으면 코드 뒤에 ```LIMIT 3``` 과 같이 덧붙이면 됨
+
 ```
 SELECT TRUNCATE(SQRT(POWER(MAX(LAT_N)-MIN(LAT_N),2)+POWER(MAX(LONG_W)-MIN(LONG_W),2)),4)
 FROM STATION
 ```
+
 답안
+
 ```
 SELECT MIN(LAT_N) AS a
      , MAX(LAT_N) AS b
@@ -385,7 +397,9 @@ SELECT MIN(LAT_N) AS a
      , ROUND(SQRT(POWER(a - b, 2) + POWER(c - d, 2)), 4)
 FROM station 
 ```
+
 수식이 복잡할 때 위와 같이 a, b, c, d 정의 후 a, b, c, d 자리에 원래 값 넣으면서 풀면 간단하다!
+
 ```
 SELECT ROUND(SQRT(POWER(MIN(LAT_N) - MAX(LAT_N), 2) + POWER(MIN(LONG_W) - MAX(LONG_W), 2)), 4)
 FROM station 
@@ -397,6 +411,7 @@ FROM station
 친구의 월급이 더 높은 경우 
 
 내 답안: 오답
+
 ```
 SELECT S.ID
 FROM (Students S 
@@ -408,6 +423,7 @@ ORDER BY P2.Salary DESC
 ```
 
 Friends, Students, Packages
+
 |ID|Friend ID|Salary|Friends Salary|친구 연봉 더 높음|출력순서|
 |:------:|:------:|:------:|:------:|:------:|:------:|
 |1|2|15.20|10.06|-|-|
@@ -418,6 +434,7 @@ Friends - Students: ID로 조인
 + Pacakges: Friends ID로 조인
 
 답안
+
 ```
 SELECT S.name
 FROM Friends F
@@ -446,6 +463,7 @@ leaf: 자식이 없는 노드, 부모가 아님, P 컬럼에서 등장하지 않
 답안
 고급반에서 sub query 배우기
 안되면 join으로 풀어보기
+
 ```
 # STEP1
 SELECT BST.N
