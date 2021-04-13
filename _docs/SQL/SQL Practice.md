@@ -27,8 +27,9 @@ https://leetcode.com/
 |FLOOR(컬럼명/값)|값의 소수점 이하를 버림해 정수 반환<br/>eg. FLOOR(8.765) ->8|
 
 **[간단한 연산하기]**
+
 |함수명|내용|
-|:------:|:------|
+|:------:|:------:|
 |POWER(컬럼명/값,n)<br/>POW(컬럼명/값,n)|값을 n제곱해서 반환<br/>eg. POWER(2,3)=8, POW(2,2)=4<br/><br/> 값의 n제곱근 구하기 = 값의 1/n제곱 구하기 = POWER(칼럼명/값, 1/n) <br/>eg. POWER(8,$\frac{1}{3}$)=2 |
 |SQRT(칼럼명/값)|값의 제곱근을 반환<br/>SQRT(4)=2|
 |MOD(컬럼명/값, n)<br/>컬럼명/값%n|값을 n으로 나누었을 때의 나머지를 반환<br/>eg. MOD(4,2)=0, 4 % 2=0|
@@ -37,7 +38,7 @@ https://leetcode.com/
 ## 문자열을 다루는 함수
 
 |함수명|내용|
-|:------:|:------|
+|:------:|:------:|
 |LOWER(컬럼명/문자열)|모든 문자를 소문자로 반환<br/> eg. SELECT LOWER(MemeberID) FROM tb_datarian|
 |UPPER(컬럼명/문자열)|모든 문자를 대문자로 반환|
 |REPLACE(컬럼명/문자열, 패턴1, 패턴2)|문자열에 포함된 패턴1을 패턴2로 대체해 반환<br/>eg. SELECT REPLACE(MemberID,'A','B') FROM tb_datarian|
@@ -55,14 +56,17 @@ DATASET: ***to_datarian***
 ```
 SELECT LOWER(MemeberID) FROM tb_datarian
 ```
+
 |ID|MemberID|
 |:---:|:---:|
 |1|a01|
 |2|a02|
 |3|a03|
+
 ```
  SELECT REPLACE(MemberID,'A','B') FROM tb_datarian
  ```
+ 
 |ID|MemberID|
 |:---:|:---:|
 |1|B01|
@@ -71,6 +75,7 @@ SELECT LOWER(MemeberID) FROM tb_datarian
 ```
 SELECT CONCAT(ID, ':', MemberID) AS Member FROM to_datarian
 ```
+
 |Member|
 |:---:|
 |1:A01|
@@ -109,8 +114,10 @@ WHERE MOD(id,2) = 1 --odd numbered ID
 AND description != 'boring'
 ORDER BY rating DESC
 ```
+
 ## 3번, 4번 문제 풀이
 **[3번]**
+
 ### GROUP BY, HAVING
 ```
 SELECT Email
@@ -119,6 +126,7 @@ FROM Person
 GROUP BY Email
 ```
 output:
+
 |Email|cnt|
 |:-----:|:-----:|
 |a@b.com |2|
@@ -131,8 +139,10 @@ FROM Person
 GROUP BY Email
 HAVING COUNT(Id) >=2
 ```
+
 **[4번]**
 ### LEFT JOIN
+
 ```
 SELECT FirstName, LastName, City, State
 FROM Person
@@ -140,11 +150,13 @@ FROM Person
 ```
 Address 테이블에 정보 없어도 출력하기 -> Person 테이블 기준 LEFT JOIN
 input: (Person 테이블)
+
 |PersonId|FirstName|LastName|
 |:-----:|:-----:|:-----:|:-----:|
 3|Sunmi |Yoon|
 
 output:
+
 |FirstName|LastName|City|State|
 |:-----:|:-----:|:-----:|:-----:|
 |Sunmi |Yoon|Null|Null|
