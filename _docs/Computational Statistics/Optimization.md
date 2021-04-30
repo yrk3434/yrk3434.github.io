@@ -32,9 +32,9 @@ Reference
 
 최적화란 Input element 중 최적의 조합을 찾는 것이다. 풀어 설명하자면, 탐색 가능한 input의 set  안에서 주어진 함수를 극대화 혹은 극소화 할 수 있는 최적의 input을 찾는 것이다. 예컨대, 우도함수를 '최대화'하는 모수인 MLE를 '찾는 것', 딥러닝에서 Loss 함수를 '최소화'하는 가중치를 '찾는 것' 모두 최적화의 일종이다. Usecase로는 수율을 모델링한 함수에 대해 수율을 극대화하는 Recipe 조합(input)을 찾는 것 또한 최적화의 일종이다.
 
-최적화는 주로 어떤 함수를 극대화 또는 극소화할 때 사용된다. 간단한 예로 연속함수를 극대화하는 것을 수식으로 표현하자면
-&nbsp;&nbsp;&nbsp;&nbsp; *Find $x*$ such that $f(x*)$&geq;$f(x)$ for all $x$
-&nbsp;&nbsp;&nbsp;&nbsp; where |$x*-x$|<&delta;, &delta;>0*
+최적화는 주로 어떤 함수를 극대화 또는 극소화할 때 사용된다. 간단한 예로 연속함수를 극대화하는 것을 수식으로 표현하자면  
+<center>Find $$x*$$ such that $$f(x*)$$ &geq; $$f(x)$$ for all $$x$$</center>  
+<center> where |$$x*-x$$|<&delta;, &delta;>0</center>  
 와 같이 표현된다. 
 
 ## 1.2. 최적화에 대한 접근방식
@@ -46,7 +46,9 @@ Reference
 ## 2.1. 단변량(Univariate)에서의 최적화
 미분을 통해 최적값을 구한 책의 예를 들어보겠다.
 
-$$g(x)=\frac{log(x)}{1+x}$$ $$g'(x)=\frac{1+1/x-log(x)}{(1+x)^{2}}$$ $$x*\approx 3.591$$
+$$g(x)=\frac{log(x)}{1+x}$$  
+$$g'(x)=\frac{1+1/x-log(x)}{(1+x)^{2}}$$  
+$$x*\approx 3.591$$
  
  
 
