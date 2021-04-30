@@ -38,40 +38,46 @@ Reference
 
 
 ## 1.2. 최적화에 대한 접근방식
-최적화 대상이 되는 함수의 성질, 제약사항 등에 따라 다른 최적화 방법을 사용해야 한다. 목차에 기술한대로 input의 값이 연속인지, 이산인지 혹은 미분이나 근사법(approximaiton)으로 해를 구할 수 있는 목적함수인지 등에 따라 다른 방법으로 최적화를 해야한다.
+최적화 대상이 되는 함수의 성질, 제약사항 등에 따라 다른 최적화 방법을 사용해야 한다. 
+목차에 기술한대로 input의 값이 연속인지, 이산인지 혹은 미분이나 근사법(approximaiton)으로 
+해를 구할 수 있는 목적함수인지 등에 따라 다른 방법으로 최적화를 해야한다.
 
 # 2.  Optimization of Nonlinear Equations
-등식을 통해 해를 구할 수 있는 경우에 해당한다. 널리 사용되는 방법은 미분이다. 위에서 언급한 MLE 역시 우도함수를 미분해 0이되는 모수를 찾은 예이므로 이 방식에 속한다. 하지만 미분을 통해 해를 구할 때에는 해의 유일성, 근사적으로 구한 해의 수렴성, 근사적으로 구할 때의 값의 초기값 등 고려할 것들이 많다.
+등식을 통해 해를 구할 수 있는 경우에 해당한다. 널리 사용되는 방법은 미분이다. 
+위에서 언급한 MLE 역시 우도함수를 미분해 0이되는 모수를 찾은 예이므로 이 방식에 속한다. 
+하지만 미분을 통해 해를 구할 때에는 해의 유일성, 근사적으로 구한 해의 수렴성, 근사적으로 
+구할 때의 값의 초기값 등 고려할 것들이 많다.
 
 ## 2.1. 단변량(Univariate)에서의 최적화
-미분을 통해 최적값을 구한 책의 예를 들어보겠다.
+미분을 통해 최적값을 구한 책의 예를 들어보겠다.  
 
-$$ g(x)=\frac{log(x)}{1+x} $$  
+$$ g(x) = \frac{log(x)}{1+x} $$  
 $$ g'(x)=\frac{1+1/x-log(x)}{(1+x)^{2}} $$  
 $$ x*\approx 3.591 $$
  
  
-
 ### 2.1.1. **Bisection Method**
-위 예제의 *x** 는 정의역 구간을 좁혀나가며 점근적으로 구할 수 있다.  1차 미분 $g'$이 구간 $[a_{0},b_{0}]$에서 연속일 때 $g'(a_{0})g'(b_{0}) &leq; 0$ 이라면 $[a_{0},b_{0}]$ 사이에 $x*$ 가 최소 한 개 이상 존재한다. 
-해를 찾는 것을 반복할수록 탐색구간이 좁아지므로 $[a_{0},b_{0}] \supset [a_{1},b_{1}] \supset [a_{2},b_{2}] \supset ...$ 와 같이 된다.
+위 예제의 $ x* $ 는 정의역 구간을 좁혀나가며 점근적으로 구할 수 있다. 
+1차 미분 $g'$이 구간 $ [a_{0},b_{0}] $에서 연속일 때 $ g'(a_{0})g'(b_{0}) &leq; 0 $ 이라면 
+$[a_{0},b_{0}]$ 사이에 $x*$ 가 최소 한 개 이상 존재한다. 
+해를 찾는 것을 반복할수록 탐색구간이 좁아지므로 $[a_{0},b_{0}] \supset [a_{1},b_{1}] \supset [a_{2},b_{2}] \supset \text{...} $ 와 같이 된다.
 (아래첨자 숫자는 탐색 iteration 순서를 의미) 단 이 방법은 $g'$ 이 연속일 때만 적용가능하다.
 >  **Updating Rule**
-Let initial value $x^{0}=(a_{0}+b_{0})/2$,  
-then, $[a_{t+1},b_{t+1}]$ equals to $[a_{t},x_{t}]$, if $g'(a_{t})g'(x_{t+1})$&leq;$0$
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; equals to $[ x_{t},b_{t}]$, if $g'(a_{t})g'(x_{t+1})$>$0$
+Let initial value $ x^{0}=(a_{0}+b_{0})/2 $,  
+then, $[a_{t+1},b_{t+1}]$ equals to $[a_{t},x_{t}]$, if $g'(a_{t})g'(x_{t+1}) &leq; 0$
+equals to $[ x_{t},b_{t}]$, if $g'(a_{t})g'(x_{t+1})$>$0$
 where $x^{t+1}=(a_{t}+b_{t})/2$*
 
 다음 stopping rule에 따라 값이 수렴했다고 간주하고 $x$ 값의 업데이트를 멈춘다.
 
 > **Stopping Rule**
 >- Absolute Convergence criterion
-> $|x_{t+1}-x_{t}|$&leq;&varepsilon;
-> &varepsilon;는 매우 작은 0이 아닌 수
+> $$|x_{t+1}-x_{t}| &leq; &varepsilon; $$,
+> $ &varepsilon; $ 는 매우 작은 0이 아닌 수
 >- Relative Convergence Criterion
->$|x_{t+1}-x_{t}|$/$|x_{t}|$&leq;&varepsilon;
+>$$ \frac{|x_{t+1}-x_{t}|}{|x_{t}|} &leq; &varepsilon; $$
 >단, 분모가 0일수도 있으므로 다음 식으로 대체할 수 있다.
->$|x_{t+1}-x_{t}|$/$($$|x_{t}|$+&varepsilon;$)$&leq;&varepsilon;
+>$$ \frac{|x_{t+1}-x_{t}|}{|x_{t}| + &varepsilon;} &leq; &varepsilon; $$
 
 수렴 이슈가 발생할 수 있는데, 이 때 $a_{t+1}=(a_{t}+b_{t})/2$ 대신 robust한 방법으로 $a_{t+1}=a_{t}+(b_{t}-a_{t})/2$를 사용할 수 있다. 수렴을 위해 알고리즘을 수정하더라도 수렴에 실패할 수 있다. 이경우 위 stopping rule에 따라 업데이트를 멈추지 말고, 업데이트 횟수를 N번으로 고정한다.
 
@@ -81,7 +87,7 @@ where $x^{t+1}=(a_{t}+b_{t})/2$*
 > **Alogrithm**
 > $0=g'(x^{*}) \approx g'(x^{t})+(x^{*}-x^{t})g''(x^{*})$ 
 > $x^*=x^{(t)}-\frac{g'(x^{t})}{g''(x^{t})}=x^{(t)}+h^{(t)}$ 
->   &nbsp;&nbsp;&nbsp;&nbsp; *where* $h^{(t)}=-\frac{g'(x^{t})}{g''(x^{t})}$
+> *where* $h^{(t)}=-\frac{g'(x^{t})}{g''(x^{t})}$
 > hence,
 > **Update**
 > $x^{(t+1)}=x^{(t)}+h^{(t)}$
@@ -109,7 +115,7 @@ $$ \theta^{(t+1)}=\theta^{(t)}+\frac{l'(\theta^{(t+1)})}{I(\theta^{(t)})}$$
 - [ ] **Secant Method**
 Newton's Method에서 2차 미분 계산이 어려울 때, 1차 미분을 수치미분한 것을 2차 미분식에 대체하여 사용하는 방법이다.
 $$x^{(t+1)}=x^{(t)}-g'(x^{(t)})\frac{x^{(t)}-x^{(t-1)}}{g'(x^{(t)})-g'(x^{(t-1)})}$$
-단 $t$&geq;$1$이며, 두 시작점 $x^{(0)}$와 $x^{(1)}$이 필요하다.
+단 $ t &geq; 1 $ 이며, 두 시작점 $x^{(0)}$와 $x^{(1)}$이 필요하다.
 
 ### 2.1.3. **Gradient Descent Method**
 이 방법은 reference 책에는 없지만, 딥러닝 역전파시 흔히 사용되므로 기술하겠다.
