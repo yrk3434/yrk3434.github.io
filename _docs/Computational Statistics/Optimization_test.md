@@ -162,8 +162,10 @@ p 차원 벡터 $x^{(t)}=(x^{(t)}_{1},...,x^{(t)}_{p})^T$에 대해 최적화하
 <center> $D(x^{(t+1)}, x^{(t)})/(D(x^{(t)},0)+\epsilon)<\epsilon $ </center> 
 <center> where $ D(u,v)=\sum{|u_i-v_i|} $ or $ D(u,v)=\sqrt{\sum{(u_i-v_i)^2}} $ </center> 
 
- ### 2.2.1. Newton's Method and  Fishering 
- 벡터 버전으로 목적함수 $ g $ 를 테일러 전개하면 다음과 같다.
+
+### 2.2.1. Newton's Method and  Fishering 
+
+벡터 버전으로 목적함수 $ g $ 를 테일러 전개하면 다음과 같다.
 <center>$ g(x^*)=g(x^{(t)})+(x^*-x^{(t)})^Tg'(x^{(t)})+
 \frac{1}{2}(x^*-x^{(t)})^Tg''(x^{(t)})(x^*-x^{(t)}) $ </center>
  
