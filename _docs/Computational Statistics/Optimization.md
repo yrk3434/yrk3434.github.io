@@ -6,10 +6,10 @@ use_math: true
 comments: true
 ---
 
-Reference
+### Reference
 - Computational Statistics, Wiley Series
 - Wikipidia
-- NP vs P 다이어그램 이미지: https://en.wikipedia.org/wiki/NP-completeness
+- NP vs P 다이어그램 이미지: [https://en.wikipedia.org/wiki/NP-completeness](https://en.wikipedia.org/wiki/NP-completeness){:target="_blank"}
 
 # Contents
 1. Meaning of Optimization
@@ -115,7 +115,7 @@ $$ \theta^{(t+1)}=\theta^{(t)}+\frac{l'(\theta^{(t+1)})}{I(\theta^{(t)})}$$
 - [ ] **Secant Method**
 Newton's Method에서 2차 미분 계산이 어려울 때, 1차 미분을 수치미분한 것을 2차 미분식에 대체하여 사용하는 방법이다.
 $$x^{(t+1)}=x^{(t)}-g'(x^{(t)})\frac{x^{(t)}-x^{(t-1)}}{g'(x^{(t)})-g'(x^{(t-1)})}$$
-단 $ t &geq; 1 $ 이며, 두 시작점 $x^{(0)}$와 $x^{(1)}$이 필요하다.
+단 $ t &geq; 1 $ 이며, 두 시작점 $x^{(0)}$와 $ x^{(1)} $이 필요하다.
 
 ### 2.1.3. **Gradient Descent Method**
 이 방법은 reference 책에는 없지만, 딥러닝 역전파시 흔히 사용되므로 기술하겠다.

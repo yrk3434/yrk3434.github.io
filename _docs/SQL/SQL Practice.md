@@ -330,7 +330,7 @@ WHERE SUBMISSIONS.score = Difficulty.score
 출력대상: full_score = score & 1번 이상 만점
 - Full score 대상자
 
-|submission_id|hacker_id|challenge_id|score|difficulty_level|full_socre|
+|제출id|hacker_id|도전id|점수|난이도|만점|
 |:----:|:----:|:----:|:----:|:----:|:----:|
 |94613|86870|71055|30|2|30|
 |97397|90411|66730|100|6|100|
@@ -424,7 +424,7 @@ ORDER BY P2.Salary DESC
 
 Friends, Students, Packages
 
-|ID|Friend ID|Salary|Friends Salary|친구 연봉 더 높음|출력순서|
+|ID|친구ID|연봉|친구연봉|친구연봉더높음|출력순서|
 |:------:|:------:|:------:|:------:|:------:|:------:|
 |1|2|15.20|10.06|-|-|
 |2|3|10.06|11.55|o|3|
