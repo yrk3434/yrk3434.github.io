@@ -99,8 +99,8 @@ $ a_{t+1}=a_{t}+(b_{t}-a_{t})/2 $ 를 사용할 수 있다.
 
 **[Alogrithm]**
 <center> $ 0=g'(x^{*}) \approx g'(x^{t})+(x^{*}-x^{t})g''(x^{*}) $ </center>
-<center> $ x^{*}=x^{(t)}-\frac{g'(x^{t})}{g''(x^{t})}=x^{(t)}+h^{(t)} $ </center>
-<center> where $ h^{(t)}=-\frac{g'(x^{t})}{g''(x^{t})} $ </center>  
+<center> $ x^{*}=x^{(t)}-\frac{g'(x^{t})}{g''(x^{t})}=x^{(t)}+h^{(t)} $
+ where $ h^{(t)}=-\frac{g'(x^{t})}{g''(x^{t})} $ </center>  
 
 hence, <br/>
 
@@ -112,3 +112,19 @@ hence, <br/>
 Eg. 앞서 제시한 예제 $ g(x)=\frac{log(x)}{1+x} $ 의 최적값을 Newton's mothod를 통해 구해본다.
 $ h^{(t)}=\frac{(x^{(t)}+1)(1+1/x^{(t)}-log(x^{(t)})}{3+4/x^{(t)}+1/(x^{(t)})^2-2log(x^{(t)})} $ 
 초기값 $ x^{(0)}=3 $ 으로부터 시작할 때,  $ x^{(4)} \approx 3.59112 $ 으로 4th iteration 근사값이 최적값에 가까워진다.
+
+- 수렴가능 <br/>
+목적 함수의 모양과 시작점 설정에 따라 위 방법의 수렴이 결정된다. 
+단, $ g' $, $ g'' $ 모두 연속적으로 미분가능하고,  
+convex하며 근을 가질 때 위 방법은 시작점과 관계없이 항상 수렴한다.
+
+- 수렴속도 <br/>
+다음은 수렴 속도를 결정하는 수렴 차수 $ \beta $다. 
+높은 차수를 가질수록 Newton's Method가 빨리 수렴하지만, 
+수렴의 robustness 관점에서 취약하여 근사값의 정확성이 떨어진다. 
+(robustness란 어떤 알고리즘이 타당하기 위해 세우는 가정이 깨지더라도 유의한 결과를 내는 것을 일컫는다.)
+
+**Convergence Order $\beta$**
+<center>$ \lim_{t\rightarrow \infty } \epsilon{(t)}=0 $ and </center>
+<center>$ \lim_{t\rightarrow \infty }\frac{|\epsilon ^{(t+1)}|}{|\epsilon{(t)}|^\beta}=c $ </center>
+<center>for some $ c \neq 0 $ and $ \beta>0 $ </center>
