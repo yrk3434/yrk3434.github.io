@@ -33,8 +33,8 @@ comments: true
 최적화란 Input element 중 최적의 조합을 찾는 것이다. 풀어 설명하자면, 탐색 가능한 input의 set  안에서 주어진 함수를 극대화 혹은 극소화 할 수 있는 최적의 input을 찾는 것이다. 예컨대, 우도함수를 '최대화'하는 모수인 MLE를 '찾는 것', 딥러닝에서 Loss 함수를 '최소화'하는 가중치를 '찾는 것' 모두 최적화의 일종이다. Usecase로는 수율을 모델링한 함수에 대해 수율을 극대화하는 Recipe 조합(input)을 찾는 것 또한 최적화의 일종이다.
 
 최적화는 주로 어떤 함수를 극대화 또는 극소화할 때 사용된다. 간단한 예로 연속함수를 극대화하는 것을 수식으로 표현하자면 다음과 같다.  
-<center>$$ \text{Find} x^{*} \text{such that} f(x^{*}) &geq; f(x) \text{for all} x $$ </center>  
-<center>$$ \text{where} |x*-x| <&delta;, &delta;>0 $$</center>  
+<center>$$ \text{Find } x^{*} \text{ such that } f(x^{*}) &geq; f(x) \text{ for all } x $$ </center>  
+<center>$$ \text{where } |x*-x| <&delta;, &delta;>0 $$</center>  
 
 ## 1.2. 최적화에 대한 접근방식
 최적화 대상이 되는 함수의 성질, 제약사항 등에 따라 다른 최적화 방법을 사용해야 한다. 
@@ -52,22 +52,23 @@ comments: true
 
 <center>$$ g(x) = \frac{log(x)}{1+x} $$</center>    
 <center>$$ g'(x)=\frac{1+1/x-log(x)}{(1+x)^{2}} $$</center>    
-<center>$$ x*\approx 3.591 $$</center>  
+<center>$$ x^{*}\approx 3.591 $$</center>  
 
  
 ### 2.1.1. **Bisection Method**
-위 예제의 $ x^{*} $ 는 정의역 구간을 좁혀나가며 점근적으로 구할 수 있다. 
-1차 미분 $g'$이 구간 $ [a_{0},b_{0}] $에서 연속일 때 
-$$ g'(a_{0})g'(b_{0}) &leq; 0 $$ 이라면 
-$[a_{0},b_{0}]$ 사이에 $ x^{*} $ 가 최소 한 개 이상 존재한다. 
-해를 찾는 것을 반복할수록 탐색구간이 좁아지므로 $[a_{0},b_{0}] \supset [a_{1},b_{1}] \supset [a_{2},b_{2}] \supset \text{...} $ 와 같이 된다.
-(아래첨자 숫자는 탐색 iteration 순서를 의미) 단 이 방법은 $g'$ 이 연속일 때만 적용가능하다.
+위 예제의 $$x^{*}$$ 는 정의역 구간을 좁혀나가며 점근적으로 구할 수 있다. 
+1차 미분 $$g'$$이 구간 $$ [a_{0},b_{0}] $$에서 연속일 때 
+$$g'(a_{0})g'(b_{0})\leq 0 $$ 이라면 
+$$[a_{0},b_{0}]$$ 사이에 $$ x^{*} $$ 가 최소 한 개 이상 존재한다. 
+해를 찾는 것을 반복할수록 탐색구간이 좁아지므로 $$[a_{0},b_{0}] \supset [a_{1},b_{1}] 
+\supset [a_{2},b_{2}] \supset \text{...} $$ 와 같이 된다.
+(아래첨자 숫자는 탐색 iteration 순서를 의미) 단 이 방법은 $$g'$$ 이 연속일 때만 적용가능하다.
 
 **Updating Rule** <br/>
-Let initial value $ x^{0}=(a_{0}+b_{0})/2 $,  
+Let initial value $$ x^{0}=(a_{0}+b_{0})/2 $$,  
 then, $$[a_{t+1},b_{t+1}] \text{equals to} [a_{t},x_{t}] $$, <br/>
-if $$g'(a_{t})g'(x_{t+1}) &leq; 0$$
+if $$g'(a_{t})g'(x_{t+1}) \leq 0$$
 equals to $$ [ x_{t},b_{t}]$$, <br/>
-if $g'(a_{t})g'(x_{t+1})$>$0$
-where $x^{t+1}=(a_{t}+b_{t})/2$
+if $$g'(a_{t})g'(x_{t+1})>0$$
+where $$x^{t+1}=(a_{t}+b_{t})/2$$
 
