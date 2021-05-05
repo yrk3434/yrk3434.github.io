@@ -1,6 +1,6 @@
 ---
 title: SQL practice
-category: SQL
+category: Programming
 order: 1
 ---
 
