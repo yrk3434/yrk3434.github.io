@@ -129,11 +129,19 @@ convex하며 근을 가질 때 위 방법은 시작점과 관계없이 항상 �
 $ \lim_{t\rightarrow \infty }\frac{|\epsilon ^{(t+1)}|}{|\epsilon{(t)}|^\beta}=c $ </center>
 <center>for some $ c \neq 0 $ and $ \beta>0 $ </center>
 
-
-**[Fisher Scoring]**
+<br/>
+**[Fisher Scoring]** <br/>
 Newton's Method를 사용하여 MLE를 구하는 것을 일컫는다.  
 $ l $을 어떤 분포의 log likelihood라 할 때, 피셔 스코어링을 통한 MLE의 추정은 다음과 같다.
 <center> $ \theta^{(t+1)}=\theta^{(t)}+\frac{l'(\theta^{(t+1)})}{I(\theta^{(t)})} $ </center>
 여기서 $ I(\theta^{(t)}) $ 는 Fisher Information의 근사값, $ -l''(\theta^{(t)}) $를 의미한다. 
 
-참고. 로그 우도함수를 2차 미분한 것에 기대값을 취하면, 로그 우도함수의 제곱항의 기대값만 남는다. 즉 로그 우도 함수의 분산의 역수가 피셔의 정보량이다. 이는 데이터를 통해 모수에 대해 얻을 수 있는 정보의 크기를 의미한다.
+참고. 로그 우도함수를 2차 미분한 것에 기대값을 취하면, 로그 우도함수의 제곱항의 기대값만 남는다.
+ 즉 로그 우도 함수의 분산의 역수가 피셔의 정보량이다. 이는 데이터를 통해 모수에 대해 얻을 수 있는 정보의 크기를 의미한다.
+
+<br/>
+**[Secant Method]** <br/>
+Newton's Method에서 2차 미분 계산이 어려울 때, 
+1차 미분을 수치미분한 것을 2차 미분식에 대체하여 사용하는 방법이다.
+<center> $ x^{(t+1)}=x^{(t)}-g'(x^{(t)})\frac{x^{(t)}-x^{(t-1)}}{g'(x^{(t)})-g'(x^{(t-1)})} $</center> 
+단 $ t \geq 1 $ 이며, 두 시작점 $ x^{(0)} $와 $ x^{(1)} $ 이 필요하다.
