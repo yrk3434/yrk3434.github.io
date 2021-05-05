@@ -192,3 +192,27 @@ Hard Problem은 모든 조합의 경우의 수를 확인해야하는 문제로 �
 Hard Problem에서 계산 횟수는 input p에 관한 다항식(예. $ p^2 $, $ p! $ 등) 
 $ h(p) $ 에 대하여 $ \mathcal{O}(h(p)) $ 에 제한(bound)된다. 
 참고로 $ \mathcal{O} $ notation은 big o를 찾아보길 바란다.
+
+
+Problem complexity 이론에서는 두 가지 이슈를 주로 다룬다. 
+첫번째는 최적화(i.e. 탐색), 두번째 decision(i.e. recognition)이다. 
+즉, 어떤 목적함수를 최적화할것이며 탐색영역을 얼마나 넓게 설정할 것인가가 주요 화두다.
+
+
+NP problem을 설명하기 전, 몇 가지 개념들을 소개한다.
+- A **decision problem** is a yes-or-no question on an infinite set of inputs.
+- **NP(nondeterministic polynomial time)** is a complexity class used to classify decision problems. NP is the set of decision problems for which the problem instances, where the answer is "yes", have proofs verifiable in polynomial time by a deterministic Turing machine.
+- A **Turing machine** is a general example of a central processing unit(CPU) that controls all data manipulation done by a computer, with the canonical machine using sequential memory to store data.
+
+- [ ] $P$:  다항식으로 이루어진 계산 횟수(polynomial time, eg.$ \mathcal{O}(p^k) $, 
+단 $ p $개의 입력값과 상수 $ k $) 안에 해결되는 문제는 $ P $ 클래스에 속한다. 
+이 경우 해를 효율적으로 구하는 것이 가능하다.
+
+- [ ] $NP$: polynomial time 안에 해결될 수 있는지 체크해볼만한 decision problem을 
+NP problem이라 부른다. 즉 모든 decision problem의 set은 NP problem이고, $ P $는 $ NP $에 속한다.
+
+NP-complete 문제와 NP-hard 문제 개념을 도식화하면 다음과 같다.
+<br/>
+<img class="center" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/P_np_np-complete_np-hard.svg" style="float:right" width=550px></img>
+<br/>
+
