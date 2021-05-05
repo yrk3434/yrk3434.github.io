@@ -98,17 +98,17 @@ $ a_{t+1}=a_{t}+(b_{t}-a_{t})/2 $ 를 사용할 수 있다.
 이 방법은 타겟 함수를 2차 테일러 전개를 하여 최적 근사값을 구하는 방법이다. 
 
 **[Alogrithm]**
-<center>$$ 0=g'(x^{*}) \approx g'(x^{t})+(x^{*}-x^{t})g''(x^{*}) $$ <center/>
-<center>$$ x^{*}=x^{(t)}-\frac{g'(x^{t})}{g''(x^{t})}=x^{(t)}+h^{(t)} $$ <center/>
-<center> where $ h^{(t)}=-\frac{g'(x^{t})}{g''(x^{t})} $ <center/>  
+<center> $ 0=g'(x^{*}) \approx g'(x^{t})+(x^{*}-x^{t})g''(x^{*}) $ </center>
+<center> $ x^{*}=x^{(t)}-\frac{g'(x^{t})}{g''(x^{t})}=x^{(t)}+h^{(t)} $ </center>
+<center> where $ h^{(t)}=-\frac{g'(x^{t})}{g''(x^{t})} $ </center>  
 
 hence, <br/>
 
 **[Update]**
-<center>$$ x^{(t+1)}=x^{(t)}+h^{(t)} $$<center/>
+<center>$ x^{(t+1)}=x^{(t)}+h^{(t)} $</center>
 
 <br/>
 <br/>
-Eg. 앞서 제시한 예제 $ g(x)=\frac{log(x)}{1+x} $의 최적값을 Newton's mothod를 통해 구해본다.
+Eg. 앞서 제시한 예제 $ g(x)=\frac{log(x)}{1+x} $ 의 최적값을 Newton's mothod를 통해 구해본다.
 $ h^{(t)}=\frac{(x^{(t)}+1)(1+1/x^{(t)}-log(x^{(t)})}{3+4/x^{(t)}+1/(x^{(t)})^2-2log(x^{(t)})} $ 
 초기값 $ x^{(0)}=3 $ 으로부터 시작할 때,  $ x^{(4)} \approx 3.59112 $ 으로 4th iteration 근사값이 최적값에 가까워진다.
