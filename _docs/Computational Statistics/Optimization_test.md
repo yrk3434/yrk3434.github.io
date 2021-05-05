@@ -4,6 +4,7 @@ category: Computational Statistics
 order: 2
 use_math: true
 comments: true
+toc: true
 ---
 
 ### Reference
