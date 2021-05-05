@@ -77,13 +77,15 @@
 				<h2>{% if page.category %}{{ page.category }}{% else %}{{ site.title }}{% endif %}</h2>
 				<h3>{{ page.title }}</h3>
 			</div>
-			<article class="content">
-				<div class="toc">
-				  <a href="#">&lt;맨 위로&gt;</a>
-				  {% include toc.html html=content %}
-				</div>
-				{{ content }}
-			</article>
+				<article class="content">
+					<article class="post-article">
+						<div class="toc">
+						  <a href="#">&lt;맨 위로&gt;</a>
+						  {% include toc.html html=content %}
+						</div>
+						{{ content }}
+					</article>
+				</article>
 		</section>
 
 		<script>
@@ -93,6 +95,7 @@
 		</script>
 	</body>
 </html>
+
 
 <script>
   function getTOCNodes(master) {
