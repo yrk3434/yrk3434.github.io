@@ -68,10 +68,21 @@ $ [a_{0},b_{0}] \supset [a_{1},b_{1}] \supset [a_{2},b_{2}] \supset \text{...} $
 
 
 **[Updating Rule]** <br/>
-Let initial value $ x^{0}=(a_{0}+b_{0})/2 $,  
+- Let initial value $ x^{0}=(a_{0}+b_{0})/2 $ ,  
 then, $ [a_{t+1},b_{t+1}] $ 
-equals to $ [a_{t},x_{t}] $, <br/>
+equals to $ [a_{t},x_{t}] $ , <br/>
 if $ g'(a_{t})g'(x_{t+1}) \leq 0 $
-equals to $ [ x_{t},b_{t}] $, <br/>
+equals to $ [ x_{t},b_{t}] $ , <br/>
 if $ g'(a_{t})g'(x_{t+1})>0 $
 where $ x^{t+1}=(a_{t}+b_{t})/2 $
+
+다음 stopping rule에 따라 값이 수렴했다고 간주하고 $ x $ 값의 업데이트를 멈춘다.
+
+**[Stopping Rule]**
+- Absolute Convergence criterion <br/>
+$ |x_{t+1}-x_{t}| \leq \epsilon $,
+$ \epsilon $ 는 매우 작은 0이 아닌 수
+- Relative Convergence Criterion <br/>
+$ \frac{|x_{t+1}-x_{t}|}{|x_{t}|} \leq \epsilon $ <br/>
+단, 분모가 0일수도 있으므로 다음 식으로 대체할 수 있다. <br/>
+$$ \frac{|x_{t+1}-x_{t}|}{|x_{t}| + \epsilon} \leq \epsilon $$
