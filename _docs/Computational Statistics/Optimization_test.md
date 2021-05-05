@@ -66,3 +66,12 @@ $ [a_{0},b_{0}] $
 $ [a_{0},b_{0}] \supset [a_{1},b_{1}] \supset [a_{2},b_{2}] \supset \text{...} $
 와 같이 된다.
 
+
+**[Updating Rule]** <br/>
+Let initial value $ x^{0}=(a_{0}+b_{0})/2 $,  
+then, $ [a_{t+1},b_{t+1}] $ 
+equals to $ [a_{t},x_{t}] $, <br/>
+if $ g'(a_{t})g'(x_{t+1}) \leq 0 $
+equals to $ [ x_{t},b_{t}] $, <br/>
+if $ g'(a_{t})g'(x_{t+1})>0 $
+where $ x^{t+1}=(a_{t}+b_{t})/2 $
