@@ -85,4 +85,4 @@ $ \epsilon $ 는 매우 작은 0이 아닌 수
 - Relative Convergence Criterion <br/>
 $ \frac{|x_{t+1}-x_{t}|}{|x_{t}|} \leq \epsilon $ <br/>
 단, 분모가 0일수도 있으므로 다음 식으로 대체할 수 있다. <br/>
-$$ \frac{|x_{t+1}-x_{t}|}{|x_{t}| + \epsilon} \leq \epsilon $$
+$ \frac{ |x_{t+1}-x_{t}| }{ |x_{t}| + \epsilon } \leq \epsilon $
