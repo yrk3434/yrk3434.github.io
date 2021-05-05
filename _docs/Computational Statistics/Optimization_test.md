@@ -145,3 +145,20 @@ Newton's Method에서 2차 미분 계산이 어려울 때,
 1차 미분을 수치미분한 것을 2차 미분식에 대체하여 사용하는 방법이다.
 <center> $ x^{(t+1)}=x^{(t)}-g'(x^{(t)})\frac{x^{(t)}-x^{(t-1)}}{g'(x^{(t)})-g'(x^{(t-1)})} $</center> 
 단 $ t \geq 1 $ 이며, 두 시작점 $ x^{(0)} $와 $ x^{(1)} $ 이 필요하다.
+
+### 2.1.3. Gradient Descent Method
+이 방법은 reference 책에는 없지만, 딥러닝 역전파시 흔히 사용되므로 기술하겠다.
+$ x_{i+1} = x_{i} - \gamma_{i} \nabla f(x_{i}) $
+위와 같은 식으로 최적화를 하는 이유는 기울기의 반대방향으로 input을 이동하여 기울기가 0인 지점을 찾아가기 때문이다.
+여기서 $ \gamma_{i} $ 는 learning rate에 해당한다.
+
+## 2.2. 다변량(Multivariate)에서의 최적화
+p 차원 벡터 $x^{(t)}=(x^{(t)}_{1},...,x^{(t)}_{p})^T$에 대해 최적화하는 문제를 생각해보자.
+단변량 최적화와 마찬가지로 테일러 전개를 이용해 iterative한 계산으로 지역 최적화 값을 구한다. 
+이전 iteration 값과 현재 iteration 값의 차이가 작아질 때 최적해를 구하는 iteration을 멈춘다.
+
+**[Convergence]**
+<center> $ D(x^{(t+1)},x^{(t)})<\epsilon $ or </center> 
+<center> $D(x^{(t+1)},x^{(t)})/D(x^{(t)},0)<\epsilon$ or </center> 
+<center> $D(x^{(t+1)}, x^{(t)})/(D(x^{(t)},0)+\epsilon)<\epsilon $ </center> 
+<center> where $ D(u,v)=\sum{|u_i-v_i|} $ or $ D(u,v)=\sqrt{\sum{(u_i-v_i)^2}} $ </center> 
