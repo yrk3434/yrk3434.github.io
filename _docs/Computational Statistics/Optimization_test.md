@@ -148,7 +148,7 @@ Newton's Method에서 2차 미분 계산이 어려울 때,
 
 ### 2.1.3. Gradient Descent Method
 이 방법은 reference 책에는 없지만, 딥러닝 역전파시 흔히 사용되므로 기술하겠다.
-$ x_{i+1} = x_{i} - \gamma_{i} \nabla f(x_{i}) $
+<center>  $ x_{i+1} = x_{i} - \gamma_{i} \nabla f(x_{i}) $ </center> 
 위와 같은 식으로 최적화를 하는 이유는 기울기의 반대방향으로 input을 이동하여 기울기가 0인 지점을 찾아가기 때문이다.
 여기서 $ \gamma_{i} $ 는 learning rate에 해당한다.
 
@@ -162,3 +162,33 @@ p 차원 벡터 $x^{(t)}=(x^{(t)}_{1},...,x^{(t)}_{p})^T$에 대해 최적화하
 <center> $D(x^{(t+1)},x^{(t)})/D(x^{(t)},0)<\epsilon$ or </center> 
 <center> $D(x^{(t+1)}, x^{(t)})/(D(x^{(t)},0)+\epsilon)<\epsilon $ </center> 
 <center> where $ D(u,v)=\sum{|u_i-v_i|} $ or $ D(u,v)=\sqrt{\sum{(u_i-v_i)^2}} $ </center> 
+
+ ### 2.2.1. Newton's Method and  Fishering 
+ 벡터 버전으로 목적함수 $ g $ 를 테일러 전개하면 다음과 같다.
+<center>$ g(x^*)=g(x^{(t)})+(x^*-x^{(t)})^Tg'(x^{(t)})+
+\frac{1}{2}(x^*-x^{(t)})^Tg''(x^{(t)})(x^*-x^{(t)}) $ </center>
+ 
+위 식을 $ x^{(t)} $ 에 대해 미분하면 다음 식과 같다.
+<center>$ g'(x^{(t)})+g''(x^{(t)})(x^*-x^{(t)})=0 $</center>
+<center>$ \Leftrightarrow x^{(t+1)}=
+x^{(t)}-g''(x^{(t)})^{-1}g(x^{(t)}) $</center>
+
+마찬가지로 p개 모수의 MLE는 다음과 같이 구한다.
+<center> $ \theta^{(t+1)}=
+\theta^{(t)}+I(\theta^{(t)})^{-1}l'(\theta^{(t)})$ </center>
+단변량의 경우와 같이 $ l'(\theta^{(t)}) $는 로그 우도함수의 1차 미분이고, 
+$ -I(\theta^{(t)})^{-1} $는 로그우도함수의 2차 미분에 해당한다.
+
+# 3.   Combinatorial Optimization
+통계적 수식으로부터 최적화하는 것과 달리, discrete value의 조합(예. 경우의 수)을 통해 
+최적값을 구하는 경우에는 2장의 방법을 사용할 수 없다.
+
+## 3.1. Hard Problem and NP-Completeness
+Hard Problem은 모든 조합의 경우의 수를 확인해야하는 문제로 탐색 영역이 너무 커서 해를 찾기 어렵다. 
+대표적인 예로 traveling salesman problem을 생각해볼 수 있다. 
+이 문제는 salesman이 p개의 도시를 거쳐 원점으로 돌아올 때 최소 경로를 찾는 문제다. 
+방향을 고려하지 않을 때 $ (p-1)!/2 $개의 후보 경로가 존재한다.
+
+Hard Problem에서 계산 횟수는 input p에 관한 다항식(예. $ p^2 $, $ p! $ 등) 
+$ h(p) $ 에 대하여 $ \mathcal{O}(h(p)) $ 에 제한(bound)된다. 
+참고로 $ \mathcal{O} $ notation은 big o를 찾아보길 바란다.
