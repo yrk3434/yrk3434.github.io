@@ -78,13 +78,11 @@
 				<h3>{{ page.title }}</h3>
 			</div>
 				<article class="content">
-					<article class="post-article">
-						<div class="toc">
-						  <a href="#">&lt;맨 위로&gt;</a>
-						  {% include toc.html html=content %}
-						</div>
-						{{ content }}
-					</article>
+					<div class="toc">
+					  <a href="#">&lt;맨 위로&gt;</a>
+					  {% include toc.html html=content %}
+					</div>
+					{{ content }}
 				</article>
 		</section>
 
@@ -113,10 +111,7 @@
     return headerNodes;
   }
 
-  var title = document.getElementsByClassName("post-title")[0];
-  var titleY = window.pageYOffset + title.getBoundingClientRect().top;
-
-  var article = document.getElementsByClassName("post-article")[0];
+  var article = document.getElementsByClassName("content")[0];
   var articleY = window.pageYOffset + article.getBoundingClientRect().top;
 
   var toc = document.getElementsByClassName("toc")[0];
