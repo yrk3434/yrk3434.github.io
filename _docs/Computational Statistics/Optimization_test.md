@@ -216,3 +216,29 @@ NP-complete 문제와 NP-hard 문제 개념을 도식화하면 다음과 같다.
 <img class="center" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/P_np_np-complete_np-hard.svg" style="float:right" width=550px></img>
 <br/>
 
+- [ ] $NP- Hard$
+- [ ] $NP- Completeness$
+
+
+## 3.1. 예제
+- 예제1. 유전자 매핑
+- 예제2. 회귀분석에서의 변수 선택
+총 $p$개의 설명변수 후보가 존재할 때, AIC를 최소화하는 $s$개의 설명변수를 선택하여## Heading best model을 구한다.  AIC는 회귀식의 예측 성능을 나타내는 RSS항과 모델의 복잡성에 대한 패널티를 나타내는 두 개의 항의 합이다. $$AIC=Nlog{RSS/N}+2(s+2)$$ 이 경우 상수항을 포함하여 각 계수를 포함하거나 제외하므로 subset model은 $2^{p+1}$개의 후보 모델이가 존재한다. 
+단, 베이지안 회귀의 경우 사후모델의 확률을 최대화하는 subset model을 best model로 삼는다.
+<br/>
+
+**Heurisitic?**
+- 감내 가능한 시간 내 지역 최적화 값을 찾는 것을 휴리스틱이라한다.
+- 전역 최적화 값의 후보값을 찾는다.
+
+
+**휴리스틱의 특성** <br/>
+< Local Search > <br/>
+(1) 현재 후보 해의  iterative improvement <br/>
+(2) 특정 iteration에서 지역 이웃값들 탐색에 대한 한계 <br/>
+
+**휴리스틱 이외 조합 최적화 알고리즘 리스트**
+- Simulated Annealing
+- Genetic Alogrithms
+- Tabu Algorithms
+
