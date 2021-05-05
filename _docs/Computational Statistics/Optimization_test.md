@@ -204,20 +204,25 @@ NP problem을 설명하기 전, 몇 가지 개념들을 소개한다.
 - **NP(nondeterministic polynomial time)** is a complexity class used to classify decision problems. NP is the set of decision problems for which the problem instances, where the answer is "yes", have proofs verifiable in polynomial time by a deterministic Turing machine.
 - A **Turing machine** is a general example of a central processing unit(CPU) that controls all data manipulation done by a computer, with the canonical machine using sequential memory to store data.
 
-- [ ] $P$:  다항식으로 이루어진 계산 횟수(polynomial time, eg.$ \mathcal{O}(p^k) $, 
+- $P$:  다항식으로 이루어진 계산 횟수(polynomial time, eg.$ \mathcal{O}(p^k) $, 
 단 $ p $개의 입력값과 상수 $ k $) 안에 해결되는 문제는 $ P $ 클래스에 속한다. 
 이 경우 해를 효율적으로 구하는 것이 가능하다.
 
-- [ ] $NP$: polynomial time 안에 해결될 수 있는지 체크해볼만한 decision problem을 
+- $NP$: polynomial time 안에 해결될 수 있는지 체크해볼만한 decision problem을 
 NP problem이라 부른다. 즉 모든 decision problem의 set은 NP problem이고, $ P $는 $ NP $에 속한다.
 
 NP-complete 문제와 NP-hard 문제 개념을 도식화하면 다음과 같다.
-<br/>
-<img class="center" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/P_np_np-complete_np-hard.svg" style="float:right" width=550px></img>
+
 <br/>
 
-- [ ] $NP- Hard$
-- [ ] $NP- Completeness$
+<img class="center" 
+src="https://upload.wikimedia.org/wikipedia/commons/a/a0/P_np_np-complete_np-hard.svg" 
+style="float:right" width=550px>
+
+<br/>
+
+- $NP- Hard$
+- $NP- Completeness$
 
 
 ## 3.1. 예제
