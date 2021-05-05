@@ -36,3 +36,21 @@ comments: true
 <center>$$ \text{Find} x^{*} \text{such that} f(x^{*}) &geq; f(x) \text{for all} x $$ </center>  
 <center>$$ \text{where} |x*-x| <&delta;, &delta;>0 $$</center>  
 
+## 1.2. 최적화에 대한 접근방식
+최적화 대상이 되는 함수의 성질, 제약사항 등에 따라 다른 최적화 방법을 사용해야 한다. 
+목차에 기술한대로 input의 값이 연속인지, 이산인지 혹은 미분이나 근사법(approximaiton)으로 
+해를 구할 수 있는 목적함수인지 등에 따라 다른 방법으로 최적화를 해야한다.
+
+# 2.  Optimization of Nonlinear Equations
+등식을 통해 해를 구할 수 있는 경우에 해당한다. 널리 사용되는 방법은 미분이다. 
+위에서 언급한 MLE 역시 우도함수를 미분해 0이되는 모수를 찾은 예이므로 이 방식에 속한다. 
+하지만 미분을 통해 해를 구할 때에는 해의 유일성, 근사적으로 구한 해의 수렴성, 근사적으로 
+구할 때의 값의 초기값 등 고려할 것들이 많다.
+
+## 2.1. 단변량(Univariate)에서의 최적화
+미분을 통해 최적값을 구한 책의 예를 들어보겠다.  
+
+<center>$$ g(x) = \frac{log(x)}{1+x} $$</center>    
+<center>$$ g'(x)=\frac{1+1/x-log(x)}{(1+x)^{2}} $$</center>    
+<center>$$ x*\approx 3.591 $$</center>  
+
