@@ -108,7 +108,6 @@ hence, <br/>
 <center>$ x^{(t+1)}=x^{(t)}+h^{(t)} $</center>
 
 <br/>
-<br/>
 Eg. 앞서 제시한 예제 $ g(x)=\frac{log(x)}{1+x} $ 의 최적값을 Newton's mothod를 통해 구해본다.
 $ h^{(t)}=\frac{(x^{(t)}+1)(1+1/x^{(t)}-log(x^{(t)})}{3+4/x^{(t)}+1/(x^{(t)})^2-2log(x^{(t)})} $ 
 초기값 $ x^{(0)}=3 $ 으로부터 시작할 때,  $ x^{(4)} \approx 3.59112 $ 으로 4th iteration 근사값이 최적값에 가까워진다.
@@ -211,13 +210,13 @@ NP problem을 설명하기 전, 몇 가지 개념들을 소개한다.
 - $NP$: polynomial time 안에 해결될 수 있는지 체크해볼만한 decision problem을 
 NP problem이라 부른다. 즉 모든 decision problem의 set은 NP problem이고, $ P $는 $ NP $에 속한다.
 
-NP-complete 문제와 NP-hard 문제 개념을 도식화하면 다음과 같다.
+NP-complete 문제와 NP-hard 문제 개념을 도식화하면 다음과 같다.      
 
 <br/>
 
 <img class="center" 
 src="https://upload.wikimedia.org/wikipedia/commons/a/a0/P_np_np-complete_np-hard.svg" 
-style="float:right" width=550px>
+style="float:right" width=550px>        
 
 <br/>
 
@@ -228,7 +227,11 @@ style="float:right" width=550px>
 ## 3.1. 예제
 - 예제1. 유전자 매핑
 - 예제2. 회귀분석에서의 변수 선택
-총 $p$개의 설명변수 후보가 존재할 때, AIC를 최소화하는 $s$개의 설명변수를 선택하여## Heading best model을 구한다.  AIC는 회귀식의 예측 성능을 나타내는 RSS항과 모델의 복잡성에 대한 패널티를 나타내는 두 개의 항의 합이다. $$AIC=Nlog{RSS/N}+2(s+2)$$ 이 경우 상수항을 포함하여 각 계수를 포함하거나 제외하므로 subset model은 $2^{p+1}$개의 후보 모델이가 존재한다. 
+총 $p$개의 설명변수 후보가 존재할 때, AIC를 최소화하는 $s$개의 설명변수를 선택하여 
+best model을 구한다.  AIC는 회귀식의 예측 성능을 나타내는 RSS항과 모델의 복잡성에 대한 
+패널티를 나타내는 두 개의 항의 합이다. 
+$ AIC = N log{RSS/N} + 2(s+2) $ 이 경우 상수항을 포함하여 각 계수를 포함하거나 제외하므로 
+subset model은 $ 2^{p+1} $ 개의 후보 모델이가 존재한다. 
 단, 베이지안 회귀의 경우 사후모델의 확률을 최대화하는 subset model을 best model로 삼는다.
 <br/>
 
