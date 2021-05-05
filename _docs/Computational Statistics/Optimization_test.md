@@ -88,7 +88,7 @@ $ \frac{|x_{t+1}-x_{t}|}{|x_{t}|} \leq \epsilon $ <br/>
 $ \frac{ |x_{t+1}-x_{t}| }{ |x_{t}| + \epsilon } \leq \epsilon $
 
 
-수렴 이슈가 발생할 수 있는데, 이 때 $ a_{t+1}=(a_{t}+b_{t})/ $ 
+수렴 이슈가 발생할 수 있는데, 이 때 $ a_{t+1}=(a_{t}+b_{t})/2 $ 
 대신 robust한 방법으로 
 $ a_{t+1}=a_{t}+(b_{t}-a_{t})/2 $ 를 사용할 수 있다. 
 수렴을 위해 알고리즘을 수정하더라도 수렴에 실패할 수 있다. 
@@ -96,3 +96,12 @@ $ a_{t+1}=a_{t}+(b_{t}-a_{t})/2 $ 를 사용할 수 있다.
 
 ### 2.1.2. Newton's Method
 이 방법은 타겟 함수를 2차 테일러 전개를 하여 최적 근사값을 구하는 방법이다. 
+
+**[Alogrithm]**
+<center>$$ 0=g'(x^{*}) \approx g'(x^{t})+(x^{*}-x^{t})g''(x^{*}) $$ <center/>
+<center>$$ x^{*}=x^{(t)}-\frac{g'(x^{t})}{g''(x^{t})}=x^{(t)}+h^{(t)}$ <center/>
+<center> where $$ h^{(t)}=-\frac{g'(x^{t})}{g''(x^{t})} $$ <center/>  
+hence, 
+
+**[Update]**
+<center>$$ x^{(t+1)}=x^{(t)}+h^{(t)} $$<center/>
