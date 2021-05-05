@@ -5,6 +5,8 @@ order: 2
 use_math: true
 comments: true
 toc: true
+toc_sticky: true
+toc_label: 목차
 ---
 
 ### Reference
