@@ -1,4 +1,4 @@
-﻿---  
+---  
 title: CodilityPractice(Lesson)
 category: Programming  
 order: 2  
