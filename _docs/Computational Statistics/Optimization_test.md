@@ -255,3 +255,30 @@ subset model은 $ 2^{p+1} $ 개의 후보 모델이가 존재한다.
 - Genetic Alogrithms
 - Tabu Algorithms
 
+
+## 3.2. Local Search
+- 기본 개념: 현재 후보 최적값 $ \theta^{(t)} $ 의 이웃값 $ \mathcal{N}(\theta^{(t)}) $ 로부터 
+다음 후보 최적값 $ \theta^{(t+1)} $ 을 iterative하게 구한다. 
+- 장점: 전역 탐색 구간 중 작은 일부분만을 탐색한다.
+- 단점: 전역 최적값이 아닌 지역 최적값을 구할 가능성이 높다.
+- *k-optimization, random starts local search*
+
+[후보 탐색 방식]
+- $ k-change $ : 현재 최적값 후보의 이웃 중 k개를 다음 최적값 후보로 삼는 것
+    - 예.  회귀모형 best subset 모형 구할 때 변수를 k개씩 넣거나 없애보기
+- $ k-optimal $ : *steepest ascent algorithm*(이전 후보값보다 큰 값 중에 후보값을 찾는 것)에 k개의 이웃 후보를 넣어 다음 후보를 찾는 것
+- *greedy algorithm*: 미래의 연속적 결과에 관계없이 현 상황에서 best 해결책을 찾는 것
+    - 참고. 이웃 후보값을 찾는 방법으로 7장의 *Markov chains* 이용 가능
+
+- *Ascent Algorithm*은 종종 전역 최적값이 아닌 지역 최적값으로 수렴한다. 
+이에 대한 해결방법 중 하나가 *Random starts local search*다. 
+가장 쉬운 방법으로 후보값의 set인 $ \Theta $에서 *uniform* 분포로부터 시작점을 
+독립적으로 여러번 랜덤하게 추출한다. 
+
+[예제] <br/>
+(Baseball Salaries) best subset 회귀모델 찾기 <br/>
+후보 변수 27개 중 AIC를 최소화하는 모델을 찾기 <br/>
+전체 모델 개수는 $ 2^{27} $개
+
+
+## 3.3. Simulated Annealing
