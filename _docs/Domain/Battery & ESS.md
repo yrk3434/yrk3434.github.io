@@ -1,4 +1,4 @@
-﻿---
+---
 title: Battery & ESS
 category: Domain
 order: 1
