@@ -21,7 +21,7 @@ reference
 ### 1.1.1. 전지의 구성
 - 전지의 구성: 음극> 분리막&전해질 < 양극
 - 이차전지는 산화, 환원 반응이 가역적이며 반복사용 가능
-<center><img class="center" src="https://www.samsungsdi.co.kr/upload/editor/1516259713027.jpg" style="float:right" width=500px></center>
+<center><img class="center" src="https://www.samsungsdi.co.kr/upload/editor/1516259713027.jpg" width=500px></center>
 
 
 ### 1.1.2. 전류, 전압, 분극
@@ -73,7 +73,7 @@ reference
 - 전지가 노화되면 capa가 낮아지고, 전지 내부저항도 높아져 동일전류에서 셀 전압이 낮아짐
 - 단, 방전 곡선은 전규, 출력, 인가 시간등에 따라 상이
 
-<center><img class="center" src="https://www.mdpi.com/energies/energies-10-00512/article_deploy/html/images/energies-10-00512-g001.png" style="float:right" width=400px></center>
+<center><img class="center" src="https://www.mdpi.com/energies/energies-10-00512/article_deploy/html/images/energies-10-00512-g001.png" width=400px></center>
 
 ### 1.4.2. 과충전
 - 과충전: 리튬 이차전지의 경우 4.3V 이상이면 과충전
@@ -94,11 +94,11 @@ reference
 - [그림3] 상이한 전지에 대해서 피크점은 전지의 Capacity라고 볼 수 있다.
 
 [그림1]
-<center><img class="center" src="https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-1.png?width=640&amp;name=dq-dv-vs-v-1.png" srcset="https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-1.png?width=320&amp;name=dq-dv-vs-v-1.png 320w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-1.png?width=640&amp;name=dq-dv-vs-v-1.png 640w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-1.png?width=960&amp;name=dq-dv-vs-v-1.png 960w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-1.png?width=1280&amp;name=dq-dv-vs-v-1.png 1280w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-1.png?width=1600&amp;name=dq-dv-vs-v-1.png" style="float:right" width=500px></center>
+<center><img class="center" src="https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-1.png?width=640&amp;name=dq-dv-vs-v-1.png" srcset="https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-1.png?width=320&amp;name=dq-dv-vs-v-1.png 320w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-1.png?width=640&amp;name=dq-dv-vs-v-1.png 640w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-1.png?width=960&amp;name=dq-dv-vs-v-1.png 960w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-1.png?width=1280&amp;name=dq-dv-vs-v-1.png 1280w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-1.png?width=1600&amp;name=dq-dv-vs-v-1.png" width=500px></center>
 [그림2]
-<center><img class="center" src="https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=640&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png" srcset="https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=320&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png 320w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=640&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png 640w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=960&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png 960w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=1280&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png 1280w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=1600&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png 1600w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=1920&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png" style="float:right" width=500px></center>
+<center><img class="center" src="https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=640&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png" srcset="https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=320&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png 320w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=640&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png 640w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=960&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png 960w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=1280&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png 1280w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=1600&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png 1600w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v-cycles-100-200-300-400.png?width=1920&amp;name=dq-dv-vs-v-cycles-100-200-300-400.png" width=500px></center>
 [그림3]
-<center><img class="center" src="https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=640&amp;name=dq-dv-vs-v_1-1.png" srcset="https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=320&amp;name=dq-dv-vs-v_1-1.png 320w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=640&amp;name=dq-dv-vs-v_1-1.png 640w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=960&amp;name=dq-dv-vs-v_1-1.png 960w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=1280&amp;name=dq-dv-vs-v_1-1.png 1280w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=1600&amp;name=dq-dv-vs-v_1-1.png 1600w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=1920&amp;name=dq-dv-vs-v_1-1.png" style="float:right" width=500px></center>
+<center><img class="center" src="https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=640&amp;name=dq-dv-vs-v_1-1.png" srcset="https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=320&amp;name=dq-dv-vs-v_1-1.png 320w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=640&amp;name=dq-dv-vs-v_1-1.png 640w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=960&amp;name=dq-dv-vs-v_1-1.png 960w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=1280&amp;name=dq-dv-vs-v_1-1.png 1280w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=1600&amp;name=dq-dv-vs-v_1-1.png 1600w, https://blog.voltaiq.com/hs-fs/hubfs/dq-dv-vs-v_1-1.png?width=1920&amp;name=dq-dv-vs-v_1-1.png" width=500px></center>
 
 
 
@@ -106,14 +106,14 @@ reference
 
 ## 2.1. ESS 구성단위
 
-<center><img class="center" src="https://cdn.buttercms.com/02O0WGJmSriXUzq7NvpE" style="float:right" width=500px></center>
+<center><img class="center" src="https://cdn.buttercms.com/02O0WGJmSriXUzq7NvpE" width=500px></center>
 
 - Cell > Module > Rack > ESS
 	- 앞서 설명한 리튬이온배터리가 셀에 해당하며, 셀 몇 개를 전기적으로 연결한 것이 모듈, 모듈 몇 개를 연결한 것이 랙에 해당한다.
 	- 각 단위는 직렬로 연결될수도, 병렬로 연결될 수도 있다. 예컨대, 셀을 직렬로 연결해 모듈 팩을 만들고, 모듈 팩을 병렬로 연결하여 적층해 랙을 만든다.
 
 ## 2.2. ESS 제어 단위
-<center><img class="center" src="https://cdn.buttercms.com/QLhtLHBnT6685CqKKwFq" style="float:right" width=700px></center>
+<center><img class="center" src="https://cdn.buttercms.com/QLhtLHBnT6685CqKKwFq" width=700px></center>
 
 - **BMS:** Battery Management System, 배터리의 전압과 전류, 온도를 실시간으로 측정하여 과충전 또는 방전 등의 보호, 배터리 상태 데이터를 PCS, 운영 시스템에 제공
 - **PCS:**  Power Conversion System, 전력 변환 장치 
