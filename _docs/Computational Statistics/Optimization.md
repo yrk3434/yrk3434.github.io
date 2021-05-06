@@ -221,7 +221,7 @@ NP-complete 문제와 NP-hard 문제 개념을 도식화하면 다음과 같다.
 
 <img class="center" 
 src="https://upload.wikimedia.org/wikipedia/commons/a/a0/P_np_np-complete_np-hard.svg" 
-style="float:right" width=550px>        
+width=550px/>        
 
 <br/>
 
