@@ -6,7 +6,7 @@ order: 3
 
 # 셀레니움을 이용한 크롤링
 
-## reference
+## Reference
 - 인프런 강의: 현존 최강 크롤링 기술: Scrapy와 Selenium 정복<br/>
 -> 저작권 침해 방지를 위해 독자적 예제 사용
 
