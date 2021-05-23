@@ -38,6 +38,7 @@ result = driver.find_element_by_tag_name('h3')
 element가 h3이므로 driver.find_element_by_tag_name에 h3을 넣는다.
 
 #### element vs elements
+
 - driver.find_element_by_tag_name
 - driver.find_elements_by_tag_name
 
@@ -54,9 +55,8 @@ result = driver.find_elements_by_tag_name('h3')
 print(result[2].text)
 ```
 
-
-
 ## 전체 코드
+
 ```
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -71,7 +71,7 @@ print(result.text)
 
 driver.quit() # 크롬 브라우저 닫기
 
-## ------------ 실행 결과 ------------ ## 
+##########  실행 결과   ##########
 # driver.title
 # 뉴스 : 네이버 부동산
 # result.text
