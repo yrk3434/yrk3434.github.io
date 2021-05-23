@@ -5,7 +5,7 @@ order: 1
 ---
 
 
-## REFERENCE
+## Reference
 - 인프런 강의. 데이터 분석을 위한 중급 SQL 문제풀이
 - [SQL 함수 리스트](https://dev.mysql.com/doc/refman/8.0/en/numeric-functions.html)
 - [해커랭크](https://www.hackerrank.com/)
