@@ -8,7 +8,7 @@ comments: true
 
 # 리튬이온배터리와 에너지 저장장치
 
-## eference
+## Reference
 - 리튬이차전지의 원리 및 응용(박정기)
 - [An Online SOC and SOH Estimation Model for Lithium-Ion Batteries(2017)](https://www.mdpi.com/1996-1073/10/4/512/htm)
 - [Applications of Voltammetry in Lithium Ion Battery Research(2020)](https://www.jecst.org/journal/view.php?doi=10.33961/jecst.2019.00619)
