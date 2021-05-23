@@ -4,15 +4,12 @@ category: Programming
 order: 1
 ---
 
-# 데이터 분석을 위한 중급 SQL 문제풀이
 
-### REFERENCE
-SQL 함수 리스트
-https://dev.mysql.com/doc/refman/8.0/en/numeric-functions.html
-
-코드 연습 사이트
-https://www.hackerrank.com/
-https://leetcode.com/
+## REFERENCE
+- 인프런 강의. 데이터 분석을 위한 중급 SQL 문제풀이
+- [SQL 함수 리스트](https://dev.mysql.com/doc/refman/8.0/en/numeric-functions.html)
+- [해커랭크](https://www.hackerrank.com/)
+- [리트코드](https://leetcode.com/)
 
 # 문제풀이 핵심 함수 개념
 ## 숫자를 다루는 함수
