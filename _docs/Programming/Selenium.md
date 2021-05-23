@@ -90,8 +90,8 @@ driver.quit() # 크롬 브라우저 닫기
 - Step1. Ctrl + Shift + C 또는
 more tools > develeopers tool > 마우스 커서 모양(Select an element in the page to inspect it) 클릭
 - Step2. 크롤링할 요소 클릭
-- Step3. 오른쪽 develeopers tool에서 선택된 요소(하늘색) 클릭 > copy > copy element 
-- Step4. ctrl +V 또는복사
+- Step3. 오른쪽 develeopers tool에서 선택된 요소(하늘색) 우클릭 > copy > copy element 
+- Step4. Ctrl + V
 
 네 가지 step에 따라 크롤링 요소를 복사하면 다음과 같다.
 
