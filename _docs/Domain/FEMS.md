@@ -72,6 +72,6 @@ Programmable Logic Controller (PLC)
 - 예. 설비 상태(운영, standby, breakdown) 별 누수 에너지 감지 -> standby 시간 설정 변경
 - specific consumption은 line-by_line으로 관리
 
-<center><img class="center" src="http://www.tisys.co.kr/images/sub/sub0201_img01.jpg" style="float:right"></center>
+<center><img class="center" src="http://www.tisys.co.kr/images/sub/sub0201_img01.jpg" style="float:right" width=500px></center>
 
 
