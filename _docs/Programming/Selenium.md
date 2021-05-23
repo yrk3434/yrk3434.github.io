@@ -26,15 +26,19 @@ driver = webdriver.Chrome(chromedriver) #
 ```
 
 ## 2.2. 사이트 & 크롤링 대상 입력
+
 ```
 driver.get('https://land.naver.com/news/newsRead.nhn?type=headline&prsco_id=119&arti_id=0002494744') 
 result = driver.find_element_by_tag_name('h3')
 ```
+
 - driver.get에는 크롤링할 사이트를 입력한다.
 - driver.find_element_by_tag_name에는 크롤링할 웹 요소를 입력한다.  element 부분을 카피하면 다음과 같다. element를 카피하는 방법은 목차 3에 기재했다.
+
 ```
 <h3 tabindex="0">시범운영에도 부작용 '속속'…전월세신고제, 임차인 보호 의구심 여전</h3>
 ```
+
 element가 h3이므로 driver.find_element_by_tag_name에 h3을 넣는다.
 
 #### element vs elements
@@ -44,12 +48,14 @@ element가 h3이므로 driver.find_element_by_tag_name에 h3을 넣는다.
 
 단, 이 예제는 가장 첫번째 h3 요소이기 때문에 문제가 없지만, 두 번째 혹은 그보다 더 뒤의 h3 요소면 문제가 된다.
 이 기사에는 4개의 h3 요소가 다음과 같이 있다. 
+
 > 1. 시범운영에도 부작용 '속속'…전월세신고제, 임차인 보호 의구심 여전
 > 2. 데일리안 관련뉴스해당 언론사에서 선정하며 언론사 페이지(아웃링크)로 이동해 볼 수 있습니다.
 > 3. 이슈 투기근절 대책
 > 4. 우리동네뉴스
 
 위와 같은 경우 element가 아닌 elements를 사용하여 해당 순서의 값을 추출한다. 예컨대, '이슈 투기근절 대책'을 추출하고 싶다면 다음과 같이 코드를 짜야 한다.
+
 ```
 result = driver.find_elements_by_tag_name('h3')
 print(result[2].text)
@@ -88,6 +94,7 @@ more tools > develeopers tool > 마우스 커서 모양(Select an element in the
 - Step4. ctrl +V 또는복사
 
 네 가지 step에 따라 크롤링 요소를 복사하면 다음과 같다.
+
 ```
 <h3 tabindex="0">시범운영에도 부작용 '속속'…전월세신고제, 임차인 보호 의구심 여전</h3>
 ```
@@ -103,13 +110,16 @@ more tools > develeopers tool > 마우스 커서 모양(Select an element in the
 ```
 
 검색창에 '날씨'를 검색했을 때 온도를 나타내는 요소를 복사하면 다음과 같다. class 이름이 'todyatemp'다. driver.find_elements_by_class_name를 통해 온도 정보를 저장한다.
+
 ```
 <span class="todaytemp">18</span>
 ```
+
 time.sleep을 통해 검색 시간을 늦추는 이유는 타이핑이 채 되기도 전에 엔터를 치면 blank 값을 검색하기 때문이다.
 
 
 ## 전체 코드
+
 ```
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
