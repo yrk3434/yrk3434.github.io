@@ -8,7 +8,7 @@ order: 2
 
 ## Reference 
 - [EMS: Factory Energy Management System based on Production Information, MITSUYASU KACHI et al.](http://www.wseas.us/e-library/conferences/2013/Morioka/ISMA/ISMA-05.pdf)
-- [MES/POP | 스마트팩토리 | (주)TIS (tisys.co.kr)](http://www.tisys.co.kr/sub2_1.html)
+- [(주)TIS 스마트팩토리](http://www.tisys.co.kr/sub2_1.html)
 - [적정스마트팩토리포럼_코에버_.pdf (snu.ac.kr)](http://fab.snu.ac.kr/smart/%EC%A0%81%EC%A0%95%EC%8A%A4%EB%A7%88%ED%8A%B8%ED%8C%A9%ED%86%A0%EB%A6%AC%ED%8F%AC%EB%9F%BC_%EC%BD%94%EC%97%90%EB%B2%84_.pdf)
 
 
@@ -33,28 +33,22 @@ Plan-Do-Check-Action (PDCA)
 Programmable Logic Controller (PLC)
 
 # 2.  FEMS 주요 기능
-에너지관리 세분화 
+1. 에너지관리 세분화 
 - 원단위 분석을 통한 에너지 효율 분석 
-
-설비별 에너지 검침 자동화 
+2. 설비별 에너지 검침 자동화 
 - 지동원격 검침 시스템을 통한 관리적 효과 
 - 기기별/공정별 세분화된 추적과 분석 
-
-에너지 사용량의 분석
+3. 에너지 사용량의 분석
 - 에너지 사용량의 통계분석 체계 구축 
 - 공정별/설비별 에너지관리, 에너지 소비량 예측 
-
-실시간 모니터링 
+4. 실시간 모니터링 
 - 전력피크 사전대응 
-
-에너지 통합관리 
+5. 에너지 통합관리 
 - 에너지관리 상황을 총체적으로 제어 
-
-장비운전 트렌드 분석 
+6. 장비운전 트렌드 분석 
 - 효율적인 운전방법 제시 
 - 장비 수명연장 및 비용절감 
-
-에너지MAP 확인 
+ 7. 에너지MAP 확인 
 - 에너지 흐름의 가시화로 소비분야 관리 시스템의 명확화 
 - 생산흐름과 에너지 흐름의 통합관리
 
