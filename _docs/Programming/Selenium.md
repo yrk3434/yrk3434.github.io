@@ -131,7 +131,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time #검색해서 크롤링하는 상황이면, 검색 소요 시간 고려해서 time 라이브러리도 불러오자
 
-chromedriver = 'D:/webdriver/chromedriver'
+chromedriver = '.../chromedriver'
 driver = webdriver.Chrome(chromedriver)
 driver.get("https://www.naver.com/")
 
@@ -143,7 +143,7 @@ elem.send_keys(Keys.ENTER) # 엔터
 
 # 날씨 검색 후 페이지에서 온도 요소 찾음
 value=driver.find_element_by_class_name('todaytemp')
-print(value.text) # 오늘의온도
+print(value.text) # 오늘의 온도
 
 driver.quit() # 크롬 브라우저 닫기
 ```
