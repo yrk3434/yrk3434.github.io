@@ -76,8 +76,8 @@ $ \theta_b \notin (\theta_l, \theta_h) $ , then $ P(\theta_a|x) > P(\theta_b|x) 
 2) 격자를 이용해 신뢰수준을 만족하는 확률밀도 누적합 구간 구함 <br/>
 3) 사후분포로부터 표본을 뽑아 신뢰구간 구함(샘플이 사후분포에 근사)
 
-## 3.2. 공액 사전분포(Conjugate Prior)
-사전분포와 사후분포의 분포족이 같을 경우 두 분포를 conjugate distribution이라 한다. 이 경우의 사전분포를 공액 사전분포라 한다.
+## 3.2. 공액 분포(Conjugate Distribution)
+사전분포와 사후분포의 분포족이 같을 경우 두 분포를 공액분포(conjugate distribution)이라 한다. 이 경우의 사전분포를 공액 사전분포(conjugate prior)라 한다.
 
 1. 베타분포(사전분포) + 이항분포(데이터) -> 베타분포(사후분포)  <br/>
 데이터: $ x | \theta \sim B(n,\theta) $ <br/>
@@ -90,7 +90,7 @@ $ \theta_b \notin (\theta_l, \theta_h) $ , then $ P(\theta_a|x) > P(\theta_b|x) 
 3.1. 분산이 알려진 경우 <br/>
 $ X_1,...,X_n | \theta \sim N(\theta, \sigma^2) $ <br/>
 감마분포( $ \theta $ 사전분포) + 정규분포(데이터) -> 감마분포( $ \theta $ 사후분포)  <br/>
-3.2. 분산이 알려지지 않은 경우 <br/>
+3.2. 분산이 알려지지 않은 경우 <br/><br/>
 데이터: $ X_1,...,X_n | \theta \sim N(\theta, \sigma^2) $ <br/>
 분산 사전분포: $ \sigma^2 \sim IG(a,b) $ <br/>
 평균 사전분포: $ \theta|\sigma^2 \sim N(\mu_0, \sigma^2 / k_0) $ <br/>
