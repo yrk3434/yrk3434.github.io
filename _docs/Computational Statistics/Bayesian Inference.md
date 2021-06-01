@@ -52,7 +52,7 @@ $ P(A_i|B) = \frac{P_I(A_i \cap B)}{
 
 [Frequentist inference]
 - hypothesis에 대한 확률을 가정하지 않음, no prior, no posterior
-- 관측, 비관측 데이터 모두 우도 함수 $ P(D|H) $ 에 의존
+- 관측, 비관측 데이터 모두 우도 함수 $P(D|H)$ 에 의존
 - 계산량이 비교적 적음
 
 # 3. 베이지안 추정과 베이지안 신뢰 구간
