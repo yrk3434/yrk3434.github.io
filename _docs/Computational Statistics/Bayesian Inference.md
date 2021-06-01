@@ -15,7 +15,6 @@ toc_label: 목차
 - JAGS를 활용한 베이지안 자료분석(2019), 오만숙
 - [MIT 강의자료](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading20.pdf)
 
-<br/><br/>
 [사전 지식] 확률론
 
 # Contents
