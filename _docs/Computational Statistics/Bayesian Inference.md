@@ -42,7 +42,7 @@ $ P(A_i|B) = \frac{P_I(A_i \cap B)}{
 통계학에는 크게 두 학파가 있다. Frequentist와 Bayesian이다. 두 학파의 가장 큰 차이는 사건(확률에서의 사
 건)이 발생할 수 있는 공간에 대해 어떤 믿음(확률 분포)을 가정하는지의 여부다. 엄밀한 설명은 아니지만, 위에서
 계속 언급되는 hypothesis는 주어진 데이터의 확률 분포가 발생할 수 있는 환경에 대한 가정을 의미한다.
-
+<br/>
 [Bayesian inference]
 - hypothesis와 data에 확률 사용
 - prior와 데이터의 우도함수에 영향을 받음
