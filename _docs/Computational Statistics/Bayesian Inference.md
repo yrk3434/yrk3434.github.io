@@ -60,7 +60,7 @@ $ P(A_i|B) = \frac{P_I(A_i \cap B)}{
 사전분포 $ \pi(\theta) $ & 자료 $ f(x|\theta) $
 -> 사후분포 $ \pi(\theta|x) $
 - 베이지안 신뢰 구간: $ 100(1-\alpha) $ % 신뢰구간은 다음을 만족하는 $ \theta $ 의 집합 $ C $ <br/>
-$$ P(\theta \in C | x ) = 1 - \alpha $$
+$ P(\theta \in C | x ) = 1 - \alpha $
 - 최대사후구간(HPD, Highest Posterior Density interval): $ 100(1-\alpha) $ % HPD 구간은 다음을
 만족하는 $ \theta_l $ , $ \theta_h $ 사이의 구간 <br/>
-$$ P( \theta_l < \theta < \theta_h ) = 1 - \alpha $$
+$ P( \theta_l < \theta < \theta_h ) = 1 - \alpha $
