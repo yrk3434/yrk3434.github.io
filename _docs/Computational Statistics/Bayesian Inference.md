@@ -94,7 +94,7 @@ $ X_1,...,X_n | \theta \sim N(\theta, \sigma^2) $ <br/>
 데이터: $ X_1,...,X_n | \theta \sim N(\theta, \sigma^2) $ <br/>
 분산 사전분포: $ \sigma^2 \sim IG(a,b) $ <br/>
 평균 사전분포: $ \theta|\sigma^2 \sim N(\mu_0, \sigma^2 / k_0) $ <br/>
-분산 사후분포: $ \sigma^2|x_1, ...x_n \sim IG(\frac{n}{2} + a, \frac{1}{2} (S + \frac{k_0 n}{k_0 + n}(\bar{x}-\mu_0)^2) +b) $
+분산 사후분포: $ \sigma^2|x_1, ...x_n \sim IG(\frac{n}{2} + a, \frac{1}{2} (S + \frac{k_0 n}{k_0 + n}(\bar{x}-\mu_0)^2) +b) $ <br/>
 평균 사후분포: $ \theta|x_1, ...x_n, \sigma^2 \sim N(\frac{k_0 \mu_0 + n \bar{x} }{k_0 + n}, \frac{\sigma^2}{k_0 + n})  $
 
 
