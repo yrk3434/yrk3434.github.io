@@ -25,14 +25,14 @@ toc_label: 목차
 # 1. 기본개념
 - Unit1. 베이즈 공식: 사건에 대한 조건부 확률
 $ P(A|B) = \frac{P(A|B)P(A)}{P(B)} $
-- Unit2. 베이지안 추론에서의 베이즈 공식
-$ P(H|D) = \frac{P(D|H)P(H)}{P(D)} $
-H: hypothesis
-D: data
-$ P(H) $ : Prior probability, 데이터를 고려하기 전 $ H $ 가 참일 때의 확률
-$ P(H|D) $ : Posterior probability, 데이터를 고려한 후 $ H $ 가 참일 때의 확률
-$ P(D|H) $: Liklihood, 모든 가능한 hypothesis가 고려될 때 데이터의 발생 확률
-- 확률공간의 분할(배반인 사건)과 베이즈 정리
+- Unit2. 베이지안 추론에서의 베이즈 공식 <br/>
+$ P(H|D) = \frac{P(D|H)P(H)}{P(D)} $ <br/>
+H: hypothesis <br/>
+D: data <br/>
+$ P(H) $ : Prior probability, 데이터를 고려하기 전 $ H $ 가 참일 때의 확률 <br/>
+$ P(H|D) $ : Posterior probability, 데이터를 고려한 후 $ H $ 가 참일 때의 확률 <br/>
+$ P(D|H) $: Liklihood, 모든 가능한 hypothesis가 고려될 때 데이터의 발생 확률 <br/>
+- 확률공간의 분할(배반인 사건)과 베이즈 정리 <br/>
 $ {A_1, A_2,..,A_k} $
 $ P(A_i|B) = \frac{P_I(A_i \cap B)}{
 ,
