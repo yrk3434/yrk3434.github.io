@@ -79,7 +79,12 @@ $ \theta_b \notin (\theta_l, \theta_h) $ , then $ P(\theta_a|x) > P(\theta_b|x) 
 3) 사후분포로부터 표본을 뽑아 신뢰구간 구함(샘플이 사후분포에 근사)
 
 ## 3.2. 공액 분포(Conjugate Distribution)
-사전분포와 사후분포의 분포족이 같을 경우 두 분포를 공액분포(conjugate distribution)이라 한다. 이 경우의 사전분포를 공액 사전분포(conjugate prior)라 한다.
+사전분포와 사후분포의 분포족이 같을 경우 두 분포를 공액분포(conjugate distribution)이라 한다. 
+이 경우의 사전분포를 공액 사전분포(conjugate prior)라 한다. <br/>
+<br/>
+기본적으로 사후분포를 유도하는 방법은 다음과 같다.
+> $ \pi(\theta|x_1, ...x_n) = \pi(\theta)f(x_1, ...,x_n|\theta)/f(x_1, ...x_n) <br/>
+>\propto \pi(\theta)f(x_1, ...,x_n|\theta) $
 
 1. 베타분포(사전분포) + 이항분포(데이터) -> 베타분포(사후분포)  <br/>
 도출 과정은 [위키피디아](https://en.wikipedia.org/wiki/Beta-binomial_distribution)를 참고한다.  <br/>
