@@ -1,4 +1,15 @@
-﻿# Reference
+---
+title: Bayesian Inference
+category: Computational Statistics
+order: 1
+use_math: true
+comments: true
+toc: true
+toc_sticky: true
+toc_label: 목차
+---
+
+# Reference
 이 포스팅은 베이지안 통계의 기본적인 내용만 다루기 때문에 실질적인 예제와 코드는 오만숙 교수님의 책을 참
 조하기 바란다.
 • R과 JAGS 몬테칼로와 함께하는 베이지안 통계추론(2017), 오만숙
