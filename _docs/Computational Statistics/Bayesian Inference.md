@@ -66,7 +66,7 @@ $ P(A_i|B) = \frac{P_I(A_i \cap B)}{
 $ P(\theta \in C | x ) = 1 - \alpha $
 - 최대사후구간(HPD, Highest Posterior Density interval): $ 100(1-\alpha) $ % HPD 구간은 다음을
 만족하는 $ \theta_l $ , $ \theta_h $ 사이의 구간 <br/>
-1) $ P( \theta_l < \theta < \theta_h ) = 1 - \alpha $
+1) $ P( \theta_l < \theta < \theta_h ) = 1 - \alpha $ <br/>
 2) if $ \theta_a \in (\theta_l, \theta_h) $ and 
 $ \theta_b \notin (\theta_l, \theta_h) $ , then $ P(\theta_a|x) > P(\theta_b|x) $
 
