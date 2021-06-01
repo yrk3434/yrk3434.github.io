@@ -71,7 +71,7 @@ $ P(\theta \in C | x ) = 1 - \alpha $
 $ \theta_b \notin (\theta_l, \theta_h) $ , then $ P(\theta_a|x) > P(\theta_b|x) $
 
 [최대 사후 구간을 찾는 방법] <br/>
-사후표본분포가 단봉, 대칭 여부를 확인하고 HPD 구할 <br/>
+사후표본분포가 단봉, 대칭 여부를 확인하고 HPD 구할 것<br/>
 1) 사후분위수 $  (\theta_{\alpha/2},\theta_{1-\alpha/2}) $ 를 대략적인 HPD 구간으로 설정 <br/>
 2) 격자를 이용해 신뢰수준을 만족하는 확률밀도 누적합 구간 구함 <br/>
 3) 사후분포로부터 표본을 뽑아 신뢰구간 구함(샘플이 사후분포에 근사)
