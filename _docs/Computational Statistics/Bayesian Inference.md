@@ -10,7 +10,7 @@ toc_label: 목차
 ---
 
 ### Reference
-이 포스팅은 베이지안 통계의 기본적인 내용만 다루기 때문에 실질적인 예제와 코드는 오만숙 교수님의 책을 참조하기 바란다.
+이 포스팅은 베이지안 통계의 기본적인 내용만 다루기 때문에 수식 도출 과정, 예제, 코드는 오만숙 교수님의 책을 참조하기 바란다.
 - R과 JAGS 몬테칼로와 함께하는 베이지안 통계추론(2017), 오만숙
 - JAGS를 활용한 베이지안 자료분석(2019), 오만숙
 - [MIT 강의자료](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading20.pdf)
