@@ -59,5 +59,5 @@ hypothesis에 대한 확률을 가정하지 않음, no prior, no posterior
 - 베이지안 신뢰 구간: $ 100(1-\alpha) $ % 신뢰구간은 다음을 만족하는 $ \theta $ 의 집합 $ C $
 $$ P(\theta) \in C|x) = 1- \alpha $$
 - 최대사후구간(HPD, Highest Posterior Density interval): $ 100(1-\alpha) $ % HPD 구간은 다음을
-만족하는 $ \theta_l $ , $ \theta_h $ 사이의 구간
+만족하는 $ \theta_l $ , $ \theta_h $ 사이의 구간 <br/>
 1) $$ P(\theta_l < theta < theta_h) = 1-\alpha $$
