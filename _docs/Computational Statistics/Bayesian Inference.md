@@ -12,10 +12,9 @@ toc_label: 목차
 # Reference
 이 포스팅은 베이지안 통계의 기본적인 내용만 다루기 때문에 실질적인 예제와 코드는 오만숙 교수님의 책을 참
 조하기 바란다.
-• R과 JAGS 몬테칼로와 함께하는 베이지안 통계추론(2017), 오만숙
-• JAGS를 활용한 베이지안 자료분석(2019), 오만숙
-
-• [MIT 강의자료](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading20.pdf)
+- R과 JAGS 몬테칼로와 함께하는 베이지안 통계추론(2017), 오만숙
+- JAGS를 활용한 베이지안 자료분석(2019), 오만숙
+- [MIT 강의자료](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading20.pdf)
 
 # Contents
 1. 기본 개념
@@ -24,16 +23,16 @@ toc_label: 목차
 4. 마코브체인 몬테카를로 시뮬레이션
 
 # 1. 기본개념
-• Unit1. 베이즈 공식: 사건에 대한 조건부 확률
+- Unit1. 베이즈 공식: 사건에 대한 조건부 확률
 $ P(A|B) = \frac{P(A|B)P(A)}{P(B)} $
-• Unit2. 베이지안 추론에서의 베이즈 공식
+- Unit2. 베이지안 추론에서의 베이즈 공식
 $ P(H|D) = \frac{P(D|H)P(H)}{P(D)} $
 H: hypothesis
 D: data
 $ P(H) $ : Prior probability, 데이터를 고려하기 전 $ H $ 가 참일 때의 확률
 $ P(H|D) $ : Posterior probability, 데이터를 고려한 후 $ H $ 가 참일 때의 확률
 $ P(D|H) $: Liklihood, 모든 가능한 hypothesis가 고려될 때 데이터의 발생 확률
-• 확률공간의 분할(배반인 사건)과 베이즈 정리
+- 확률공간의 분할(배반인 사건)과 베이즈 정리
 $ {A_1, A_2,..,A_k} $
 $ P(A_i|B) = \frac{P_I(A_i \cap B)}{
 ,
