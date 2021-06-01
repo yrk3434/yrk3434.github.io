@@ -94,6 +94,7 @@ $ \theta_b \notin (\theta_l, \theta_h) $ , then $ P(\theta_a|x) > P(\theta_b|x) 
 사후분포: $ \theta|x_1, ...,x_n \sim Gamma(a+ \sum x_i, b+n) $  <br/> 
 
 3. 정규분포 <br/>
+도출과정은 다음 [강의자료](https://www.cs.ubc.ca/~murphyk/Papers/bayesGauss.pdf)를 참고한다 <br/>
 3.1. 분산이 알려진 경우 <br/>
 $ X_1,...,X_n | \theta \sim N(\theta, \sigma^2) $ <br/>
 감마분포( $ \theta $ 사전분포) + 정규분포(데이터) -> 감마분포( $ \theta $ 사후분포)  <br/><br/>
