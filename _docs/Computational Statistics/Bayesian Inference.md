@@ -80,7 +80,7 @@ $ \theta_b \notin (\theta_l, \theta_h) $ , then $ P(\theta_a|x) > P(\theta_b|x) 
 사전분포와 사후분포의 분포족이 같을 경우 두 분포를 공액분포(conjugate distribution)이라 한다. 이 경우의 사전분포를 공액 사전분포(conjugate prior)라 한다.
 
 1. 베타분포(사전분포) + 이항분포(데이터) -> 베타분포(사후분포)  <br/>
-도출 과정은 [위키피디아](https://en.wikipedia.org/wiki/Beta-binomial_distribution)를 참고한다.
+도출 과정은 [위키피디아](https://en.wikipedia.org/wiki/Beta-binomial_distribution)를 참고한다.  <br/>
 데이터: $ x | \theta \sim B(n,\theta) $ <br/>
 사전분포: $ \theta \sim Beta(a,b) $  <br/>
 사후분포: $ \theta|x \sim Beta(x+a, n-x+b) $ <br/>
