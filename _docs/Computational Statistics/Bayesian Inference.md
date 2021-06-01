@@ -88,8 +88,8 @@ $ \theta_b \notin (\theta_l, \theta_h) $ , then $ P(\theta_a|x) > P(\theta_b|x) 
 2. 감마분포(사전분포) + 포아송분포(데이터) -> 감마분포(사후분포)
 도출 과정은 다음 [강의자료](https://people.stat.sc.edu/Hitchcock/slides535day5spr2014.pdf)를 참고한다. <br/>
 데이터: $ X_1, ...,X_n | \theta \sim Poi(\theta) $ <br/>
-사전분포: $ \theta \sim Gamma(a,b) $
-사후분포: $ \theta|x_1, ...,x_n \sim Gamma(a+ \sum x_i, b+n) $
+사전분포: $ \theta \sim Gamma(a,b) $  <br/>
+사후분포: $ \theta|x_1, ...,x_n \sim Gamma(a+ \sum x_i, b+n) $  <br/> 
 
 3. 정규분포 <br/>
 3.1. 분산이 알려진 경우 <br/>
