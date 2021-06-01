@@ -84,11 +84,9 @@ $ \theta_b \notin (\theta_l, \theta_h) $ , then $ P(\theta_a|x) > P(\theta_b|x) 
 2. 감마분포(사전분포) + 포아송분포(데이터) -> 감마분포(사후분포)
 
 3. 정규분포 <br/>
-<br/>
 3.1. 분산이 알려진 경우 <br/>
 $ X_1,...,X_n | \theta \sim N(\theta, \sigma^2) $ <br/>
 감마분포( $ \theta $ 사전분포) + 정규분포(데이터) -> 감마분포( $ \theta $ 사후분포)  <br/>
-<br/>
 3.2. 분산이 알려지지 않은 경우 <br/>
 데이터: $ X_1,...,X_n | \theta \sim N(\theta, \sigma^2) $ <br/>
 분산 사전분포: $ \sigma^2 \sim IG(a,b) $ <br/>
