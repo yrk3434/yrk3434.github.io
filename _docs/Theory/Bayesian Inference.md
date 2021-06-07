@@ -67,9 +67,9 @@ $ P(A_i|B) = \frac{P_I(A_i \cap B)}{
 -> 사후분포 $ \pi(\theta|x) $
 
 기본적으로 사후분포를 유도하는 방법은 다음과 같다.
-<center>$ \pi(\theta|x_1, ...x_n) = \pi(\theta)f(x_1, ...,x_n|\theta)/f(x_1, ...x_n) $ </center><br/>
-<center>$ \propto \pi(\theta)f(x_1, ...,x_n|\theta) $ ...(a) </center> <br/>
-<center>$ = \pi(\theta)\prod_{i=1}^{n}f(x_i) $ ...(b)  </center><br/>
+<center>$ \pi(\theta|x_1, ...x_n) = \pi(\theta)f(x_1, ...,x_n|\theta)/f(x_1, ...x_n) $ </center>
+<center>$ \propto \pi(\theta)f(x_1, ...,x_n|\theta) $ ...(a) </center>
+<center>$ = \pi(\theta)\prod_{i=1}^{n}f(x_i) $ ...(b)  </center>
 $ f(x_1,..., x_n) $ 은 모수 $ \theta $ 와 무관하므로 상수값이기 때문에 (a)가 성립한다.
 또한 각 자료가 iid인 경우 (b)와 같이 식이 간단해진다. 식 정리를 한 후 어떤 분포를 따르는지 확인하면 된다.
 
@@ -96,7 +96,7 @@ $ P(X_{n+1}|x_1, ..., x_n) = \int P(X_{n+1}, \theta |x_1, ..., x_n) d \theta$
 $ \int P(X_{n+1} | \theta,x_1, ..., x_n) \pi(\theta|x_1, ..., x_n) d \theta$ ...(a)
 
 joint 분포로부터 적분을 통해 marginal 분포를 구하는 것과 베이지안 정리를 이용하면 (a) 식을 도출할 수 있다.
-$P(a) = \int P(a,\theta) d\theta = \int P(a | \theta) \pi(\theta) d\theta$
+<center>$ P(a) = \int P(a,\theta) d\theta = \int P(a | \theta) \pi(\theta) d\theta $ <center/>
 위 식의 given condition에 전부 $x_1, ..., x_n $ 을 넣으면 된다.
 
 
