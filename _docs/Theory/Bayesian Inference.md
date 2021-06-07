@@ -81,10 +81,11 @@ $ \theta_b \notin (\theta_l, \theta_h) $ , then $ P(\theta_a|x) > P(\theta_b|x) 
 <br/>
 기본적으로 사후분포를 유도하는 방법은 다음과 같다.
 $ \pi(\theta|x_1, ...x_n) = \pi(\theta)f(x_1, ...,x_n|\theta)/f(x_1, ...x_n) $ <br/>
-$ \propto \pi(\theta)f(x_1, ...,x_n|\theta) $ (*) <br/>
-$ f(x_1,..., x_n) $ 은 모수 $ \theta $ 와 무관하므로 상수값이기 때문에 (*) 식이 성립한다.
-(*)를 식 정리를 한 후 어떤 분포를 따르는지 확인하면 된다. 다음 세 가지 경우는 알려진 사전, 사후 분포가 같으며 
-잘 알려진 분포를 따르는 경우다.
+$ \propto \pi(\theta)f(x_1, ...,x_n|\theta) $ ...(a) <br/>
+$ = \pi(\theta)\prod_{i=1}^{n}f(x_i) $ ...(b) <br/>
+$ f(x_1,..., x_n) $ 은 모수 $ \theta $ 와 무관하므로 상수값이기 때문에 (a)가 성립한다.
+또한 각 자료가 iid인 경우 (b)와 같이 식이 간단해진다. 식 정리를 한 후 어떤 분포를 따르는지 확인하면 된다. 
+다음 세 가지 경우는 알려진 사전, 사후 분포가 같으며 잘 알려진 분포를 따르는 경우다. 
 
 ## 3.2. 공액 분포(Conjugate Distribution)
 사전분포와 사후분포의 분포족이 같을 경우 두 분포를 공액분포(conjugate distribution)이라 한다. 
