@@ -138,15 +138,15 @@ $ X = (X_1, ..., X_p) $ <br/>
 데이터: $ X \sim N_p(\theta, \Sigma) $ <br/>
 평균 사전분포: $ \theta \sim N_p(\mu_0, \Sigma_0) $ <br/>
 평균 사후분포: $ \theta | X \sim N_p(\mu_{\pi}, \Sigma_{\pi}) $ <br/>
-where $ \mu{\pi} = (n \Sigma^{-1} + \Sigma_0^{-1})^{-1} (n \Sigma^{-1} \bar{x} + \Sigma_0^{-1} \mu_0)$ <br/>
+where $ \mu_{\pi} = (n \Sigma^{-1} + \Sigma_0^{-1})^{-1} (n \Sigma^{-1} \bar{x} + \Sigma_0^{-1} \mu_0)$ <br/>
 $ \Sigma_{\pi} =  (n \Sigma^{-1} + \Sigma_0^{-1})^{-1} $ <br/><br/>
 4.2. 공분산이 알려지지 않은 경우 <br/>
 공분산 사전분포인 $ IW $ 는 역위샤트 분포를 의미한다. <br/>
 데이터: $ X \sim N_p(\theta, \Sigma) $ <br/>
 평균 사전분포: $ \theta | \Sigma \sim N_p(\mu_0, 1/k_0 \Sigma_0) $ <br/>
 공분산 사전분포: $ \Sigma \sim IW(\upsilon_0, \Lambda_0) $ <br/>
-평균 사후분포: $ \theta|x_1,...x_n \Sigma \sim N_p( \frac{n bar{x} +k_0\mu_0}{n+k_0} , \frac{1}{n+k_0} \Sigma ) $
+평균 사후분포: $ \theta|x_1,...x_n \Sigma \sim N_p( \frac{n \bar{x} +k_0\mu_0}{n+k_0} , \frac{1}{n+k_0} \Sigma ) $
 공분산 사후분포 $ \Sigma|x_1,...x_n \sim IW(n+\upsilon_0, \Lambda_n) $ <br/>
-where $ \Lambda_n = \Lambda_0 + S + \frac{n k_0}{n+k_0}(bar{x}-\mu_0)(bar{x}-\mu_0)' $ <br/>
-$ S = \Sigma_{i=1}{n} (bar{x}-\mu_0)(bar{x}-\mu_0)' $
+where $ \Lambda_n = \Lambda_0 + S + \frac{n k_0}{n+k_0}(\bar{x}-\mu_0)(\bar{x}-\mu_0)' $ <br/>
+$ S = \Sigma_{i=1}{n} (\bar{x}-\mu_0)(\bar{x}-\mu_0)' $
  
