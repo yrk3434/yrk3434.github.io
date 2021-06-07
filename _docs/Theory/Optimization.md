@@ -1,6 +1,6 @@
 ---
 title: Optimization
-category: Computational Statistics
+category: Theory
 order: 2
 use_math: true
 comments: true
