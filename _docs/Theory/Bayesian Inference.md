@@ -139,8 +139,7 @@ $ X = (X_1, ..., X_p) $ <br/>
 평균 사전분포: $ \theta \sim N_p(\mu_0, \Sigma_0) $ <br/>
 평균 사후분포: $ \theta | X \sim N_p(\mu_{\pi}, \Sigma_{\pi}) $ <br/>
 where $ \mu{\pi} = (n \Sigma^{-1} + \Sigma_0^{-1})^{-1} (n \Sigma^{-1} \bar{x} + \Sigma_0^{-1} \mu_0)$ <br/>
-$ \Sigma_{\pi} =  (n \Sigma^{-1} + \Sigma_0^{-1})^{-1} $ <br/>
-
+$ \Sigma_{\pi} =  (n \Sigma^{-1} + \Sigma_0^{-1})^{-1} $ <br/><br/>
 4.2. 공분산이 알려지지 않은 경우 <br/>
 공분산 사전분포인 $ IW $ 는 역위샤트 분포를 의미한다. <br/>
 데이터: $ X \sim N_p(\theta, \Sigma) $ <br/>
