@@ -69,7 +69,7 @@ $ P(A_i|B) = \frac{P_I(A_i \cap B)}{
 기본적으로 사후분포를 유도하는 방법은 다음과 같다.
 <center>$ \pi(\theta|x_1, ...x_n) = \pi(\theta)f(x_1, ...,x_n|\theta)/f(x_1, ...x_n) $ </center>
 <center>$ \propto \pi(\theta)f(x_1, ...,x_n|\theta) $ ...(a) </center>
-<center>$ = \pi(\theta)\prod_{i=1}^{n}f(x_i) $ ...(b)  </center>
+<center>$ = \pi(\theta)\prod_{i=1}^{n}f(x_i | \theta) $ ...(b)  </center>
 $ f(x_1,..., x_n) $ 은 모수 $ \theta $ 와 무관하므로 상수값이기 때문에 (a)가 성립한다.
 또한 각 자료가 iid인 경우 (b)와 같이 식이 간단해진다. 식 정리를 한 후 어떤 분포를 따르는지 확인하면 된다.
 3.4의 공액 분포에서는 알려진 분포를 따르는 경우를 다룬다.
@@ -146,8 +146,8 @@ $ \Sigma_{\pi} =  (n \Sigma^{-1} + \Sigma_0^{-1})^{-1} $ <br/><br/>
 데이터: $ X \sim N_p(\theta, \Sigma) $ <br/>
 평균 사전분포: $ \theta | \Sigma \sim N_p(\mu_0, 1/k_0 \Sigma_0) $ <br/>
 공분산 사전분포: $ \Sigma \sim IW(\upsilon_0, \Lambda_0) $ <br/>
-평균 사후분포: $ \theta|x_1,...x_n \Sigma \sim N_p( \frac{n \bar{x} +k_0\mu_0}{n+k_0} , \frac{1}{n+k_0} \Sigma ) $
-공분산 사후분포 $ \Sigma|x_1,...x_n \sim IW(n+\upsilon_0, \Lambda_n) $ <br/>
+평균 사후분포: $ \theta|x_1,...x_n, \Sigma \sim N_p( \frac{n \bar{x} +k_0\mu_0}{n+k_0} , \frac{1}{n+k_0} \Sigma ) $ <br/>
+공분산 사후분포: $ \Sigma|x_1,...x_n \sim IW(n+\upsilon_0, \Lambda_n) $ <br/>
 where <br/>
 $ \Lambda_n = \Lambda_0 + S + \frac{n k_0}{n+k_0}(\bar{x}-\mu_0)(\bar{x}-\mu_0)' $ <br/>
 $ S = \Sigma_{i=1}{n} (\bar{x}-\mu_0)(\bar{x}-\mu_0)' $
