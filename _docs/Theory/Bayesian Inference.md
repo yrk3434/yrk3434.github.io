@@ -61,9 +61,19 @@ $ P(A_i|B) = \frac{P_I(A_i \cap B)}{
 
 # 3. 베이지안 추론
 ## 3.1. 베이지안 추정 & 베이지안 신뢰구간
-- 베이지안 추정
-사전분포 $ \pi(\theta) $ & 자료 $ f(x|\theta) $
+- 베이지안 추정 <br/>
+>[요약] <br/>
+>사전분포 $ \pi(\theta) $ & 자료 $ f(x|\theta) $
 -> 사후분포 $ \pi(\theta|x) $
+
+기본적으로 사후분포를 유도하는 방법은 다음과 같다.
+<center>$ \pi(\theta|x_1, ...x_n) = \pi(\theta)f(x_1, ...,x_n|\theta)/f(x_1, ...x_n) $ </center><br/>
+<center>$ \propto \pi(\theta)f(x_1, ...,x_n|\theta) $ ...(a) </center> <br/>
+<center>$ = \pi(\theta)\prod_{i=1}^{n}f(x_i) $ ...(b)  </center><br/>
+$ f(x_1,..., x_n) $ 은 모수 $ \theta $ 와 무관하므로 상수값이기 때문에 (a)가 성립한다.
+또한 각 자료가 iid인 경우 (b)와 같이 식이 간단해진다. 식 정리를 한 후 어떤 분포를 따르는지 확인하면 된다.
+
+
 - 베이지안 신뢰 구간: $ 100(1-\alpha) $ % 신뢰구간은 다음을 만족하는 $ \theta $ 의 집합 $ C $ <br/>
 $ P(\theta \in C | x ) = 1 - \alpha $
 - 최대사후구간(HPD, Highest Posterior Density interval): $ 100(1-\alpha) $ % HPD 구간은 다음을
@@ -78,14 +88,16 @@ $ \theta_b \notin (\theta_l, \theta_h) $ , then $ P(\theta_a|x) > P(\theta_b|x) 
 2) 격자를 이용해 신뢰수준을 만족하는 확률밀도 누적합 구간 구함 <br/>
 3) 사후분포로부터 표본을 뽑아 신뢰구간 구함(샘플이 사후분포에 근사)
 
-<br/>
-기본적으로 사후분포를 유도하는 방법은 다음과 같다.
-$ \pi(\theta|x_1, ...x_n) = \pi(\theta)f(x_1, ...,x_n|\theta)/f(x_1, ...x_n) $ <br/>
-$ \propto \pi(\theta)f(x_1, ...,x_n|\theta) $ ...(a) <br/>
-$ = \pi(\theta)\prod_{i=1}^{n}f(x_i) $ ...(b) <br/>
-$ f(x_1,..., x_n) $ 은 모수 $ \theta $ 와 무관하므로 상수값이기 때문에 (a)가 성립한다.
-또한 각 자료가 iid인 경우 (b)와 같이 식이 간단해진다. 식 정리를 한 후 어떤 분포를 따르는지 확인하면 된다. 
-다음 세 가지 경우는 알려진 사전, 사후 분포가 같으며 잘 알려진 분포를 따르는 경우다. 
+- 예측 확률
+위에서 구한 사후분포를 이용해 현재 가진 데이터로부터 미래 관측치에 대해 예측 분포를 구할 수 있다.
+
+$ P(X_{n+1}|x_1, ..., x_n) = \int P(X_{n+1}, \theta |x_1, ..., x_n) d \theta$ 
+$ \int P(X_{n+1} | \theta,x_1, ..., x_n) \pi(\theta|x_1, ..., x_n) d \theta$ ...(a)
+
+joint 분포로부터 적분을 통해 marginal 분포를 구하는 것과 베이지안 정리를 이용하면 (a) 식을 도출할 수 있다.
+$P(a) = \int P(a,\theta) d\theta = \int P(a | \theta) \pi(\theta) d\theta$
+위 식의 given condition에 전부 $x_1, ..., x_n $ 을 넣으면 된다.
+
 
 ## 3.2. 공액 분포(Conjugate Distribution)
 사전분포와 사후분포의 분포족이 같을 경우 두 분포를 공액분포(conjugate distribution)이라 한다. 
