@@ -90,13 +90,14 @@ $ \theta_b \notin (\theta_l, \theta_h) $ , then $ P(\theta_a|x) > P(\theta_b|x) 
 3) 사후분포로부터 표본을 뽑아 신뢰구간 구함(샘플이 사후분포에 근사)
 
 ## 3.3. 예측 확률
-위에서 구한 사후분포를 이용해 현재 가진 데이터로부터 미래 관측치에 대해 예측 분포를 구할 수 있다.
-
+위에서 구한 사후분포를 이용해 현재 가진 데이터로 $ x_1, ..., x_n $ 부터 
+미래 관측치  $ X_{n+1} $ 의 예측 분포를 구할 수 있다.
 <center> $ P(X_{n+1}|x_1, ..., x_n) = \int P(X_{n+1}, \theta |x_1, ..., x_n) d \theta $ </center>
-<center> $ \int P(X_{n+1} | \theta,x_1, ..., x_n) \pi(\theta|x_1, ..., x_n) d \theta $ ...(a) </center>
-
+<center> $ = \int P(X_{n+1} | \theta,x_1, ..., x_n) \pi(\theta|x_1, ..., x_n) d \theta $ ...(a) </center>
+<br/>
 joint 분포로부터 적분을 통해 marginal 분포를 구하는 것과 베이지안 정리를 이용하면 (a) 식을 도출할 수 있다.
 <center>$ P(a) = \int P(a,\theta) d\theta = \int P(a | \theta) \pi(\theta) d\theta $ </center>
+<br/>
 위 식의 given condition에 전부 $x_1, ..., x_n $ 을 넣으면 된다.
 
 
