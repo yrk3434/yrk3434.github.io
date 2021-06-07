@@ -1,5 +1,5 @@
 ---
-title: Optimization
+title: Computational Statistics_Optimization
 category: Theory
 order: 2
 use_math: true

@@ -1,6 +1,6 @@
 ---
 title: Bayesian Inference
-category: Computational Statistics
+category: Theory
 order: 1
 use_math: true
 comments: true
@@ -78,13 +78,19 @@ $ \theta_b \notin (\theta_l, \theta_h) $ , then $ P(\theta_a|x) > P(\theta_b|x) 
 2) 격자를 이용해 신뢰수준을 만족하는 확률밀도 누적합 구간 구함 <br/>
 3) 사후분포로부터 표본을 뽑아 신뢰구간 구함(샘플이 사후분포에 근사)
 
+<br/>
+기본적으로 사후분포를 유도하는 방법은 다음과 같다.
+$$ \pi(\theta|x_1, ...x_n) = \pi(\theta)f(x_1, ...,x_n|\theta)/f(x_1, ...x_n) $$ 
+$$ \propto \pi(\theta)f(x_1, ...,x_n|\theta) $$ ...(*)
+$ f(x_1,..., x_n) $ 은 모수 $ \theta $ 와 무관하므로 상수값이기 때문에 (*) 식이 성립한다.
+(*)를 식 정리를 한 후 어떤 분포를 따르는지 확인하면 된다. 다음 세 가지 경우는 알려진 사전, 사후 분포가 같으며 
+잘 알려진 분포를 따르는 경우다.
+
 ## 3.2. 공액 분포(Conjugate Distribution)
 사전분포와 사후분포의 분포족이 같을 경우 두 분포를 공액분포(conjugate distribution)이라 한다. 
 이 경우의 사전분포를 공액 사전분포(conjugate prior)라 한다. <br/>
 <br/>
-기본적으로 사후분포를 유도하는 방법은 다음과 같다.
-> $ \pi(\theta|x_1, ...x_n) = \pi(\theta)f(x_1, ...,x_n|\theta)/f(x_1, ...x_n) <br/>
->\propto \pi(\theta)f(x_1, ...,x_n|\theta) $
+
 
 1. 베타분포(사전분포) + 이항분포(데이터) -> 베타분포(사후분포)  <br/>
 도출 과정은 [위키피디아](https://en.wikipedia.org/wiki/Beta-binomial_distribution)를 참고한다.  <br/>
