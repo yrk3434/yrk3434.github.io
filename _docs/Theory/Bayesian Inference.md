@@ -21,9 +21,10 @@ toc_label: 목차
 1. 기본 개념
 2. Frequentist와 Bayesian의 차이
 3. 베이지안 추론
-4. 베이지안 회귀
-5. 마코브체인 몬테카를로 시뮬레이션
-6. JAGS를 통한 시뮬레이션 연습
+4. 계층 모형
+5. 베이지안 회귀
+6. 마코브체인 몬테카를로 시뮬레이션
+7. JAGS를 통한 시뮬레이션 연습
 
 3장은 데이터에 설정한 분포와 사전분포에 관한 적분해 사후 분포를 구한다. 적분이 간단한 경우 3장과 같이 사후 분포를 구하지만, 적분이 복잡할 경우 4장과 같이 MCMC 시뮬레이션으로 사후분포에 근사한 샘플을 추출한다.
 
@@ -173,5 +174,16 @@ iid 관측치의 경우 $ X1,...,Xn $ 의 정보상수는 $ nI_1(\theta) $
 - 부적합 사전분포: 모수공간을 제대로 반영하지 못하거나 모수공간 적분값이 무한인 경우. 
 그러나 사후 분포는 적합할 수 있는데 이 경우는 문제 없음
 
+4. 계층 모형
+동질적이지 않은 다른 집단으로부터 자료가 수집된 경우 계층 모형을 사용한다.
+예컨대, 학생들의 성적을 추출할 때 지역별로 다른 분포를 가진다. 
+성적이라는 공통의 특성에 대해 집단 별로 조금씩 다른 분포를 가질 수 있다.
+
+<center>$ X_{ij}|\theta, \sigma^2 \sim N(\theta_i, \sigma^2) $ 
+where i: group, j: observation </center>
+<center>$ \theta_i|\mu, \gamma^2 \sim N(\mu, \gamma^2) $ </center>
+<center>$ \sigma \sim IG(a,b) $ </center>
+<center>$ \mu|\gamma^2 \sim N(\mu_0, \gamma^2/k_0) $ </center>
+<center>$ \gamma^2 \sim IG(c,d) $ </center>
 
 
