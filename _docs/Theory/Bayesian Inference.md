@@ -174,16 +174,15 @@ iid 관측치의 경우 $ X1,...,Xn $ 의 정보상수는 $ nI_1(\theta) $
 - 부적합 사전분포: 모수공간을 제대로 반영하지 못하거나 모수공간 적분값이 무한인 경우. 
 그러나 사후 분포는 적합할 수 있는데 이 경우는 문제 없음
 
-4. 계층 모형
+# 4. 계층 모형
 동질적이지 않은 다른 집단으로부터 자료가 수집된 경우 계층 모형을 사용한다.
 예컨대, 학생들의 성적을 추출할 때 지역별로 다른 분포를 가진다. 
 성적이라는 공통의 특성에 대해 집단 별로 조금씩 다른 분포를 가질 수 있다.
-
-<center>$ X_{ij}|\theta, \sigma^2 \sim N(\theta_i, \sigma^2) $ 
-where i: group, j: observation </center>
+<center>$ X_{ij}|\theta, \sigma^2 \sim N(\theta_i, \sigma^2) $ </center>
+<center> where i: group, j: observation </center>
 <center>$ \theta_i|\mu, \gamma^2 \sim N(\mu, \gamma^2) $ </center>
 <center>$ \sigma \sim IG(a,b) $ </center>
 <center>$ \mu|\gamma^2 \sim N(\mu_0, \gamma^2/k_0) $ </center>
 <center>$ \gamma^2 \sim IG(c,d) $ </center>
-
-
+위 모델에 대한 사후분포 도출은 [강의자료](http://www.stat.cmu.edu/~brian/463-663/week10/Chapter%2009.pdf)
+의 p11~p15(9.2.1 Random effects: The random intercept model)을 참고한다.
