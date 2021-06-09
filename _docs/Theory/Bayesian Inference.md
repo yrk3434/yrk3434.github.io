@@ -163,7 +163,14 @@ $ S = \Sigma_{i=1}{n} (\bar{x}-\mu_0)(\bar{x}-\mu_0)' $
 - 무정보 사전분포: 균등분포 $ U(a,b) $, 사전정보가 유의하지 않을 때 사용
 - 변환불변 사전분포: 위치변환에 불변( $ \pi_1(\theta)= \pi_2(\theta+c) $ )또는 
 척도변환에 대해 불변( $ \pi_1(\sigma)=  \frac{1}{c} \pi_2(\frac{\sigma}{c}) $ )인 사전 분포
-- 제프리 사전분포: $ \pi(\theta) = \sqrt{I(\theta)} $ , 여기서 $I(\theta)$는 피셔의 정보상수
+- 제프리 사전분포: $ \pi(\theta) = \sqrt{I(\theta)} $ , 여기서 $I(\theta)$는 피셔의 정보상수 <br/>
+하나의 관측치에 대한 피셔의 정보 상수 <br/>
+<center> $ I_1(\theta) = E^{X|\theta}[(\frac{d log f(X|\theta) }{d \theta})^2] $ </center>
+<center> $ = - E^{X|\theta}[frac{d^2 log f(X|\theta }{d \theta^2}] $ </center>
+iid 관측치의 경우 $ X1,...,Xn $ 의 정보상수는 $ nI_1(\theta) $
 - 공액 사전분포
 - 부적합 사전분포: 모수공간을 제대로 반영하지 못하거나 모수공간 적분값이 무한인 경우. 
-사전분포는 부적절하나 사후 분포는 적합할 수 있음. 이 겨우는 문제 없음
+그러나 사후 분포는 적합할 수 있는데 이 경우는 문제 없음
+
+
+
