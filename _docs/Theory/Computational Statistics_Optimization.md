@@ -284,7 +284,7 @@ subset model은 $ 2^{p+1} $ 개의 후보 모델이가 존재한다.
 ## 3.3. Simulated Annealing
 - 기본 개념: 최적값 탐색폭을 담금질 시 식어가는 온도로 빗댄 알고리즘이다. 매 iteration마다 점점 줄어든 폭으로 주변 값을 탐색하며, 새로운 후보값의 확률밀도와 기존 값의 확률밀도에 관한 값(p)을 확률로 후보값 업데이트를 랜덤하게 결정한다. 후보값 채택확률 역시 특정 iteration 구간마다 줄어들어 값을 수렴시키려 한다. 채택확률의 식인 (2)의 $ f $는 열에너지의 감소를 나타내는 Boltzmann 확률($ exp(\Delta E / k \tau)  $)을 사용한다.
 	
-iteration 횟수를 $ t $, 초기값을 $ \theta{(0)} $, 온도를 $ \tau_0 $, j번째 iteration 블럭을 $ m_j $라 하자.
+iteration 횟수를 $ t $, 초기값을 $ \theta{(0)} $, 온도를 $ \tau_0 $, j번째 iteration 블럭을 $ m_j $라 하자. <br/>
 (1) 제안분포(proposal density) $ g^{(t)}(.|\theta(t)) $  로부터 $ \theta^{(t)}$의 주변값 $ \math{N} (\theta^{(t)}) $ 내에서 새로운 후보값 $ \theta^* $ 를 뽑는다. <br/>
 (2) $ min(1, exp(/frac{ f(\theta^{(t)}) - f(\theta^*) }{ \tau_j })) $ 의 확률로 값을 업데이트한다. ( $ \theta^{(t+1)} = \theta{(t)} $ ) <br/>
 (3) 앞서 시행한 (1), (2)를 $ m_j $ 번 반복한다. <br/>
