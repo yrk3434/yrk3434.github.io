@@ -187,6 +187,7 @@ $ -I(\theta^{(t)})^{-1} $는 로그우도함수의 2차 미분에 해당한다.
 ### 2.2.2. Iteratively Reweighted Least Squares
 
 회귀계수를 추정하는 것은 잔차를 최소화하는 일이므로 최적화에 해당한다. 단순회귀모형(OLS)의 모수는 미분을 통해 간단히 구해지는 반면, GLM의 모수는 chain rule을 통해 근사적으로 모수를 추정해야 한다. <br/>
+ <br/>
 [참고: OLS 모수 추정] <br/>
 <center> $ E(y|X) = X^T \beta $  </center>
 <center> $ Squared Error = (y - X^T \beta)^T (y - X^T \beta) = y^T y - 2\beta^TXy + \beta^TXX^T\beta $  </center>
@@ -196,7 +197,8 @@ $ -I(\theta^{(t)})^{-1} $는 로그우도함수의 2차 미분에 해당한다.
 OLS는 $ E(y|X) $ 를 구하는 게 목적인 반면, GLM은  $ g(E(y_i|x_i)) $ 를 구하는 게 목적이다. ( $ g $ 는 GLM의 link function) 
 이 때 IRLS를 통해 GLM의 모수를 추정한다. <br/>
 <br/>
-GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반에 대해 다루는 것은 최적화 내용의 범위를 넘어가므로 GLM은 회귀분석에서 다루도록 하겠다. <br/> 
+GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반에 대해 다루는 것은 최적화 내용의 범위를 넘어가므로 GLM은 회귀분석에서 다루도록 하겠다. <br/>
+ <br/>
 [참고: 지수족] <br/>
 <center> $ f(y|\theta) = \frac{y\theta- b(\theta)} {a(\phi) + c(y,\phi))}  $ </center>
 <center> canonical parameter $ \theta $ , dispersion parameter $ \phi $ </center>
@@ -212,7 +214,7 @@ GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반�
 식 정리를 하면 다음과 같다.  <br/>
 [Score function of GLM] <br/>
 <center> $ X^T D V^{-1} (y-M) = 0 $ </center>
-- $ D $ : $ \frac{\partial M_i}{ \partial eta_i} $ 의 대각성분으로 갖는 대각행렬, 단 $ \eta = X \beta $
+- $ D $ : $ \frac{\partial M_i}{ \partial \eta_i} $ 의 대각성분으로 갖는 대각행렬, 단 $ \eta = X \beta $
 - $ V  = cov(y) $ 행렬
 - $ E(Y) = M $
 <br/>
