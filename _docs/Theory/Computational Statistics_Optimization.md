@@ -45,7 +45,7 @@ toc_label: 목차
 해를 구할 수 있는 목적함수인지 등에 따라 다른 방법으로 최적화를 해야한다.
 
 # 2.  Optimization of Nonlinear Equations
-등식을 통해 해를 구할 수 있는 경우에 해당한다. 널리 사용되는 방법은 미분이다. 
+등식을 통해 해를 구할 수 있는 경우에 해당한다. 구체적으로, 식의 미분을 통해 최적값을 구한다.
 위에서 언급한 MLE 역시 우도함수를 미분해 0이되는 모수를 찾은 예이므로 이 방식에 속한다. 
 하지만 미분을 통해 해를 구할 때에는 해의 유일성, 근사적으로 구한 해의 수렴성, 근사적으로 
 구할 때의 값의 초기값 등 고려할 것들이 많다.
@@ -186,17 +186,34 @@ $ -I(\theta^{(t)})^{-1} $는 로그우도함수의 2차 미분에 해당한다.
 
 ### 2.2.2. Iteratively Reweighted Least Squares
 
-단순회귀모형(OLS)은 Least Squares를 미분해 모수의 해를 구한다. <br/>
-참고 <br/>
+회귀계수를 추정하는 것은 잔차를 최소화하는 일이므로 최적화에 해당한다. 단순회귀모형(OLS)의 모수는 미분을 통해 간단히 구해지는 반면, GLM의 모수는 chain rule을 통해 근사적으로 모수를 추정해야 한다. <br/>
+[참고: OLS 모수 추정] <br/>
 <center> $ E(y|X) = X^T \beta $  </center>
-<center> $ Squared Error = (y - X^T \beta)^T (y - X^T \beta) = y^T y - 2\beta X^Ty + \beta^TXX^T\beta $  </center>
-<center> $ \frac{d}{d \beta} Squared Error = -2X^Ty + 2 X^TX\beta = 0 $  </center>
+<center> $ Squared Error = (y - X^T \beta)^T (y - X^T \beta) = y^T y - 2\beta^TXy + \beta^TXX^T\beta $  </center>
+<center> $ \frac{\partial}{\partial \beta} Squared Error = -2X^Ty + 2 X^TX\beta = 0 $  </center>
 <center>  $ \hat{\beta} = (X^T X)^{-1}X^T y $ </center>
-
-OLS는 $ E(y|X) $ 를 구하는 게 목적인 반면, GLM은  $ f(E(y|X)) $ 를 구하는 게 목적이다. ( $ f $ 는 GLM의 link function) 
-이 때 IRLS를 통해 GLM의 모수를 추정한다.
+<br/>
+OLS는 $ E(y|X) $ 를 구하는 게 목적인 반면, GLM은  $ g(E(y_i|x_i)) $ 를 구하는 게 목적이다. ( $ g $ 는 GLM의 link function) 
+이 때 IRLS를 통해 GLM의 모수를 추정한다. <br/>
+GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반에 대해 다루는 것은 최적화 내용의 범위를 넘어가므로 GLM은 회귀분석에서 다루도록 하겠다. <br/> 
+[참고: 지수족] <br/>
+<center> $ f(y|\theta) = \frac{y\theta- b(\theta)}{a(\phi) + c(y,\phi))}}  $ </center>
+<center> canonical parameter $ \theta $ , dispersion parameter $ \phi $ </center>
+<center> $ g(E(y_i|x_i)) = x_i^T \beta = \eta_i $ </center>
 	
-
+이 때, log 우도함수( $ l $ )를 최대화하는 모수를 추정하려면 chain rule에 의해 다음을 미분해야 한다.
+<center> $ \frac{\partial l_i}{\partial \beta_j} = 
+	\frac{\partial l_i}{\partial \theta_i}  
+	\frac{\partial \theta_i}{\partial Mu_i} 
+	\frac{\partial \Mu_i}{\partial \eta_i}
+	\frac{\partial \eta_i }{\partial \beta_j}$ </center>
+	
+식 정리를 하면 다음과 같다.
+<center> X^T D V^{-1} (y-\Mu) = 0  </center>
+- $ D $ : $ \frac{\partial Mu_i}{ \partail eta_i} $ 의 대각성분으로 갖는 대각행렬, 단 $ \eta = X \beta $
+- $ V  = cov(y) $ 행렬
+	
+	
 # 3.   Combinatorial Optimization
 통계적 수식으로부터 최적화하는 것과 달리, discrete value의 조합(예. 경우의 수)을 통해 
 최적값을 구하는 경우에는 2장의 방법을 사용할 수 없다.
