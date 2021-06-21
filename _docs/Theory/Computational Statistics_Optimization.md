@@ -286,6 +286,48 @@ subset model은 $ 2^{p+1} $ 개의 후보 모델이가 존재한다.
 	
 iteration 횟수를 $ t $, 초기값을 $ \theta{(0)} $, 온도를 $ \tau_0 $, j번째 iteration 블럭을 $ m_j $라 하자. <br/>
 (1) 제안분포(proposal density) $ g^{(t)}(.|\theta(t)) $  로부터 $ \theta^{(t)}$의 주변값 $ \mathcal{N} (\theta^{(t)}) $ 내에서 새로운 후보값 $ \theta^* $ 를 뽑는다. <br/>
-(2) $ min(1, exp(/frac{ f(\theta^{(t)}) - f(\theta^*) }{ \tau_j })) $ 의 확률로 값을 업데이트한다. ( $ \theta^{(t+1)} = \theta{(t)} $ ) <br/>
+(2) $ min(1, exp(\frac{ f(\theta^{(t)}) - f(\theta^*) }{ \tau_j })) $ 의 확률로 값을 업데이트한다. ( $ \theta^{(t+1)} = \theta{(t)} $ ) <br/>
 (3) 앞서 시행한 (1), (2)를 $ m_j $ 번 반복한다. <br/>
 (4) j 배수의 iteration마다 $ \tau_j = \alpha(\tau_j -1) $ , $ m_j = \beta (m_{j-1}) $ 로 업데이트한다.  <br/>
+
+단변량 변수로 목적함수를 최적화하는 담금질 알고리즘을 파이썬으로 코드화하면 다음과 같다. [참고](https://machinelearningmastery.com/simulated-annealing-from-scratch-in- python/)
+- obejctive: 최적화할 대상인 목적함수
+- bounds: input 탐색 구간
+- n_iterations: 탐색 횟수
+- step_size: 업데이트 후보가 될 주변값 탐색 폭
+- temp: 채택확률에 영향을 미치는 온도값(실제 온도가 아니고 담금질 기법에서의 업데이트 가능성을 의미, temp가 작으면 업데이트 후보의 채택확률이 낮아짐)
+	
+```
+# simulated annealing algorithm
+def simulated_annealing(objective, bounds, n_iterations, step_size, temp):
+	# generate an initial point
+	best = bounds[:, 0] + rand(len(bounds)) * (bounds[:, 1] - bounds[:, 0])
+	# evaluate the initial point
+	best_eval = objective(best)
+	# current working solution
+	curr, curr_eval = best, best_eval
+	# run the algorithm
+	for i in range(n_iterations):
+		# take a step
+		candidate = curr + randn(len(bounds)) * step_size
+		# evaluate candidate point
+		candidate_eval = objective(candidate)
+		# check for new best solution
+		if candidate_eval < best_eval:
+			# store new best point
+			best, best_eval = candidate, candidate_eval
+			# report progress
+			print('>%d f(%s) = %.5f' % (i, best, best_eval))
+		# difference between candidate and current point evaluation
+		diff = candidate_eval - curr_eval
+		# calculate temperature for current epoch
+		t = temp / float(i + 1)
+		# calculate metropolis acceptance criterion
+		metropolis = exp(-diff / t)
+		# check if we should keep the new point
+		if diff < 0 or rand() < metropolis:
+			# store the new current point
+			curr, curr_eval = candidate, candidate_eval
+	return [best, best_eval]
+	
+```
