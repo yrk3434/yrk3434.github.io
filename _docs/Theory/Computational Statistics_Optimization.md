@@ -214,7 +214,7 @@ GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반�
 식 정리를 하면 다음과 같다.  <br/>
 [Score function of GLM] <br/>
 <center> $ X^T D V^{-1} (y-M) = 0 $ </center>
-- $ D $ : $ \frac{\partial M_i}{ \partial \eta_i} $ 의 대각성분으로 갖는 대각행렬, 단 $ \eta = X \beta $
+- $ D $ : $ \frac{\partial M_i}{ \partial \eta_i} $ 을 대각성분으로 갖는 대각행렬, 단 $ \eta = X \beta $
 - $ V  = cov(y) $ 행렬
 - $ E(Y) = M $
 <br/>
