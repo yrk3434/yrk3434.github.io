@@ -223,9 +223,11 @@ Fisher Scoring에 의해 $ \beta^{(t+1)}=\beta^{(t)} + (J^{(t)})^{-1}+u^{(t)} $,
 (a)에  $ u $ 와 $ J $를 대입한다.
 - score function $ u = X^T W D^{-1} (y-M) $
 - Information matrix $ J =  X^{T} W X $
+
+결론적으로 (b)를 업데이트하며 GLM의 모수를 추정한다.
 <center> $ J^{(t)} \beta^{(t+1)} = X^T W^{(t)} Z^{(t)} $ </center>
 <center> where $ Z^{(t)} = X \beta^{(t)} + (D^{(t)})^{-1} (y-M^{(t)}) $   </center>
-
+<center> -> $ \beta^{(t+1)} = (X^T W^{(t)} Z^{(t)})^{-1} X^T W^{(t)} Z^{(t)} $ ...(b) </center>
 	
 # 3.   Combinatorial Optimization
 통계적 수식으로부터 최적화하는 것과 달리, discrete value의 조합(예. 경우의 수)을 통해 
