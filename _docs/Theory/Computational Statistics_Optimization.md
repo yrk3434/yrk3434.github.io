@@ -197,20 +197,20 @@ OLS는 $ E(y|X) $ 를 구하는 게 목적인 반면, GLM은  $ g(E(y_i|x_i)) $ 
 이 때 IRLS를 통해 GLM의 모수를 추정한다. <br/>
 GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반에 대해 다루는 것은 최적화 내용의 범위를 넘어가므로 GLM은 회귀분석에서 다루도록 하겠다. <br/> 
 [참고: 지수족] <br/>
-<center> $ f(y|\theta) = \frac{y\theta- b(\theta)}{a(\phi) + c(y,\phi))}}  $ </center>
+<center> $ f(y|\theta) = \frac{y\theta- b(\theta)} {a(\phi) + c(y,\phi))}  $ </center>
 <center> canonical parameter $ \theta $ , dispersion parameter $ \phi $ </center>
 <center> $ g(E(y_i|x_i)) = x_i^T \beta = \eta_i $ </center>
 	
 이 때, log 우도함수( $ l $ )를 최대화하는 모수를 추정하려면 chain rule에 의해 다음을 미분해야 한다.
 <center> $ \frac{\partial l_i}{\partial \beta_j} = 
 	\frac{\partial l_i}{\partial \theta_i}  
-	\frac{\partial \theta_i}{\partial Mu_i} 
+	\frac{\partial \theta_i}{\partial \Mu_i} 
 	\frac{\partial \Mu_i}{\partial \eta_i}
 	\frac{\partial \eta_i }{\partial \beta_j}$ </center>
 	
 식 정리를 하면 다음과 같다.
 <center> X^T D V^{-1} (y-\Mu) = 0  </center>
-- $ D $ : $ \frac{\partial Mu_i}{ \partail eta_i} $ 의 대각성분으로 갖는 대각행렬, 단 $ \eta = X \beta $
+- $ D $ : $ \frac{\partial Mu_i}{ \partial eta_i} $ 의 대각성분으로 갖는 대각행렬, 단 $ \eta = X \beta $
 - $ V  = cov(y) $ 행렬
 	
 	
