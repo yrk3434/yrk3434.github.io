@@ -227,8 +227,7 @@ Fisher Scoring에 의해 $ \beta^{(t+1)}=\beta^{(t)} + (J^{(t)})^{-1}+u^{(t)} $,
 결론적으로 (b)를 업데이트하며 GLM의 모수를 추정한다.
 <center> $ J^{(t)} \beta^{(t+1)} = X^T W^{(t)} Z^{(t)} $ </center>
 <center> where $ Z^{(t)} = X \beta^{(t)} + (D^{(t)})^{-1} (y-M^{(t)}) $   </center>
-<center> -> $ \beta^{(t+1)} = (J^{(t)})-1 X^T W^{(t)} Z^{(t)} $ </center>
-<center> $ = (X^T W^{(t)} X)^{-1} X^T W^{(t)} Z^{(t)} $ ...(b) </center>
+<center> -> $ \beta^{(t+1)} = (J^{(t)})-1 X^T W^{(t)} Z^{(t)}  = (X^T W^{(t)} X)^{-1} X^T W^{(t)} Z^{(t)} $ ...(b) </center>
 
 <br/>
 # 3.   Combinatorial Optimization
