@@ -211,7 +211,7 @@ GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반�
 	
 식 정리를 하면 다음과 같다.  <br/>
 [Score function of GLM] <br/>
-<center> X^T D V^{-1} (y-M) = 0  </center>
+<center> $ X^T D V^{-1} (y-M) = 0 $ </center>
 - $ D $ : $ \frac{\partial M_i}{ \partial eta_i} $ 의 대각성분으로 갖는 대각행렬, 단 $ \eta = X \beta $
 - $ V  = cov(y) $ 행렬
 - $ E(Y) = M $
@@ -220,7 +220,7 @@ Fisher Scoring에 의해 $ \beta^{(t+1)}=\beta^{(t)} + (J^{(t)})^{-1}+u^{(t)} $,
 <center> $ J^{(t)} \beta^{(t+1)}= J^{(t)} \beta^{(t)} + u^{(t)} $ ...(a) </center>
 (a)에  $ u $ 와 $ J $를 대입한다.
 - score function $ u = X^T W D^{-1} (y-M) $
-- Information matrix $ J =  X^T W X $
+- Information matrix $ J =  X^{T} W X $
 <center> $ J^{(t)} \beta^{(t+1)} = X^T W^{(t)} Z^{(t)} $ </center>
 <center> where $ Z^{(t)} = X \beta^{(t)} + (D^{(t)})^{-1} (y-M^{(t)}) $   </center>
 
