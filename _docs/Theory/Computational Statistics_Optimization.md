@@ -211,8 +211,10 @@ GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반�
 	\frac{\partial M_i}{\partial \eta_i}
 	\frac{\partial \eta_i }{\partial \beta_j}$ </center>
 	
-식 정리를 하면 다음과 같다.  <br/>
-[Score function of GLM] <br/>
+<br/>
+[GLM 모수추정] <br/>
+GLM의 모수를 추정하는 과정을 결론 위주로 설명하면 다음과 같다.
+	
 <center> $ X^T D V^{-1} (y-M) = 0 $ </center>
 - $ D $ : $ \frac{\partial M_i}{ \partial \eta_i} $ 을 대각성분으로 갖는 대각행렬, 단 $ \eta = X \beta $
 - $ V  = cov(y) $ 행렬
@@ -223,7 +225,8 @@ Fisher Scoring에 의해 $ \beta^{(t+1)}=\beta^{(t)} + (J^{(t)})^{-1} u^{(t)} $,
 <center> -> $ J^{(t)} \beta^{(t+1)}= J^{(t)} \beta^{(t)} + u^{(t)} $ ...(a) </center>
 (a)에  $ u $ 와 $ J $를 대입한다.
 - score function $ u = X^T W D^{-1} (y-M) $
-- Information matrix $ J =  X^{T} W X $
+- Information matrix $ J =  X^{T} W X $ 
+- 단, W는 $ w_i = \frac{ (\partial M_i/ \partial \eta_i)^2 }{ var(y_i) }$ 를 대각성분으로 갖는 행렬
 
 결론적으로 (b)를 업데이트하며 GLM의 모수를 추정한다.
 <center> $ J^{(t)} \beta^{(t+1)} = X^T W^{(t)} Z^{(t)} $ where $ Z^{(t)} = X \beta^{(t)} + (D^{(t)})^{-1} (y-M^{(t)}) $   </center>
