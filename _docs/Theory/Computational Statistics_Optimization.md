@@ -196,7 +196,9 @@ $ -I(\theta^{(t)})^{-1} $는 로그우도함수의 2차 미분에 해당한다.
 <br/>
 OLS는 $ E(y|X) $ 를 구하는 게 목적인 반면, GLM은  $ g(E(y_i|x_i)) $ 를 구하는 게 목적이다. ( $ g $ 는 GLM의 link function) 
 이 때 IRLS를 통해 GLM의 모수를 추정한다. <br/>
+	
 <br/>
+[GLM 모수추정] <br/>
 GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반에 대해 다루는 것은 최적화 내용의 범위를 넘어가므로 GLM은 회귀분석에서 다루도록 하겠다. <br/>
  <br/>
 [참고: 지수족] <br/>
@@ -209,12 +211,10 @@ GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반�
 	\frac{\partial l_i}{\partial \theta_i}  
 	\frac{\partial \theta_i}{\partial M_i} 
 	\frac{\partial M_i}{\partial \eta_i}
-	\frac{\partial \eta_i }{\partial \beta_j}$ </center>
+	\frac{\partial \eta_i }{\partial \beta_j}$ = 0 ...(a)</center>
 	
-<br/>
-[GLM 모수추정] <br/>
-GLM의 모수를 추정하는 과정을 결론 위주로 설명하면 다음과 같다.
-	
+모수 $ \beta $ 를 추정하는 과정을 결론 위주로 설명하겠다.
+(a)를 식정리하면 다음과 같다.
 <center> $ X^T D V^{-1} (y-M) = 0 $ </center>
 - $ D $ : $ \frac{\partial M_i}{ \partial \eta_i} $ 을 대각성분으로 갖는 대각행렬, 단 $ \eta = X \beta $
 - $ V  = cov(y) $ 행렬
@@ -222,15 +222,15 @@ GLM의 모수를 추정하는 과정을 결론 위주로 설명하면 다음과 
 	
 <br/>
 Fisher Scoring에 의해 $ \beta^{(t+1)}=\beta^{(t)} + (J^{(t)})^{-1} u^{(t)} $, 단 $ J^{(t)} $는 피셔 정보 행렬<br/>
-<center> -> $ J^{(t)} \beta^{(t+1)}= J^{(t)} \beta^{(t)} + u^{(t)} $ ...(a) </center>
-(a)에  $ u $ 와 $ J $를 대입한다.
+<center> -> $ J^{(t)} \beta^{(t+1)}= J^{(t)} \beta^{(t)} + u^{(t)} $ ...(b) </center>
+(b)에  $ u $ 와 $ J $를 대입한다.
 - score function $ u = X^T W D^{-1} (y-M) $
 - Information matrix $ J =  X^{T} W X $ 
 - 단, W는 $ w_i = \frac{ (\partial M_i/ \partial \eta_i)^2 }{ var(y_i) }$ 를 대각성분으로 갖는 행렬
 
-결론적으로 (b)를 업데이트하며 GLM의 모수를 추정한다.
+결론적으로 (c)를 업데이트하며 GLM의 모수를 추정한다.
 <center> $ J^{(t)} \beta^{(t+1)} = X^T W^{(t)} Z^{(t)} $ where $ Z^{(t)} = X \beta^{(t)} + (D^{(t)})^{-1} (y-M^{(t)}) $   </center>
-<center> -> $ \beta^{(t+1)} = (J^{(t)})^{-1} X^T W^{(t)} Z^{(t)}  = (X^T W^{(t)} X)^{-1} X^T W^{(t)} Z^{(t)} $ ...(b) </center>
+<center> -> $ \beta^{(t+1)} = (J^{(t)})^{-1} X^T W^{(t)} Z^{(t)}  = (X^T W^{(t)} X)^{-1} X^T W^{(t)} Z^{(t)} $ ...(c) </center>
 
 <br/>
 # 3.   Combinatorial Optimization
