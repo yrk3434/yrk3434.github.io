@@ -183,6 +183,20 @@ x^{(t)}-g''(x^{(t)})^{-1}g(x^{(t)}) $</center>
 단변량의 경우와 같이 $ l'(\theta^{(t)}) $는 로그 우도함수의 1차 미분이고, 
 $ -I(\theta^{(t)})^{-1} $는 로그우도함수의 2차 미분에 해당한다.
 
+
+### 2.2.2. Iteratively Reweighted Least Squares
+
+단순회귀모형(OLS)은 Least Squares를 미분해 모수의 해를 구한다. <br/>
+참고 <br/>
+<center> $ E(y|X) = X^T \beta $  </center>
+<center> $ Squared Error = (y - X^T \beta)^T (y - X^T \beta) = y^T y - 2\beta X^Ty + \beta^TXX^T\beta $  </center>
+<center> $ \frac{d}{d \beta} Squared Error = -2X^Ty + 2 X^TX\beta = 0 $  </center>
+<center>  $ \hat{\beta} = (X^T X)^{-1}X^T y $ </center>
+
+OLS는 $ E(y|X) $ 를 구하는 게 목적인 반면, GLM은  $ f(E(y|X)) $ 를 구하는 게 목적이다. ( $ f $ 는 GLM의 link function) 
+이 때 IRLS를 통해 GLM의 모수를 추정한다.
+	
+
 # 3.   Combinatorial Optimization
 통계적 수식으로부터 최적화하는 것과 달리, discrete value의 조합(예. 경우의 수)을 통해 
 최적값을 구하는 경우에는 2장의 방법을 사용할 수 없다.
