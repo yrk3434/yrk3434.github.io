@@ -205,15 +205,24 @@ GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반�
 이 때, log 우도함수( $ l $ )를 최대화하는 모수를 추정하려면 chain rule에 의해 다음을 미분해야 한다.
 <center> $ \frac{\partial l_i}{\partial \beta_j} = 
 	\frac{\partial l_i}{\partial \theta_i}  
-	\frac{\partial \theta_i}{\partial \Mu_i} 
-	\frac{\partial \Mu_i}{\partial \eta_i}
+	\frac{\partial \theta_i}{\partial M_i} 
+	\frac{\partial M_i}{\partial \eta_i}
 	\frac{\partial \eta_i }{\partial \beta_j}$ </center>
 	
-식 정리를 하면 다음과 같다.
-<center> X^T D V^{-1} (y-\Mu) = 0  </center>
-- $ D $ : $ \frac{\partial Mu_i}{ \partial eta_i} $ 의 대각성분으로 갖는 대각행렬, 단 $ \eta = X \beta $
+식 정리를 하면 다음과 같다.  <br/>
+[Score function of GLM] <br/>
+<center> X^T D V^{-1} (y-M) = 0  </center>
+- $ D $ : $ \frac{\partial M_i}{ \partial eta_i} $ 의 대각성분으로 갖는 대각행렬, 단 $ \eta = X \beta $
 - $ V  = cov(y) $ 행렬
-	
+- $ E(Y) = M $
+<br/>
+Fisher Scoring에 의해 $ \beta^{(t+1)}=\beta^{(t)} + (J^{(t)})-1+u^{(t)} $, 단 $ J^{(t)} $는 피셔 정보 행렬<br/>
+<center> $ J^{(t)} \beta^{(t+1)}= J^{(t)} \beta^{(t)} + u^{(t)} $, 단 $ J^{(t)} $ ...(a) </center>
+<center> $ X^T W^{(t)} Z^{(t)} $ </center>
+<center> where $ Z^{(t)} = X \beta^{(t)} + (D^{(t)})^{-1} (y-M^{(t)}) $   </center>
+- score function $ u = X^T W D^{-1} (y-M) $
+- Information matrix $ J =  X^T W X $
+(a)에 $ u $ 와 $ J $를 대입한다.
 	
 # 3.   Combinatorial Optimization
 통계적 수식으로부터 최적화하는 것과 달리, discrete value의 조합(예. 경우의 수)을 통해 
