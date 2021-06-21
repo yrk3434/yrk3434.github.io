@@ -216,7 +216,7 @@ GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반�
 - $ V  = cov(y) $ 행렬
 - $ E(Y) = M $
 <br/>
-Fisher Scoring에 의해 $ \beta^{(t+1)}=\beta^{(t)} + (J^{(t)})-1+u^{(t)} $, 단 $ J^{(t)} $는 피셔 정보 행렬<br/>
+Fisher Scoring에 의해 $ \beta^{(t+1)}=\beta^{(t)} + (J^{(t)})^{-1}+u^{(t)} $, 단 $ J^{(t)} $는 피셔 정보 행렬<br/>
 <center> $ J^{(t)} \beta^{(t+1)}= J^{(t)} \beta^{(t)} + u^{(t)} $ ...(a) </center>
 <center> $ J^{(t)} \beta^{(t+1)} = X^T W^{(t)} Z^{(t)} $ </center>
 <center> where $ Z^{(t)} = X \beta^{(t)} + (D^{(t)})^{-1} (y-M^{(t)}) $   </center>
