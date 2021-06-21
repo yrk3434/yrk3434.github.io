@@ -195,6 +195,7 @@ $ -I(\theta^{(t)})^{-1} $는 로그우도함수의 2차 미분에 해당한다.
 <br/>
 OLS는 $ E(y|X) $ 를 구하는 게 목적인 반면, GLM은  $ g(E(y_i|x_i)) $ 를 구하는 게 목적이다. ( $ g $ 는 GLM의 link function) 
 이 때 IRLS를 통해 GLM의 모수를 추정한다. <br/>
+<br/>
 GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반에 대해 다루는 것은 최적화 내용의 범위를 넘어가므로 GLM은 회귀분석에서 다루도록 하겠다. <br/> 
 [참고: 지수족] <br/>
 <center> $ f(y|\theta) = \frac{y\theta- b(\theta)} {a(\phi) + c(y,\phi))}  $ </center>
