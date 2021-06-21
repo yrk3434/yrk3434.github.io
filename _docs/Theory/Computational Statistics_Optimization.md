@@ -204,7 +204,7 @@ GLM에서 y의 분포는 대개 지수족(exponential family)이다. GLM 전반�
 <center> canonical parameter $ \theta $ , dispersion parameter $ \phi $ </center>
 <center> $ g(E(y_i|x_i)) = x_i^T \beta = \eta_i $ </center>
 	
-이 때, log 우도함수( $ l $ )를 최대화하는 모수를 추정하려면 chain rule에 의해 다음을 미분해야 한다.
+이 때, 로그 우도함수( $ l $ )를 최대화하는 모수를 추정하려면 chain rule에 의해 다음을 미분해야 한다.
 <center> $ \frac{\partial l_i}{\partial \beta_j} = 
 	\frac{\partial l_i}{\partial \theta_i}  
 	\frac{\partial \theta_i}{\partial M_i} 
@@ -228,7 +228,8 @@ Fisher Scoring에 의해 $ \beta^{(t+1)}=\beta^{(t)} + (J^{(t)})^{-1}+u^{(t)} $,
 <center> $ J^{(t)} \beta^{(t+1)} = X^T W^{(t)} Z^{(t)} $ </center>
 <center> where $ Z^{(t)} = X \beta^{(t)} + (D^{(t)})^{-1} (y-M^{(t)}) $   </center>
 <center> -> $ \beta^{(t+1)} = (X^T W^{(t)} Z^{(t)})^{-1} X^T W^{(t)} Z^{(t)} $ ...(b) </center>
-	
+
+<br/>
 # 3.   Combinatorial Optimization
 통계적 수식으로부터 최적화하는 것과 달리, discrete value의 조합(예. 경우의 수)을 통해 
 최적값을 구하는 경우에는 2장의 방법을 사용할 수 없다.
@@ -374,6 +375,5 @@ def simulated_annealing(objective, bounds, n_iterations, step_size, temp):
 		if diff < 0 or rand() < metropolis:
 			# store the new current point
 			curr, curr_eval = candidate, candidate_eval
-	return [best, best_eval]
-	
+	return [best, best_eval]	
 ```
