@@ -382,16 +382,18 @@ def simulated_annealing(objective, bounds, n_iterations, step_size, temp):
 ```
 
 ## 3.4. Gene Algotithms		
-- 기본 개념: 유전자 알고리즘은 다윈의 자연선택설을 모방한 알고리즘이다. 이전 iteration의 후보값을 부모라고 여길 때, 두 부모 후보값의 교배를 통해 다음 세대의 후보값을 생성한다. 후보 탐색시 적합성(fitness)이 높은 값(organism)의 염 다음 세대로 통과할 가능성이 크고, 적합성이 낮은 값은 후보탐색의 다양성을 높인다.
+- 기본 개념: 유전자 알고리즘은 다윈의 자연선택설을 모방한 알고리즘이다. 이전 iteration의 후보값을 부모라고 여길 때, 두 부모 후보값의 교배를 통해 다음 세대의 후보값을 생성한다. 후보 탐색시 적합성이 높은 값의 염 다음 세대로 통과할 가능성이 크고, 적합성이 낮은 값은 후보탐색의 다양성을 높인다.
 - [코드 참조](https://machinelearningmastery.com/simple-genetic-algorithm-from-scratch-in-python/)						   
 <br/>						   
 - genotype
 - phenotype: genotype이 발현된 것
+- $ C $ : 염색체 element
+- $ P $ : 세대의 크기( 대략 $ 2C < P <20C $ )
 - genetic operator: 
 	- 교차(crossover): 한 세대의 두 후보값(부모)를 조합(breeding)을 통해 다음 세대의 해를 생성 <br/>
 	eg. 부모 100110001 & 110100110 -> 자손 110110001 (세 번째, 네 번째 사이를 쪼개 붙임)
 	- 돌연변이(mutation): 부모의 공통된 특성을 물려받지 않음, 돌연변이는 breeding 이후 발생 <br/>
 	eg. 부모의 세번째 염색체가 모두 0, **0****** -> 자손의 세 번째 염색체가 0이 아님 101100110
 - Fitness: 후보 최적값을 목적함수에 넣었을 때의 아웃풋 값, 후보값을 넣었을 때 목적함수가 최소 또는 최대값으로 다가가는지 score에 해당
-- Selection: 다음 세대 후보를 선택하는 가장 흔한 방식은 토너먼트 선택		   
+- Selection: 다음 세대 후보를 선택하는 가장 흔한 방식은 토너먼트 선택, 후보값을 k개의 소그룹으로 나눈 후 각 그룹에서 최적의 후보가 부모로 선택된다. 각 부모를 랜덤하게 교배하여 다음 세대를 생성한다. generation gap $ G $ 는 자손에 의해 대체되는 세대의 비율이다.    
 						
