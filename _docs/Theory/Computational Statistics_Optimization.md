@@ -392,6 +392,6 @@ def simulated_annealing(objective, bounds, n_iterations, step_size, temp):
 	eg. 부모 100110001 & 110100110 -> 자손 110110001 (세 번째, 네 번째 사이를 쪼개 붙임)
 	- 돌연변이(mutation): 부모의 공통된 특성을 물려받지 않음, 돌연변이는 breeding 이후 발생 <br/>
 	eg. 부모의 세번째 염색체가 모두 0, **0****** -> 자손의 세 번째 염색체가 0이 아님 101100110
-- Fitness
-		   
+- Fitness: 후보 최적값을 목적함수에 넣었을 때의 아웃풋 값, 후보값을 넣었을 때 목적함수가 최소 또는 최대값으로 다가가는지 score에 해당
+- Selection: 다음 세대 후보를 선택하는 가장 흔한 방식은 토너먼트 선택		   
 						
