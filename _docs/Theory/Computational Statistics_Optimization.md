@@ -380,3 +380,16 @@ def simulated_annealing(objective, bounds, n_iterations, step_size, temp):
 			curr, curr_eval = candidate, candidate_eval
 	return [best, best_eval]	
 ```
+
+## 3.4. Gene Algotithms		
+- 기본 개념: 유전자 알고리즘은 다윈의 자연선택설을 모방한 알고리즘이다. 이전 iteration의 후보값을 부모라고 여길 때, 두 부모 후보값의 교배를 통해 다음 세대의 후보값을 생성한다. 후보 탐색시 적합성(fitness)이 높은 값(organism)의 염 다음 세대로 통과할 가능성이 크고, 적합성이 낮은 값은 후보탐색의 다양성을 높인다.
+- genotype
+- phenotype: genotype이 발현된 것
+- genetic operator: 
+	- 교차(crossover): 한 세대의 두 후보값(부모)를 조합(breeding)을 통해 다음 세대의 해를 생성 <br/>
+	eg. 부모 100110001 & 110100110 -> 자손 110110001 (세 번째, 네 번째 사이를 쪼개 붙임)
+	- 돌연변이(mutation): 부모의 공통된 특성을 물려받지 않음 <br/>
+	eg. 부모의 세번째 염색체가 모두 0, **0****** -> 자손의 세 번째 염색체가 0이 아님 101100110
+						  
+						   
+						
