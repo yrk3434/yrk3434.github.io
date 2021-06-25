@@ -14,6 +14,7 @@ toc_label: 목차
 - R과 JAGS 몬테칼로와 함께하는 베이지안 통계추론(2017), 오만숙
 - JAGS를 활용한 베이지안 자료분석(2019), 오만숙
 - [MIT 강의자료](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading20.pdf)
+- Computational Statistics, Wiley Series
 
 [사전 지식] 확률론
 
@@ -186,3 +187,11 @@ iid 관측치의 경우 $ X1,...,Xn $ 의 정보상수는 $ nI_1(\theta) $
 <center>$ \gamma^2 \sim IG(c,d) $ </center>
 위 모델에 대한 사후분포 도출은 [강의자료](http://www.stat.cmu.edu/~brian/463-663/week10/Chapter%2009.pdf)
 의 p11~p15(9.2.1 Random effects: The random intercept model)을 참고한다.
+
+
+# 6. 마코브체인 몬테카를로 시뮬레이션
+(1) Monte Carlo Method
+- 대수의법칙(LLN, Law of Large Number)에 의해 표본의 크기가 커질 때 표본평균이 모평균에 근접 <br/>
+$ \lim_{n \to \infty} P(\bar{X}_n -\mu < \epsilon) =1 $ <br/>
+단, $ \bar{X}_n $ 는 샘플 평균, $ \mu $는 
+- 표본에 어떤 함수를 취했을 때의 평균이 모집단에 함수를 취했을 때의 평균에 근접
