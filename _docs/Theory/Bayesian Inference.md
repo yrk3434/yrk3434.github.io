@@ -193,5 +193,5 @@ iid 관측치의 경우 $ X1,...,Xn $ 의 정보상수는 $ nI_1(\theta) $
 (1) Monte Carlo Method
 - 대수의법칙(LLN, Law of Large Number)에 의해 표본의 크기가 커질 때 표본평균이 모평균에 근접 <br/>
 $ \lim_{n \to \infty} P(\bar{X}_n -\mu < \epsilon) =1 $ <br/>
-단, $ \bar{X}_n $ 는 샘플 평균, $ \mu $는 
+단, $ \bar{X}_n $ 는 샘플 평균, $ \mu $는 모평균 <br/>
 - 표본에 어떤 함수를 취했을 때의 평균이 모집단에 함수를 취했을 때의 평균에 근접
