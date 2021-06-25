@@ -1,4 +1,16 @@
-﻿# 자연어 응용_책 정리1
+---
+title: NLP_Introduction&Application
+category: Theory
+order: 3
+use_math: true
+comments: true
+toc: true
+toc_sticky: true
+toc_label: 목차
+---
+
+
+# 자연어 응용_책 정리1
 
 **<font size='5'> 파이썬으로 배우는 응용 텍스트 분석(벤자민 벵포트 외 2인) <font/>**
 **<font size='4'>- 언어 인식 데이터 제품 개발을 위한 머신러닝 <font/>**
