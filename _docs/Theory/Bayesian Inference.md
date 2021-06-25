@@ -201,6 +201,8 @@ iid 관측치의 경우 $ X1,...,Xn $ 의 정보상수는 $ nI_1(\theta) $
 표본의 크기가 커질 때 표본평균이 모평균에 근접, $ \bar{X}_n $ 는 샘플 평균, $ \mu $ 는 모평균일 때<br/>
 <center> $ \lim_{n \to \infty} P(\bar{X}_n -\mu < \epsilon) =1 $ </center> <br/>
 
-(2) Markov Chain
-마코브 체인은 마코브성질(직전 하나의state만 기억하는 memoryless 성질)을 가진 확률과정
- 
+(2) Markov Chain <br/>
+마코브 체인은 마코브성질(직전 하나의state만 기억하는 memoryless 성질)을 가진 확률과정을 의미한다. 즉, n+1번째 상태의 값인 $ X_{n+1} $ 의 값은 직전 상태인 $ X_n $ 에만 의존한다.
+상태 공간이 이산일 때 마코브체인을 수식화하면 다음과 같다. <br/>
+<center> $ P(X_{n+1}|X_1=x_1, ..., X_n=x_n ) = P(X_{n+1}|X_n=x_n) $ </center>
+
