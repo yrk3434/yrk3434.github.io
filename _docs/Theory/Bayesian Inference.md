@@ -191,8 +191,10 @@ iid 관측치의 경우 $ X1,...,Xn $ 의 정보상수는 $ nI_1(\theta) $
 
 # 6. 마코브체인 몬테카를로 시뮬레이션
 (1) Monte Carlo Method
-- 대수의법칙(LLN, Law of Large Number)에 의해 표본의 크기가 커질 때 표본평균이 모평균에 근접 <br/>
+- 표본에 어떤 함수를 취했을 때의 평균이 모집단에 함수를 취했을 때의 평균에 근접 <br/>
+$ \hat{\mu_{MC}} = \frac{1}{n} \sum^{n}_{i=1} h(X_i) \to \int h(x)f(x) dx = \mu $  <br/>
+<참고. 대수의법칙(LLN, Law of Large Number)>
+- 표본의 크기가 커질 때 표본평균이 모평균에 근접 <br/>
 $ \lim_{n \to \infty} P(\bar{X}_n -\mu < \epsilon) =1 $ <br/>
 단, $ \bar{X}_n $ 는 샘플 평균, $ \mu $는 모평균 <br/>
-- 표본에 어떤 함수를 취했을 때의 평균이 모집단에 함수를 취했을 때의 평균에 근접 <br/>
-$ \hat{\mu_{MC}} = \frac{1}{n} \sum^{n}_{i=1} h(X_i) \to \int h(x)f(x) dx = \mu $
+
