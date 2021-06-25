@@ -191,10 +191,13 @@ iid 관측치의 경우 $ X1,...,Xn $ 의 정보상수는 $ nI_1(\theta) $
 
 # 6. 마코브체인 몬테카를로 시뮬레이션
 (1) Monte Carlo Method
+표본수가 커짐에 따라 랜덤표본에 어떤 함수 $ h $ 를 취한것의 '평균'이 모집단에 $ h $ 를 취한 것의 '평균'에 근접하는 것을 몬테카를로 방법이라 부른다.
 > <center> $ \hat{\mu_{MC}} = \frac{1}{n} \sum^{n}_{i=1} h(X_i) \to \int h(x)f(x) dx = \mu $  as $ n \to \infty $ </center>
 
-[참고. 대수의법칙(LLN, Law of Large Number)]
-- 표본의 크기가 커질 때 표본평균이 모평균에 근접, $ \bar{X}_n $ 는 샘플 평균, $ \mu $는 모평균일 때<br/>
+[참고. 대수의법칙(LLN, Law of Large Number)] <br/>
+표본의 크기가 커질 때 표본평균이 모평균에 근접, $ \bar{X}_n $ 는 샘플 평균, $ \mu $ 는 모평균일 때<br/>
 <center> $ \lim_{n \to \infty} P(\bar{X}_n -\mu < \epsilon) =1 $ </center> <br/>
 
-
+(2) Markov Chain
+마코브 체인은 마코브성질(직전 하나의state만 기억하는 memoryless 성질)을 가진 확률과정
+ 
