@@ -37,8 +37,11 @@ toc_label: 목차
 - 유사성: 엔트로피를 통해 파악
 
 ### 자질 
-- **언어 자질**: 단어 집합 count를 통해 언어 자질 파악 <br/> eg; 텍스트 성별 식별 <br/> 파이썬 nltk.sent_tokenze(text) -> nltk.word_tokenize(sentence) -> collections.Counters
-- **맥락 자질**: 언어자질이 아닌 **어감**에 의존, 같은 단어여도 맥락 따라 긍정일수도 부정일수도 있음 eg. 정서분석, 단어주머니(단어 동시출현 고려), 엔그램분석(n개 주변 단어 고려) 
+- **언어 자질**: 단어 집합 count를 통해 언어 자질 파악 <br/> 
+eg. 텍스트 성별 식별 <br/> 
+파이썬 nltk.sent_tokenze(text) -> nltk.word_tokenize(sentence) -> collections.Counters
+- **맥락 자질**: 언어자질이 아닌 **어감**에 의존, 같은 단어여도 맥락 따라 긍정일수도 부정일수도 있음  <br/>
+eg. 정서분석, 단어주머니(단어 동시출현 고려), 엔그램분석(n개 주변 단어 고려) 
 - **구조적 자질**:  단순 의미가 아닌 논리적 추론 적용 가능한 데이터 분석, 구문론적 분석(문장, 구 단위 분석)
 	
 <br/>
