@@ -379,7 +379,7 @@ tfidf = gensim.models.TfidfModel.load('tfidf.pkl')
 - 맥락의 유사성을 인코딩하는 것이 가능
 - word2vec: CBOW(continous bag-of-words) 기반으로 단어 표현 훈련
 - doc2vec: word2vec의 확장
-- 규모가 큰 말뭉치의 경우 PCA, SVD 통해 차원축소
+- 차원이 큰 말뭉치의 경우 PCA, SVD 통해 차원축소
 
 (1) Gensim
 	
