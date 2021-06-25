@@ -194,7 +194,7 @@ iid 관측치의 경우 $ X1,...,Xn $ 의 정보상수는 $ nI_1(\theta) $
 > <center> $ \hat{\mu_{MC}} = \frac{1}{n} \sum^{n}_{i=1} h(X_i) \to \int h(x)f(x) dx = \mu $  as $ n \to \infty $ </center>
 
 [참고. 대수의법칙(LLN, Law of Large Number)]
-- 표본의 크기가 커질 때 표본평균이 모평균에 근접 <br/>
+- 표본의 크기가 커질 때 표본평균이 모평균에 근접, $ \bar{X}_n $ 는 샘플 평균, $ \mu $는 모평균일 때<br/>
 <center> $ \lim_{n \to \infty} P(\bar{X}_n -\mu < \epsilon) =1 $ </center> <br/>
-단, $ \bar{X}_n $ 는 샘플 평균, $ \mu $는 모평균 <br/>
+
 
