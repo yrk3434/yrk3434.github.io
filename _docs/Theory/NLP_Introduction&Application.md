@@ -40,7 +40,9 @@ toc_label: 목차
 - **언어 자질**: 단어 집합 count를 통해 언어 자질 파악 <br/> eg; 텍스트 성별 식별 <br/> 파이썬 nltk.sent_tokenze(text) -> nltk.word_tokenize(sentence) -> collections.Counters
 - **맥락 자질**: 언어자질이 아닌 **어감**에 의존, 같은 단어여도 맥락 따라 긍정일수도 부정일수도 있음 eg. 정서분석, 단어주머니(단어 동시출현 고려), 엔그램분석(n개 주변 단어 고려) 
 - **구조적 자질**:  단순 의미가 아닌 논리적 추론 적용 가능한 데이터 분석, 구문론적 분석(문장, 구 단위 분석)
-
+	
+<br/>
+	
 # CH2. 사용자 정의 말뭉치 구축
 
 - 특징분석: 언어를 표현하는 방식, 구문론적 패턴을 성분 별로 분해하여 통계적 메커니즘 적용
@@ -111,7 +113,9 @@ _cur.execute("SELECT score From reviews")
 for score in iter(_cur.fetchon, None):
 	yield score
 ```
-
+	
+<br/>
+	
 # CH3. 말뭉치의 전처리와 가공
 - 이 챕터에서는 텍스트를 작은 단위로 쪼개가는 과정을 코드를 통해 보여준다.
 - raw 말뭉치 -> (HTML -> 단락 -> 문장 -> 토큰 -> 태그) ->...
@@ -206,7 +210,10 @@ for paragraph in paras(fileids=fileids):
 ```
 
 
-# ch4.  텍스트 벡터화와 변환 파이프라인
+		
+<br/>
+	
+# CH4.  텍스트 벡터화와 변환 파이프라인
 - 텍스트 데이터를 머신러닝에 적용하기 위해 row(obs), column(feature) 꼴의 수치 데이터로 변환한다. 즉. 문서의 특징을 다차원 특징 공간(multidimensional feature space, manifold)에 맵핑(투영)하는 것이다. 이를 벡터화 또는 특징 추출이라고 부른다. 
 - 잘 투영된 특징공간은 **유사한 의미(의미 공간, semantic space)의 문서를 유사한 거리로 인코딩**한 것이다.  가장 간단한 인코딩 방법은 **단어 주머니(bag-of-word)**다.
 - **NLTK, 사이킷런, Gensim**은 재사용 가능한 인코딩 변환기다.
