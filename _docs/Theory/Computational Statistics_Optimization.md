@@ -12,7 +12,6 @@ toc_label: 목차
 ### Reference
 - Computational Statistics, Wiley Series
 - Wikipidia
-- NP vs P 다이어그램 이미지: [https://en.wikipedia.org/wiki/NP-completeness](https://en.wikipedia.org/wiki/NP-completeness){:target="_blank"}
 
 # Contents
 1. Meaning of Optimization
