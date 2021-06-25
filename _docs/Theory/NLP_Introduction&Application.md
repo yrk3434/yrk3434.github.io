@@ -12,8 +12,8 @@ toc_label: 목차
 
 # 자연어 응용_책 정리1
 
-**<font size='5'> 파이썬으로 배우는 응용 텍스트 분석(벤자민 벵포트 외 2인) <font/>** <br/>
-**<font size='4'>- 언어 인식 데이터 제품 개발을 위한 머신러닝 <font/>**
+<font size='5'> **파이썬으로 배우는 응용 텍스트 분석(벤자민 벵포트 외 2인)** <font/> <br/>
+<font size='4'> **- 언어 인식 데이터 제품 개발을 위한 머신러닝** <font/>
 - 이 책은 자연어 처리 기본의 전반을 익힐 수 있으며 영어 텍스트에 대한 분석을 배울 수 있다.
 - 이론보다는 코드와 응용에 포커스가 맞춰진 책이다.
 - 코드 설명 중 중요한 함수가 쓰인 부분만 발췌했다.
@@ -30,20 +30,21 @@ toc_label: 목차
 8. 텍스트 시각화
 9. 텍스트의 그래프 분석
 
-# ch1. 언어와 계산
+# CH1. 언어와 계산
 
 - 언어 계산 모델: 불완전한 phrase를 받더라도 발화를 완료할 가능성이 높은 후속 단어를 추론(text is predictable)
 - 유사성: 엔트로피를 통해 파악
 
-자질
+### 자질
 - **언어 자질**: 단어 집합 count를 통해 언어 자질 파악 <br/> eg; 텍스트 성별 식별 <br/> 파이썬 nltk.sent_tokenze(text) -> nltk.word_tokenize(sentence) -> collections.Counters
 - **맥락 자질**: 언어자질이 아닌 **어감**에 의존, 같은 단어여도 맥락 따라 긍정일수도 부정일수도 있음 eg. 정서분석, 단어주머니(단어 동시출현 고려), 엔그램분석(n개 주변 단어 고려) 
 - **구조적 자질**:  단순 의미가 아닌 논리적 추론 적용 가능한 데이터 분석, 구문론적 분석(문장, 구 단위 분석)
 
-# ch2. 사용자 정의 말뭉치 구축
+# CH2. 사용자 정의 말뭉치 구축
 
 - 특징분석: 언어를 표현하는 방식, 구문론적 패턴을 성분 별로 분해하여 통계적 메커니즘 적용
-## 말뭉치(Corpora)
+	
+### 1. 말뭉치(Corpora)
 
 - 자연어가 들어 있는 관련 문서들의 모음집, eg. 이메일, 트윗, 책
 - 지도 학습: 말뭉치에 주석
@@ -52,7 +53,7 @@ toc_label: 목차
 - 영역 특정 말뭉치
 	- 특정 분야의 언어 모델링이 일반 언어 모델링보다 잘 작동, 범위를 좁혀 예측 공간이 작아지기 때문
 
-## Baleen 수집 엔진
+<font size='5'> [Baleen 수집 엔진] <font/>
 - 말뭉치 작성 오픈소스, 스포츠, 게임 등 12범주에서 RSS 피드 수집
 
 ## 말뭉치 데이터 관리
@@ -108,7 +109,7 @@ for score in iter(_cur.fetchon, None):
 	yield score
 ```
 
-# ch3. 말뭉치의 전처리와 가공
+# CH3. 말뭉치의 전처리와 가공
 - 이 챕터에서는 텍스트를 작은 단위로 쪼개가는 과정을 코드를 통해 보여준다.
 - raw 말뭉치 -> (HTML -> 단락 -> 문장 -> 토큰 -> 태그) ->...
 
@@ -120,6 +121,7 @@ for score in iter(_cur.fetchon, None):
 
 ### 1. 핵심 내용 식별 및 추출
 - Unparseable, Document: HTML 텍스트 추출, 정리
+	
 ```
 from readability.readability import Unparseable
 from readability.readability import Document as Paper
@@ -149,6 +151,7 @@ for element in soup.fild_all(TAGS):
 	yield element.text
 soup.decompose() # 메모리 확보 위해 트리 파괴
 ```
+	
 ### 3. 문장 나누기(분할, segmentation)
 
 문장의 시작과 끝인 단어와 구두점을 사전 학습한 sent_tokenizer를 이용한다. (sent_tokenizer는 PunktSentenceTokenizer 토크나이저 사용, 영어 텍스트에 대해 훈련, 유럽 언어도 잘 작동) 구두점이 약어, 줄임말 등에도 사용되므로 비표준 텍스트에 사용하면 제대로 작동하지 않을 수도 있다.
