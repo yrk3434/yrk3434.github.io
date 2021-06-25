@@ -15,6 +15,7 @@ toc_label: 목차
 - JAGS를 활용한 베이지안 자료분석(2019), 오만숙
 - [MIT 강의자료](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading20.pdf)
 - Computational Statistics, Wiley Series
+- Wikipedia
 
 [사전 지식] 확률론
 
@@ -190,6 +191,10 @@ iid 관측치의 경우 $ X1,...,Xn $ 의 정보상수는 $ nI_1(\theta) $
 
 
 # 6. 마코브체인 몬테카를로 시뮬레이션
+
+사후확률을 구하는 일은 적분을 동반한다. 4장에서처럼 사전확률과 데이터 분포의 결합을 적분하는 일이 수식으로 풀린다면 행운이다. 
+이와 달리 적분이 복잡해 수식으로 풀기 힘든 경우 MCMC 샘플링을 통해 근사적으로 사후모수를 추정할 수 있다. MCMC 시뮬레이션을 설명하기에 앞서 몬테카를로방법과 마코브체인의 개념을 알아보겠다.
+
 (1) Monte Carlo Method <br/>
 표본수가 커짐에 따라 랜덤표본에 어떤 함수 $ h $ 를 취한것의 '평균'이 모집단에 $ h $ 를 취한 것의 '기대값'에 근접하는 것을 몬테카를로 방법이라 부른다. <br/>
 - $ h $: 임의의 함수
@@ -206,3 +211,5 @@ iid 관측치의 경우 $ X1,...,Xn $ 의 정보상수는 $ nI_1(\theta) $
 상태 공간이 이산일 때 마코브체인을 수식화하면 다음과 같다. <br/>
 <center> $ P(X_{n+1}|X_1=x_1, ..., X_n=x_n ) = P(X_{n+1}|X_n=x_n) $ </center>
 
+<br/>
+(1)과 (2)를 종합하면 MCMC 샘플링이란 
