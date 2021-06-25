@@ -11,7 +11,7 @@ toc_label: 목차
 
 # 자연어 응용_책 정리1
 
-**<font size='5'> 파이썬으로 배우는 응용 텍스트 분석(벤자민 벵포트 외 2인) <font/>**
+**<font size='5'> 파이썬으로 배우는 응용 텍스트 분석(벤자민 벵포트 외 2인) <font/>** <br/>
 **<font size='4'>- 언어 인식 데이터 제품 개발을 위한 머신러닝 <font/>**
 	
 # 개요
@@ -237,6 +237,7 @@ eg. Bats can see via echolocation. See the bat sight sneeze!
 |0|2|0|...|2|...|
 
 - NLTK
+	
 ```
 from collections import defaultdict
 
@@ -248,14 +249,18 @@ def vectorize(doc):
 
 vectors = map(vectorize, corpus)
 ```
+	
 - 사이킷런
+	
 ```
 from sklearn.fearure_extraction.text import CountVetorizer
 
 vectorizer = CountVectorizer()
 vectors = vectorizer.fit_transform(corpus)
 ```
+	
 - Gensim
+	
 ```
 import gensim
 
