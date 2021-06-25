@@ -239,7 +239,7 @@ eg. Bats can see via echolocation. See the bat sight sneeze!
 |:----:|:----:|:----:|:----:|:----:|:----:|
 |0|2|0|...|2|...|
 
-- NLTK
+(1) NLTK
 	
 ```
 from collections import defaultdict
@@ -253,7 +253,7 @@ def vectorize(doc):
 vectors = map(vectorize, corpus)
 ```
 	
-- 사이킷런
+(2) 사이킷런
 	
 ```
 from sklearn.fearure_extraction.text import CountVetorizer
@@ -262,7 +262,7 @@ vectorizer = CountVectorizer()
 vectors = vectorizer.fit_transform(corpus)
 ```
 	
-- Gensim
+(3) Gensim
 	
 ```
 import gensim
@@ -284,7 +284,7 @@ eg. The elephant sneezed at the sight of potatoes.
 |:----:|:----:|:----:|:----:|:----:|:----:|
 |1|0|0|...|0|...|
 
-- NLTK
+(1) NLTK
 	
 ```
 def vectorize(doc):
@@ -292,7 +292,7 @@ return { token: True for token in doc }
 vectors = map(vectorize, corpus)
 ```
 	
-- 사이킷런 <br/>
+(2) 사이킷런 <br/>
 주의. sklearn.preprocessing 모듈의 OneHotEncoder는 각 벡터 column을 이진이 아닌 독립적인 범주형 변수로 처리
 	
 ```
@@ -305,7 +305,7 @@ onehot = Binarizer()
 corpus = onehot.fit_transform(corpus.toarray())
 ```
 	
-- Gensim <br/>
+(3) Gensim <br/>
 빈도 벡터화를 확장해 원핫 인코딩
 	
 ```
@@ -331,7 +331,8 @@ vectors = [
 	- 역문서빈도: $ idf(t,D) = log (1 + \frac{N}{n_t}) $ , 전체 문서에서 특정 용어 t의 등장횟수에 관한 식 
 	- **TF-IDF: $ tfidf(t,d,D) = tf(t,d) \cdot  idf(t,D) $**
 	- 1에 가까울수록 해당 용어가 중요, 0에 가까울수록 덜 중요
-- NLTK
+	
+(1) NLTK
 	
 ```
 from nltk.text import TextCollection
@@ -344,7 +345,7 @@ def vectorize(corpus):
 		yield { term: texts.tf_idf(term, doc) for term in doc }
 ```
 	
-- 사이킷런
+(2) 사이킷런
 	
 ```
 from sklearn.feature_selection.text import TFidVectorizer
@@ -356,7 +357,7 @@ corpus = tfidf.fit_transform(corpus)
 # ((doc, term), tfidf)
 ```
 	
-- Gensim
+(3) Gensim
 	
 ```
 corpus = [tokenize(doc) for doc in corpus]
@@ -380,7 +381,7 @@ tfidf = gensim.models.TfidfModel.load('tfidf.pkl')
 - doc2vec: word2vec의 확장
 - 규모가 큰 말뭉치의 경우 PCA, SVD 통해 차원축소
 
-- Gensim
+(1) Gensim
 	
 ```
 from gensim.models.doc2vec import TaggedDocument, Doc2Vec
