@@ -31,7 +31,7 @@ toc_label: 목차
 8. 텍스트 시각화
 9. 텍스트의 그래프 분석
 
-# ch1. 언어와 계산
+# CH1. 언어와 계산
 
 - 언어 계산 모델: 불완전한 phrase를 받더라도 발화를 완료할 가능성이 높은 후속 단어를 추론(text is predictable)
 - 유사성: 엔트로피를 통해 파악
@@ -41,10 +41,11 @@ toc_label: 목차
 - **맥락 자질**: 언어자질이 아닌 **어감**에 의존, 같은 단어여도 맥락 따라 긍정일수도 부정일수도 있음 eg. 정서분석, 단어주머니(단어 동시출현 고려), 엔그램분석(n개 주변 단어 고려) 
 - **구조적 자질**:  단순 의미가 아닌 논리적 추론 적용 가능한 데이터 분석, 구문론적 분석(문장, 구 단위 분석)
 
-# ch2. 사용자 정의 말뭉치 구축
+# CH2. 사용자 정의 말뭉치 구축
 
 - 특징분석: 언어를 표현하는 방식, 구문론적 패턴을 성분 별로 분해하여 통계적 메커니즘 적용
-## 말뭉치(Corpora)
+	
+## 1. 말뭉치(Corpora)
 
 - 자연어가 들어 있는 관련 문서들의 모음집, eg. 이메일, 트윗, 책
 - 지도 학습: 말뭉치에 주석
@@ -53,13 +54,13 @@ toc_label: 목차
 - 영역 특정 말뭉치
 	- 특정 분야의 언어 모델링이 일반 언어 모델링보다 잘 작동, 범위를 좁혀 예측 공간이 작아지기 때문
 
-## Baleen 수집 엔진
+### Baleen 수집 엔진
 - 말뭉치 작성 오픈소스, 스포츠, 게임 등 12범주에서 RSS 피드 수집
 
-## 말뭉치 데이터 관리
+## 2. 말뭉치 데이터 관리
 - 말뭉치 디스크: 개별파일 저장하지 않는 것 권장 eg. MBox 형식 저장, 트윗은 메타 데이터 포함 JSON 구조 
 
-## 말뭉치 리더
+## 3. 말뭉치 리더
 
 텍스트 데이터는 여러 방식으로 접근 가능하다.
 
@@ -88,6 +89,7 @@ corpus.fileids()
 ```
  
 ### HTML 말뭉치 읽기
+	
 ```
 from nltk.corpus.reader.api import CorpusReader
 from nltk.corpus.reader.api import CategorizedCorpusReader
@@ -100,6 +102,7 @@ CorpusReader.__init__
 
 
 ### 데이터베이스에서 말뭉치 읽기
+	
 ```
 import sqlite3
 
@@ -109,18 +112,21 @@ for score in iter(_cur.fetchon, None):
 	yield score
 ```
 
-# ch3. 말뭉치의 전처리와 가공
+# CH3. 말뭉치의 전처리와 가공
 - 이 챕터에서는 텍스트를 작은 단위로 쪼개가는 과정을 코드를 통해 보여준다.
 - raw 말뭉치 -> (HTML -> 단락 -> 문장 -> 토큰 -> 태그) ->...
 
 ## 문서 쪼개 보기
+	
  - NLTK corpus reader: 
 	 - raw(): 전처리 없이 텍스트 엑세스
 	 - sents(): 개별 문장 생성자
 	 - words(): 텍스트를 단어로 토큰화
 
 ### 1. 핵심 내용 식별 및 추출
+	
 - Unparseable, Document: HTML 텍스트 추출, 정리
+	
 ```
 from readability.readability import Unparseable
 from readability.readability import Document as Paper
@@ -140,7 +146,9 @@ log.setLevel("warning)
 ```
 
 ### 2. 단락 나누기
+	
 beautifulsoup을 통해 html 텍스트로부터 단락을 추출한다.
+	
 ```
 import bs4
 TAGS = ['h1', 'h2', 'h3', 'h4' ,'h5', 'h6' ,'h7', 'p', 'li']
@@ -150,6 +158,7 @@ for element in soup.fild_all(TAGS):
 	yield element.text
 soup.decompose() # 메모리 확보 위해 트리 파괴
 ```
+	
 ### 3. 문장 나누기(분할, segmentation)
 
 문장의 시작과 끝인 단어와 구두점을 사전 학습한 sent_tokenizer를 이용한다. (sent_tokenizer는 PunktSentenceTokenizer 토크나이저 사용, 영어 텍스트에 대해 훈련, 유럽 언어도 잘 작동) 구두점이 약어, 줄임말 등에도 사용되므로 비표준 텍스트에 사용하면 제대로 작동하지 않을 수도 있다.
@@ -166,6 +175,7 @@ for paragraph in paras(fileids, categories):
 ```
 
 ### 4. 개별 토큰 식별(tokenization)
+	
 - 공백, 구두를 떼어 내고 영문자, 비영문자 반환
 - 합성어, 축약형 등 처리 기준에 따라 토크나이저 선택, eg. TreebankWordTokenizer, WordPunctTokenize, PunktWordTokenizer
 
@@ -180,6 +190,7 @@ for sentence in sents(fileids, categories):
 ### 5. 품사 태깅(part-of-speech-tagging)
 - (태그, 토큰) 튜플 꼴로 아웃풋 반환
 - NLTK 품사 태거를 위한 옵션 eg. DefaultTagger, RegexpTagger, UnigramTagger, BrillTagger
+	
 ```
 from nltk import pos_tag, sent_tokenize, wordpunct_tokenize
 for paragraph in paras(fileids=fileids):
@@ -259,13 +270,16 @@ eg. The elephant sneezed at the sight of potatoes.
 |1|0|0|...|0|...|
 
 - NLTK
+	
 ```
 def vectorize(doc):
 return { token: True for token in doc }
 vectors = map(vectorize, corpus)
 ```
+	
 - 사이킷런 <br/>
 주의. sklearn.preprocessing 모듈의 OneHotEncoder는 각 벡터 column을 이진이 아닌 독립적인 범주형 변수로 처리
+	
 ```
 from sklearn.preprocessing import Binarizer
 
@@ -275,8 +289,10 @@ corpus = freq.fit_transform(corpus)
 onehot = Binarizer()
 corpus = onehot.fit_transform(corpus.toarray())
 ```
+	
 - Gensim <br/>
 빈도 벡터화를 확장해 원핫 인코딩
+	
 ```
 corpus = [tokenize(doc) for doc in corpus]
 id2word = gensim.corpora.Dictionary(corpus) # 빈도 벡터화
@@ -301,6 +317,7 @@ vectors = [
 	- **TF-IDF: $ tfidf(t,d,D) = tf(t,d) \cdot  idf(t,D) $**
 	- 1에 가까울수록 해당 용어가 중요, 0에 가까울수록 덜 중요
 - NLTK
+	
 ```
 from nltk.text import TextCollection
 
@@ -311,7 +328,9 @@ def vectorize(corpus):
 	for doc in corpus:
 		yield { term: texts.tf_idf(term, doc) for term in doc }
 ```
+	
 - 사이킷런
+	
 ```
 from sklearn.feature_selection.text import TFidVectorizer
 
@@ -321,7 +340,9 @@ corpus = tfidf.fit_transform(corpus)
 # output
 # ((doc, term), tfidf)
 ```
+	
 - Gensim
+	
 ```
 corpus = [tokenize(doc) for doc in corpus]
 lexicon = gensim.corpora.Dictionary(corpus)
@@ -345,6 +366,7 @@ tfidf = gensim.models.TfidfModel.load('tfidf.pkl')
 - 규모가 큰 말뭉치의 경우 PCA, SVD 통해 차원축소
 
 - Gensim
+	
 ```
 from gensim.models.doc2vec import TaggedDocument, Doc2Vec
 
