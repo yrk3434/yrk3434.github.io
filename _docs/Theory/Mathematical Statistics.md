@@ -40,7 +40,7 @@ toc_label: 목차
 
 ### 적률생성함수
 <br/>
-분포의 가장 중요한 성질 중 하나는 적률생성함수(mgf, Moment Genrating Function)다. 그 이유는 분포와 mgf는 unique하게 1:1 대응이기 때문이다. 즉, 특정 확률변수의 mgf를 알면 역으로 분포를 알 수 있다.
+분포의 가장 중요한 성질 중 하나는 적률생성함수(mgf, Moment Genrating Function)다. 그 이유는 분포와 mgf는 unique하게 1:1 대응이기 때문이다. 즉, 특정 확률변수의 mgf를 알면 역으로 분포를 알 수 있다. 또한 분포의 여러가지 통계량을 구하거나 증명을 할 때 mgf가 유용하게 이용된다.
 <br/>  
 [적률생성함수 정의]
 > <center>$ M(t)=E( e^{tX} )  = \sum_x e^{tX} p(x) $ <center/>
