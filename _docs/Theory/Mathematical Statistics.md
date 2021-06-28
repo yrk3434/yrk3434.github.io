@@ -54,15 +54,20 @@ m차 기대값을 구할 때 exponential 함수는 미분꼴이 자기자신과 
   
 > 성질2. $ E(X^m) = \sum_x x^m p(x) $ or $ \int_{-\infty}^{\infty} x^m f(x)$ <br/>  
   
-- 1차 <br/>  
+- 1차 미분 <br/>  
 $ M'(t) = \frac{M(t)}{dt} = \sum_x xe^{tx}p(x) $ or $ \int_{-\infty}^{\infty} x e^{tx}f(x) dx $ <br/>
 여기에 $ t=0 $ 을 대입하면 $ M'(0) = E(X) =\mu $
   
-- 2차 <br/>
+- 2차 미분 <br/>
 $ M^{''}(t) = \sum_x x^2 e^{tx}p(x) $or $ \int_{-\infty}^{\infty} x^2 e^{tx}f(x) dx $ <br/>
 여기에 $ t=0 $ 을 대입하면 $ M^{''}(0) = E(X^2) $ 
   
 - 분산 <br/>
 위에서 구한 1차, 2차 적률을 이용해 분산을 구할 수 있다. $ \sigma^2 = E(X^2)-E(X) = M''(0) - M'(0) $
-  
-  
+<br/>  
+[mgf의 유용한 활용]
+$ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid)를 따를 때 <br/>
+(1) 합의 분포 $ S_n = X_1 + X_2 + ... + X_n $ 의 mgf는 $ E(e^{t S_n}) = E(e^{t X_1}...e^{t X_1} $ 인데 
+  독립성질에 의해 기대값이 분해되어  $ E(e^{t X_1}) ...E(e^{t X_n}) $ 가 되고
+  확률변수들이 동일분포를 따르므로 $ {E(e^{t X_i)}^n = M_X(t)^n $ 로 정리된다.
+ 
