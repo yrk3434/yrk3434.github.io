@@ -49,10 +49,11 @@ toc_label: 목차
 > 성질1. $ F_X(z) = F_Y(z)$ for all $ z \in \mathbb{R} $ if and only if $ M_X(t) = M_Y(t) $ for all $ t \in (-h,h) $ for some $h>0$  
 
 <br/>
-mgf의 이름처럼 $ M_X(t) $ 를 k차 미분하면 확률변수의 m차 기대값을 생성할 수 있다. 
+mgf의 이름처럼 $ M_X(t) $ 를 m차 미분하면 확률변수의 m차 기대값을 생성할 수 있다. 
 m차 기대값을 구할 때 exponential 함수는 미분꼴이 자기자신과 같고, $e^0=1$이라는 성질을 이용한다. 
   
 > 성질2. $ E(X^m) = \sum_x x^m p(x) $ or $ \int_{-\infty}^{\infty} x^m f(x)$ <br/>  
+  
 - 1차 <br/>  
 $ M'(t) = \frac{M(t)}{dt} = \sum_x xe^{tx}p(x) $ or $ \int_{-\infty}^{\infty} x e^{tx}f(x) dx $ <br/>
 여기에 $ t=0 $ 을 대입하면 $ M'(0) = E(X) =\mu $
