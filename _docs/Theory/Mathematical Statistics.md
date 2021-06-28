@@ -55,11 +55,13 @@ m차 기대값을 구할 때 exponential 함수는 미분꼴이 자기자신과 
 > 성질2. $ E(X^m) = \sum_x x^m p(x) $ or $ \int_{-\infty}^{\infty} x^m f(x)$ <br/>  
   
 - 1차 <br/>  
-$ M'(t) = \frac{M(t)}{dt} = \sum_x xe^{tx}p(x) $ or $ \int_{-\infty}^{\infty} x e^{tx}f(x) dx $
+$ M'(t) = \frac{M(t)}{dt} = \sum_x xe^{tx}p(x) $ or $ \int_{-\infty}^{\infty} x e^{tx}f(x) dx $ <br/>
 여기에 $ t=0 $ 을 대입하면 $ M'(0) = E(X) =\mu $
+  
 - 2차 <br/>
 $ M^{''}(t) = \sum_x x^2 e^{tx}p(x) $or $ \int_{-\infty}^{\infty} x^2 e^{tx}f(x) dx $ <br/>
 여기에 $ t=0 $ 을 대입하면 $ M^{''}(0) = E(X^2) $ 
+  
 - 분산 <br/>
 위에서 구한 1차, 2차 적률을 이용해 분산을 구할 수 있다. $ \sigma^2 = E(X^2)-E(X) = M''(0) - M'(0) $
   
