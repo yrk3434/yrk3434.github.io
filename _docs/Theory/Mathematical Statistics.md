@@ -46,16 +46,16 @@ toc_label: 목차
 > <center>$ M(t)=E( e^{tX} )  = \sum_x e^{tX} p(x) $ <center/>
 
 위에서 언급했듯이 분포와 mgf는 1:1 대응이다. 따라서 두 확률변수 $ X $, $ Y $가 동일한 확률분포를 가지면 두 확률변수의 mgf 역시 동일하다.
-
-<center> $ F_X(z) = F_Y(z)$ for all $ z \in \mathbb{R} $ if and only if $ M_X(t) = M_Y(t) $ <center/> <br/>
-<center> for all $ t \in (-h,h) $ for some $h>0$  <center/>
+- 성질1. $ F_X(z) = F_Y(z)$ for all $ z \in \mathbb{R} $ if and only if $ M_X(t) = M_Y(t) $ for all $ t \in (-h,h) $ for some $h>0$  <center/>
 
 <br/>
-mgf의 이름처럼 $ M_X(t) $ 를 k차 미분하면 k차 적률을 생성할 수 있다. exponential 함수는 미분꼴이 자기자신과 같기 때문에 mgf의 미분꼴은 단순하다.
-
+mgf의 이름처럼 $ M_X(t) $ 를 k차 미분하면 확률변수의 m차 기대값을 생성할 수 있다. m차 기대값을 구할 때 exponential 함수는 미분꼴이 자기자신과 같고, $e^0=1$이라는 성질을 이용한다. 
+- 성질2. $ E(X^m) = \sum_x x^m p(x) $ or $ \int_{-\infty}^{\infty} x^m f(x)$
+  
 <center> $ M'(t) = \frac{M(t)}{dt} = \sum_x xe^{tx}p(x) $ <center/> <br/>
 단 연속확률변수의 경우 $ M'(t) = \int_{-\infty}^{\infty} xe^{tx}f(x) dx $ <br/>
 여기에 $ t=0 $ 을 대입하면 $ M'(t) = E(X) =\mu $ 다.
+  
   
   
   
