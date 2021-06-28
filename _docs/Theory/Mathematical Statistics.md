@@ -1,4 +1,14 @@
-﻿
+---
+title: Mathematical Statistics
+category: Theory
+order: 4
+use_math: true
+comments: true
+toc: true
+toc_sticky: true
+toc_label: 목차
+---
+
 # Mathematical Statistics
 - 통계학에서 근본이 되는 몇 가지 성질과 theorem을 다룬다.
 - 이 포스팅에서는 확률론, 회귀분석 등 주요 과목과 중복되는 내용은 제외하고, 여러가지 수리적 
