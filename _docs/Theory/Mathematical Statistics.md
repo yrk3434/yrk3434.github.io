@@ -69,5 +69,5 @@ $ M^{''}(t) = \sum_x x^2 e^{tx}p(x) $or $ \int_{-\infty}^{\infty} x^2 e^{tx}f(x)
 $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid)를 따를 때 <br/>
 (1) 합의 분포 $ S_n = X_1 + X_2 + ... + X_n $ 의 mgf는 $ E(e^{t S_n}) = E(e^{t X_1}...e^{t X_1} $ 인데 
   독립성질에 의해 기대값이 분해되어  $ E(e^{t X_1}) ...E(e^{t X_n}) $ 가 되고
-  확률변수들이 동일분포를 따르므로 $ {E(e^{t X_i)}^n = M_X(t)^n $ 로 정리된다.
+  확률변수들이 동일분포를 따르므로 $ \left \{ E(e^{t X_i) \right \} ^n = M_X(t)^n $ 로 정리된다.
  
