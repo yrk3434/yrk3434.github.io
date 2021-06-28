@@ -38,8 +38,9 @@ toc_label: 목차
 이산확률변수 X의 기대값에 대한 정의는 다음과 같다. 
 <center> $ E(X) = \sum_x x p(x) $ </center>
 
+### 적률생성함수
 <br/>
-분포의 가장 중요한 성질 중 하나는 적률생성함수(mgf, Moment Genrating Function)와 특성함수(Charateristic Function)이다. 그 이유는 분포와 적률생성함수, 특성함수는 unique하게 1:1 대응이기 때문이다. 즉, 특정 확률변수의 mgf를 알면 역으로 분포를 알 수 있다.
+분포의 가장 중요한 성질 중 하나는 적률생성함수(mgf, Moment Genrating Function)다. 그 이유는 분포와 mgf는 unique하게 1:1 대응이기 때문이다. 즉, 특정 확률변수의 mgf를 알면 역으로 분포를 알 수 있다.
 <br/>
 [Moment Generating Function]  
 > <center>$ M(t)=E( e^{tX} )  = \sum_x e^{tX} p(x) $ <center/>
@@ -48,3 +49,13 @@ toc_label: 목차
 
 <center> $ F_X(z) = F_Y(z)$ for all $ z \in \mathbb{R} $ if and only if $ M_X(t) = M_Y(t) $ <center/> <br/>
 <center> for all $ t \in (-h,h) $ for some $h>0$  <center/>
+
+<br/>
+mgf의 이름처럼 $ M_X(t) $ 를 k차 미분하면 k차 적률을 생성할 수 있다. exponential 함수는 미분꼴이 자기자신과 같기 때문에 mgf의 미분꼴은 단순하다.
+
+<center> $ M'(t) = \frac{M(t)}{dt} = \sum_x xe^{tx}p(x) $ <center/> <br/>
+단 연속확률변수의 경우 $ M'(t) = \int_{-\infty}^{\infty} xe^{tx}f(x) dx $ <br/>
+여기에 $ t=0 $ 을 대입하면 $ M'(t) = E(X) =\mu $ 다.
+  
+  
+  
