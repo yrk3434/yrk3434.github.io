@@ -215,4 +215,4 @@ MCMC 시뮬레이션을 설명하기에 앞서 몬테카를로방법과 마코�
 
 <br/>
 사후 모수를 $ \theta^{post} $ 라 하자. 사후 모수의 표본 
- $ \theta^{post}_{1}, ..., \theta^{post}_{n} $ 
+ $ \theta^{post}_{1}$ , ..., $\theta^{post}_{n} $ 
