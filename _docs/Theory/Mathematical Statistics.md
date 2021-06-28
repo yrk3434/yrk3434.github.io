@@ -41,8 +41,8 @@ toc_label: 목차
 ### 적률생성함수
 <br/>
 분포의 가장 중요한 성질 중 하나는 적률생성함수(mgf, Moment Genrating Function)다. 그 이유는 분포와 mgf는 unique하게 1:1 대응이기 때문이다. 즉, 특정 확률변수의 mgf를 알면 역으로 분포를 알 수 있다.
-<br/>
-[Moment Generating Function]  
+<br/>  
+[적률생성함수 정의]
 > <center>$ M(t)=E( e^{tX} )  = \sum_x e^{tX} p(x) $ <center/>
 
 위에서 언급했듯이 분포와 mgf는 1:1 대응이다. 따라서 두 확률변수 $ X $, $ Y $가 동일한 확률분포를 가지면 두 확률변수의 mgf 역시 동일하다.
