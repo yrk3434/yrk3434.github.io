@@ -40,5 +40,7 @@ toc_label: 목차
 <br/>
 > [Moment Generating Function] <br/>
 > $ M(t)=E( e^{tX} )  = \sum_x e^{tX} p(x) $
+
 위에서 언급했듯이 분포와 mgf는 1:1 대응이다. 따라서 두 확률변수 $ X $, $ Y $가 동일한 확률분포를 가지면 두 확률변수의 mgf 역시 동일하다.
+
 > $ F_X(z) = F_Y(z)$ for all $ z \in \mathbb{R} $ if and only if $ M_X(t) = M_Y(t) $ for all $ t \in (-h,h) $ for some $h>0$  
