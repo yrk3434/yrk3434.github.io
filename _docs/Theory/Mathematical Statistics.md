@@ -33,7 +33,7 @@ toc_label: 목차
 ## 1.9. Some Special Expectations
 
 이산확률변수 X의 기대값에 대한 정의는 다음과 같다. 
-<center> $ E(X) = \sum_x x p(x) $ <center/>
+<center> $ E(X) = \sum_x x p(x) $ </center>
 
 <br/>
 분포의 가장 중요한 성질 중 하나는 적률생성함수(mgf, Moment Genrating Function)와 특성함수(Charateristic Function)이다. 그 이유는 분포와 적률생성함수, 특성함수는 unique하게 1:1 대응이기 때문이다. 즉, 특정 확률변수의 mgf를 알면 역으로 분포를 알 수 있다.
