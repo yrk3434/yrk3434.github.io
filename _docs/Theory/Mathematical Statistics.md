@@ -72,7 +72,7 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   독립성질에 의해 기대값이 분해되어  $ E(e^{t X_1}) ...E(e^{t X_n}) $ 가 되고
   확률변수들이 동일분포를 따르므로 $  E(e^{t X_i})^n = M_X(t)^n $ 로 정리된다.
 > 참고. MGF of $ Z \sim  N(\mu, \sigma^2) $: $ M_Z(t) = exp(\mu t + \frac{\sigma^2 t^2}{2}) $ 
-2. MGF를 이용한 CLT 증명 <br/> 
+2. MGF를 이용한 중심극한정리(CLT) 증명 <br/> 
   $ S_n = X_1 + X_2 + ... + X_n $ 일 때 <br/>
   $ Z_n  =  \frac{S_n- n \mu}{\sqrt{ n \sigma^2 }} $ (표준화된 합의 분포)
   $ = \sum_{i=1}^n \frac{ X_i - \mu }{ \sigma \sqrt{n} } $ 
@@ -82,8 +82,9 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   $ M_{Z_n}(t) = E(e^{t Z_n}) = E( exp( t \frac{S_n'}{ \sigma \sqrt{n} } ) ) 
   = E( \sum_{i=1}^n X_i (\frac{t}{ \sigma \sqrt{n} })  )  =  ( M_X( \frac{t}{\sigma \sqrt{n} }  ) )^n $ <br/>
    <br/>
-  $ M_{Z_n}(t) = ( M_X( \frac{t}{\sigma \sqrt{n} }  ) )^n $ 를 $ t=0 $ 일 때의 2차 테일러 전개를 한다. <br/ >
-  $ \approx  M_X(0) + tM_X'(0) + \frac{1}{2} t^2 M_X''(0) $
+  $ M_{Z_n}(t) = ( M_X( \frac{t}{\sigma \sqrt{n} }  ) )^n $ 를 $ t=0 $ 일 때의 2차 테일러 전개를 한다. <br/>
+  $ \approx  ( M_X(0) + \frac{t}{\sigma \sqrt{n} } M_X'(0) + \frac{t^2}{2 n \sigma^2 }  M_X''(0) )^n $ <br/>
+  $ = ( 1+ \frac{t^2}{2 n \sigma^2 } sigma^2  )^n $ 
   
   
   
