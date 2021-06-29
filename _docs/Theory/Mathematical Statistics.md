@@ -93,6 +93,7 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   $ = ( 1+ \frac{t^2}{2 n \sigma^2 } \sigma^2  )^n $ ,  <br/> 
   since $ M_{X^*}(0) = E(e^0)=1 $ , $ M_{X^*}'(0) = \mu = 0 $ and $ M_{X^*}''(0) = \sigma^2 $ <br/> 
   $ =  ( 1+ \frac{t^2}{2 n }  )^n  \rightarrow e^{t^2/2}  $ as $ n  \rightarrow \infty $
-
+  마지막에 도출된 $ e^{t^2/2} $ 이 $ N(0,1) $ 의 MGF다.
+  
   
   
