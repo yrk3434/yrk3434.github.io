@@ -84,8 +84,8 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   where $ S_n' = \sum_{i=1}^n ( X_i - \mu ) = \sum X_i^* $ 
   (demeaned $ X_i $ 를 $ X_i^* $ 라 하자) <br/>
   이 때 $ Z_n $ 의 MGF는 다음과 같다.  <br/>
-  $ M_{Z_n}(t) = E(exp(t Z_n)) = E( exp( t \frac{S_n'}{ \sigma \sqrt{n} } ) )   <br/>
-  = E( exp( \sum_{i=1}^n X_i^* (\frac{t}{ \sigma \sqrt{n} })  ) )  =  ( M_{X^*}( \frac{t}{\sigma \sqrt{n} }  ) )^n $ <br/> 
+  $ M_{Z_n}(t) = E(exp(t Z_n)) = E( exp( t \frac{S_n'}{ \sigma \sqrt{n} } ) ) $  <br/>
+  $ = E( exp( \sum_{i=1}^n X_i^* (\frac{t}{ \sigma \sqrt{n} })  ) )  =  ( M_{X^*}( \frac{t}{\sigma \sqrt{n} }  ) )^n $ <br/> 
   1번에 의해 합의 분포 $ S'n $ 의 MGF가 개별 분포 $ X_i^* $ 의 MGF의 n차로 분해된다. <br/>
   
   
