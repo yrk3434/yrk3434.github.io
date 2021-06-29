@@ -417,9 +417,10 @@ $ Y $ 로그우도함수의 기대값을 최대화하는 $ \theta $
 
 <br/>
 단  <br/>
-> $ Q(\theta|\theta^{(t)}) = E ( log L(\theta|Y) | x, \theta^{(t)} ) $ ...(a)  <br/>
-> $ = E \{ log f_Y(y|\theta) | x, \theta^{(t)} \} $ <br/>
-> $ = \int f_Y(y|\theta) \cdot f_{Z|X}(z|x,\theta{(t)}) dz $  <br/>	
+> <center> $ Q(\theta|\theta^{(t)}) = E ( log L(\theta|Y) | x, \theta^{(t)} ) $ ...(a) </center> <br/>
+> <center> $ = E \{ log f_Y(y|\theta) | x, \theta^{(t)} \} $ </center> <br/>
+> <center> $ = \int f_Y(y|\theta) \cdot f_{Z|X}(z|x,\theta{(t)}) dz $  ...(b) </center> <br/>	
+	
 <br/>
 (a): 관측된 값 $ x $ 와 이전 iteration으로부터 구해진 $ \theta $ 를 조건부로 넣음 <br/>
 (b): 확률변수 $ Z $ 에 대해 적분하므로 $ Z $ 사라짐 <br/>
