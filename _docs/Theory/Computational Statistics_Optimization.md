@@ -425,7 +425,7 @@ $ Y $ 로그우도함수의 기대값을 최대화하는 $ \theta $
 3. stopping rule을 충족할 때까지 E-step, M-step 반복
 
 - 지수분포 예제: $ Y_1, Y_2 \sim i.i.d. Exp(\theta) $ , $ y_1=5 $ ,  $ y_2 $ 는 결측 <br/>
-참고. 지수분포의 확률밀도 함수는 $ f(y|\theta) = \theta e^{ - \theta y} $ , 기대값은 $ 1/\theta $ <br/>
+참고. 지수분포의 확률밀도함수는 $ f(y|\theta) = \theta e^{ - \theta y} $ , 기대값은 $ 1/\theta $ <br/>
 $ log L(\theta|Y) = log (\theta e^{ - \theta y_1} ) + log (\theta e^{ - \theta y_1} ) $ <br/>
 $ = 2 log \theta - \theta y_1 - \theta y_2 $ <br/>
 $=  2 log \theta - 5 \theta - \theta y_2 $ <br/>
