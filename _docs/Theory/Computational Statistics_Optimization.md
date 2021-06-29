@@ -411,5 +411,5 @@ EM 알고리즘은 다음 순서에 따라 동작한다. <br/>
 1. E-step: $ Q(\theta|\theta^{(t)}) $ 계산 <br/>
 M step에서 구한 $ \theta $ 이용, $ \theta $ 와 관측된 데이터 $ x $가 픽스되었다고 여기고 관측되지 않은 $ Z $ 의 확률밀도함수를 이용해 기대값 계산 
 (Z는 integrate out되므로 기대값 구하면 사라짐)
-2. M-step: $ \theta^{(t+1)} = argmax_{ \theta }  $ $ Q(\theta|\theta^{(t)}) $
+2. M-step: $ \theta^{(t+1)} = argmax_{\theta} Q(\theta|\theta^{(t)}) $
 3. stopping rule을 충족할 때까지 E-step, M-step 반복
