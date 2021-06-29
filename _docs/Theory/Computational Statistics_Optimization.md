@@ -424,7 +424,8 @@ EM 알고리즘은 다음 순서에 따라 동작한다. <br/>
 $ Y $ 로그우도함수의 기대값을 최대화하는 $ \theta $ 
 3. stopping rule을 충족할 때까지 E-step, M-step 반복
 
-- 지수분포 예제: $ Y_1, Y_2 \sim i.i.d. Exp(\theta) $ , $ y_1=5 $ ,  $ y_2 $ 는 결측 <br/>
+[지수분포 예제]  <br/> 
+$ Y_1, Y_2 \sim i.i.d. Exp(\theta) $ , $ y_1=5 $ ,  $ y_2 $ 는 결측 <br/>
 참고. 지수분포의 확률밀도함수는 $ f(y|\theta) = \theta e^{ - \theta y} $ , 기대값은 $ 1/\theta $ <br/>
 complete data $ Y = (Y_1, Y_2) $ 의 joint 로그우도함수는 다음과 같다. <br/>
 (a) $ log L(\theta|Y) = log (\theta e^{ - \theta y_1} ) + log (\theta e^{ - \theta y_1} ) $ <br/>
