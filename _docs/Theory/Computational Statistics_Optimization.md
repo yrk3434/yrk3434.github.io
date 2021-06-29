@@ -414,5 +414,5 @@ M step에서 구한 $ \theta $ 이용, $ \theta $ 와 관측된 데이터 $ x $�
 2. M-step: $ \theta^{(t+1)} = argmax_{ \theta }  $ $ Q(\theta|\theta^{(t)}) $
 3. stopping rule을 충족할 때까지 E-step, M-step 반복
 	
-- $ Q(\theta|\theta^{(t)} = E ( log L(\theta|Y) | x, \theta^{(t)} ) $ -> 관측된 값 $ x $ 와 이전 iteration으로부터 구해진 $ \theta $ 를 조건부로 넣음 <br/>
+- $ Q(\theta|\theta^{(t)}) = E ( log L(\theta|Y) | x, \theta^{(t)} ) $ -> 관측된 값 $ x $ 와 이전 iteration으로부터 구해진 $ \theta $ 를 조건부로 넣음 <br/>
 
