@@ -40,16 +40,16 @@ toc_label: 목차
 
 ### 적률생성함수
 <br/>
-분포의 가장 중요한 성질 중 하나는 적률생성함수(mgf, Moment Genrating Function)다. 그 이유는 분포와 mgf는 unique하게 1:1 대응이기 때문이다. 즉, 특정 확률변수의 mgf를 알면 역으로 분포를 알 수 있다. 또한 분포의 여러가지 통계량을 구하거나 증명을 할 때 mgf가 유용하게 이용된다.
+분포의 가장 중요한 성질 중 하나는 적률생성함수(MGF, Moment Genrating Function)다. 그 이유는 분포와 MGF는 unique하게 1:1 대응이기 때문이다. 즉, 특정 확률변수의 MGF를 알면 역으로 분포를 알 수 있다. 또한 분포의 여러가지 통계량을 구하거나 증명을 할 때 mgf가 유용하게 이용된다.
 <br/>  
 [적률생성함수 정의]
 > <center>$ M(t)=E( e^{tX} )  = \sum_x e^{tX} p(x) $ <center/>
 
-위에서 언급했듯이 분포와 mgf는 1:1 대응이다. 따라서 두 확률변수 $ X $, $ Y $가 동일한 확률분포를 가지면 두 확률변수의 mgf 역시 동일하다.
+위에서 언급했듯이 분포와 MGF는 1:1 대응이다. 따라서 두 확률변수 $ X $, $ Y $가 동일한 확률분포를 가지면 두 확률변수의 MGF 역시 동일하다.
 > 성질1. $ F_X(z) = F_Y(z)$ for all $ z \in \mathbb{R} $ if and only if $ M_X(t) = M_Y(t) $ for all $ t \in (-h,h) $ for some $h>0$  
 
 <br/>
-mgf의 이름처럼 $ M_X(t) $ 를 m차 미분하면 확률변수의 m차 기대값을 생성할 수 있다. 
+MGF의 이름처럼 $ M_X(t) $ 를 m차 미분하면 확률변수의 m차 기대값을 생성할 수 있다. 
 m차 기대값을 구할 때 exponential 함수는 미분꼴이 자기자신과 같고, $e^0=1$이라는 성질을 이용한다. 
   
 > 성질2. $ E(X^m) = \sum_x x^m p(x) $ or $ \int_{-\infty}^{\infty} x^m f(x) $ 
@@ -66,8 +66,19 @@ $ M^{''}(t) = \sum_x x^2 e^{tx}p(x) $or $ \int_{-\infty}^{\infty} x^2 e^{tx}f(x)
 위에서 구한 1차, 2차 적률을 이용해 분산을 구할 수 있다. $ \sigma^2 = E(X^2)-E(X) = M''(0) - M'(0) $
 <br/>  
 [mgf의 유용한 활용] <br/> 
-$ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid)를 따를 때 <br/>
-(1) 합의 분포 $ S_n = X_1 + X_2 + ... + X_n $ 의 mgf는 $ E(e^{t S_n}) = E(e^{t X_1}...e^{t X_1}) $ 인데 
+$ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 따른다고 가정하자. ( $ F $ 는 임의의 확률분포) <br/>
+(1) 합의 분포 <br/>
+  $ S_n = X_1 + X_2 + ... + X_n $ 의 mgf는 $ E(e^{t S_n}) = E(e^{t X_1}...e^{t X_1}) $ 인데 
   독립성질에 의해 기대값이 분해되어  $ E(e^{t X_1}) ...E(e^{t X_n}) $ 가 되고
   확률변수들이 동일분포를 따르므로 $  E(e^{t X_i})^n = M_X(t)^n $ 로 정리된다.
- 
+(2) MGF를 이용한 CLT 증명 <br/> 
+  참고. 확률변수  $ Z $ 가 평균 $ \mu $ , 분산 $ \sigma^2 $ 인 정규분포를 따를 때, $ Z $ 의 MGF는 $ M_Z(t) = exp(\mu t + \frac{sigma^2 t^2}{2}) $ 다. <br/>
+  $ Z_n  =  \frac{S_n- n \mu}{\sqrt{ n sigma^2 }} $ (표준화된 합의 분포) <br/>
+  $ = \sum_{i=1}^n ( X_i - \mu ) / \sigma \sqrt{n} $ <br/>
+  $ = S_n' / \sigma \sqrt{n}  $ <br/>
+  이 때 MGF는  <br/>
+  $ M_{Z_n}(t) = E(e^{t Z_n}) = E( e^{t S_n'/\sigma \sqrt(n) } ) = E() $ <br/>
+   
+  
+  
+  
