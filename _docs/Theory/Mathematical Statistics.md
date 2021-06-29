@@ -72,12 +72,12 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   독립성질에 의해 기대값이 분해되어  $ E(e^{t X_1}) ...E(e^{t X_n}) $ 가 되고
   확률변수들이 동일분포를 따르므로 $  E(e^{t X_i})^n = M_X(t)^n $ 로 정리된다. <br/><br/>
 (2) MGF를 이용한 CLT 증명 <br/> 
-  참고. 확률변수  $ Z $ 가 평균 $ \mu $ , 분산 $ \sigma^2 $ 인 정규분포를 따를 때, $ Z $ 의 MGF는 $ M_Z(t) = exp(\mu t + \frac{sigma^2 t^2}{2}) $ 다. <br/>
-  $ Z_n  =  \frac{S_n- n \mu}{\sqrt{ n sigma^2 }} $ (표준화된 합의 분포) <br/>
-  $ = \sum_{i=1}^n ( X_i - \mu ) / \sigma \sqrt{n} $ <br/>
-  $ = S_n' / \sigma \sqrt{n}  $ <br/>
+  참고. 확률변수  $ Z $ 가 평균 $ \mu $ , 분산 $ \sigma^2 $ 인 정규분포를 따를 때, $ Z $ 의 MGF는 $ M_Z(t) = exp(\mu t + \frac{\sigma^2 t^2}{2}) $ 다. <br/>
+  $ Z_n  =  \frac{S_n- n \mu}{\sqrt{ n \sigma^2 }} $ (표준화된 합의 분포) <br/>
+  $ = \sum_{i=1}^n \frac{ X_i - \mu }{ \sigma \sqrt{n} } $ <br/>
+  $ = \frac{ S_n' }{ \sigma \sqrt{n} }  $ <br/>
   이 때 MGF는  <br/>
-  $ M_{Z_n}(t) = E(e^{t Z_n}) = E( e^{t S_n'/\sigma \sqrt(n) } ) = E() $ <br/>
+  $ M_{Z_n}(t) = E(e^{t Z_n}) = E( e^{t \frac{S_n'}{ \sigma \sqrt(n) } ) = E() $ <br/>
    
   
   
