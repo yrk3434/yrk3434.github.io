@@ -434,6 +434,8 @@ $ Y_1, Y_2 $는 독립이므로 $ E(Y_2|y_1, \theta^{(t)}) = E(Y_2|\theta^{(t)})
 $ Q(\theta|theta{(t)}) = E(log L(\theta|Y)) $ <br/>
 $ =  2 log \theta - 5 \theta - \theta E(Y_2) $ <br/>
 $ =  2 log \theta - 5 \theta - \theta / \theta^{(t)} $  <br/>
-M-step을 구하면
+	
+M-step을 구하면 <br/>
 $ \frac{ \partial Q(\theta|theta{(t)}) }{ \partial \theta } = \frac{2}{\theta} -5 - \frac{1}{\theta^{(t)}} = 0 $ <br/>
-$  \frac{2}{\theta} =  5 +  \frac{1}{\theta^{(t)}} = \frac{5 \theta^{(t)} +1 } {\theta^{(t)}}  $	
+$ \frac{2}{\theta} =  5 +  \frac{1}{\theta^{(t)}} = \frac{5 \theta^{(t)} +1 } {\theta^{(t)}}  $  <br/>
+$ \theta^{(t+1)} = 2\theta^{(t)}/(5\theta^{(t)}+1) $
