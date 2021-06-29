@@ -85,8 +85,9 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   (demeaned $ X_i $ 를 $ X_i^* $ 라 하자) <br/>
   이 때 $ Z_n $ 의 MGF는 다음과 같다.  <br/>
   $ M_{Z_n}(t) = E(exp(t Z_n)) = E( exp( t \frac{S_n'}{ \sigma \sqrt{n} } ) ) $  <br/>
-  $ = E( exp( \sum_{i=1}^n X_i^* (\frac{t}{ \sigma \sqrt{n} })  ) )  =  ( M_{X^*}( \frac{t}{\sigma \sqrt{n} }  ) )^n $ <br/> 
-  1번에 의해 합의 분포 $ S'n $ 의 MGF가 개별 분포 $ X_i^* $ 의 MGF의 n차로 분해된다. <br/><br/>
+  $ = E( exp( \sum_{i=1}^n X_i^* (\frac{t}{ \sigma \sqrt{n} })  ) ) $ <br/>
+  $ =  ( M_{X^*}( \frac{t}{\sigma \sqrt{n} }  ) )^n $ <br/> 
+  1번에 의해 합의 분포 $ Sn' $ 의 MGF가 개별 분포 $ X_i^* $ 의 MGF의 n차로 분해된다. <br/><br/>
   
   $ M_{Z_n}(t) = ( M_{X^*}( \frac{t}{\sigma \sqrt{n} }  ) )^n $ 를 $ t=0 $ 일 때의 2차 테일러 전개를 한다. <br/>
   $ \approx  ( M_{X^*}(0) + \frac{t}{\sigma \sqrt{n} } M_{X^*}'(0) + \frac{t^2}{2 n \sigma^2 }  M_{X^*}''(0) )^n $ <br/>
