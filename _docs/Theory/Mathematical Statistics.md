@@ -99,6 +99,7 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   $ M_{Z_n}(t) \approx $ 
   $ ( M_{ X^* } (0) + \frac{ t }{\sigma \sqrt{n} } M_{ X^* }'(0) + \frac{ t^2 }{ 2 n \sigma^2 }  M_{ X^* } '' (0) )^n $ <br/>
   $ = ( 1+ \frac{t^2}{2 n \sigma^2 } \sigma^2  )^n $, 
+  
   since
   (a) $ M_{X^*}(0) = E(e^0)=1 $ 
   (b) $ M_{X^*}'(0) = \mu = 0 $ 
