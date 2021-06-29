@@ -65,7 +65,7 @@ $ M^{''}(t) = \sum_x x^2 e^{tx}p(x) $or $ \int_{-\infty}^{\infty} x^2 e^{tx}f(x)
 - 분산 <br/>
 위에서 구한 1차, 2차 적률을 이용해 분산을 구할 수 있다. $ \sigma^2 = E(X^2)-E(X) = M''(0) - M'(0) $
 <br/>  
-[mgf의 유용한 활용] <br/> 
+- [mgf의 유용한 활용] 
 $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 따른다고 가정하자. ( $ F $ 는 임의의 확률분포) 
 1. 합의 분포 <br/>
   $ S_n = X_1 + X_2 + ... + X_n $ 의 mgf는 $ E(e^{t S_n}) = E(e^{t X_1}...e^{t X_1}) $ 인데 
