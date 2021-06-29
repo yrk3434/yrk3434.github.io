@@ -407,9 +407,9 @@ EM 알고리즘은 관찰값이 주어질 때 조건부 분포로부터 결측�
 - 확률변수 $ X $ 로부터 관측 데이터 발생
 - 확률변수 $ Z $ 로부터 관측되지 않은 데이터 발생
 
-> <center> $ Q(\theta|\theta^{(t)}) = E ( log L(\theta|Y) | x, \theta^{(t)} ) $ ...(a) </center> <br/>
-> <center> $ = E \{ log f_Y(y|\theta) | x, \theta^{(t)} \} $ </center> <br/>
-> <center> $ = \int f_Y(y|\theta) \cdot f_{Z|X}(z|x,\theta{(t)}) dz $  ...(b) </center> <br/>	
+> <center> $ Q(\theta|\theta^{(t)}) = E ( log L(\theta|Y) | x, \theta^{(t)} ) $ ...(a) </center> 
+> <center> $ = E \{ log f_Y(y|\theta) | x, \theta^{(t)} \} $ </center> 
+> <center> $ = \int f_Y(y|\theta) \cdot f_{Z|X}(z|x,\theta{(t)}) dz $  ...(b) </center> 
 	
 <br/>
 (a): 관측된 값 $ x $ 와 이전 iteration으로부터 구해진 $ \theta $ 를 조건부로 넣음 <br/>
