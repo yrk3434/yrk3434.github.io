@@ -119,5 +119,5 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
 적률생성함수에서 설명한 성질들이 특성함수에도 동일하게 적용된다
 1. $ E( e^{it S_n} ) = \phi(t)^n $
 2. CLT 증명 가능
-3. m차 모먼트가 유한하다면, $ \phi^(m)(t) = E( \partial^m e^{it X_1} ) = E( (i X_i )^m e^{it X_1} )  $ <br/>
+3. m차 모먼트가 유한하다면, $ \phi^{(m)}(t) = E( \partial^m e^{it X_1} / \partial t^m ) = E( (i X_i )^m e^{it X_1} )  $ <br/>
   $ \phi^{(m)}(0) = i^m E(X_1^m) $
