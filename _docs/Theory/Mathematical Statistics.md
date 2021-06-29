@@ -80,8 +80,8 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   $ Z_n  =  \frac{S_n- n \mu}{\sqrt{ n \sigma^2 }} $ (표준화된 합의 분포)
   $ = \sum_{i=1}^n \frac{ X_i - \mu }{ \sigma \sqrt{n} } $ 
   $ = \frac{ S_n' }{ \sigma \sqrt{n} }  $ , <br/> 
-  where $ S_n' = \sum_{i=1}^n ( X_i - \mu ) = \sum X*_i $ 
-  (demeaned $ X_i $ 를 $ X_i* $ 라 하자) <br/>
+  where $ S_n' = \sum_{i=1}^n ( X_i - \mu ) = \sum X_i^* $ 
+  (demeaned $ X_i $ 를 $ X_i^* $ 라 하자) <br/>
   
   
   
