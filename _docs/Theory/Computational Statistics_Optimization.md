@@ -416,7 +416,7 @@ $ Y $ 로그우도함수의 기대값을 최대화하는 $ \theta $
 3. stopping rule을 충족할 때까지 E-step, M-step 반복
 
 <br/>
-단 
+단  <br/>
 > $ Q(\theta|\theta^{(t)}) = E ( log L(\theta|Y) | x, \theta^{(t)} ) $ ...(a)  <br/>
 > $ = E \{ log f_Y(y|\theta) | x, \theta^{(t)} \} $ <br/>
 > $ = \int f_Y(y|\theta) \cdot f_{Z|X}(z|x,\theta{(t)}) dz $  <br/>	
