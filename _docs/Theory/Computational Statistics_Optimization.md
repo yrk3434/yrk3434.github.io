@@ -405,17 +405,20 @@ def simulated_annealing(objective, bounds, n_iterations, step_size, temp):
 EM 알고리즘은 관찰값이 주어질 때 조건부 분포로부터 결측치를 추측하는 것을 발상으로 탄생한 알고리즘이다. <br/>
 - 데이터쌍(complete data): $ Y=(X, Z) $
 - 확률변수 $ X $ 로부터 관측 데이터 발생
-- 확률변수  $ Z $ 로부터 관측되지 않은 데이터 발생
+- 확률변수 $ Z $ 로부터 관측되지 않은 데이터 발생
 
 EM 알고리즘은 다음 순서에 따라 동작한다. <br/>
-다음 로그우도함수 $ log L(\theta|Y) $ 는 complete data인 $ Y $ 의 로그우도함수다.
+$ log L(\theta|Y) $ 는 complete data인 $ Y $ 의 로그우도함수다.
+$ Y $ 의 로그우도함수는 두 확률변수 $ X $, $ Z $ 의 joint 로그우도함수이고 X에 대한 관측치가 주어졌을 때
 $ Q $ 는 $ Y $ 의 로그우도함수의 기대값이다. 
-즉 $ Y $ 의 로그우도함수는 두 확률변수 $ X $, $ Y $ 의 joint 로그우도함수다.
+
 
 $ Q(\theta|\theta^{(t)} = E {% log L(\theta|Y) | x, \theta^{(t)} %} $ -> 관측된 값 $ x $와 이전 iteration으로부터 구해진 $ \theta $ 를 조건부로 넣음 <br/>
 	$ = E{% log f_Y(y|\theta) | x, \theta^{(t)} %} $ <br/>
 	$ = \int f_Y(y|\theta) \cdot f_{Z|X}(z|x,\theta{(t)}) dz $ -> 확률변수 $ Z $ 에 대해 적분하므로 $ Z $ 사라짐 <br/>
-1. E-step: $ Q(\theta|\theta^{(t)}) $ 계산
+1. E-step: $ Q(\theta|\theta^{(t)}) $ 계산 <br/>
+M step에서 구한 $ \theta $ 이용, $ \theta $ 와 관측된 데이터 $ x $가 픽스되었다고 여기고 관측되지 않은 $ Z $ 의 확률밀도함수를 이용해 기대값 계산 
+(Z는 integrate out되므로 기대값 구하면 사라짐)
 2. M-step: $ \theta^{(t+1)} = argmax_\theta  Q(\theta|\theta^{(t)}) $
 3. stopping rule을 충족할 때까지 E-step, M-step 반복
 	
