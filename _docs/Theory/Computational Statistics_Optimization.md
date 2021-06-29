@@ -417,8 +417,8 @@ M step에서 구한 $ \theta $ 이용, $ \theta $ 와 관측된 데이터 $ x $�
 2. M-step: $ \theta^{(t+1)} = \argmax_{\theta}  Q(\theta|\theta^{(t)}) $
 3. stopping rule을 충족할 때까지 E-step, M-step 반복
 	
-- $ Q(\theta|\theta^{(t)} = E [ log L(\theta|Y) | x, \theta^{(t)} ] $ -> 관측된 값 $ x $와 이전 iteration으로부터 구해진 $ \theta $ 를 조건부로 넣음 <br/>
-	$ = E[ log f_Y(y|\theta) | x, \theta^{(t)} ] $ <br/>
+- $ Q(\theta|\theta^{(t)} = E \{ log L(\theta|Y) | x, \theta^{(t)} \} $ -> 관측된 값 $ x $와 이전 iteration으로부터 구해진 $ \theta $ 를 조건부로 넣음 <br/>
+	$ = E \{ log f_Y(y|\theta) | x, \theta^{(t)} \} $ <br/>
 	$ = \int f_Y(y|\theta) \cdot f_{Z|X}(z|x,\theta{(t)}) dz $ -> 확률변수 $ Z $ 에 대해 적분하므로 $ Z $ 사라짐 <br/>	
 - $ log L(\theta|Y) $ 는 complete data인 $ Y $ 의 로그우도함수다.
 - $ Y $ 의 로그우도함수는 두 확률변수 $ X $, $ Z $ 의 joint 로그우도함수이고 X에 대한 관측치가 주어졌을 때
