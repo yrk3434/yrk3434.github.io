@@ -399,7 +399,7 @@ def simulated_annealing(objective, bounds, n_iterations, step_size, temp):
 	eg. 752631948 & 912386754 -> xx238x754 61/238/9/754 
 	eg.  752631948 & 912386754 -> 35xxx1754 & 35/267/1/948
 						
-## 3.5. Tabu Algorithms
+
 	
 # 4. EM algorithm
 EM 알고리즘은 관찰값이 주어질 때 조건부 분포로부터 결측치를 추측하는 것을 발상으로 탄생한 알고리즘이다. <br/>
