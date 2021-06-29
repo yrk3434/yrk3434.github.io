@@ -403,9 +403,9 @@ def simulated_annealing(objective, bounds, n_iterations, step_size, temp):
 	
 # 4. EM algorithm
 EM 알고리즘은 관찰값이 주어질 때 조건부 분포로부터 결측치를 추측하는 것을 발상으로 만들어진 알고리즘이다. <br/>
-- 데이터쌍(complete data): $ Y=(X, Z) $
+- 완전데이터(complete data): $ Y=(X, Z) $
 - 확률변수 $ X $ 로부터 관측 데이터 발생
-- 확률변수 $ Z $ 로부터 관측되지 않은 데이터 발생
+- 확률변수 $ Z $ 로부터 결측 데이터 발생
 
 complete data $ Y $ 의 로그우도함수의 기대값 $ Q $ 를 다음과 같이 정의한다.
 > <center> $ Q(\theta|\theta^{(t)}) = E ( log L(\theta|Y) | x, \theta^{(t)} ) $ ...(a) </center> 
