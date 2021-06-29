@@ -76,11 +76,14 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   $ S_n = X_1 + X_2 + ... + X_n $ 일 때 <br/>
   $ Z_n  =  \frac{S_n- n \mu}{\sqrt{ n \sigma^2 }} $ (표준화된 합의 분포)
   $ = \sum_{i=1}^n \frac{ X_i - \mu }{ \sigma \sqrt{n} } $ 
-  $ = \frac{ S_n' }{ \sigma \sqrt{n} }  $ ,  where $ S_n' = \sum_{i=1}^n ( X_i - \mu ) $ <br/>
+  $ = \frac{ S_n' }{ \sigma \sqrt{n} }  $ , <br/> 
+  where $ S_n' = \sum_{i=1}^n ( X_i - \mu ) $ <br/>
   이 때 $ Z_n $ 의 MGF는 다음과 같다.  <br/>
-  $ M_{Z_n}(t) = E(e^{t Z_n}) = E( exp( t \frac{S_n'}{ \sigma \sqrt{n} } ) ) $  <br/>
-  $ = E( \sum X_i (\frac{t}{ \sigma \sqrt{n} })  )  =  ( M_X( \frac{t}{\sigma \sqrt{n} }  ) )^n $ <br/>
-   
+  $ M_{Z_n}(t) = E(e^{t Z_n}) = E( exp( t \frac{S_n'}{ \sigma \sqrt{n} } ) ) 
+  = E( \sum_{i=1}^n X_i (\frac{t}{ \sigma \sqrt{n} })  )  =  ( M_X( \frac{t}{\sigma \sqrt{n} }  ) )^n $ <br/>
+   <br/>
+  $ M_{Z_n}(t) = ( M_X( \frac{t}{\sigma \sqrt{n} }  ) )^n $ 를 $ t=0 $ 일 때의 2차 테일러 전개를 한다. <br/ >
+  $ \approx  M_X(0) + tM_X'(0) + \frac{1}{2} t^2 M_X''(0) $
   
   
   
