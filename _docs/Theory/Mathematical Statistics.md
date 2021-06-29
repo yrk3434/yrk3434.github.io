@@ -67,14 +67,14 @@ $ M^{''}(t) = \sum_x x^2 e^{tx}p(x) $or $ \int_{-\infty}^{\infty} x^2 e^{tx}f(x)
 <br/>  
 [mgf의 유용한 활용] <br/> 
 $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 따른다고 가정하자. ( $ F $ 는 임의의 확률분포) <br/>
-(1) 합의 분포 <br/>
+1. 합의 분포 <br/>
   $ S_n = X_1 + X_2 + ... + X_n $ 의 mgf는 $ E(e^{t S_n}) = E(e^{t X_1}...e^{t X_1}) $ 인데 
   독립성질에 의해 기대값이 분해되어  $ E(e^{t X_1}) ...E(e^{t X_n}) $ 가 되고
   확률변수들이 동일분포를 따르므로 $  E(e^{t X_i})^n = M_X(t)^n $ 로 정리된다. <br/><br/>
   
 > 참고. MGF of $ Z \sim  N(\mu, \sigma^2) $: $ M_Z(t) = exp(\mu t + \frac{\sigma^2 t^2}{2}) $ 
 
-(2) MGF를 이용한 CLT 증명 <br/> 
+2. MGF를 이용한 CLT 증명 <br/> 
   $ Z_n  =  \frac{S_n- n \mu}{\sqrt{ n \sigma^2 }} $ (표준화된 합의 분포)
   $ = \sum_{i=1}^n \frac{ X_i - \mu }{ \sigma \sqrt{n} } $ 
   $ = \frac{ S_n' }{ \sigma \sqrt{n} }  $ ,  where $ S_n' = \sum_{i=1}^n ( X_i - \mu ) $ <br/>
