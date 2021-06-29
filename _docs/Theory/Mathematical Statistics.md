@@ -75,9 +75,9 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   참고. 확률변수  $ Z $ 가 평균 $ \mu $ , 분산 $ \sigma^2 $ 인 정규분포를 따를 때, $ Z $ 의 MGF는 $ M_Z(t) = exp(\mu t + \frac{\sigma^2 t^2}{2}) $ 다. <br/>
   $ Z_n  =  \frac{S_n- n \mu}{\sqrt{ n \sigma^2 }} $ (표준화된 합의 분포) <br/>
   $ = \sum_{i=1}^n \frac{ X_i - \mu }{ \sigma \sqrt{n} } $ <br/>
-  $ = \frac{ S_n' }{ \sigma \sqrt{n} }  $ <br/>
-  이 때 MGF는  <br/>
-  $ M_{Z_n}(t) = E(e^{t Z_n}) = E( e^{t \frac{S_n'}{ \sigma \sqrt(n) } ) = E() $ <br/>
+  $ = \frac{ S_n' }{ \sigma \sqrt{n} }  $ ,  where $ S_n' = \sum_{i=1}^n ( X_i - \mu ) $ <br/>
+  이 때 $ Z_n $ 의 MGF는 다음과 같다.  <br/>
+  $ M_{Z_n}(t) = E(e^{t Z_n}) = E( exp( t \frac{S_n'}{ \sigma \sqrt(n) } ) ) = E() $ <br/>
    
   
   
