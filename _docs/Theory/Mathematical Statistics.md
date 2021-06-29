@@ -95,8 +95,7 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   위에서 도출한 
   $ M_{Z_n}(t) =  ( M_{X^*}( \frac{t}{ \sigma \sqrt{n} }  ) )^n $ 
   를 $ t=0 $ 에 대해 2차 테일러 전개를 한다. <br/>
-  
-  $ \approx  ( M_{X^*}(0) + \frac{t}{\sigma \sqrt{n} } M_{X^*}'(0) + \frac{t^2}{2 n \sigma^2 }  M_{X^*}''(0) )^n $ <br/>
+  $ \approx  ( M_{ X^* }(0) + \frac{ t }{\sigma \sqrt{n} } M_{ X^* }'(0) + \frac{ t^2 }{ 2 n \sigma^2 }  M_{ X^* } '' (0) )^n $ <br/>
   
   $ = ( 1+ \frac{t^2}{2 n \sigma^2 } \sigma^2  )^n $ ,  <br/> 
   
