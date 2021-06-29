@@ -116,8 +116,7 @@ $ h^{(t)}=\frac{(x^{(t)}+1)(1+1/x^{(t)}-log(x^{(t)})}{3+4/x^{(t)}+1/(x^{(t)})^2-
 
 - 수렴가능 <br/>
 목적 함수의 모양과 시작점 설정에 따라 위 방법의 수렴이 결정된다. 
-단, $ g' $, $ g'' $ 모두 연속적으로 미분가능하고,  
-convex하며 근을 가질 때 위 방법은 시작점과 관계없이 항상 수렴한다.
+단, $ g' $, $ g'' $ 모두 연속적으로 미분가능하고 convex하며 근을 가질 때 위 방법은 시작점과 관계없이 항상 수렴한다.
 
 - 수렴속도 <br/>
 다음은 수렴 속도를 결정하는 수렴 차수 $ \beta $다. 
@@ -154,7 +153,7 @@ Newton's Method에서 2차 미분 계산이 어려울 때,
 여기서 $ \gamma_{i} $ 는 learning rate에 해당한다.
 
 ## 2.2. 다변량(Multivariate)에서의 최적화
-p 차원 벡터 $x^{(t)}=(x^{(t)}_{1},...,x^{(t)}_{p})^T$에 대해 최적화하는 문제를 생각해보자.
+p 차원 벡터 $ x^{(t)}=(x^{(t)}_{1},...,x^{(t)}_{p})^T $에 대해 최적화하는 문제를 생각해보자.
 단변량 최적화와 마찬가지로 테일러 전개를 이용해 iterative한 계산으로 지역 최적화 값을 구한다. 
 이전 iteration 값과 현재 iteration 값의 차이가 작아질 때 최적해를 구하는 iteration을 멈춘다.
 
@@ -189,7 +188,7 @@ $ -I(\theta^{(t)})^{-1} $는 로그우도함수의 2차 미분에 해당한다.
  <br/>
 [참고: OLS 모수 추정] <br/>
 <center> $ E(y|X) = X^T \beta $  </center>
-<center> $ Squared Error = (y - X^T \beta)^T (y - X^T \beta) = y^T y - 2\beta^TXy + \beta^TXX^T\beta $  </center>
+<center> $ Squared Error = (y - X^T \beta)^T (y - X^T \beta) = y^T y - 2\beta^T X^T y + \beta^TXX^T\beta $  </center>
 <center> $ \frac{\partial}{\partial \beta} Squared Error = -2X^Ty + 2 X^TX\beta = 0 $  </center>
 <center>  $ \hat{\beta} = (X^T X)^{-1}X^T y $ </center>
 <br/>
@@ -233,8 +232,8 @@ Fisher Scoring에 의해 $ \beta^{(t+1)}=\beta^{(t)} + (J^{(t)})^{-1} u^{(t)} $,
 
 <br/>
 # 3.   Combinatorial Optimization
-통계적 수식으로부터 최적화하는 것과 달리, discrete value의 조합(예. 경우의 수)을 통해 
-최적값을 구하는 경우에는 2장의 방법을 사용할 수 없다.
+등식으로부터 최적화하는 것과 달리, discrete value의 조합(예. 경우의 수)을 통해 
+최적값을 구하는 경우에는 3장의 방법을 적용한다.
 
 ## 3.1. Hard Problem and NP-Completeness
 Hard Problem은 모든 조합의 경우의 수를 확인해야하는 문제로 탐색 영역이 너무 커서 해를 찾기 어렵다. 
