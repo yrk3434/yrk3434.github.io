@@ -406,12 +406,15 @@ EM 알고리즘은 관찰값이 주어질 때 조건부 분포로부터 결측�
 - 데이터쌍(complete data): $ Y=(X, Z) $
 - 확률변수 $ X $ 로부터 관측 데이터 발생
 - 확률변수 $ Z $ 로부터 관측되지 않은 데이터 발생
-		
+	
+	
+\DeclareMathOperator*{\argmax}{arg\,max}
+	
 EM 알고리즘은 다음 순서에 따라 동작한다. <br/>
 1. E-step: $ Q(\theta|\theta^{(t)}) $ 계산 <br/>
 M step에서 구한 $ \theta $ 이용, $ \theta $ 와 관측된 데이터 $ x $가 픽스되었다고 여기고 관측되지 않은 $ Z $ 의 확률밀도함수를 이용해 기대값 계산 
 (Z는 integrate out되므로 기대값 구하면 사라짐)
-2. M-step: $ \theta^{(t+1)} = argmax_\theta  Q(\theta|\theta^{(t)}) $
+2. M-step: $ \theta^{(t+1)} = \argmax_{\theta}  Q(\theta|\theta^{(t)}) $
 3. stopping rule을 충족할 때까지 E-step, M-step 반복
 	
 - $ Q(\theta|\theta^{(t)} = E [ log L(\theta|Y) | x, \theta^{(t)} ] $ -> 관측된 값 $ x $와 이전 iteration으로부터 구해진 $ \theta $ 를 조건부로 넣음 <br/>
