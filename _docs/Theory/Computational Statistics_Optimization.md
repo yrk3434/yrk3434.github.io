@@ -426,15 +426,17 @@ $ Y $ 로그우도함수의 기대값을 최대화하는 $ \theta $
 
 - 지수분포 예제: $ Y_1, Y_2 \sim i.i.d. Exp(\theta) $ , $ y_1=5 $ ,  $ y_2 $ 는 결측 <br/>
 참고. 지수분포의 확률밀도함수는 $ f(y|\theta) = \theta e^{ - \theta y} $ , 기대값은 $ 1/\theta $ <br/>
-$ log L(\theta|Y) = log (\theta e^{ - \theta y_1} ) + log (\theta e^{ - \theta y_1} ) $ <br/>
+complete data $ Y = (Y_1, Y_2) $ 의 joint 로그우도함수는 다음과 같다. <br/>
+(a) $ log L(\theta|Y) = log (\theta e^{ - \theta y_1} ) + log (\theta e^{ - \theta y_1} ) $ <br/>
 $ = 2 log \theta - \theta y_1 - \theta y_2 $ <br/>
 $=  2 log \theta - 5 \theta - \theta y_2 $ <br/>
-$ Y_1, Y_2 $는 독립이므로 $ E(Y_2|y_1, \theta^{(t)}) = E(Y_2|\theta^{(t)}) = 1/\theta^{(t)} $  <br/>
-이를 이용해 E-step을 구하면 <br/>
+(b) $ Y_1, Y_2 $는 독립이므로 $ E(Y_2|y_1, \theta^{(t)}) = E(Y_2|\theta^{(t)}) = 1/\theta^{(t)} $  <br/>
+ <br/>
+(a), (b)를 이용해 E-step을 구하면 <br/>
 $ Q(\theta|theta{(t)}) = E(log L(\theta|Y)) $ <br/>
 $ =  2 log \theta - 5 \theta - \theta E(Y_2) $ <br/>
 $ =  2 log \theta - 5 \theta - \theta / \theta^{(t)} $  <br/>
-	
+<br/>	
 M-step을 구하면 <br/>
 $ \frac{ \partial Q(\theta|theta{(t)}) }{ \partial \theta } = \frac{2}{\theta} -5 - \frac{1}{\theta^{(t)}} = 0 $ <br/>
 $ \frac{2}{\theta} =  5 +  \frac{1}{\theta^{(t)}} = \frac{5 \theta^{(t)} +1 } {\theta^{(t)}}  $  <br/>
