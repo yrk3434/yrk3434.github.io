@@ -406,9 +406,10 @@ EM 알고리즘은 관찰값이 주어질 때 조건부 분포로부터 결측�
 - 데이터쌍(complete data): $ Y=(X, Z) $
 - 확률변수 $ X $ 로부터 관측 데이터 발생
 - 확률변수 $ Z $ 로부터 관측되지 않은 데이터 발생
-	
-	
-\DeclareMathOperator*{\argmax}{arg\,max}
+		
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\DeclareMathOperator{\col}{col}
 	
 EM 알고리즘은 다음 순서에 따라 동작한다. <br/>
 1. E-step: $ Q(\theta|\theta^{(t)}) $ 계산 <br/>
