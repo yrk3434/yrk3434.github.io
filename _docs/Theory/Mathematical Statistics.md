@@ -84,7 +84,8 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
    <br/>
   $ M_{Z_n}(t) = ( M_X( \frac{t}{\sigma \sqrt{n} }  ) )^n $ 를 $ t=0 $ 일 때의 2차 테일러 전개를 한다. <br/>
   $ \approx  ( M_X(0) + \frac{t}{\sigma \sqrt{n} } M_X'(0) + \frac{t^2}{2 n \sigma^2 }  M_X''(0) )^n $ <br/>
-  $ = ( 1+ \frac{t^2}{2 n \sigma^2 } sigma^2  )^n $ 
+  $ = ( 1+ \frac{t^2}{2 n \sigma^2 } \sigma^2  )^n $ <br/>
+  $ =  ( 1+ \frac{t^2}{2 n }  )^n  \rightarrow e^{t^2/2}  $ as $ n  \rightarrow \infty $
   
   
   
