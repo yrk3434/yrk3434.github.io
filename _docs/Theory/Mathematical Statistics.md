@@ -112,7 +112,7 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
 
   
 ### 특성함수
-확률분포에 따라 MGF가 존재하지 않는 경우가 있다. 어떤 분포에 대해서도 특성함수(CF, charateristic function)은 존재하기 때문에 MGF가 존재하지 않을 경우 CF를 사용한다. 
+확률분포에 따라 MGF가 존재하지 않는 경우가 있다. 어떤 분포에 대해서도 특성함수(CF, charateristic function)는 존재하기 때문에 MGF가 존재하지 않을 경우 CF를 사용한다. 
 <br/>  
 [특성함수의 정의]
 > <center>$ \phi(t) = E( e^{itX} )  = \sum_x e^{itX} p(x) $ <center/>
