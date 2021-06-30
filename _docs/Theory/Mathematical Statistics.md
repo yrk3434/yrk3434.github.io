@@ -150,7 +150,7 @@ $ \phi(x) $ 를 $ X=\mu $ 에 대해 2차 테일러 전개를 하여 부등식�
 분산 역시 기대값의 일종이다.( $Var(X) = E((X-\mu)^2) $ ) 분산을 구할 때 $ \mu $ 를 기준으로 적분구간을 나눠( $ (-\infty, \mu) $, $ (\mu, \infty) $ ) 한쪽 적분 구간을 없애 부등식을 만들면 체비셰프 부등식을 증명할 수 있다. 증명은 [여기](https://zhengtianyu.wordpress.com/2014/01/04/proof-of-chebyshevs-inequality/)를 참조한다.
   
 (4) Cauchy-Schwarz Inequality: 기대값의 곱과 곱의 기대값 대소비교
-> <center> $ (E(XY)^2 \leq E(X^2) E(Y^2) $ <center/>
+> <center> $ E(XY)^2 \leq E(X^2) E(Y^2) $ <center/>
 > <center> = holds iff $ Y = \lambda X $ for some $ \lambda \in \mathbb{R}  $ <center/>
   
 증명은 [여기](https://www.probabilitycourse.com/chapter6/6_2_4_cauchy_schwarz.php)를 참조한다. <br/>
