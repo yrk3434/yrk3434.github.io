@@ -136,7 +136,8 @@ $ \phi(x) $ 를 $ X=\mu $ 에 대해 2차 테일러 전개를 하여 부등식�
   
 2. Markov Inequality: 평균으로 구하는 누적분포의 상한
 > If $ h(X) \geq 0 $ and $ k>0 $, then $ P(h(x)>k) \leq E(h(X))/k $ 
-  
+대부분의 증명은 $ h(X)=X $ 의 경우에 대해 서술하지만 $ h(X) $ 가 양의 값의 범위의 함수라면 $ h(X)=X $ 의 경우와 동일하게 부등식이 성립된다.
+증명은 이 [페이지](https://www.probabilitycourse.com/chapter6/6_2_2_markov_chebyshev_inequalities.php)를 참조한다.
 3. Chebyschev Inequality
 4. Cauchy-Schwarz Inequality
 5. Shannon Inequality
