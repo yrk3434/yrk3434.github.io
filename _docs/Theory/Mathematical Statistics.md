@@ -12,7 +12,7 @@ toc_label: 목차
 - 통계학에서 자주 사용되는 기초적인 성질과 theorem을 다룬다.
 - 이 포스팅에서는 확률론, 회귀분석 등 주요 과목과 중복되는 내용은 제외하고, 여러가지 수리적 
 성질에 관한 내용만 다룬다.
-- reference 책 이상의 범위의 증명은 소병수 교수님의 수리통계학/이론통계학 수업을 참조했다.
+- reference 책 이상의 범위의 내용은 소병수 교수님의 수리통계학/이론통계학 수업을 참조했다.
 
 <br/>
 [사전지식] 확률론, 해석학, 미분적분학
@@ -161,5 +161,6 @@ $ (corr(X,Y))^2 = ( E( X^* Y^* ) )^2 $ <br/>
 $ \geq E( X^{ *2 } ) E( Y^{ *2 } )  = 1 \cdot 1 = 1 $
   
 (5) Shannon Inequality
-> <center> $ (E(XY)^2 \geq E(X^2) E(Y^2) $ <center/>
-> <center> = holds iff $ Y = \lambda X $ for some $ \lambda \in \mathbb{R}  $ <center/>
+> <center> Let $ p(.) $ , $ q(.) $ p.d.f. of $ X \in \mathbb{R} $ & $ E_p(h(x)) = \int h(x) p(x) d\mu $  <center/>
+> <center> Then, $ E_p( ln p(x) ) \leq E_p( ln q(x)) $ <center/>
+> <center> = holds iff $ p(x) = q(x) $ for all $ x $ <center/>
