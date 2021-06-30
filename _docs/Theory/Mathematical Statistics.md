@@ -128,7 +128,11 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
  
 <img class="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ConvexFunction.svg/1280px-ConvexFunction.svg.png"  width=550px/>
   
-> <center> $ \phi( E(X) ) \leq E(\phi(X)) $, $ \phi $ 는 convex function <center/>     
+> <center> If $ \phi $  (strictly) convex function, then $ \phi( E(X) ) \geq E(\phi(X)) $ <center/>     
+
+어떤 함수가 convex(아래로 볼록)일 때 함수값의 평균이 평균의 함수값보다 크거나 같다. 이미지를 보면 쉽게 이해된다. 
+위 부등식의 증명은 [강의노트](https://www.cs.purdue.edu/homes/hmaji/teaching/Spring%202018/lectures/note01.pdf) p5-p6에서 설명한다.
+$ \phi(x) $ 식에 대하여 $ X=\mu $ 에서의 2차 테일러 전개를 이용해 증명한다.
   
 2. Markov Inequality
 3. Chebyschev Inequality
