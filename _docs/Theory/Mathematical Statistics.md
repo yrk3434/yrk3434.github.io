@@ -146,10 +146,15 @@ $ \phi(x) $ 를 $ X=\mu $ 에 대해 2차 테일러 전개를 하여 부등식�
 > <center> If $ E(X)=\mu $, $ Var(X) =\sigma^2 < \infty $ and $ k>0 $, <center/>
 > <center> then $ P(|X-\mu| \leq k \sigma) \geq 1/k^2 $  or  $ P(|X-\mu| \geq k \sigma) \leq 1-1/k^2 $ <center/>
 
-분산 역시 기대값의 일종이다.( $Var(X) = E((X-\mu)^2) $ ) 분산을 구할 때 $ \mu $ 를 기준으로 적분구간을 나눠( ($ (-\infty, \mu) $, $ (\mu, \infty) $ ) 한쪽 적분 구간을 없애 부등식을 만들면 체비셰프 부등식을 증명할 수 있다. 증명 [여기](https://zhengtianyu.wordpress.com/2014/01/04/proof-of-chebyshevs-inequality/)를 참조하길 바란다.
+분산 역시 기대값의 일종이다.( $Var(X) = E((X-\mu)^2) $ ) 분산을 구할 때 $ \mu $ 를 기준으로 적분구간을 나눠( ($ (-\infty, \mu) $, $ (\mu, \infty) $ ) 한쪽 적분 구간을 없애 부등식을 만들면 체비셰프 부등식을 증명할 수 있다. 증명은 [여기](https://zhengtianyu.wordpress.com/2014/01/04/proof-of-chebyshevs-inequality/)를 참조한다.
   
 (4) Cauchy-Schwarz Inequality: 기대값의 곱과 곱의 기대값 대소비교
 > <center> $ (E(XY)^2 \geq E(X^2) E(Y^2) $ <center/>
 > <center> = holds iffs $ Y = \labmda X $ for some $ \labmda \in \mathbb{R}  $ <center/>
+증명은 [여기](https://www.probabilitycourse.com/chapter6/6_2_4_cauchy_schwarz.php)를 참조한다.
+위 부등식에 의해 상관계수의 절대값이 언제나 1 이하임을 밝힐 수 있다. <br/>
+$ X^* = \frac{X-E(X)}{\sqrt{var(X)}} $ <br/>
+$ Y^* = \frac{Y-E(Y)}{\sqrt{var(Y)}} $ <br/>
+$ (corr(X,Y))^2 = (E(X^* Y^*))^2 \geq E(X^{*2}) E(Y^{*2})  = 1 \cdot 1 = 1$
   
 (5) Shannon Inequality
