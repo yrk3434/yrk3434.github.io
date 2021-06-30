@@ -141,9 +141,11 @@ $ \phi(x) $ 를 $ X=\mu $ 에 대해 2차 테일러 전개를 하여 부등식�
 대부분의 증명은 $ h(X)=X $ 의 경우에 대해 서술하지만 $ h(X) $ 가 양의 값의 범위의 함수라면 $ h(X)=X $ 의 경우와 동일하게 부등식이 성립된다.
 증명은 이 [페이지](https://www.probabilitycourse.com/chapter6/6_2_2_markov_chebyshev_inequalities.php)를 참조한다.
   
-(3) Chebyschev Inequality
+(3) Chebyschev Inequality: 표준화된 확률변수의 누적분포확률(probability of CDF) 상한을 구할 수 있다.
 > <center> If $ E(X)=\mu $, $ Var(X) =\sigma^2 < \infty $ and $ k>0 $, <center/>
 > <center> then $ P(|X-\mu| \leq k \sigma) \geq 1/k^2 $  or  $ P(|X-\mu| \geq k \sigma) \leq 1-1/k^2 $ <center/>
+
+증명의 컨셉은 분산 역시 기대값의 일종이다.( $Var(X) = E((X-\mu)^2) $ ) 분산을 구할 때 $ \mu $ 를 기준으로 적분구간을 나눠( ($ (-\infty, \mu) $, $ (\mu, \infty) $ ) 한쪽 적분 구간을 없애 부등식을 만들면 체비셰프 부등식을 증명할 수 있다. 증명 [여기](https://zhengtianyu.wordpress.com/2014/01/04/proof-of-chebyshevs-inequality/)를 참조하길 바란다.
   
 (4) Cauchy-Schwarz Inequality
 (5) Shannon Inequality
