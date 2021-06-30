@@ -151,7 +151,8 @@ $ \phi(x) $ 를 $ X=\mu $ 에 대해 2차 테일러 전개를 하여 부등식�
 (4) Cauchy-Schwarz Inequality: 기대값의 곱과 곱의 기대값 대소비교
 > <center> $ (E(XY)^2 \geq E(X^2) E(Y^2) $ <center/>
 > <center> = holds iff $ Y = \lambda X $ for some $ \lambda \in \mathbb{R}  $ <center/>
-증명은 [여기](https://www.probabilitycourse.com/chapter6/6_2_4_cauchy_schwarz.php)를 참조한다.
+  
+증명은 [여기](https://www.probabilitycourse.com/chapter6/6_2_4_cauchy_schwarz.php)를 참조한다. <br/>
 위 부등식에 의해 상관계수의 절대값이 언제나 1 이하임을 밝힐 수 있다. <br/>
 $ X^* = \frac{X-E(X)}{\sqrt{var(X)}} $ <br/>
 $ Y^* = \frac{Y-E(Y)}{\sqrt{var(Y)}} $ <br/>
