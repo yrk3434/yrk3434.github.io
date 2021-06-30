@@ -48,7 +48,7 @@ toc_label: 목차
 > <center>$ M(t)=E( e^{tX} )  = \sum_x e^{tX} p(x) $ <center/>
 
 위에서 언급했듯이 분포와 MGF는 1:1 대응이다. 따라서 두 확률변수 $ X $, $ Y $가 동일한 확률분포를 가지면 두 확률변수의 MGF 역시 동일하다.
-> 성질1. $ F_X(z) = F_Y(z)$ for all $ z \in \mathbb{R} $ if and only if $ M_X(t) = M_Y(t) $ for all $ t \in (-h,h) $ for some $h>0$  
+> 성질1. $ F_X(z) = F_Y(z)$ for all $ z \in \mathbb{R} $ iff $ M_X(t) = M_Y(t) $ for all $ t \in (-h,h) $ for some $h>0$  
 
 <br/>
 MGF의 이름처럼 $ M_X(t) $ 를 m차 미분하면 확률변수의 m차 기대값을 생성할 수 있다. 
