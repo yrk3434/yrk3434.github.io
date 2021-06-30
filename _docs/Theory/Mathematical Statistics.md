@@ -164,3 +164,5 @@ $ \geq E( X^{ *2 } ) E( Y^{ *2 } )  = 1 \cdot 1 = 1 $
 > <center> Let $ p(.) $ , $ q(.) $ p.d.f. of $ X \in \mathbb{R} $ & $ E_p(h(x)) = \int h(x) p(x) d\mu $  <center/>
 > <center> Then, $ E_p( ln p(x) ) \leq E_p( ln q(x)) $ <center/>
 > <center> = holds iff $ p(x) = q(x) $ for all $ x $ <center/>
+  
+섀넌 부등식을 설명하기에 앞서 정보이론의 엔트로피 개념을 이해해야 한다. 엔트로피는 정보부족으로 인한 불확실성을 의미한다. 정보에 대한 확신(높은 probability density)의 마이너스 부호를 취한 것의 기대값을 엔트로피라고 생각하면 된다.
