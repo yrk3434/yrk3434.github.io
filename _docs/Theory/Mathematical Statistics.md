@@ -126,7 +126,7 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   
 1. Jensen's Inequality
  
-<img class="center" src="https://en.wikipedia.org/wiki/Jensen%27s_inequality#/media/File:ConvexFunction.svg" width=550px/>
+<img class="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ConvexFunction.svg/1280px-ConvexFunction.svg.png"  width=550px/>
   
 > <center> $ \phi( E(X) ) \leq E(\phi(X)) $, $ \phi $ 는 convex function <center/>     
   
