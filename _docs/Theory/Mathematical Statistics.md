@@ -158,7 +158,7 @@ $ \phi(x) $ 를 $ X=\mu $ 에 대해 2차 테일러 전개를 하여 부등식�
 $ X^* = \frac{X-E(X)}{\sqrt{var(X)}} $ <br/>
 $ Y^* = \frac{Y-E(Y)}{\sqrt{var(Y)}} $ <br/>
 $ (corr(X,Y))^2 = ( E( X^* Y^* ) )^2 $ <br/>
-$ \l     eq E( X^{ *2 } ) E( Y^{ *2 } )  = 1 \cdot 1 = 1 $
+$ \leq E( X^{ *2 } ) E( Y^{ *2 } )  = 1 \cdot 1 = 1 $
   
 (5) Shannon Inequality
 > <center> Let $ p(.) $ , $ q(.) $ p.d.f. of $ X \in \mathbb{R} $ & $ E_p(h(x)) = \int h(x) p(x) d\mu $  <center/>
