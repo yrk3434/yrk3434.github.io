@@ -20,17 +20,18 @@ toc_label: 목차
 - [Introduction to Mathematical Statistics, Robert V. Hogg.](https://minerva.it.manchester.ac.uk/~saralees/statbook2.pdf)
 
 # Contents
-1. Probabilty and Distributions
+1. Probabilty and Distributions:
+- MGF, Characteristic Fucntion, Inequalities
 2. Multivariate Distributions
-3. Some Special Distributions
-4. Some Elementary Statistical Inference
-5. Consistency and Limiting Distributions
-6. Maximum Likelihood Methods
-7. Sufficiency
-8. Optimal Tests of Hypotheses
-9. Inferences About Normal Linear Models
-10. Nonparameteric Robust Statistics
-11. Bayesian Statistics 
+4. Some Special Distributions
+5. Some Elementary Statistical Inference
+6. Consistency and Limiting Distributions
+7. Maximum Likelihood Methods
+8. Sufficiency
+9. Optimal Tests of Hypotheses
+10. Inferences About Normal Linear Models
+11. Nonparameteric Robust Statistics
+12. Bayesian Statistics 
 
 # 1. Probabilty and Distributions
 ## 1.9. Some Special Expectations
@@ -147,5 +148,8 @@ $ \phi(x) $ 를 $ X=\mu $ 에 대해 2차 테일러 전개를 하여 부등식�
 
 분산 역시 기대값의 일종이다.( $Var(X) = E((X-\mu)^2) $ ) 분산을 구할 때 $ \mu $ 를 기준으로 적분구간을 나눠( ($ (-\infty, \mu) $, $ (\mu, \infty) $ ) 한쪽 적분 구간을 없애 부등식을 만들면 체비셰프 부등식을 증명할 수 있다. 증명 [여기](https://zhengtianyu.wordpress.com/2014/01/04/proof-of-chebyshevs-inequality/)를 참조하길 바란다.
   
-(4) Cauchy-Schwarz Inequality
+(4) Cauchy-Schwarz Inequality: 기대값의 곱과 곱의 기대값 대소비교
+> <center> $ (E(XY)^2 \geq E(X^2) E(Y^2) $ <center/>
+> <center> = holds iffs $ Y = \labmda X $ for some $ \labmda \in \mathbb{R}  $ <center/>
+  
 (5) Shannon Inequality
