@@ -9,7 +9,7 @@ toc_sticky: true
 toc_label: 목차
 ---
 
-- 통계학에서 근본이 되는 몇 가지 성질과 theorem을 다룬다.
+- 통계학에서 자주 사용되는 기초적인 성질과 theorem을 다룬다.
 - 이 포스팅에서는 확률론, 회귀분석 등 주요 과목과 중복되는 내용은 제외하고, 여러가지 수리적 
 성질에 관한 내용만 다룬다.
 
@@ -120,4 +120,12 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
 1. $ E( e^{it S_n} ) = \phi(t)^n $
 2. CLT 증명 가능
 3. m차 모먼트가 유한하다면, $ \phi^{(m)}(t) = E( \partial^m e^{it X_1} / \partial t^m ) = E( (i X_i )^m e^{it X_1} )  $ <br/>
-  $ \phi^{(m)}(0) = i^m E(X_1^m) $
+  $ \phi^{(m)}(0) = i^m E(X_1^m) $ <br/>
+
+## 1.10. Important Inequalities
+1. Jensen's Inequality
+> $ \phi( E(X) ) \leq E(\phi(X)) $
+2. Markov Inequality
+3. Chebyschev Inequality
+4. Cauchy-Schwarz Inequality
+5. Shannon Inequality
