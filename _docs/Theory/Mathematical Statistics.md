@@ -125,11 +125,10 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
 ## 1.10. Important Inequalities
   
 1. Jensen's Inequality
-> <center> $ \phi( E(X) ) \leq E(\phi(X)) $, $ \phi $ 는 convex function <center/>
-
-<img class="center" 
-src="https://en.wikipedia.org/wiki/Jensen%27s_inequality#/media/File:ConvexFunction.svg" 
-width=550px/>     
+ 
+<img class="center" src="https://en.wikipedia.org/wiki/Jensen%27s_inequality#/media/File:ConvexFunction.svg" width=550px/>
+  
+> <center> $ \phi( E(X) ) \leq E(\phi(X)) $, $ \phi $ 는 convex function <center/>     
   
 2. Markov Inequality
 3. Chebyschev Inequality
