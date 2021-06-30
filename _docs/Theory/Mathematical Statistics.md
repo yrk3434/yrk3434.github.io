@@ -135,13 +135,13 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
 위 부등식의 증명은 [강의노트](https://www.cs.purdue.edu/homes/hmaji/teaching/Spring%202018/lectures/note01.pdf) p5-p6에서 설명한다.
 $ \phi(x) $ 를 $ X=\mu $ 에 대해 2차 테일러 전개를 하여 부등식을 증명한다.
 
-(2) Markov Inequality: 평균으로 구하는 누적분포의 상한  
+(2) Markov Inequality: 평균으로 구하는 누적분포함수확률의 상한  
 > <center> If $ h(X) \geq 0 $ and $ k>0 $, then $ P(h(x)>k) \leq E(h(X))/k $ <center/>   
 
 대부분의 증명은 $ h(X)=X $ 의 경우에 대해 서술하지만 $ h(X) $ 가 양의 값의 범위의 함수라면 $ h(X)=X $ 의 경우와 동일하게 부등식이 성립된다.
 증명은 이 [페이지](https://www.probabilitycourse.com/chapter6/6_2_2_markov_chebyshev_inequalities.php)를 참조한다.
   
-(3) Chebyschev Inequality: 표준화된 확률변수의 누적분포확률(probability of CDF) 상한을 구할 수 있다.
+(3) Chebyschev Inequality: 표준화된 확률변수의 누적분포함수확률 상한
 > <center> If $ E(X)=\mu $, $ Var(X) =\sigma^2 < \infty $ and $ k>0 $, <center/>
 > <center> then $ P(|X-\mu| \leq k \sigma) \geq 1/k^2 $  or  $ P(|X-\mu| \geq k \sigma) \leq 1-1/k^2 $ <center/>
 
