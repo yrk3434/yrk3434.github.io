@@ -134,7 +134,7 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
 위 부등식의 증명은 [강의노트](https://www.cs.purdue.edu/homes/hmaji/teaching/Spring%202018/lectures/note01.pdf) p5-p6에서 설명한다.
 $ \phi(x) $ 식에 대하여 $ X=\mu $ 에서의 2차 테일러 전개를 이용해 증명한다.
   
-2. Markov Inequality: 평균과 분포
+2. Markov Inequality: 평균으로 구하는 누적분포의 상한
 > $ If h(X) \geq 0 $ and $ k>0 $, then $ P(h(x)>k) \leq E(h(X))/k $ 
   
 3. Chebyschev Inequality
