@@ -123,8 +123,13 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   $ \phi^{(m)}(0) = i^m E(X_1^m) $ <br/>
 
 ## 1.10. Important Inequalities
+  
 1. Jensen's Inequality
 > $ \phi( E(X) ) \leq E(\phi(X)) $
+<img class="center" 
+src="https://en.wikipedia.org/wiki/Jensen%27s_inequality#/media/File:ConvexFunction.svg" 
+width=550px/>     
+  
 2. Markov Inequality
 3. Chebyschev Inequality
 4. Cauchy-Schwarz Inequality
