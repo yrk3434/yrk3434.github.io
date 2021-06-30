@@ -123,6 +123,7 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   $ \phi^{(m)}(0) = i^m E(X_1^m) $ <br/>
 
 ## 1.10. Important Inequalities
+기대값, 확률에 관한 부등식을 다룬다. 부등식을 통해 특정 조건에서의 대소관계와 상한 등의 법칙을 알 수 있다.
   
 (1) Jensen's Inequality: 아래로 볼록(convex) 함수와 평균
 <img class="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ConvexFunction.svg/1280px-ConvexFunction.svg.png"  width=550px/>
@@ -139,6 +140,8 @@ $ \phi(x) $ 를 $ X=\mu $ 에 대해 2차 테일러 전개를 하여 부등식�
 증명은 이 [페이지](https://www.probabilitycourse.com/chapter6/6_2_2_markov_chebyshev_inequalities.php)를 참조한다.
   
 (3) Chebyschev Inequality
+> <center> If $ E(X)=\mu $, $ Var(X) =\sigma^2 < \infty $ and $ k>0 $, <center/>
+> <center> then $ P(|X-\mu| \leq k \sigma) \geq 1/k^2 $  or  $ P(|X-\mu| \geq k \sigma) \leq 1-1/k^2 $ <center/>
   
 (4) Cauchy-Schwarz Inequality
 (5) Shannon Inequality
