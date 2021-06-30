@@ -130,7 +130,7 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   
 > <center> If $ \phi $  (strictly) convex function, then $ \phi( E(X) ) \geq E(\phi(X)) $ <center/>     
 
-어떤 함수가 convex(아래로 볼록)일 때 함수값의 평균이 평균의 함수값보다 크거나 같다. 이미지를 보면 쉽게 이해된다. 
+어떤 함수가 convex(아래로 볼록)일 때 함수값의 평균이 평균의 함수값보다 크거나 같다. 이미지를 보면 젠센 부등식을 쉽게 이해할 수 있는데 함수값의 평균은 핑크색 선 위에 있고 평균의 함수값은 검정색 선 위에 있는데 두 점 사이의 구간에서 항상 핑크색 선이 검정색 선보다 위에 있다.
 위 부등식의 증명은 [강의노트](https://www.cs.purdue.edu/homes/hmaji/teaching/Spring%202018/lectures/note01.pdf) p5-p6에서 설명한다.
 $ \phi(x) $ 식에 대하여 $ X=\mu $ 에서의 2차 테일러 전개를 이용해 증명한다.
   
