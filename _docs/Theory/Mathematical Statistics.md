@@ -124,19 +124,21 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
 
 ## 1.10. Important Inequalities
   
-1. Jensen's Inequality: 아래로 볼록(convex) 함수와 평균
+**[Jensen's Inequality]**: 아래로 볼록(convex) 함수와 평균
 <img class="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ConvexFunction.svg/1280px-ConvexFunction.svg.png"  width=550px/>
 > <center> If $ \phi $  (strictly) convex function, then $ \phi( E(X) ) \geq E(\phi(X)) $ <center/> 
-<br/>
+
 어떤 함수가 convex(아래로 볼록)일 때 함수값의 평균이 평균의 함수값보다 크거나 같다. 이미지를 보면 젠센 부등식을 쉽게 이해할 수 있는데 함수값의 평균은 핑크색 선 위에 있고 평균의 함수값은 검정색 선 위에 있는데 두 점 사이의 구간에서 항상 핑크색 선이 검정색 선보다 위에 있다.
 위 부등식의 증명은 [강의노트](https://www.cs.purdue.edu/homes/hmaji/teaching/Spring%202018/lectures/note01.pdf) p5-p6에서 설명한다.
 $ \phi(x) $ 를 $ X=\mu $ 에 대해 2차 테일러 전개를 하여 부등식을 증명한다.
-2. Markov Inequality: 평균으로 구하는 누적분포의 상한
+
+**[Markov Inequality]**: 평균으로 구하는 누적분포의 상한  <br/>
 > <center> If $ h(X) \geq 0 $ and $ k>0 $, then $ P(h(x)>k) \leq E(h(X))/k $ <center/>   
 <br/>
 대부분의 증명은 $ h(X)=X $ 의 경우에 대해 서술하지만 $ h(X) $ 가 양의 값의 범위의 함수라면 $ h(X)=X $ 의 경우와 동일하게 부등식이 성립된다.
 증명은 이 [페이지](https://www.probabilitycourse.com/chapter6/6_2_2_markov_chebyshev_inequalities.php)를 참조한다.
   
-3. Chebyschev Inequality
-4. Cauchy-Schwarz Inequality
-5. Shannon Inequality
+[Chebyschev Inequality]  <br/>
+  
+[Cauchy-Schwarz Inequality]  <br/>
+[Shannon Inequality]  <br/>
