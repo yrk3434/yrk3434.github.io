@@ -238,5 +238,5 @@ cf. 베이지안에서 사용하는 마코브체인은 사후분포가 정상분
 (1) sample $ \theta^* $ from $ f(\theta|\theta^{(t)}) $ <br/>
  x(사전확률)가 주어졌을 때, 다음 iteration step의 후보값 $ \theta^* $ 를 분포 $ g $ 로부터 뽑는다. <br/>
 (2) Metropolis-Hastings ratio 계산 <br/>
-$ R(\theta^{(t)}, \theta^*) = \frac{ f( \theta^* ) }{ f( \theta{(t)}  )  }  $ <br/>
+$ R(\theta^{(t)}, \theta^*) =  \frac{ f(\theta^*) g( \theta^{(t)} | \theta^*) }{ f( \theta^{(t)} ) g( \theta^* | \theta^{(t)}) }  $ <br/>
 
