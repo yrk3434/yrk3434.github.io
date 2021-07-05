@@ -171,7 +171,8 @@ $ \leq E( X^{ *2 } ) E( Y^{ *2 } )  = 1 \cdot 1 = 1 $
 <center> <img class="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Binary_entropy_plot.svg/800px-Binary_entropy_plot.svg.png" width=300px/>  <center/>
 
 <br/>
-[Shannon Inequality] 
+[Shannon Inequality]  
+  
 > <center> Let $ p(.) $ , $ q(.) $ p.d.f. of $ X \in \mathbb{R} $ & $ E_p(h(x)) = \int h(x) p(x) d\mu $  <center/>
 > <center> Then, $ E_p( ln p(x) ) \leq E_p( ln q(x)) $ <center/>
 > <center> = holds iff $ p(x) = q(x) $ for all $ x $ <center/>
