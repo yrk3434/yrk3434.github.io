@@ -192,4 +192,4 @@ $ E_p(\phi(R)) \geq \phi(E_p(R)) = -ln(E_p(R)) = -ln1 = 0 $  <br/>
 [Kullback Leibler Divergence] <br/>
 KL 발산은 엔트로피 개념을 이용해 동일 확률변수 X에 대해 분포 간 유사성을 측정한 것이다. <br/>
 참 확률분포가 $ p(x) $ 일 때 $ p(x) $ 와 어떤 확률분포 $ q(x) $ 의 거리를 쿨백발산으로 나타내면 다음과 같다. $ p(x) = q(x) $ 이면 쿨백발산이 0이다. 
-> <center> $ D_{KL} (p \left \| q) = E_p( ln p(x) - ln q(x) ) = \int p(x) ln \frac{p(x)}{q(x)} d\mu $ <center/>    
+> <center> $ D_{KL} (p | q) = E_p( ln p(x) - ln q(x) ) = \int p(x) ln \frac{p(x)}{q(x)} d\mu $ <center/>    
