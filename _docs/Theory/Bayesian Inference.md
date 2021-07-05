@@ -243,3 +243,6 @@ $ R( \theta^{(t)}, \theta^* ) =   \frac{ f( \theta^* ) g( \theta^{(t)} | \theta^
 $ R( \theta^{(t)}, \theta^* ) = \frac{ f( \theta^* ) }{ f( \theta^{(t)} ) } $ <br/>
 3. $ R( \theta^{(t)} , \theta^* ) $ 에 따라 업데이트를 결정한다. <br/>
 $ \theta^{(t+1)} = \theta^* $ with probability $ min( 1, R( \theta^{(t)}, \theta^* )) $ otherwise $ \theta^{(t)} $
+
+<br/>
+베이지안 추론에서는 데이터가 $ y $ 라 할 때, 모수 $ \theta $ 의 확률분포를 $ f(\theta | y) $ 제안분포 $ g $ 를 likelihood로 두면 된다. 
