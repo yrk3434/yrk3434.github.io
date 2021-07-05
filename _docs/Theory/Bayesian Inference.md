@@ -238,10 +238,9 @@ cf. 베이지안에서 사용하는 마코브체인은 사후분포가 정상분
 (1) sample $ \theta^* $ from $ f(\theta|\theta^{(t)}) $ <br/>
  x(사전확률)가 주어졌을 때, 다음 iteration step의 후보값 $ \theta^* $ 를 분포 $ g $ 로부터 뽑는다.
  
-(2) Metropolis-Hastings ratio 계산 <br/>
-<center> $ R(\theta^{(t)}, \theta^*) = \frac{ f(\theta^*) g(\theta^{(t)}|\theta^*) }{ f(\theta^{(t)}) g(\theta^*|\theta^{(t)}) } $ <center/> <br/>
-여기서 메트로폴리스 헤이스팅스 알고리즘은 $ g $ 가 symmetric한 경우다. 즉, $ g(\theta^{(t)}|\theta^*) = g(\theta^*|\theta^{(t)}). $ 따라서 <br/> 
-<center> $ R(\theta^{(t)}, \theta^*) = \frac{ f(\theta^*) }{ f(\theta^{(t)}) } $ <center/> <br/>
+(2) Metropolis-Hastings ratio 계산: $ R(\theta^{(t)}, \theta^*) = \frac{ f(\theta^*) g(\theta^{(t)}|\theta^*) }{ f(\theta^{(t)}) g(\theta^*|\theta^{(t)}) } $ <br/>
+여기서 메트로폴리스 헤이스팅스 알고리즘은 $ g $ 가 symmetric한 경우다. 즉, $ g(\theta^{(t)}|\theta^*) = g(\theta^*|\theta^{(t)}). $ 따라서
+$ R(\theta^{(t)}, \theta^*) = \frac{ f(\theta^*) }{ f(\theta^{(t)}) } $ <br/>
  
 (3) $ R(\theta^{(t)}, \theta^*) $ 에 따라 업데이트를 결정한다. <br/>
 $ \theta^{(t+1)} = \theta^* $ with probability $ min(R(\theta^{(t)}, \theta^*)) $ otherwise $ \theta^{(t)} $
