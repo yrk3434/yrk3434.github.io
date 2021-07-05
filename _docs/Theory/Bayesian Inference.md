@@ -240,5 +240,5 @@ cf. 베이지안에서 사용하는 마코브체인은 사후분포가 정상분
 (2) Metropolis-Hastings ratio 계산 <br/>
 $ R( \theta^{(t)}, \theta^* ) =   \frac{ f( \theta^* ) g( \theta^{(t)} | \theta^* ) }{ f( \theta^{(t)} ) g( \theta^* | \theta^{(t)}) } $  <br/>
 
-여기서 메트로폴리스 헤이스팅스 알고리즘은 $ g $ 가 symmetric한 경우다. 즉, $ g(\theta^{(t)}|\theta^*) = g(\theta^*|\theta^{(t)}) $ . 따라서
-$ R(\theta^{(t)}, \theta^*) = \frac{ f(\theta^*) }{ f(\theta^{(t)}) } $ <br/>
+여기서 메트로폴리스 헤이스팅스 알고리즘은 $ g $ 가 symmetric한 경우다. 즉, $ g( \theta^{(t)} | \theta^* ) = g( \theta^* | \theta^{(t)} ) $ . 따라서
+$ R( \theta^{(t)}, \theta^* ) = \frac{ f( \theta^* ) }{ f( \theta^{(t)} ) } $ <br/>
