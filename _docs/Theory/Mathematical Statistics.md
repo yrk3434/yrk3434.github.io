@@ -171,5 +171,5 @@ $ \leq E( X^{ *2 } ) E( Y^{ *2 } )  = 1 \cdot 1 = 1 $
 > <center> $ H(x) = E( - ln f(x) ) = - \int f(x) ln f(x) $  <center/>
  
 간단한 예로 동전을 던지는 행위를 X라 하고 동전이 앞면이 나오는 사건을 X=1이라고 하자. 동전이 앞면이 나올 확률(x축)에 따른 엔트로피(y축)를 그리면 다음과 같다. 상식과 부합하게 앞면이 나올 확률과 뒷면이 나올 확률이 반반(P(X=1)=0.5)일 때 가장 높은 불확실성, 즉 엔트로피를 갖는다.
-<img class="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Binary_entropy_plot.svg/800px-Binary_entropy_plot.svg.png"  width=300px/>
+<center> <img class="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Binary_entropy_plot.svg/800px-Binary_entropy_plot.svg.png" width=300px/>  <center/>
 
