@@ -1,16 +1,23 @@
-﻿
-구매정보
-------------
+---
+title: SCM & Logistics
+category: Domain
+order: 3
+use_math: true
+comments: true
+toc: true
+toc_sticky: true
+toc_label: 목차
+---
 
-참고 
-------------
+
+## Reference 
 [유통]
 - https://m.post.naver.com/viewer/postView.nhn?volumeNo=10237032&memberNo=36733075
 - https://byline.network/2019/05/11-58/
 
 [물류]
 - https://www.samsungsds.com/kr/insights/102817_L_whitepaper7.html
----
+
 
 # 1. 유통 용어 정리
 프로젝트 관리는 일반적으로 **지정된 기간 내**에 특정 제품, 서비스 또는 결과를 생산하기 위해 수행되는 일련의 작업
