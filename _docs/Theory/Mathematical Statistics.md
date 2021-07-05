@@ -185,7 +185,7 @@ Let $ R = q(x)/p(x) $ , $ \phi(r) = -ln r $ ,  $ r>0 $ . Then $ \phi '' (r) = 1/
 $ \phi(r) $ 은 2차 미분값이 항상 양수이므로 strictly convex다. 따라서 (1) 젠센부등식을 대입할 수 있다. <br/>
 젠센 부등식에 의해 <br/>
 $ E_p(\phi(R)) \geq \phi(E_p(R)) = -ln(E_p(R)) = -ln1 = 0 $  <br/>
- since $ E_p(R) = \int \frac{q(x)}{p(x)} p(x)  d\mu = \int q(x) d\mu = 1 $ (실수 전 구간에 대해 확률분포를 적분하면 언제나 1) <br/>
+ since $ E_p(R) = \int \frac{q(x)}{p(x)} p(x)  d\mu = \int q(x) d\mu = 1 $ (실수 전 구간에 대해 확률분포를 적분 1) <br/>
  $ \therefore  E_p(\phi(R)) = E(-ln (q(x)/p(x))) \geq 0 $ <br/>
   $ E(ln (p(x)) \geq E(ln (q(x)) $ <br/>
 
