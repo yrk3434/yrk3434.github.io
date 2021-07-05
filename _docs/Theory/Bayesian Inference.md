@@ -233,9 +233,10 @@ cf. 베이지안에서 사용하는 마코브체인은 사후분포가 정상분
 ## 6.1. Metropolis-Hastings
 
 현재 상태를 t, 다음 상태를 t+1이라 하자. 그리고 $ \theta \sim f(\theta) $ 이고 제안분포(proposal distribution가 $ g $ 라 하자. 
-(제안분포는 이전 현재값 $ \theta^{(t)} $ 과 다음값의 후보값 $ \theta^{*}_{(t+1)} $ 간의 조건부 확률을 의미한다.) 
+(제안분포는 이전 현재값 $ \theta^{(t)} $ 과 다음값의 후보값 $ \theta^* $ 간의 조건부 확률을 의미한다.) 
 <br/>
-(1) sample $ \theta^* $ from $ f(\theta|\theta^{(t)}) $ : x(사전확률)가 주어졌을 때, 다음 iteration step의 후보값 $ \theta^* $ 를 분포 $ g $ 로부터 뽑는다. <br/>
+(1) sample $ \theta^* $ from $ f(\theta|\theta^{(t)}) $ <br/>
+ x(사전확률)가 주어졌을 때, 다음 iteration step의 후보값 $ \theta^* $ 를 분포 $ g $ 로부터 뽑는다. <br/>
 (2) Metropolis-Hastings ratio 계산 <br/>
 <center> $ R(\theta^{(t)}, \theta^*) = \frac{ f(\theta^*) g(\theta^{(t)}|\theta^*) }{ f(\theta^{(t)}) g(\theta^*|\theta^{(t)}) } $ <center/> <br/>
 여기서 메트로폴리스 헤이스팅스 알고리즘은 $ g $ 가 symmetric한 경우다. ( $ g(\theta^{(t)}|\theta^*) = g(\theta^*|\theta^{(t)}) $ <br/>
