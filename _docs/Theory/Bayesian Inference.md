@@ -214,7 +214,8 @@ MCMC 시뮬레이션을 설명하기에 앞서 몬테카를로방법과 마코�
 마코브 체인은 마코브성질(직전 하나의state만 기억하는 memoryless 성질)을 가진 확률과정을 의미한다. 즉, n+1번째 상태의 값인 $ X_{n+1} $ 의 값은 직전 상태인 $ X_n $ 에만 의존한다.
 상태 공간이 이산일 때 마코브체인을 수식화하면 다음과 같다. <br/>
 <center> $ P(X_{n+1}|X_1=x_1, ..., X_n=x_n ) = P(X_{n+1}|X_n=x_n) $ </center>
-
+cf. 베이지안에서 사용하는 마코브체인은 사후분포가 정상분포(stationary distribution)일 때 적용한다. 정상분포란 시점에 상관없이 유한한 transition 횟수 후에 원래 상태로 돌아오고(positive recurrent), 모든 상태가 상호 도달 가능하며(irreducible), 주기적으로 원래 상태가 되지 않는(aperiodic) 전이확률분포를 일컫는다. 이상의 설명은 확률과정론을 찾아보길 바란다. 
+ 
 <br/>
 다시 돌아와 MCMC 시뮬레이션을 통한 사후 모수의 추정을 알아보겠다.
 사후 모수를 $ \theta' $ 라 하자. MCMC 시뮬레이션을 통해 사후 모수의 표본 $ \theta_1' $ , ..., $ \theta_n' $ 을 뽑는다. 
@@ -228,3 +229,11 @@ MCMC 시뮬레이션을 설명하기에 앞서 몬테카를로방법과 마코�
 현재 사후 샘플을 $ \theta_k' $ 라 할 때, MCMC 시뮬레이션을 통해 뽑은 사후 샘플 후보를 $ \theta_{k+1}' $ 로 업데이트할지 현재값을 유지할지 채택한다. 
 이 때, 채택확률이 1 이하 일 때의 MCMC 시뮬레이션 **메트로폴리스-헤이스팅스 알고리즘**이라 부르고, 
  채택확률이 1일 때 MCMC 시뮬레이션을 **깁스샘플링**이라 부른다. 즉 깁스샘플링은 메트로폴리스-헤이스팅스 알고리즘의 특수한 케이스다.
+
+ ## 6.1. Metropolis-Hastings
+ 현재 상태를 t, 다음 상태를 t+1이라 하자. 그리고 $ \theta \sim f(\theta) $ 이고 제안분포(proposal distribution가 $ g $ 라 하자. (제안분포는 이전 현재값 $ \theta^{(t)} $ 과 다음값의 후보값 $ \theta^{proposal}_{(t+1)} $ 간의 조건부 확률을 의미한다.) 
+
+(1) sample $ \theta $ from $ f(\theta|\theta^{(t)}) $ : x(사전확률)가 주어졌을 때, 다음 iteration step의 후보값 $ \theta $ 를 분포 $ g $ 로부터 뽑는다.
+(2) Metropolis-Hastings ratio 계산
+<center> $ R(\theta, \theta^{(t)} = \frac{ f(\theta)g(\theta^{(t)}|\theta) }{ f(\theta^{(t)})g(\theta|\theta^{(t)}) } $ <center/>
+(3) $ R(\theta, \theta^{(t)} $ 업데이트를 결정한다.
