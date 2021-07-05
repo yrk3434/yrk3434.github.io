@@ -161,9 +161,6 @@ $ (corr(X,Y))^2 = ( E( X^* Y^* ) )^2 $ <br/>
 $ \leq E( X^{ *2 } ) E( Y^{ *2 } )  = 1 \cdot 1 = 1 $
   
 (5) Shannon Inequality
-> <center> Let $ p(.) $ , $ q(.) $ p.d.f. of $ X \in \mathbb{R} $ & $ E_p(h(x)) = \int h(x) p(x) d\mu $  <center/>
-> <center> Then, $ E_p( ln p(x) ) \leq E_p( ln q(x)) $ <center/>
-> <center> = holds iff $ p(x) = q(x) $ for all $ x $ <center/>
   
 섀넌 부등식을 설명하기에 앞서 정보이론의 엔트로피 개념을 이해해야 한다. 엔트로피는 정보부족으로 인한 불확실성을 의미한다. 정보에 대한 확신(로그 확률 밀도)에 마이너스 부호를 취한 것의 기대값을 엔트로피라고 생각하면 된다. 따라서 deterministic(확정적)일수록 엔트로피가 낮다. 정보 엔트로피의 정의는 다음과 같다. <br/>
   
@@ -173,3 +170,8 @@ $ \leq E( X^{ *2 } ) E( Y^{ *2 } )  = 1 \cdot 1 = 1 $
 간단한 예로 동전을 던지는 행위를 X라 하고 동전이 앞면이 나오는 사건을 X=1이라고 하자. 동전이 앞면이 나올 확률(x축)에 따른 엔트로피(y축)를 그리면 다음과 같다. 상식과 부합하게 앞면이 나올 확률과 뒷면이 나올 확률이 반반(P(X=1)=0.5)일 때 가장 높은 불확실성, 즉 엔트로피를 갖는다.
 <center> <img class="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Binary_entropy_plot.svg/800px-Binary_entropy_plot.svg.png" width=300px/>  <center/>
 
+[Shannon Inequality]
+> <center> Let $ p(.) $ , $ q(.) $ p.d.f. of $ X \in \mathbb{R} $ & $ E_p(h(x)) = \int h(x) p(x) d\mu $  <center/>
+> <center> Then, $ E_p( ln p(x) ) \leq E_p( ln q(x)) $ <center/>
+> <center> = holds iff $ p(x) = q(x) $ for all $ x $ <center/>
+  
