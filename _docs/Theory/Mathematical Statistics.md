@@ -178,3 +178,13 @@ $ \leq E( X^{ *2 } ) E( Y^{ *2 } )  = 1 \cdot 1 = 1 $
 > <center> = holds iff $ p(x) = q(x) $ for all $ x $ <center/>
   
 다시 섀넌 부등식을 설명하면, 섀넌 부등식은 참 분포가 $ p $ 일 때 분포 $ p $ 에서의 로그기대값의은 어떤 분포 $ q $ 의 로그기대값보다 크거나 같다는 내용의 부등식이다. 
+적절한 증명이 없어 다음 증명은 소병수 교수님의 수업을 참고했다. <br/>
+
+Let $ R = q(x)/p(x) $ , $ \phi(r) = -ln r $ ,  $ r>0 $ . Then $ \phi '' (r) = 1/ r2  > 0 $ <br/>
+여기서 참 확률 분포는 $ p(x) $ , 후보 확률 분포는  $ q(x) $ 라 하자.
+$ \phi(r) $ 은 2차 미분값이 항상 양수이므로 strictly convex다. 따라서 (1) 젠센부등식을 대입할 수 있다. <br/>
+젠센 부등식에 의해 <br/>
+(a) $ E_p(\phi(R)) \leq \phi(E_p(R)) = -ln(E_p(R)) = -ln1 = 0 $  <br/>
+ since $ E_p(R) = \int \frac{q(x)}{p(x)} p(x)  d\mu = \int q(x) d\mu = 1 $ (실수 전 구간에 대해 확률분포를 적분하면 언제나 1) <br/>
+ \therefore $ E_p(\phi(R)) = E(-ln (q(x)/p(x))) \leq 0 $ <br/>
+  $ E(ln (p(x)) \leq E(ln (q(x)) $ <br/>
