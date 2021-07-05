@@ -230,8 +230,10 @@ cf. 베이지안에서 사용하는 마코브체인은 사후분포가 정상분
 이 때, 채택확률이 1 이하 일 때의 MCMC 시뮬레이션 **메트로폴리스-헤이스팅스 알고리즘**이라 부르고, 
  채택확률이 1일 때 MCMC 시뮬레이션을 **깁스샘플링**이라 부른다. 즉 깁스샘플링은 메트로폴리스-헤이스팅스 알고리즘의 특수한 케이스다.
 
- ## 6.1. Metropolis-Hastings
- 현재 상태를 t, 다음 상태를 t+1이라 하자. 그리고 $ \theta \sim f(\theta) $ 이고 제안분포(proposal distribution가 $ g $ 라 하자. (제안분포는 이전 현재값 $ \theta^{(t)} $ 과 다음값의 후보값 $ \theta^{proposal}_{(t+1)} $ 간의 조건부 확률을 의미한다.) 
+## 6.1. Metropolis-Hastings
+
+현재 상태를 t, 다음 상태를 t+1이라 하자. 그리고 $ \theta \sim f(\theta) $ 이고 제안분포(proposal distribution가 $ g $ 라 하자. 
+(제안분포는 이전 현재값 $ \theta^{(t)} $ 과 다음값의 후보값 $ \theta^{*}_{(t+1)} $ 간의 조건부 확률을 의미한다.) 
 <br/>
 (1) sample $ \theta^* $ from $ f(\theta|\theta^{(t)}) $ : x(사전확률)가 주어졌을 때, 다음 iteration step의 후보값 $ \theta^* $ 를 분포 $ g $ 로부터 뽑는다. <br/>
 (2) Metropolis-Hastings ratio 계산 <br/>
