@@ -12,11 +12,11 @@ toc_label: 목차
 
 ## Reference 
 [유통]
-- https://m.post.naver.com/viewer/postView.nhn?volumeNo=10237032&memberNo=36733075
-- https://byline.network/2019/05/11-58/
+- [삼성SDS블로그](https://m.post.naver.com/viewer/postView.nhn?volumeNo=10237032&memberNo=36733075)
+- [뉴스기사](https://byline.network/2019/05/11-58/)
 
 [물류]
-- https://www.samsungsds.com/kr/insights/102817_L_whitepaper7.html
+- [삼성SDS사이트](https://www.samsungsds.com/kr/insights/102817_L_whitepaper7.html)
 
 
 # 1. 유통 용어 정리
