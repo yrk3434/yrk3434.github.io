@@ -54,16 +54,19 @@ toc_label: 목차
 
 <img class="center" src="https://res.cloudinary.com/practicaldev/image/fetch/s--O_kCr-s2--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/lkli02223oqhlac1jetz.png" style="float:right" width=550px></img>
 
-직선으로 위와 같이 문제를 해결할 수 없을 때, 여러 층의 퍼셉트론(MLP)을 사용하여 **비선형** 식을 만들어 문제를 해결해야 한다.
+<br/>
+결론: 선형식으로 위와 같이 문제를 해결할 수 없을 때, 여러 층의 퍼셉트론(MLP)을 사용하여 **비선형** 식을 만들어 문제를 해결해야 한다.
 
 ## 1.2. Gradient-Based Learning
 
 피드포워드 신경망은 비선형 함수이고 그에 따라 **손실함수는 non-convex**다. 그 의미는 손실함수의 최소값을 찾으려면, iterative하게 gradient 최적화를 해야한다. <br/>
+<br/>
 참고. 연속적으로 미분 가능하며 아래로 볼록(convexity)인 함수는 전역 최소값이 항상 존재한다. <br/>
+<br/>
 참고. 이 블로그 포스팅 [Computational Statistics_Optimization](https://yrk3434.github.io/Theory/Computational%20Statistics_Optimization/) ch2. Optimization of Nonlinear Equations를 읽어보자.
 
 ### 1.2.1. 손실 함수
-
+<br/>
 1. 분류문제: 크로스 엔트로피
 
 1.1. 관점1. 정보이론의 엔트로피 <br/>
@@ -90,7 +93,6 @@ $ ln p(x_1, x_2,..., x_k|n, p_1, p_2, ..., p_k)=ln\frac{n!}{x_1!x_2!...x_k!} + x
 독립시행이 1번일 때 $ ln\frac{n!}{x_1!x_2!...x_k!}= ln(1) =0 $ 이다. 0인 항을 소거하고 마이너스 로그를 취하면 우리가 아는 꼴의 크로스 엔트로피가 나온다. <br/>
 $ - ln p(x_1, x_2,..., x_k|n, p_1, p_2, ..., p_k)= - (x_1 ln p_1 + x_2 ln p_2 + ... + x_k ln p_k) $ ...(a)
 
-<br/>
 - 3개의 카테고리를 분류하는 문제의 경우를 생각해보자. 어떤 관측치가 1번 클래스이면 label은 [1,0,0]이다. 다항분포로 생각하면, 총 독립시행이 1번일 때, 1번째 카테고리의 사건 발생횟수는 1, 나머지 카테고리의 사건 발생횟수는 0인 경우다. 즉, [ $ x1 $, $ x2 $ , $ x3 $ ]이 [1,0,0]이다. 또한, 각 카테고리의 사건이 발생할 확률  [ $ p1 $, $ p2 $ , $ p3 $ ] 은 우리가 추정한 값의 분포라고 생각하면 된다. 예를 들어 softmax를 거쳐 추정한 값이 [0.7,0.2,0.1]이면 이것이 각 카테고리가 발생할 확률이다. 따라서 이 관측치의 마이너스 로그 우도 함수 값은 (a) 식에 의해 -{1xln(0.7) + 0xln(0.2)+0xln(0.1)} 다. 
 	
 1.3. 시그모이드와 이진분류
