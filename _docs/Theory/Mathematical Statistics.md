@@ -173,7 +173,7 @@ $ \leq E( X^{ *2 } ) E( Y^{ *2 } )  = 1 \cdot 1 = 1 $
 [Shannon Inequality]  
   
 > <center> Let $ p(.) $ , $ q(.) $ p.d.f. of $ X \in \mathbb{R} $ & $ E_p(h(x)) = \int h(x) p(x) d\mu $  <center/>
-> <center> Then, $ E_p( ln p(x) ) \leq E_p( ln q(x)) $ <center/>
+> <center> Then, $ E_p( ln p(x) ) \geq E_p( ln q(x)) $ <center/>
 > <center> = holds iff $ p(x) = q(x) $ for all $ x $ <center/>
   
 다시 섀넌 부등식을 설명하면, 섀넌 부등식은 참 분포가 $ p $ 일 때 분포 $ p $ 에서의 로그기대값의은 어떤 분포 $ q $ 의 로그기대값보다 크거나 같다는 내용의 부등식이다. 
