@@ -52,7 +52,7 @@ toc_label: 목차
 - 퍼셉트론의 한계 <br/>
 퍼셉트론은 일종의 **이진 분류기**다. 어떤 **선형식** $ w \cdot x $ 을 기준으로  $ w \cdot x >0 $ 이면  1 아니면 0을 반환한다. 여기서 $ w $ 는 가중치다. 한 층의 퍼셉트론이 갖는 대표적인 한계가 선형으로 분류 되지 않는 XOR 문제다. $ x_1 $ , $ x_2 $ 이 1 또는 0을 갖는 논리값이라고 할 때, XOR은 $ x_1 $ , $ x_2 $ 중 하나만 1일 때 1을 반환하고, 나머지의 경우 0을 반환하는 논리회로다. 아래 그림과 같이 XOR은 하나의 직선으로 두 색깔의 점을 분류할 수 없다. 즉 퍼셉트론으로 XOR 분류 문제를 해결할 수 없다. 
 
-![Image](https://res.cloudinary.com/practicaldev/image/fetch/s--O_kCr-s2--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/lkli02223oqhlac1jetz.png)
+![Image](https://res.cloudinary.com/practicaldev/image/fetch/s--O_kCr-s2--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/lkli02223oqhlac1jetz.png){: height="200"}
 
 결론: 선형식으로 위와 같이 문제를 해결할 수 없을 때, 여러 층의 퍼셉트론(MLP)을 사용하여 **비선형** 식을 만들어 문제를 해결해야 한다.
 
