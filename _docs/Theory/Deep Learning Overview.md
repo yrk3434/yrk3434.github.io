@@ -67,6 +67,7 @@ toc_label: 목차
 
 ### 1.2.1. 손실 함수
 <br/>
+
 #### 분류문제: 크로스 엔트로피
 
 (1) 관점1. 정보이론의 엔트로피 <br/>
@@ -118,7 +119,9 @@ $ - ln p(x_1, x_2,..., x_k|n, p_1, p_2, ..., p_k)= - (x_1 ln p_1 + x_2 ln p_2 + 
 - 소프트맥스 함수: $ k $ 개 요소를 가진 벡터 $ x =(x_1, x_2, ...,x_k) $에 대해 $ \sigma (x)_i = \frac{ e^{x_i} }{ \sum^k_{j=1}e^{x_j} } $  
 		
 #### 회귀문제: MSE
-
+- 회귀 문제의 경우 모델을 통해 추정한 값과 참값 간 손실함수로 MSE를 사용한다.
+- $ MSE=\frac{1}{n} \sum^n_{i=1} (Y_i - \hat{Y_i})^2 $ , 단 $ Y_i $ 는 참값, $ \hat{Y_i} $ 는 
+- 
 # 2. Regularization for Deep Learning
 
 # 3. Optimization for Training Deep
