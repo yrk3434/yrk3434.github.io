@@ -105,7 +105,7 @@ $ - ln p(x_1, x_2,..., x_k|n, p_1, p_2, ..., p_k)= - (x_1 ln p_1 + x_2 ln p_2 + 
 <br/>
 
 (3) 시그모이드와 이진분류 <br/>
-![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Error_Function.svg/1280px-Error_Function.svg.png){: height="200"}
+![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Error_Function.svg/1280px-Error_Function.svg.png){: height="50"}
 
 - 클래스가 1개(사건이 발생, 즉 해당 label이거나 아니거나로 해석, 다항분포에서의 클래스 수 k=1), 독립시행 1번인 다항분포에 해당한다. 즉 베르누이 분포에 해당한다.
 - 시그모이드 함수: $ \sigma(x) = \frac{1}{1+e^{-x}} $
