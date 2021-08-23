@@ -127,12 +127,19 @@ $ - ln p(x_1, x_2,..., x_k|n, p_1, p_2, ..., p_k)= - (x_1 ln p_1 + x_2 ln p_2 + 
 딥러닝에서 주로 사용하는 활성함수들은 모든 정의역에 대해 미분가능한 것은 아니다. ReLU의 경우 0 이하의 정의역에서는 미분값이 0인데 파라미터를 0으로 추정하는 것은 바라는 바가 아니다. 이 이슈에 대해서는 뒤 챕터 3. Optimization for Training Deep에서 다루겠다.
 
 ## 1.3.1. ReLU와 ReLU의 일반화 버전
-ReLu: $ g(x) = max{0,z} $  <br/>
 활성화함수의 역할은 레이어를 통과한 식을 아핀변환하는 것이다. <br/>
 $ h = g(W^T x+b) $   <br/>
-단순하게 이야기하자면, 활성화 함수는 레이어를 통과한 결과값의 성질을 유지하되 값의 범위를 shift하는 역할을 한다.
-![Image](
-https://homepages.inf.ed.ac.uk/rbf/HIPR2/affineb.gif)
+단순하게 이야기하자면, 활성화 함수는 레이어를 통과한 결과값의 성질을 유지하되 값의 범위를 shift하는 역할을 한다. <br/>
+![Image](https://homepages.inf.ed.ac.uk/rbf/HIPR2/affineb.gif)
+
+<br/>
+다음은 기본적인 ReLU와 일반화된 버전의 ReLU다. 
+- ReLu: $ g(x) = max{0,z} $  <br/> 
+기본 ReLU는 음수의 정의역에 대해 모두 0으로 반환한다.
+- 0 이하의 정의역 구간 $ z_i<0 $에 대해 활성화 함수를 수정하면 다음과 같다. 0이 아닌 기울기인 $ \alpha $ 를 적용해 활성함수를 다음 가중합 $ h_i = g(z, \alpha)_i = max(0,z_i) + \alpha_i min(0, z_i) $ 으로 수정한다.
+
+- Absolute value Rectification: 위 식에서 $ \alpha=-1 $ 인 버전이다. 이 경우 $ g(z) = |z| $ 가 된다.
+- Leaky ReLU: 위 식에서 $ \alpha $ 값이 0.01과 같이 작은 값으로 고정하는 경우다.
 
 ## 1.3.2. Logistic Sigmoid & Hyperbolic Tangent
 
