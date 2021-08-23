@@ -132,7 +132,7 @@ ReLu: $ g(x) = max{0,z} $  <br/>
 $ h = g(W^T x+b) $   <br/>
 단순하게 이야기하자면, 활성화 함수는 레이어를 통과한 결과값의 성질을 유지하되 값의 범위를 shift하는 역할을 한다.
 ![Image](
-https://homepages.inf.ed.ac.uk/rbf/HIPR2/affineb.gif){: height="200"}
+https://homepages.inf.ed.ac.uk/rbf/HIPR2/affineb.gif)
 
 ## 1.3.2. Logistic Sigmoid & Hyperbolic Tangent
 
