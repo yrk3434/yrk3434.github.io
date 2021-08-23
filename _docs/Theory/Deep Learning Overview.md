@@ -116,7 +116,7 @@ $ - ln p(x_1, x_2,..., x_k|n, p_1, p_2, ..., p_k)= - (x_1 ln p_1 + x_2 ln p_2 + 
 
 (4) 소프트맥스와 다항분류
 - 클래스가 2개 이상, 독립시행이 1번인 다항분포에 해당한다.
-- 소프트맥스 함수: $ k $ 개 요소를 가진 벡터 $ x =(x_1, x_2, ...,x_k) $에 대해 $ \sigma (x)_i = \frac{e^{x_i}}{\sum^k_{j=1}e^{x_j}} $  
+- 소프트맥스 함수: $ k $ 개 요소를 가진 벡터 $ x =(x_1, x_2, ...,x_k) $에 대해 $ \sigma (x)_i = \frac{ e^{x_i} }{ \sum^k_{j=1} e^{x_j} } $  
 		
 #### 회귀문제: MSE
 - 회귀 문제의 경우 모델을 통해 추정한 값과 참값 간 손실함수로 MSE를 사용한다.
@@ -139,7 +139,7 @@ $ h = g(W^T x+b) $   <br/>
 <br/>
 [변형] <br/>
 - ReLU의 $ z_i<0 $ 구간에 대해 가중합 $ h_i = g(z, \alpha)_i = max(0,z_i) + \alpha_i min(0, z_i) $ 으로 수정한다. 단, $ \alpha $ 는  0이 아닌 기울기   <br/>
-- Absolute value Rectification: $ \alpha=-1 $인 버전. 이 경우 $ g(z) = \abs{z} $ 가 된다.  <br/>
+- Absolute value Rectification: $ \alpha=-1 $인 버전. 이 경우 $ g(z) =  \lvert z  \lvert $ 가 된다.  <br/>
 - Leaky ReLU: $ \alpha $ 값이 0.01과 같이 작은 값으로 고정하는 경우다.  <br/>
 
 ## 1.3.2. Logistic Sigmoid & Hyperbolic Tangent
