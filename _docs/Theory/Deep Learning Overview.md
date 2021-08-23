@@ -141,7 +141,7 @@ $ h = g(W^T x+b) $   <br/>
 a. 기본형
 - ReLu: $ g(x) = max{0,z} $ 기본 ReLU는 음수의 정의역에 대해 모두 0으로 반환한다. <br/>
 
-b. 변형 <br/>
+b. 변형 
 - ReLU의 $ z_i<0 $ 구간에 대해 가중합 $ h_i = g(z, \alpha)_i = max(0,z_i) + \alpha_i min(0, z_i) $ 으로 수정한다. 단, $ \alpha $ 는  0이 아닌 기울기   <br/>
 - Absolute value Rectification: $ \alpha=-1 $인 버전. 이 경우 $ g(z) =  \lvert z  \lvert $ 가 된다.  <br/>
 - Leaky ReLU: $ \alpha $ 값이 0.01과 같이 작은 값으로 고정하는 경우다.  <br/>
