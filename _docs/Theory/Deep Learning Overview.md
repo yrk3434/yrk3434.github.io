@@ -156,10 +156,18 @@ b. 변형
 
 <img src="https://www.researchgate.net/profile/Junxi-Feng/publication/335845675/figure/fig3/AS:804124836765699@1568729709680/Commonly-used-activation-functions-a-Sigmoid-b-Tanh-c-ReLU-and-d-LReLU.ppm" width="60%">
 
-- Sigmoid Activation: $ g(z) = \sigma (z) $ , binary classification에서 positive일 확률을 구하는 활성화 함수, 절대값이 큰 음수 값은 0에 가까운 값으로 활성화되고, 절대값이 큰 양수 값은 1에 가까운 값으로 활성화, gradient 기반의 파라미터 추정에서는 파라미터의 전달이 0이면 좋지 않기 때문에, sigmoid 활성화 함수는 주로 hidden layer가 아닌 output layer에 적용됨
-- Hyperbolic Tangent Activation: $ g(z) = tanh(z) $ , 
+- Sigmoid Activation: $ g(z) = \sigma (z) $  <br/> 
+binary classification에서 positive일 확률을 구하는 활성화 함수, 절대값이 큰 음수 값은 0에 가까운 값으로 활성화되고, 절대값이 큰 양수 값은 1에 가까운 값으로 활성화(saturation), gradient 기반의 파라미터 추정에서는 파라미터의 전달이 0이면 좋지 않기 때문에, sigmoid 활성화 함수는 주로 hidden layer가 아닌 output layer에 적용됨 <br/> 
+- Hyperbolic Tangent Activation: $ g(z) = tanh(z) $   <br/> 
+ $ \sigma(0) = \frac{1}{2} $ 인데 반해 $ \tanh(0) = 0 $ <br/> 이라는 점에서 $ z=0 $ 부근에서 tanh가 sigmoid보다 identity 함수(y=x)과 비슷하다. 이러한 특징은 $ tanh $ 활성 함수를 사용했을 때 파라미터 최적화를 하는 학습을 용이하게 한다.
 - 두 활성 함수의 관계: $ tanh(z) = 2 \sigma (2z) -1 $
 
+### 1.3.3. Other Hidden Units
+
+- Softmax
+- Radial basis function
+- Softplus
+- Hard tanh
 
 
 # 2. Regularization for Deep Learning
