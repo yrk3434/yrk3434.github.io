@@ -129,7 +129,7 @@ $ - ln p(x_1, x_2,..., x_k|n, p_1, p_2, ..., p_k)= - (x_1 ln p_1 + x_2 ln p_2 + 
 이 챕터에서는 은닉층의 활성화함수에 대해 살펴보겟다. <br/>
 딥러닝에서 주로 사용하는 활성함수들은 모든 정의역에 대해 미분가능한 것은 아니다. ReLU의 경우 0 이하의 정의역에서는 미분값이 0인데 파라미터를 0으로 추정하는 것은 바라는 바가 아니다. 이 이슈에 대해서는 뒤 챕터 3. Optimization for Training Deep에서 다루겠다.
 
-## 1.3.1. ReLU와 ReLU의 일반화 버전
+### 1.3.1. ReLU와 ReLU의 일반화 버전
 활성화함수의 역할은 레이어를 통과한 식 $ W^T x+b $ 을 아핀변환 $ g $ 하는 것이다. <br/>
 $ h = g(W^T x+b) $   <br/>
 단순하게 이야기하자면, 활성화 함수는 레이어를 통과한 결과값의 성질을 유지하되 값의 범위를 shift하는 역할을 한다. 다음 그림을 보면 아핀변환 후 A라는 정보는 유지하되 정보의 각도와 위치가 바뀌었다.<br/>
@@ -141,14 +141,14 @@ $ h = g(W^T x+b) $   <br/>
 <img src="https://paperswithcode.com/media/methods/new_act.jpg" width="100%">
 
 a. 기본형
-- ReLu: $ g() = max ( 0,z ) $ 기본 ReLU는 음수의 정의역에 대해 모두 0으로 반환한다. <br/>
+- ReLu: $ g(z) = max ( 0,z ) $ 기본 ReLU는 음수의 정의역에 대해 모두 0으로 반환 <br/>
 
 b. 변형 
-- 활성화 대상의 정의역의 $ z_i<0 $ 구간에 대해 활성함수를 가중합 $ h_i = g(z, \alpha)_i = max(0,z_i) + \alpha_i min(0, z_i) $ 으로 수정. 단, $ \alpha $ 는  0이 아닌 기울기   <br/>
+- $ z_i<0 $ 구간에 대해 활성함수를 가중합 $ h_i = g(z, \alpha)_i = max(0,z_i) + \alpha_i min(0, z_i) $ 으로 수정. 단, $ \alpha $ 는  0이 아닌 기울기   <br/>
 - Absolute Value Rectification: $ \alpha=-1 $인 버전. 이 경우 $ g(z) =  \lvert z  \lvert $  <br/>
 - Leaky ReLU: $ \alpha $ 값이 0.01과 같이 작은 값으로 고정  <br/>
 
-## 1.3.2. Logistic Sigmoid & Hyperbolic Tangent
+### 1.3.2. Logistic Sigmoid & Hyperbolic Tangent
 
 
 
