@@ -123,9 +123,16 @@ $ - ln p(x_1, x_2,..., x_k|n, p_1, p_2, ..., p_k)= - (x_1 ln p_1 + x_2 ln p_2 + 
 - $ MSE=\frac{1}{n} \sum^n_{i=1} (Y_i - \hat{Y_i})^2 $ , 단 $ Y_i $ 는 참값, $ \hat{Y_i} $ 는 
 
 ## 1.3. Hidden Units
-은닉층의 활성화함수에 대해 살펴보겟다.
+이 챕터에서는 은닉층의 활성화함수에 대해 살펴보겟다. <br/>
+딥러닝에서 주로 사용하는 활성함수들은 모든 정의역에 대해 미분가능한 것은 아니다. ReLU의 경우 0 이하의 정의역에서는 미분값이 0인데 파라미터를 0으로 추정하는 것은 바라는 바가 아니다. 이 이슈에 대해서는 뒤 챕터 3. Optimization for Training Deep에서 다루겠다.
 
 ## 1.3.1. ReLU와 ReLU의 일반화 버전
+ReLu: $ g(x) = max{0,z} $  <br/>
+활성화함수의 역할은 레이어를 통과한 식을 아핀변환하는 것이다. <br/>
+$ h = g(W^T x+b) $   <br/>
+단순하게 이야기하자면, 활성화 함수는 레이어를 통과한 결과값의 성질을 유지하되 값의 범위를 shift하는 역할을 한다.
+![Image](
+https://homepages.inf.ed.ac.uk/rbf/HIPR2/affineb.gif){: height="200"}
 
 ## 1.3.2. Logistic Sigmoid & Hyperbolic Tangent
 
