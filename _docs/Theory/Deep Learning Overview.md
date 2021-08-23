@@ -133,9 +133,9 @@ $ h = g(W^T x+b) $   <br/>
 ![Image](https://homepages.inf.ed.ac.uk/rbf/HIPR2/affineb.gif)
 
 <br/>
-다음은 기본적인 ReLU와 일반화된 버전의 ReLU다. 
-- ReLu: $ g(x) = max{0,z} $  <br/> 
-기본 ReLU는 음수의 정의역에 대해 모두 0으로 반환한다.
+다음은 기본적인 ReLU와 일반화된 버전의 ReLU다. <br/>
+
+- ReLu: $ g(x) = max{0,z} $ 기본 ReLU는 음수의 정의역에 대해 모두 0으로 반환한다.
 - 0 이하의 정의역 구간 $ z_i<0 $에 대해 활성화 함수를 수정하면 다음과 같다. 0이 아닌 기울기인 $ \alpha $ 를 적용해 활성함수를 다음 가중합 $ h_i = g(z, \alpha)_i = max(0,z_i) + \alpha_i min(0, z_i) $ 으로 수정한다.
 
 - Absolute value Rectification: 위 식에서 $ \alpha=-1 $ 인 버전이다. 이 경우 $ g(z) = |z| $ 가 된다.
