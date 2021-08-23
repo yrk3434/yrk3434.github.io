@@ -141,7 +141,7 @@ $ h = g(W^T x+b) $   <br/>
 <img src="https://paperswithcode.com/media/methods/new_act.jpg" width="100%">
 
 a. 기본형
-- ReLu: $ g(x) = max ( 0,z ) $ 기본 ReLU는 음수의 정의역에 대해 모두 0으로 반환한다. <br/>
+- ReLu: $ g() = max ( 0,z ) $ 기본 ReLU는 음수의 정의역에 대해 모두 0으로 반환한다. <br/>
 
 b. 변형 
 - 활성화 대상의 정의역의 $ z_i<0 $ 구간에 대해 활성함수를 가중합 $ h_i = g(z, \alpha)_i = max(0,z_i) + \alpha_i min(0, z_i) $ 으로 수정한다. 단, $ \alpha $ 는  0이 아닌 기울기   <br/>
