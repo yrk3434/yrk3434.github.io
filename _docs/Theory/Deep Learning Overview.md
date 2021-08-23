@@ -138,7 +138,7 @@ $ h = g(W^T x+b) $   <br/>
 <br/>
 다음은 기본적인 ReLU와 일반화된 버전의 ReLU다. <br/>
 
-<img src="https://paperswithcode.com/media/methods/new_act.jpg" width="40%">
+<img src="https://paperswithcode.com/media/methods/new_act.jpg" width="100%">
 
 a. 기본형
 - ReLu: $ g(x) = max \{ 0,z \} $ 기본 ReLU는 음수의 정의역에 대해 모두 0으로 반환한다. <br/>
