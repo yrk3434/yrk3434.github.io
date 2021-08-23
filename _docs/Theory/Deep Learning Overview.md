@@ -69,9 +69,13 @@ toc_label: 목차
 참고. 이 블로그 포스팅 [Computational Statistics_Optimization](https://yrk3434.github.io/Theory/Computational%20Statistics_Optimization/) ch2. Optimization of Nonlinear Equations를 읽어보자.
 
 ### 1.2.1. 손실 함수
+
+손실함수는 실제값과 모델을 통해 추정한 값의 차이로 모델의 성능을 측정하는 함수다. 여기서 '차이'는 값의 차이일수도 있고 확률밀도 상의 차이일수도 있다. 해결하고자 하는 문제가 분류인지 회귀인지에 따라 다른 손실함수를 사용한다.
 <br/>
 
 #### 분류문제: 크로스 엔트로피
+
+분류문제는 크로스 엔트로피를 통해 실제값과 추정값의 차이를 측정한다. 두 가지 관점(정보이론, 확률론)으로 크로스엔트로피를 설명할 수 있다.
 
 (1) 관점1. 정보이론의 엔트로피 <br/>
 
