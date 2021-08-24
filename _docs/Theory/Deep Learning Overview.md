@@ -175,8 +175,8 @@ binary classification에서 positive일 확률을 구하는 활성화 함수, �
 신경망을 구성할 때 고려할 점은 한 레이어 당 레이어의 width와 레이어 연결의 depth다.
 
 ### 1.4.1. Universal Approximation Properties and Depth
-선형 모형은 손실함수(선형식의 제곱합 꼴)가 아래로볼록(convex) 함수여서 손실함수를 최소로 만드는 파라미터를 추정하는 것이 쉽다. 반면 신경망은 비선형 함수여서 손실함수를 최소화하는 파라미터를 추정하는 것이 어렵다. universal approximation theorem에 의하면 충분한 hidden layer를 가진 신경망이라면 어떤 복잡한 함수(Borel 측도 가능 함수라면 어떤 함수라도, (확률)측도론 참조)도 근사할 수 있다. Closed & bounded(해석학 참조) N차 실수 공간 상의 연속 함수에 대해 신경망으로 근사할 수 있다.
-
+선형 모형은 손실함수(선형식의 제곱합 꼴)가 아래로볼록(convex) 함수여서 손실함수를 최소로 만드는 파라미터를 추정하는 것이 쉽다. 반면 신경망은 비선형 함수여서 손실함수를 최소화하는 파라미터를 추정하는 것이 어렵다. universal approximation theorem에 의하면 선형 output layer와 squashing* 활성화 함수를 가진 피드포워드 신경망이라면 어떤 복잡한 함수(Borel 측도 가능 함수라면 어떤 함수라도, (확률)측도론 참조)도 근사할 수 있다. Closed & bounded(해석학 참조) N차 실수 공간 상의 연속 함수에 대해 신경망으로 근사할 수 있다. <br/>
+참고. squashing 함수: 아웃풋 값을 뭉개는 함수, 시그모이드 함수와 같이 작은 값의 범위로 아웃풋을 변환
 
 # 2. Regularization for Deep Learning
 
