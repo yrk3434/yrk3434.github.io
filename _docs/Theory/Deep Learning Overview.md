@@ -164,7 +164,7 @@ binary classification에서 positive일 확률을 구하는 활성화 함수, �
 
 ### 1.3.3. Other Hidden Units
 <img src="https://www.researchgate.net/profile/Joel-Dapello/publication/325022755/figure/fig9/AS:624102360494083@1525809006987/Alternative-activation-functions.png" width="40%">
-<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpytorch.org%2Fdocs%2Fstable%2Fgenerated%2Ftorch.nn.Hardtanh.html&psig=AOvVaw3SRojVPr64Zl_YO-7iSwqB&ust=1629852422624000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDX6Me3yPICFQAAAAAdAAAAABAD" width="20%">
+<img src="https://d3i71xaburhd42.cloudfront.net/67ea3089b457e6a09e45ea4117cb7f30d7695e69/3-Figure3-1.png" width="20%">
 
 - Softmax
 - Radial basis function
