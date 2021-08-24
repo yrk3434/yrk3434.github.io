@@ -163,7 +163,7 @@ binary classification에서 positive일 확률을 구하는 활성화 함수, �
 - 두 활성 함수의 관계: $ tanh(z) = 2 \sigma (2z) -1 $
 
 ### 1.3.3. Other Hidden Units
-<img src="https://www.researchgate.net/profile/Joel-Dapello/publication/325022755/figure/fig9/AS:624102360494083@1525809006987/Alternative-activation-functions.png" width="60%">
+<img src="https://www.researchgate.net/profile/Joel-Dapello/publication/325022755/figure/fig9/AS:624102360494083@1525809006987/Alternative-activation-functions.png" width="40%">
 
 - Softmax
 - Radial basis function
