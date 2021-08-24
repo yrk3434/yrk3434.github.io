@@ -163,6 +163,7 @@ binary classification에서 positive일 확률을 구하는 활성화 함수, �
 - 두 활성 함수의 관계: $ tanh(z) = 2 \sigma (2z) -1 $
 
 ### 1.3.3. Other Hidden Units
+<img src="https://www.researchgate.net/profile/Joel-Dapello/publication/325022755/figure/fig9/AS:624102360494083@1525809006987/Alternative-activation-functions.png" width="60%">
 
 - Softmax
 - Radial basis function
@@ -179,7 +180,9 @@ binary classification에서 positive일 확률을 구하는 활성화 함수, �
 <br/>
 참고. *squashing 함수: 아웃풋 값을 뭉개는 함수, 시그모이드 함수와 같이 아웃풋을 작은 값의 범위로 변환 <br/>
 
-큰 MLP가 어떤 함수도 근사할 수 있다는 사실과는 별개로 신경망이 **학습**을 통해 제대로 True 함수에 근사할 수 있는지는 보장할 수 없다. 근사하고자 하는 함수에 적절한 최적화 방법을 선택하는 것, 과적합 없이 훈련하는 것 등의 이슈를 해결하지 않는 한 신경망이 True 함수에 근사할 수 없다.
+큰 MLP가 어떤 함수도 근사할 수 있다는 사실과는 별개로 신경망이 **학습**을 통해 제대로 True 함수에 근사할 수 있는지는 보장할 수 없다. 근사하고자 하는 함수에 적절한 최적화 방법을 선택하는 것, 과적합 없이 훈련하는 것 등의 이슈를 해결하지 않는 한 신경망이 True 함수에 근사할 수 없다. 또한 적절한 근사함수를 만들기 위해 얼마나 깊게, 효율적으로 신경망을 만들어야 하는지는 알 수 없다. 
+
+
 
 
 # 2. Regularization for Deep Learning
