@@ -183,8 +183,7 @@ binary classification에서 positive일 확률을 구하는 활성화 함수, �
 
 큰 MLP가 어떤 함수도 근사할 수 있다는 사실과는 별개로 신경망이 **학습**을 통해 제대로 True 함수에 근사할 수 있는지는 보장할 수 없다. 근사하고자 하는 함수에 적절한 최적화 방법을 선택하는 것, 과적합 없이 훈련하는 것 등의 이슈를 해결하지 않는 한 신경망이 True 함수에 근사할 수 없다. 또한 적절한 근사함수를 만들기 위해 얼마나 깊게, 효율적으로 신경망을 만들어야 하는지는 알 수 없다.  <br/>
 
-hidden layer 당 $ d $ 개의 input 개수, $ l $ 층의 깊이, $ n$ 개의 units을 가질 때 선형 분할 된 영역의 수는 다음과 같다. <br/>
-$ \mathcal{O}( \begin{pmatrix} n \\ d \end{pmatrix}^{(d-1)} n^d ) $
+hidden layer 당 $ d $ 개의 input 개수, $ l $ 층의 깊이, $ n$ 개의 units을 가질 때 선형 분할 된 영역의 수는 $ \mathcal{O}( \begin{pmatrix} n \\ d \end{pmatrix}^{(d-1)} n^d ) $ 로 bound 된다.  
 
 
 # 2. Regularization for Deep Learning
