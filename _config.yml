@@ -5,6 +5,7 @@ title: Data Science blog
 url: "https://yrk3434.github.io"
 baseurl: ""
 google_analytics_key:
+goggle_fonts: "Nanum+Gothic:400,700"
 show_full_navigation: true
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
