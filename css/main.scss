@@ -30,3 +30,6 @@ $full-width-break: $nav-width + ($space * 4) + $content-max-width;
 @import "code";
 @import "tables";
 @import "layout";
+
+@charset "utf-8"
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap')
