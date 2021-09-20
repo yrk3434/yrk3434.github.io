@@ -18,8 +18,8 @@ comments: true
 [사전 지식] 확률론
 
 # Contents
-1. [기본 개념](#ch1.-기본-개념) <br/>
-2. [Frequentist와 Bayesian의 차이](#ch2.-frequentist와-bayesian의-차이) <br/>
+1. [기본 개념](#기본-개념) <br/>
+2. [Frequentist와 Bayesian의 차이](#frequentist와-bayesian의-차이) <br/>
 3. [베이지안 추론](#ch3.-베이지안-추론) <br/>
 4. [계층 모형](#ch4.-계층-모형) <br/>
 5. [베이지안 회귀](#ch5.-베이지안-회귀) <br/>
@@ -29,7 +29,7 @@ comments: true
 3장은 데이터에 설정한 분포와 사전분포에 관한 적분해 사후 분포를 구한다. 적분이 간단한 경우 3장과 같이 사후 분포를 구하지만, 적분이 복잡할 경우 4장과 같이 MCMC 시뮬레이션으로 사후분포에 근사한 샘플을 추출한다.
 
 ---
-# CH1. 기본 개념
+# 기본 개념
 - Unit1. 베이즈 공식: 사건에 대한 조건부 확률
 $ P(A|B) = \frac{P(A|B)P(A)}{P(B)} $
 - Unit2. 베이지안 추론에서의 베이즈 공식 <br/>
@@ -46,7 +46,7 @@ $ P(A_i|B) = \frac{P_I(A_i \cap B)}{
 } $
 
 ---
-# CH2. Frequentist와 Bayesian의 차이
+# Frequentist와 Bayesian의 차이
 통계학에는 크게 두 학파가 있다. Frequentist와 Bayesian이다. 두 학파의 가장 큰 차이는 사건(확률에서의 사
 건)이 발생할 수 있는 공간에 대해 어떤 믿음(확률 분포)을 가정하는지의 여부다. 엄밀한 설명은 아니지만, 위에서
 계속 언급되는 hypothesis는 주어진 데이터의 확률 분포가 발생할 수 있는 환경에 대한 가정을 의미한다.
