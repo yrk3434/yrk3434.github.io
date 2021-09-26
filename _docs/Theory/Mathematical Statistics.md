@@ -21,18 +21,26 @@ toc_label: 목차
 - [Introduction to Mathematical Statistics, Robert V. Hogg.](https://minerva.it.manchester.ac.uk/~saralees/statbook2.pdf)
 
 # Contents
-1. Probabilty and Distributions:
-- MGF, Characteristic Fucntion, Inequalities
-2. Multivariate Distributions
-4. Some Special Distributions
-5. Some Elementary Statistical Inference
-6. Consistency and Limiting Distributions
-7. Maximum Likelihood Methods
-8. Sufficiency
-9. Optimal Tests of Hypotheses
-10. Inferences About Normal Linear Models
-11. Nonparameteric Robust Statistics
-12. Bayesian Statistics 
+1. [Probabilty and Distributions](#1-probabilty-and-Distributions)
+- MGF
+- Characteristic Fucntion
+- Inequalities(마코브 부등식, 코쉬 슈바르츠 부등식, 엔트로피와 섀넌 부등식)
+2. [Multivariate Distributions](#2-multivariate-Distributions)
+- Joint Probability
+- Marginal Distribution
+- Transformation
+- Conditional Distribution
+- Independence
+- Correlation Coefficient
+3. Some Special Distributions
+4. Some Elementary Statistical Inference
+5. Consistency and Limiting Distributions
+6. Maximum Likelihood Methods
+7. Sufficiency
+8. Optimal Tests of Hypotheses
+9. Inferences About Normal Linear Models
+10. Nonparameteric Robust Statistics
+11. Bayesian Statistics 
 
 # 1. Probabilty and Distributions
 ## 1.9. Some Special Expectations
@@ -60,12 +68,13 @@ m차 기대값을 구할 때 exponential 함수는 미분꼴이 자기자신과 
 $ M'(t) = \frac{M(t)}{dt} = \sum_x xe^{tx}p(x) $ or $ \int_{-\infty}^{\infty} x e^{tx}f(x) dx $ <br/>
 여기에 $ t=0 $ 을 대입하면 $ M'(0) = E(X) =\mu $
   
+  
 - 2차 미분 <br/>
-$ M^{''}(t) = \sum_x x^2 e^{tx}p(x) $or $ \int_{-\infty}^{\infty} x^2 e^{tx}f(x) dx $ <br/>
-여기에 $ t=0 $ 을 대입하면 $ M^{''}(0) = E(X^2) $ 
+$ {M}''(t) = \sum_x x^2 e^{tx}p(x) $or $ \int_{-\infty}^{\infty} x^2 e^{tx}f(x) dx $ <br/>
+여기에 $ t=0 $ 을 대입하면 $ {M}''(0) = E(X^2) $ 
   
 - 분산 <br/>
-위에서 구한 1차, 2차 적률을 이용해 분산을 구할 수 있다. $ \sigma^2 = E(X^2)-E(X) = M''(0) - M'(0) $
+위에서 구한 1차, 2차 적률을 이용해 분산을 구할 수 있다. $ \sigma^2 = E(X^2)-E(X) = {M}''(0) - M'(0) $
 <br/>  
   
   
@@ -99,13 +108,14 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   를 $ t=0 $ 에 대해 2차 테일러 전개를 한다.  <br/> 
   
   $ M_{Z_n}(t) \approx $ 
-  $ ( M_{ X^* } (0) + \frac{ t }{\sigma \sqrt{n} } M_{ X^* }'(0) + \frac{ t^2 }{ 2 n \sigma^2 }  M_{ X^* } '' (0) )^n $ <br/>
+  $ ( M_{ X^* } (0) + \frac{ t }{\sigma \sqrt{n} } M_{ X^* }'(0) + \frac{ t^2 }{ 2 n \sigma^2 }  {M}''_{ X^* } (0) )^n $ <br/>
   $ = ( 1+ \frac{t^2}{2 n \sigma^2 } \sigma^2  )^n $, 
   <br/>
   since
+  
   - $ M_{X^*}(0) = E(e^0)=1 $ 
   - $ M_{X^*}'(0) = \mu = 0 $ 
-  - $ M_{X^*}''(0) = \sigma^2 $ 
+  - $ {M}''_{X^*}(0) = \sigma^2 $ 
   
   $ =  ( 1+ \frac{t^2}{2 n }  )^n  \rightarrow e^{t^2/2}  $ as $ n  \rightarrow \infty $ 
   
@@ -168,6 +178,9 @@ $ \leq E( X^{ *2 } ) E( Y^{ *2 } )  = 1 \cdot 1 = 1 $
 > <center> $ H(x) = E( - ln f(x) ) = - \int f(x) ln f(x) $  <center/>
  
 간단한 예로 동전을 던지는 행위를 X라 하고 동전이 앞면이 나오는 사건을 X=1이라고 하자. 동전이 앞면이 나올 확률(x축)에 따른 엔트로피(y축)를 그리면 다음과 같다. 상식과 부합하게 앞면이 나올 확률과 뒷면이 나올 확률이 반반(P(X=1)=0.5)일 때 가장 높은 불확실성, 즉 엔트로피를 갖는다.
+- 참고. $ - P(앞면이 나올 확률) \log_2 P(앞면이 나올 확률) - P(뒷면이 나올 확률) \log_2 P(뒷면이 나올 확률) =  -0.5 \log_2 0.5 -0.5 \log_2 0.5  = 1$
+
+
 <img class="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Binary_entropy_plot.svg/800px-Binary_entropy_plot.svg.png" width=300px/>
 <br/>
 [Shannon Inequality]  
@@ -193,3 +206,35 @@ $ E_p(\phi(R)) \geq \phi(E_p(R)) = -ln(E_p(R)) = -ln1 = 0 $  <br/>
 KL 발산은 엔트로피 개념을 이용해 동일 확률변수 X에 대해 분포 간 유사성을 측정한 것이다. <br/>
 참 확률분포가 $ p(x) $ 일 때 $ p(x) $ 와 어떤 확률분포 $ q(x) $ 의 거리를 쿨백발산으로 나타내면 다음과 같다. $ p(x) = q(x) $ 이면 쿨백 라이블러 발산이 0이다. 
 > <center> $ D_{KL} (p | q) = E_p( ln p(x) - ln q(x) ) = \int p(x) ln \frac{p(x)}{q(x)} d\mu $ <center/>    
+
+
+---
+
+# 2. Multivariate Distributions
+
+## 2.1. Joint Probability Distriubution
+
+결합확률분포란 두 개 이상의 변수를 동시에 고려하는 확률분포를 일컫는다. 결합 확률 분포 역시 확률 이므로 [확률의 공리](https://en.wikipedia.org/wiki/Probability_axioms)를 따른다. 이 챕터에서는 적분이 많으니 사전지식을 갖추길 바란다. <br/><br/>
+
+[결합확률분포가 중요한 이유는 무엇일까?]
+- 결합확률분포를 알면 두 변수 간 관계 뿐 아니라 한 변수만의 성질(marginal distriubtion), 한 변수가 주어졌을 때 다른 변수의 분포(conditional probability)를 모두 알 수 있기 때문이다. 
+
+
+<br/>
+[정의] 
+<br/>
+- 이산 확률 변수의 결합 확률 분포 <br/>
+$ p_{X_1, X_2}(x_1, x_2) = P(X_1 = x_1, X_2 = x_2) $
+
+- 연속 확률 변수의 누적 결합 확률 분포 <br/>
+$ F_{X_1, X_2}(x_1,x_2) = P[X_1 < x_1, X_2<x_2] $ <br/>
+$ P_[a_1<X_1<a_2, b_1<X_2<b_2] = F_{X_1, X_2}(b_1, b_2) - F_{X_1, X_2}(a_1, b_2) - F_{X_1, X_2}(b_1, a_2) + F_{X_1, X_2}(a_1, a_1)$ <br/>
+-> 구간에 대한 적분은 두 축을 그려 각 구간을 빼고 더해보면 쉽게 구할 수 있다.  
+
+eg. 두 배터리의 수명이 확률 분포 $ X $ , $ Y $ 이며 서로 연결되어 함수 $ f $ 의 관계를 가진다고 가정하자. 
+
+$ f(x,y) = 4xy e^{-(x^2+y^2)} $ at $x>0, y>0$, 0 otherwise
+
+이 때 두 배터리의 수명이 모두 $\sqrt (2) /2 $ 이상일 확률은 다음과 같다.
+
+$ P(X>\sqrt 2 /2, Y>\sqrt 2 /2)  = \int^{\infty}_{\sqrt 2 /2}   \int^{\infty}_{\sqrt 2 /2} 4xy e^{-(x^2+y^2)} dx dy = $ 적분 과정생략 $ = (e^{-1/2})^2 $
