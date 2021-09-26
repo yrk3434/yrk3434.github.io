@@ -4,9 +4,6 @@ category: Theory
 order: 5
 use_math: true
 comments: true
-toc: true
-toc_sticky: true
-toc_label: 목차
 ---
 
 # Deep Learning Book_책 정리
@@ -23,10 +20,10 @@ toc_label: 목차
 
 
 # Contents
-[Part1. Deep Networks: Modern Practices]
+[[Part1. Deep Networks: Modern Practices]](#Part1-deep-networks:-modern-practices)
 
-1. Deep Feedforward Networks
-2. Regularization for Deep Learning
+1. [Deep Feedforward Networks](#1-deep-feedforward-networks)
+2. [Regularization for Deep Learning](#2-regularization-for-deep-learning)
 3. Optimization for Training Deep
 4. Convolutional Networks
 5. Sequence Modeling: Recurrent and Recursive Nets
@@ -119,7 +116,8 @@ $ - ln p(x_1, x_2,..., x_k|n, p_1, p_2, ..., p_k)= - (x_1 ln p_1 + x_2 ln p_2 + 
 - 클래스가 1개(사건이 발생, 즉 해당 label이거나 아니거나로 해석, 다항분포에서의 클래스 수 k=1), 독립시행 1번인 다항분포에 해당한다. 즉 베르누이 분포에 해당한다.
 - 시그모이드 함수: $ \sigma(x) = \frac{1}{1+e^{-x}} $
 - 클래스에 해당할 확률은 $ \sigma(x) $, 클래스에 해당하지 않을 확률은 $ 1-\sigma(x) $
-- 위 시그모이드 변환 그래프를 보면 $ x $ 가 절대값이 큰 음수일 때 변환된 값은 0에 가까워져 graident가 소실된다. 따라서 시그모이드 층을 거친 벡터의 손실함수로 크로스엔트로피를 사용하지 않고 MSE를 쓰면 예측이 매우 부정확해진다.
+- 위 시그모이드 변환 그래프를 보면 $ x $ 가 절대값이 큰 음수일 때 변환된 값은 0에 가까워져 graident가 소실된다. 따라서 시그모이드 층을 거친 벡터의 손실함수로 크로스엔트로피를 사용하지 않고 MSE를 쓰면 예측이 매우 부정확해진다. (이해를 돕기 위해 첨언하자면, 시그모이드를 통과한 값이 0에 가까운 경우를 생각해보자. 0.01과 0.001에 로그를 취하면 $ \log 0.01 = -2$ ,  $ \log 0.01 = -3$ 으로 두 값의 간격이 커진다. 즉 원래 스케일을 사용하는 MSE보다 log를 취하는 크로스엔트로피가 0에 가까워진 값에 대해 좀 더 민감하다. 따라서 이 경우 크로스엔트로피가 MSE보다 네트워크의 파라미터를 좀 더 민감하고 정확하게 추정한다.)
+
 
 (4) 소프트맥스와 다항분류
 - 클래스가 2개 이상, 독립시행이 1번인 다항분포에 해당한다.
@@ -185,30 +183,49 @@ binary classification에서 positive일 확률을 구하는 활성화 함수, �
 
 hidden layer 당 $ d $ 개의 input 개수, $ l $ 층의 깊이, $ n$ 개의 units을 가질 때 선형 분할 된 영역의 수는 $ \mathcal{O}( \begin{pmatrix} n \\ d \end{pmatrix}^{d(l-1)} n^d ) $ 로 bound 된다.  
 
+## 1.5. Back-Propagation and Other Differentiation Algorithms
+MLP는 레이어들이 순방향으로 연결돼있어 인풋 $ x $ 가 아웃풋 $ y $ 로 전달된다. 이를 feed forward라 한다. 반대로 손실(예측값의 차이 지표), 즉 $ J(\theta) $ 의 정보가 네트워크로 전달되는 것을 역전파(back-propagation)라 한다. 역전파의 장점은 단순하고 계산이 쉽다는 점이다. <br/>
+역전파에서 흔히 하는 오해는 다음과 같다.
+- 역전파는 Gradient Descent에 한정된 방법이 아니다. 다른 gradient 계산 방법에도 적용가능하다.
+- 역전파는 MLP에 한정된 방법이 아니다. 어떤 미분 함수에 대해서도 사용 가능하다.
 
+### 1.5.1. Computational Graph
+Computational Graph는 연산이 어떻게 작동(operation)하는지를 나타낸다. 위키피디아에 의하면 Computational Graph는 변수에 해당하는 노드와 노드 간 관계를 설명하는 엣지로 구성된다.
+
+<img src="https://www.easy-tensorflow.com/files/1_2.png" width="60%">
+
+위와 같은 방식으로 인공신경망의 흐름과 연산을 그래프로 나타낸다.
+
+### 1.5.2. Chain Rule
+앞서 설명했듯 MLP는 선형식의 합성함수다. 합성함수의 미분할 때 가장 기본적으로 사용되는 법칙이 chain rule이다. 합성함수의 미분 가능 조건 및 증명은 [위키피디아](https://en.wikipedia.org/wiki/Chain_rule#Proofs)를 참고 바란다.
+
+$$ \frac{\partial z}{\partial x} =\frac{\partial z}{\partial y} \cdot \frac{\partial y}{\partial x} $$
+
+where $ y=f(x) $  and $ z = g(y) = g(f(x)) $ <br/>
+<br/>
+
+합성함수를 각 레이어의 층이라고 상정하고 loss function을 합성합수의 최종 아웃풋이라고 생각하면 된다. loss function의 값을 전역 최소값으로 만드는 파라미터를 찾으려면 합성함수(인공신경망에 해당) 전체를 미분해야하는데, 이 때 chain rule을 이용하면 복잡한 꼴의 함수를 간단하게 미분할 수 있다.
+<br/>
+<br/>
+computational graph와 chain rule을 이용하여 역전파를 적용해 인공신경망을 구성하는 최적 모수의 값을 추정한다. 각 레이어의 연결 상태가 노드와 엣지로 연결되며, chain rule을 통해 가장 최종 아웃풋 레이어부터 인풋 레이어 방향으로 각 레이어에서의 미분이 계산된다. 
+<br/> <br/> 
+합성함수를 computational grapha로 표현하고 chain rule을 통해 역전파를 적용하는 간단한 예를 살펴보면 다음과 같다.
+
+<img src="https://miro.medium.com/max/2000/1*7XxBjQzyLCkWKEgJD_w9jQ.png" width="40%">
+<img src="https://miro.medium.com/max/417/1*azqHvbrNsZ8AIZ7H75tbIQ.jpeg" width="40%">
+
+
+---
 # 2. Regularization for Deep Learning
 
-# 3. Optimization for Training Deep
+정규화는 train set 뿐 아니라 new data를 포함한 test set에서도 어느 정도 모델의 성능을 보장하기 위해 필요하다. 자세히 설명하자면, 모델이 이미 정답을 알고 있는 train set 뿐 아니라 경험해보지 못한 new data에 제대로 예측할 수 있어야 한다. 이를 위해 train set에 대해 약간의 성능 저하를 감수하더라도 new pattern의 데이터를 맞추는 일반화 된 모델을 만들어야 한다. <br/><br/>
 
-# 4. Convolutional Networks
+[[bias-variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)]
 
-# 5. Sequence Modeling: Recurrent and Recursive Nets
+- *The bias-variance tradeoff is a central problem in supervised learning. Ideally, one wants to choose a model that both accurately captures the regularities in its training data, but also generalizes well to unseen data. Unfortunately, it is typically impossible to do both simultaneously. High-variance learning methods may be able to represent their training set well but are at risk of overfitting to noisy or unrepresentative training data. In contrast, algorithms with high bias typically produce simpler models that may fail to capture important regularities (i.e. underfit) in the data.*
+- cost function인 MSE는 error의 bias와 error의 variance의 합으로 분해된다. MSE가 고정일 때 bias와 variance는 한쪽 값이 작아지면 다른 한 쪽 값이 커지는 trade off 관계다. 모델의 복잡도를 높혀 train set을 잘 맞추게 되면 모델의 bias는 낮아지고 모델의 variance는 높아진다. 
+- bias: (모델의 추정치의 기대값)과 (참값)의 차이
+- variance: 모델 추정치의 분산
+- 모델 예측의 bias가 낮은 대신 variance가 높은 상황을 어떻게 이해해야 할까? 회귀분석을 예로 설명하자면, 회귀분석을 시행할 때 우리는 모수의 추정치 뿐 아니라 모수의 varinace도 확인한다. 회귀분석의 모수 추정치(OLS)는 unbiased parameter이므로 bias-variance tradeoff 상황에서 bias=0인 상황에 해당한다. 이 때 모수 추정의 variance가 높다면 우리는 이 모수 추정치를 신뢰할 수 없다. 데이터의 패턴에 따라 추정되는 모수의 값이 가변적이며 모델이 새 데이터에 대해 취약하다는 의미이다.
 
-
-# Part2. Deep Learning Research
-
-# 1. Linear Factor Models
-
-# 2. Autoencoders
-
-# 3. Representation Learning
-
-# 4. Structured Probabilistic Models
-
-# 5. Monte Carlo Methods
-
-# 6.Confronting the Partition Function
-
-# 7. Approximate Inference
-
-# 8. Deep Generative Models
+## 2.1. Parameter Norm Penalties

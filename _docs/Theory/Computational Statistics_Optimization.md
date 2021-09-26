@@ -4,9 +4,6 @@ category: Theory
 order: 2
 use_math: true
 comments: true
-toc: true
-toc_sticky: true
-toc_label: 목차
 ---
 
 ### Reference
@@ -14,19 +11,20 @@ toc_label: 목차
 - Wikipidia
 
 # Contents
-1. Meaning of Optimization
-2. Optimization of Nonlinear Equations
+1. [Meaning of Optimization](#1-meaning-of-optimization)
+2. [Optimization of Nonlinear Equations](#2-optimization-of-nonlinear-equations)
 	- Continuous function, computational method
 	- Problem is solved by target function itself.
 	- Eg. Newton's Method, Taylor Expansion, Descent Method
-3. Combinatorial Optimization
+3. [Combinatorial Optimization](#3-combinatorial-optimization)
 	- Discrete and complex function, computational method
 	- Problem is solved after input is iteratively put into target function.
 	- Eg. Local Search, Gene Algorithm, Simulated Annealing,
-4. EM Algorithm
+4. [EM Algorithm](#4-em-algorithm)
 	- Statistical method
 	- One of the moethds of MI(Multiple Imputation) of missing value
 	
+---
 # 1. Meaning of Optimization
 ## 1.1. 최적화의 개념
 
@@ -43,7 +41,9 @@ toc_label: 목차
 목차에 기술한대로 input의 값이 연속인지, 이산인지 혹은 미분이나 근사법(approximaiton)으로 
 해를 구할 수 있는 목적함수인지 등에 따라 다른 방법으로 최적화를 해야한다.
 
-# 2.  Optimization of Nonlinear Equations
+---
+
+# 2. Optimization of Nonlinear Equations
 등식을 통해 해를 구할 수 있는 경우에 해당한다. 구체적으로, 식의 미분을 통해 최적값을 구한다.
 위에서 언급한 MLE 역시 우도함수를 미분해 0이되는 모수를 찾은 예이므로 이 방식에 속한다. 
 하지만 미분을 통해 해를 구할 때에는 해의 유일성, 근사적으로 구한 해의 수렴성, 근사적으로 
@@ -230,8 +230,9 @@ Fisher Scoring에 의해 $ \beta^{(t+1)}=\beta^{(t)} + (J^{(t)})^{-1} u^{(t)} $,
 <center> $ J^{(t)} \beta^{(t+1)} = X^T W^{(t)} Z^{(t)} $ where $ Z^{(t)} = X \beta^{(t)} + (D^{(t)})^{-1} (y-M^{(t)}) $   </center>
 <center> -> $ \beta^{(t+1)} = (J^{(t)})^{-1} X^T W^{(t)} Z^{(t)}  = (X^T W^{(t)} X)^{-1} X^T W^{(t)} Z^{(t)} $ ...(c) </center>
 
-<br/>
-# 3.   Combinatorial Optimization
+---
+
+# 3. Combinatorial Optimization
 등식으로부터 최적화하는 것과 달리, discrete value의 조합(예. 경우의 수)을 통해 
 최적값을 구하는 경우에는 3장의 방법을 적용한다.
 
@@ -401,6 +402,8 @@ def simulated_annealing(objective, bounds, n_iterations, step_size, temp):
 ## 3.5. Tabu Algorithms
 <br/>
 	
+---
+
 # 4. EM algorithm
 EM 알고리즘은 관찰값이 주어질 때 조건부 분포로부터 결측치를 추측하는 것을 발상으로 만들어진 알고리즘이다. <br/>
 - 완전데이터(complete data): $ Y=(X, Z) $
