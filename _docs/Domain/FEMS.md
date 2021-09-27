@@ -4,13 +4,21 @@ category: Domain
 order: 2
 ---
 
-# 공장에너지관리시스템(FEMS)
+# 공장 에너지 관리 시스템(FEMS)
 
 ## Reference 
 - [EMS: Factory Energy Management System based on Production Information, MITSUYASU KACHI et al.](http://www.wseas.us/e-library/conferences/2013/Morioka/ISMA/ISMA-05.pdf)
 - [(주)TIS 스마트팩토리](http://www.tisys.co.kr/sub2_1.html)
 - [적정스마트팩토리포럼](http://fab.snu.ac.kr/smart/%EC%A0%81%EC%A0%95%EC%8A%A4%EB%A7%88%ED%8A%B8%ED%8C%A9%ED%86%A0%EB%A6%AC%ED%8F%AC%EB%9F%BC_%EC%BD%94%EC%97%90%EB%B2%84_.pdf)
 
+---
+
+# Contents
+1. [개요](#1-개요)
+2. [FEMS 주요 기능](#2-fems-주요-기능)
+3. [에너지 절감 관리 절차](#3-에너지-절감-관리-절차)
+
+---
 
 # 1. 개요
 
@@ -32,7 +40,9 @@ Factory Automation (FA)
 Plan-Do-Check-Action (PDCA)
 Programmable Logic Controller (PLC)
 
-# 2.  FEMS 주요 기능
+---
+
+# 2. FEMS 주요 기능
 1. 에너지관리 세분화 
 - 원단위 분석을 통한 에너지 효율 분석 
 2. 설비별 에너지 검침 자동화 
@@ -51,6 +61,8 @@ Programmable Logic Controller (PLC)
  7. 에너지MAP 확인 
 - 에너지 흐름의 가시화로 소비분야 관리 시스템의 명확화 
 - 생산흐름과 에너지 흐름의 통합관리
+
+---
 
 # 3. 에너지 절감 관리 절차
 1. Measurement: 생산 정보(예. 생산 수량)와 관련된 에너지 데이터 수집 -> PLC에 데이터 전달

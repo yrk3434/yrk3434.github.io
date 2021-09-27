@@ -16,11 +16,13 @@ order: 3
 
 웹크롤링란 웹 사이트로부터 원하는 정보를 추출하는 행위다. 파이썬에서 beautifulsoup을 통해 크롤링을 할 수도 있지만, 동적 크롤링, 검색을 통한 웹페이지 크롤링 등을 하는 데에 한계가 있어 selenium을 이용해 크롤링하고자 한다.
 
+---
 
 # 1. 크롬 드라이버 설치
 [드라이버 설치 사이트 클릭](https://chromedriver.chromium.org/downloads)
 크롬 버전 확인 후 ChromeDriver exe 설치, 단 설치 경로를 기억할 것
 
+---
 
 # 2. 크롬 드라이버 실행 & 크롤링 기본 구조
 [네이버 부동산 뉴스 예제](https://land.naver.com/news/newsRead.nhn?type=headline&prsco_id=119&arti_id=0002494744)의 기사 제목 크롤링
@@ -90,6 +92,7 @@ driver.quit() # 크롬 브라우저 닫기
 # 시범운영에도 부작용 '속속'…전월세신고제, 임차인 보호 의구심 여전
 ```
 
+---
 
 # 3. 크롤링 대상 찾기
 
@@ -104,6 +107,8 @@ more tools > develeopers tool > 마우스 커서 모양(Select an element in the
 ```
 <h3 tabindex="0">시범운영에도 부작용 '속속'…전월세신고제, 임차인 보호 의구심 여전</h3>
 ```
+
+---
 
 # 4. 검색을 통한 크롤링 예제
 
