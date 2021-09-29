@@ -9,6 +9,17 @@ order: 4
 - 인프런 강의: 그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법
 
 ---
+# Contents
+1. [그로스 해킹이란](#1-그로스-해킹이란)
+2. [PMF](#2-pmf)
+3. [AARRR](#3-aarrr)
+    - [Acquisition](#31-acquisition)
+    - Activation
+    - Retention
+    - Revenue
+    - Referral
+
+---
 
 # 1. 그로스 해킹이란
 
@@ -79,3 +90,47 @@ order: 4
 ## 3.1. Acquisition
 
 - 사용자를 서비스로 데려오는 것
+
+1. 사용자 구분
+- Organic vs Paid
+    - 자발적 유입(Organic) <- Unknown(유입 경로를 모르는 경우)와 혼동하지 말 것
+    - 마케팅으로 인한 유입(Paid)
+- 유입 채널 별 구분(유튜브 광고/지인 추천/검색/...) 
+
+2. 지표
+- 유저 획득 지표: Signup, CAC(Customer Acquisition Cost)
+- 광고 집행 지표: 
+    - 과금되는 광고상품: CPC(Cost Per Click), CPI(Cost per Install), CPA(Cost per Action, 일반적으로 complete registration 액션 당 과금), CPM(Cost Per Mile, 노출 당 과금), CPP(Cost Per Period, 기간 보장형)
+    - ROAS(Return on Ads Spending): 광고로 인한 매출액/광고비
+
+3. CAC(Customer Acquisition Cost) - 유저 획득 비용
+    - 총 CAC가 아닌 채널/캠페인/날짜 별 CAC를 확인해야 함
+
+    - LTV: Lifetime Value, 고객생애가치, 한 고객이 서비스를 사용하는 동안 창출할 것으로 기대되는 순수익 
+    - CAC < LTV 여야 기업이 망하지 않는다.
+
+4. UTM(Urchin Tracking Module) paramters
+
+*UTM parameters are short text codes that you add to URLs (or links) to help you track the performance of webpage or campaign.*
+- 링크를 통해 유저가 어느 경로로 서비스에 유입되었는지 추적할 수 있는 파라미터
+- 앞서 CAC를 구할 때 유입경로를 나누어 CAC를 구해야 한다고 언급했는데 UTM parameter를 통해 어느 채널에서 어떻게 마케팅을 해야 효과적인지 확인할 수 있다.
+
+<img src="https://cdn.searchenginejournal.com/wp-content/uploads/2020/05/utm-codes-explained-5ecdde9a0cd2c-1520x800.png" width="80%">
+
+<img src="https://cdn.business2community.com/wp-content/uploads/2020/02/utm-parameters-2.png" width="80%">
+
+- 파라미터 구성
+    - Source: 유입 채널, eg. 페이스북, 블로그, 뉴스레터
+    - Medium: 링크 유형, eg. organic social, paid social, email
+    - Campaign: 홍보 유형, eg. summer_sale, free_trial
+    - Term: 유입 키워드 
+    - Content: 유저 유입된 구체적인 대상, eg. 배너, 광고 문구
+
+- 구글 애널리틱스에서 UTM paramter 확인 가능
+
+<img src="https://www.orbitmedia.com/wp-content/uploads/2019/02/campaign-tracking.png" width="90%">
+
+- 구글 URL builder를 통해 다음과 같이 사용자의 유입경로를 추적할 수 있는 URL을 생성할 수 있음
+<img src="https://polkadotdata.com/wp-content/uploads/2019/07/pdd-utm-parameters-example-1.png" width="60%">
+
+5. Attribution
