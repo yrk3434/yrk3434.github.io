@@ -55,12 +55,10 @@ order: 4
 
 
 2. Conversion
-한 단계에서 다음 단계로 넘어감
-
+- 한 단계에서 다음 단계로 넘어감
 - 아래와 그림과 같이 사용자가 서비스를 이용하기까지의 단계를 깔대기 모양에 빗대어 funnel이라 부른다. funnel의 각 단계를 지나가는 것을 conversion이라 부른다. 많은 funnel 단계를 지나간 이용자일 수록 loyalty가 있는 이용자라 할 수 있다.
 
 <img src="https://mobile-marketing-masterclass.com/wp-content/uploads/2020/02/Mobile_Marketing_Funnel.jpg" width="50%">
-
 
 
 3. Net Promoter Score(NPS)
@@ -69,9 +67,7 @@ order: 4
     - Detractors: 0-6 (비판자)
     - Passives: 7-8 (중립자)
     - Promoters: 9-10 (추천자)
-
 - eg. 비판자 34%, 중립자 23%, 추천자 43%일 때, NPS = 43% - 34% =9%
-
 - 주의사항
     - retention, conversion, NPS는 서비스의 결과일 뿐 목적이 아니다. 주객전도되어 지표를 개선하기 위해 실험하지 않는다.
     - 새로운 기능을 추가하는 것으로 문제를 해결하려 하지 않는다.
@@ -131,6 +127,7 @@ order: 4
 <img src="https://www.orbitmedia.com/wp-content/uploads/2019/02/campaign-tracking.png" width="90%">
 
 - 구글 URL builder를 통해 다음과 같이 사용자의 유입경로를 추적할 수 있는 URL을 생성할 수 있음
+
 <img src="https://polkadotdata.com/wp-content/uploads/2019/07/pdd-utm-parameters-example-1.png" width="60%">
 
 5. Attribution
