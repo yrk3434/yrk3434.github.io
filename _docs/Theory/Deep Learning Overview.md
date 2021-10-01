@@ -111,7 +111,7 @@ $ - ln p(x_1, x_2,..., x_k|n, p_1, p_2, ..., p_k)= - (x_1 ln p_1 + x_2 ln p_2 + 
 <br/>
 
 (3) 시그모이드와 이진분류 <br/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Error_Function.svg/1280px-Error_Function.svg.png" width="40%">
+<center> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Error_Function.svg/1280px-Error_Function.svg.png" width="40%"> </center>
 
 - 클래스가 1개(사건이 발생, 즉 해당 label이거나 아니거나로 해석, 다항분포에서의 클래스 수 k=1), 독립시행 1번인 다항분포에 해당한다. 즉 베르누이 분포에 해당한다.
 - 시그모이드 함수: $ \sigma(x) = \frac{1}{1+e^{-x}} $
@@ -135,12 +135,13 @@ $ - ln p(x_1, x_2,..., x_k|n, p_1, p_2, ..., p_k)= - (x_1 ln p_1 + x_2 ln p_2 + 
 활성화함수의 역할은 레이어를 통과한 식 $ W^T x+b $ 을 아핀변환 $ g $ 하는 것이다. <br/>
 $ h = g(W^T x+b) $   <br/>
 단순하게 이야기하자면, 활성화 함수는 레이어를 통과한 결과값의 성질을 유지하되 값의 범위를 shift하는 역할을 한다. 다음 그림을 보면 아핀변환 후 A라는 정보는 유지하되 정보의 각도와 위치가 바뀌었다.<br/>
-![Image](https://homepages.inf.ed.ac.uk/rbf/HIPR2/affineb.gif)
+
+<center> <img src="https://homepages.inf.ed.ac.uk/rbf/HIPR2/affineb.gif" width="50%"> </center>
 
 <br/>
 다음은 기본적인 ReLU와 일반화된 버전의 ReLU다. <br/>
 
-<img src="https://paperswithcode.com/media/methods/new_act.jpg" width="100%">
+<center> <img src="https://paperswithcode.com/media/methods/new_act.jpg" width="100%"> </center>
 
 a. 기본형
 - ReLu: $ g(z) = max ( 0,z ) $ 기본 ReLU는 음수의 정의역에 대해 모두 0으로 반환 <br/>
@@ -152,7 +153,7 @@ b. 변형
 
 ### 1.3.2. Logistic Sigmoid & Hyperbolic Tangent
 
-<img src="https://www.researchgate.net/profile/Junxi-Feng/publication/335845675/figure/fig3/AS:804124836765699@1568729709680/Commonly-used-activation-functions-a-Sigmoid-b-Tanh-c-ReLU-and-d-LReLU.ppm" width="60%">
+<center> <img src="https://www.researchgate.net/profile/Junxi-Feng/publication/335845675/figure/fig3/AS:804124836765699@1568729709680/Commonly-used-activation-functions-a-Sigmoid-b-Tanh-c-ReLU-and-d-LReLU.ppm" width="60%"> </center>
 
 - Sigmoid Activation: $ g(z) = \sigma (z) $  <br/> 
 binary classification에서 positive일 확률을 구하는 활성화 함수, 절대값이 큰 음수 값은 0에 가까운 값으로 활성화되고, 절대값이 큰 양수 값은 1에 가까운 값으로 활성화(saturation), gradient 기반의 파라미터 추정에서는 파라미터의 전달이 0이면 좋지 않기 때문에, sigmoid 활성화 함수는 주로 hidden layer가 아닌 output layer에 적용됨 <br/> 
@@ -161,8 +162,8 @@ binary classification에서 positive일 확률을 구하는 활성화 함수, �
 - 두 활성 함수의 관계: $ tanh(z) = 2 \sigma (2z) -1 $
 
 ### 1.3.3. Other Hidden Units
-<img src="https://www.researchgate.net/profile/Joel-Dapello/publication/325022755/figure/fig9/AS:624102360494083@1525809006987/Alternative-activation-functions.png" width="45%">
-<img src="https://atcold.github.io/pytorch-Deep-Learning/images/week11/11-1/Hardtanh.png" width="45%">
+<center> <img src="https://www.researchgate.net/profile/Joel-Dapello/publication/325022755/figure/fig9/AS:624102360494083@1525809006987/Alternative-activation-functions.png" width="45%">
+<img src="https://atcold.github.io/pytorch-Deep-Learning/images/week11/11-1/Hardtanh.png" width="45%"> </center>
 
 - Softmax
 - Radial basis function
@@ -192,7 +193,7 @@ MLP는 레이어들이 순방향으로 연결돼있어 인풋 $ x $ 가 아웃�
 ### 1.5.1. Computational Graph
 Computational Graph는 연산이 어떻게 작동(operation)하는지를 나타낸다. 위키피디아에 의하면 Computational Graph는 변수에 해당하는 노드와 노드 간 관계를 설명하는 엣지로 구성된다.
 
-<img src="https://www.easy-tensorflow.com/files/1_2.png" width="60%">
+<center> <img src="https://www.easy-tensorflow.com/files/1_2.png" width="60%"> </center>
 
 위와 같은 방식으로 인공신경망의 흐름과 연산을 그래프로 나타낸다.
 
@@ -211,8 +212,8 @@ computational graph와 chain rule을 이용하여 역전파를 적용해 인공�
 <br/> <br/> 
 합성함수를 computational grapha로 표현하고 chain rule을 통해 역전파를 적용하는 간단한 예를 살펴보면 다음과 같다.
 
-<img src="https://miro.medium.com/max/2000/1*7XxBjQzyLCkWKEgJD_w9jQ.png" width="40%">
-<img src="https://miro.medium.com/max/417/1*azqHvbrNsZ8AIZ7H75tbIQ.jpeg" width="40%">
+<center> <img src="https://miro.medium.com/max/2000/1*7XxBjQzyLCkWKEgJD_w9jQ.png" width="40%">  &nbsp;&nbsp;&nbsp;
+<img src="https://miro.medium.com/max/417/1*azqHvbrNsZ8AIZ7H75tbIQ.jpeg" width="40%"> </center>
 
 
 ---

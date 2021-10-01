@@ -149,8 +149,50 @@ Newton's Method에서 2차 미분 계산이 어려울 때,
 ### 2.1.3. Gradient Descent Method
 이 방법은 reference 책에는 없지만, 딥러닝 역전파시 흔히 사용되므로 기술하겠다.
 <center>  $ x_{i+1} = x_{i} - \gamma_{i} \nabla f(x_{i}) $ </center> 
+
 위와 같은 식으로 최적화를 하는 이유는 기울기의 반대방향으로 input을 이동하여 기울기가 0인 지점을 찾아가기 때문이다.
 여기서 $ \gamma_{i} $ 는 learning rate에 해당한다.
+
+[코드 참조 사이트]("https://stackabuse.com/gradient-descent-in-python-implementation-and-theory/")
+
+```
+# 위 식에서 탐색 대상인 x가 코드에서는 w
+# obj_func: 최적화 대상인 함수, 딥러닝에서는 cost function(최소화 대상)
+# 	update된 w를 obj_func에 대입했을 때 obj_func의 값이 줄어드는지(최소화의 경우) 추적하기 위해 변수로 사용
+# grad_func: obj_func의 1차 미분 함수, 경사하강법 식에 대입
+
+def gradient_descent(max_iterations, 
+					 threshold, # 탐색 stop 기준
+					 w_init,
+                     obj_func,
+					 grad_func,
+					 extra_param = [], # obj_func(w, extra_param), 최적화 대상 이외의 변수
+                     learning_rate=0.05,
+					 momentum=0.8):
+    
+    w = w_init
+    w_history = w
+    f_history = obj_func(w,extra_param)
+    delta_w = np.zeros(w.shape)
+    i = 0
+    diff = 1.0e10
+    
+    while  i<max_iterations and diff>threshold: # 최적화 stopping rule
+        delta_w = -learning_rate*grad_func(w,extra_param) + momentum*delta_w #----- 경사하강법 식
+        w = w+delta_w # w 업데이트
+        
+        # store the history of w and f
+        w_history = np.vstack((w_history,w))
+        f_history = np.vstack((f_history,obj_func(w,extra_param)))
+        
+        # update iteration number and diff between successive values
+        # of objective function
+        i+=1
+        diff = np.absolute(f_history[-1]-f_history[-2]) # 업데이트 폭(diff)이 threshold 이하면 stop
+    
+    return w_history,f_history
+```
+
 
 ## 2.2. 다변량(Multivariate)에서의 최적화
 p 차원 벡터 $ x^{(t)}=( x_1^{(t)} , ... , x_p^{(t)} )^T $에 대해 최적화하는 문제를 생각해보자.
@@ -268,9 +310,9 @@ NP-complete 문제와 NP-hard 문제 개념을 도식화하면 다음과 같다.
 
 <br/>
 
-<img class="center" 
+<center> <img class="center" 
 src="https://upload.wikimedia.org/wikipedia/commons/a/a0/P_np_np-complete_np-hard.svg" 
-width=550px/>        
+width=550px/>  </center>    
 
 <br/>
 
