@@ -14,7 +14,7 @@ order: 4
 2. [PMF](#2-pmf)
 3. [AARRR](#3-aarrr)
     - [Acquisition](#31-acquisition)
-    - Activation
+    - [Activation](#32-activation)
     - Retention
     - Revenue
     - Referral
@@ -50,17 +50,11 @@ order: 4
 1. Retention
     - 시간이 지남에 따라 이탈하지 않고 서비스를 유지하는 이용자의 비율
     - 파란색 선(Product A): 시간이 지남에 따라 서비스 이용객의 비율이 완만하게 줄어들기 때문에 PMF가 양호하다고 말할 수 있다.
-
-<center> <img src="https://images.squarespace-cdn.com/content/v1/528c45f9e4b06be250a9fe30/1389476491749-2P7WUPF27LRDEXUG0ATV/pm+fit+3.png?format=750w" width="50%"> </center>
-
-
+    <center> <img src="https://images.squarespace-cdn.com/content/v1/528c45f9e4b06be250a9fe30/1389476491749-2P7WUPF27LRDEXUG0ATV/pm+fit+3.png?format=750w" width="50%"> </center>
 2. Conversion
     - 한 단계에서 다음 단계로 넘어감
     - 아래와 그림과 같이 사용자가 서비스를 이용하기까지의 단계를 깔대기 모양에 빗대어 funnel이라 부른다. funnel의 각 단계를 지나가는 것을 conversion이라 부른다. 많은 funnel 단계를 지나간 이용자일 수록 loyalty가 있는 이용자라 할 수 있다.
-
-<center> <img src="https://mobile-marketing-masterclass.com/wp-content/uploads/2020/02/Mobile_Marketing_Funnel.jpg" width="50%"> </center>
-
-
+    <center> <img src="https://mobile-marketing-masterclass.com/wp-content/uploads/2020/02/Mobile_Marketing_Funnel.jpg" width="50%"> </center>
 3. Net Promoter Score(NPS)
     - 특정 기업 및 브랜드, 제품・서비스에 대해 이용자가 얼마나 애착과 신뢰를 가졌는지를 수치화한 것
     - 서비스 추천 여부 설문조사: 0-10 점수 매김
@@ -78,6 +72,8 @@ order: 4
 ---
 
 # 3. AARRR
+
+AARRR은 특정 비지니스(서비스)에서의 약점을 찾기 위해 사용되는 평가지표다. 다음 그림에서 보여지는 Funnel 순서에 따라 서비스 현황을 파악/평가한다.
 
 <center><img src="https://miro.medium.com/max/1400/0*09d8JKcPpdKHaoLl.png" width="80%"></center>
 
@@ -130,6 +126,7 @@ order: 4
     - 유저가 앱을 설치, 실행하는데 기여한 채널 파악
     - 서비스에 따라 기여 기준 다름(정답이 없음)
     - 종합적인 판단 필요
+    - 다양한 조건으로 attribution 조건을 세팅해보고, 성과를 다양한 기준으로 측정해 봐야함
     - 개념
         - 어트리뷰션 윈도우(룩백 윈도우): 어트리뷰션으로 인정되는 기간
         - Click-trough / View-through: 어트리뷰션으로 인정되는 행동, 클릭? 보기? eg. 유투브 클릭/미리보기 <br/>
@@ -145,4 +142,29 @@ order: 4
         광고비가 10만원, 매출 150만원: ROAS 1500% <br/>
         -> 광고비를 줄이면 마케팅 대상을 엄격하기 targeting하기 때문에 ROAS는 높아지나 마케팅으로 인한 매출 자체는 줄어듦
     <center><img src="https://uploads-ssl.webflow.com/5f7bd27f467dc0a5944e00d4/6080c547d921c918173506cc_ROAS_Graph_Missed_Revenue_T0.png" width="90%"></center>
-        - 다양한 조건으로 attribution 조건을 세팅해보고, 성과를 다양한 기준으로 측정해 봐야함
+
+## 3.2. Activation
+
+- 사용자가 서비스의 핵심가치 경험
+- Acquisition과 겹치는 부분이 있음, 앱 설치 뿐 아니라 서비스 사용을 통해 유저가 *Aha moment를 느낌 <br/>
+*Aha moment: 신규 유저가 제품에서 처음으로 가치를 느낀 순간 
+- 사용자의 경험의 단계를 나누어(Funnel화) 각 단계의 전환율을 측정 <br/>
+
+<font size="3.5"> [Funnel 분석] </font> <br/>
+- 방법
+    - 핵심가치 경험 시점 단계 정의: 서비스 제공자(회사)와 유저의 가치가 동일한지 체크, eg. 마케팅 의도 vs 유저 리뷰
+    - 전환율 측정 기준 정의: 전환 사람수 기준, unique 상품 수 기준, view 대비 전환 수 기준 등 
+    - Cohort(특정 기간에 특정 특성/경험을 공유하는 사용자 집단) 분리하여 측정(인구특성, 유입경로, 사용기기, 마케팅 이벤트 유/무 등 segmentation) -> cohort 별 Funnel 단계 전환율 패턴 분석
+- 의의
+    - Funnel 단계 별 전환율 확인
+    - Cohort 별 상이한 전환율을 가지는 Funnel 단계 파악
+- 주의사항
+    - 개별 Funnel 단계 전환이 전체 단계 전환으로 이어지지 않을 수 있음
+    - 전환율을 높이는 것보다 Funnel 단계를 줄이는 게 나을 수도 있음
+    - Funnel 단계를 뒤집어 보기 eg. (결제->배송) -> (배송->결제)
+    - Cohort(고객 그룹) 별 따른 차이 파악 및 차이의 원인 파악
+- 분석 이후 개선
+    - 이탈 원인 파악: 사용자 인터뷰(정성적 data 분석), Raw Data를 통해 서비스 단계를 많이 나아간 유저와 그렇지 않은 유저의 차이점 파악
+    - 개인화: Rule Base 추천 시스템/ 머신러닝
+    - UI/UX: 전환율을 변화하는 데 도움 but 부정적인 변화일 수도 있음
+    - 개입: 유저 타겟팅을 적절하게 한 후 이메일, 푸시 등 개입 but 잘못 사용하면 악영향(전체푸시 주의)

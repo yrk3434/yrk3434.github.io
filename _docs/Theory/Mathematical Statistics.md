@@ -9,10 +9,10 @@ toc_sticky: true
 toc_label: 목차
 ---
 
-- 통계학에서 자주 사용되는 기초적인 성질과 theorem을 다룬다.
-- 이 포스팅에서는 확률론, 회귀분석 등 주요 과목과 중복되는 내용은 제외하고, 여러가지 수리적 
-성질에 관한 내용만 다룬다.
+- 통계학에서 자주 사용되는 기초적인 성질과 theorem을 다룬다. 
+- 이 포스팅에서는 확률론, 회귀분석 등 주요 과목과 중복되는 내용은 제외하고, 여러가지 수리적 성질에 관한 내용만 다룬다.
 - reference 책 이상의 범위의 내용은 소병수 교수님의 수리통계학/이론통계학 수업을 참조했다.
+- 이 과목은 원래 어렵다. 내용이 와닿지 않는 게 당연한 과목이다. 나름대로의 첨언을 통해 정리들의 의미와 의의를 기술했지만 이 마저도 설명이 부족하게 느껴질 게 당연하다. 그래도 수많은 과목의 근간이 되는 내용들이 많으니 그냥 공부하도록 하자.
 
 <br/>
 [사전지식] 확률론, 해석학, 미분적분학
@@ -42,6 +42,8 @@ toc_label: 목차
 10. Nonparameteric Robust Statistics
 11. Bayesian Statistics 
 
+---
+
 # 1. Probabilty and Distributions
 ## 1.9. Some Special Expectations
 
@@ -53,14 +55,13 @@ toc_label: 목차
 분포의 가장 중요한 성질 중 하나는 적률생성함수(MGF, Moment Genrating Function)다. 그 이유는 분포와 MGF는 unique하게 1:1 대응이기 때문이다. 즉, 특정 확률변수의 MGF를 알면 역으로 분포를 알 수 있다. 또한 분포의 여러가지 통계량을 구하거나 증명을 할 때 mgf가 유용하게 이용된다.
 <br/>  
 [적률생성함수 정의]
-> <center>$ M(t)=E( e^{tX} )  = \sum_x e^{tX} p(x) $ <center/>
+> <center>$ M(t)=E( e^{tX} )  = \sum_x e^{tX} p(x) $ </center>
 
 위에서 언급했듯이 분포와 MGF는 1:1 대응이다. 따라서 두 확률변수 $ X $, $ Y $가 동일한 확률분포를 가지면 두 확률변수의 MGF 역시 동일하다.
 > 성질1. $ F_X(z) = F_Y(z)$ for all $ z \in \mathbb{R} $ iff $ M_X(t) = M_Y(t) $ for all $ t \in (-h,h) $ for some $h>0$  
 
-<br/>
-MGF의 이름처럼 $ M_X(t) $ 를 m차 미분하면 확률변수의 m차 기대값을 생성할 수 있다. 
-m차 기대값을 구할 때 exponential 함수는 미분꼴이 자기자신과 같고, $e^0=1$이라는 성질을 이용한다. 
+MGF의 이름처럼 $ M_X(t) $ 를 m차 미분하면 확률변수의 m차 moment허(확률변수의 m차 기대값)를 생성할 수 있다. 
+MGF를 구할 때 exponential 함수는 미분꼴이 자기자신과 같고, $e^0=1$이라는 성질을 이용한다. 
   
 > 성질2. $ E(X^m) = \sum_x x^m p(x) $ or $ \int_{-\infty}^{\infty} x^m f(x) $ 
   
@@ -70,11 +71,11 @@ $ M'(t) = \frac{M(t)}{dt} = \sum_x xe^{tx}p(x) $ or $ \int_{-\infty}^{\infty} x 
   
   
 - 2차 미분 <br/>
-$ {M}''(t) = \sum_x x^2 e^{tx}p(x) $or $ \int_{-\infty}^{\infty} x^2 e^{tx}f(x) dx $ <br/>
+$ {M}^{''}(t) = \sum_x x^2 e^{tx}p(x) $or $ \int_{-\infty}^{\infty} x^2 e^{tx}f(x) dx $ <br/>
 여기에 $ t=0 $ 을 대입하면 $ {M}''(0) = E(X^2) $ 
   
 - 분산 <br/>
-위에서 구한 1차, 2차 적률을 이용해 분산을 구할 수 있다. $ \sigma^2 = E(X^2)-E(X) = {M}''(0) - M'(0) $
+위에서 구한 1차, 2차 적률을 이용해 분산을 구할 수 있다. $ \sigma^2 = E(X^2)-E(X) = {}^{''}(0) - M'(0) $
 <br/>  
   
   
@@ -115,7 +116,7 @@ $ X_1, X_2, ..., X_n $ 이 identically independent distributed(iid) $ F $ 를 �
   
   - $ M_{X^*}(0) = E(e^0)=1 $ 
   - $ M_{X^*}'(0) = \mu = 0 $ 
-  - $ {M}''_{X^*}(0) = \sigma^2 $ 
+  - $ {M}^{''}_{X^*}(0) = \sigma^2 $ 
   
   $ =  ( 1+ \frac{t^2}{2 n }  )^n  \rightarrow e^{t^2/2}  $ as $ n  \rightarrow \infty $ 
   
@@ -173,29 +174,31 @@ $ \leq E( X^{ *2 } ) E( Y^{ *2 } )  = 1 \cdot 1 = 1 $
 (5) Shannon Inequality
   
 섀넌 부등식을 설명하기에 앞서 정보이론의 엔트로피 개념을 이해해야 한다. 엔트로피는 정보부족으로 인한 불확실성을 의미한다. 정보에 대한 확신(로그 확률 밀도)에 마이너스 부호를 취한 것의 기대값을 엔트로피라고 생각하면 된다. 따라서 deterministic(확정적)일수록 엔트로피가 낮다. 정보 엔트로피의 정의는 다음과 같다. <br/>
-  
-[Shannon Entropy] 
+ 
+<font size="3"> **Shannon Entropy** </font> <br/>  
 > <center> $ H(x) = E( - ln f(x) ) = - \int f(x) ln f(x) $  <center/>
  
 간단한 예로 동전을 던지는 행위를 X라 하고 동전이 앞면이 나오는 사건을 X=1이라고 하자. 동전이 앞면이 나올 확률(x축)에 따른 엔트로피(y축)를 그리면 다음과 같다. 상식과 부합하게 앞면이 나올 확률과 뒷면이 나올 확률이 반반(P(X=1)=0.5)일 때 가장 높은 불확실성, 즉 엔트로피를 갖는다.
 
 - $ p=0.5 $ 일 때 엔트로피는 <br/>
-P(앞면이 나올 확률) $ \log_2 $ P(앞면이 나올 확률) - P(뒷면이 나올 확률) $ \log_2 $ P(뒷면이 나올 확률) <br/>
+-P(앞면이 나올 확률) $ \log_2 $ P(앞면이 나올 확률) - P(뒷면이 나올 확률) $ \log_2 $ P(뒷면이 나올 확률) <br/>
 =  $ -p \log_2 p - (1-p) \log_2 (1-p) $ <br/>
 =  $ -0.5 \log_2 0.5 -0.5 \log_2 0.5  = 1 $
 
 <img class="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Binary_entropy_plot.svg/800px-Binary_entropy_plot.svg.png" width=300px/>
 <br/>
-[Shannon Inequality]  
-  
+
+
+<font size="3"> **Shannon Inequality** </font> <br/>  
 > <center> Let $ p(.) $ , $ q(.) $ p.d.f. of $ X \in \mathbb{R} $ & $ E_p(h(x)) = \int h(x) p(x) d\mu $  <center/>
 > <center> Then, $ E_p( ln p(x) ) \geq E_p( ln q(x)) $ <center/>
 > <center> = holds iff $ p(x) = q(x) $ for all $ x $ <center/>
   
 다시 섀넌 부등식을 설명하면, 섀넌 부등식은 참 분포가 $ p $ 일 때 분포 $ p $ 에서의 로그기대값의은 어떤 분포 $ q $ 의 로그기대값보다 크거나 같다는 내용의 부등식이다. 
 적절한 증명이 없어 다음 증명은 소병수 교수님의 수업을 참고했다. <br/>
-<br/>  
-[proof. Shannon Inequality] <br/>
+
+
+<font size="3"> **Proof. Shannon Inequality** </font> <br/>
 Let $ R = q(x)/p(x) $ , $ \phi(r) = -ln r $ ,  $ r>0 $ . Then $ \phi '' (r) = 1/ r2  > 0 $ <br/>
 여기서 참 확률 분포는 $ p(x) $ , 후보 확률 분포는  $ q(x) $ 라 하자.
 $ \phi(r) $ 은 2차 미분값이 항상 양수이므로 strictly convex다. 따라서 (1) 젠센부등식을 대입할 수 있다. <br/>
@@ -205,7 +208,7 @@ $ E_p(\phi(R)) \geq \phi(E_p(R)) = -ln(E_p(R)) = -ln1 = 0 $  <br/>
  $ \therefore  E_p(\phi(R)) = E(-ln (q(x)/p(x))) \geq 0 $ <br/>
   $ E(ln (p(x)) \geq E(ln (q(x)) $ <br/>
 
-[Kullback Leibler Divergence] <br/>
+<font size="3"> **Kullback Leibler Divergence** </font>  <br/>
 KL 발산은 엔트로피 개념을 이용해 동일 확률변수 X에 대해 분포 간 유사성을 측정한 것이다. <br/>
 참 확률분포가 $ p(x) $ 일 때 $ p(x) $ 와 어떤 확률분포 $ q(x) $ 의 거리를 쿨백발산으로 나타내면 다음과 같다. $ p(x) = q(x) $ 이면 쿨백 라이블러 발산이 0이다. 
 > <center> $ D_{KL} (p | q) = E_p( ln p(x) - ln q(x) ) = \int p(x) ln \frac{p(x)}{q(x)} d\mu $ <center/>    
@@ -219,13 +222,12 @@ KL 발산은 엔트로피 개념을 이용해 동일 확률변수 X에 대해 �
 
 결합확률분포란 두 개 이상의 변수를 동시에 고려하는 확률분포를 일컫는다. 결합 확률 분포 역시 확률 이므로 [확률의 공리](https://en.wikipedia.org/wiki/Probability_axioms)를 따른다. 이 챕터에서는 적분이 많으니 사전지식을 갖추길 바란다. <br/><br/>
 
-[결합확률분포가 중요한 이유는 무엇일까?]
+<font size="3"> **결합확률분포가 중요한 이유는 무엇일까?** </font>  <br/>
 - 결합확률분포를 알면 두 변수 간 관계 뿐 아니라 한 변수만의 성질(marginal distriubtion), 한 변수가 주어졌을 때 다른 변수의 분포(conditional probability)를 모두 알 수 있기 때문이다. 
 
 
-<br/>
-[정의] 
-<br/>
+<font size="3"> **정의** </font>  <br/>
+
 - 이산 확률 변수의 결합 확률 분포 <br/>
 $ p_{X_1, X_2}(x_1, x_2) = P(X_1 = x_1, X_2 = x_2) $
 
@@ -234,10 +236,9 @@ $ F_{X_1, X_2}(x_1,x_2) = P[X_1 < x_1, X_2<x_2] $ <br/>
 $ P[a_1<X_1<a_2, b_1<X_2<b_2] = F_{X_1, X_2}(b_1, b_2) - F_{X_1, X_2}(a_1, b_2) - F_{X_1, X_2}(b_1, a_2) + F_{X_1, X_2}(a_1, a_1)$ <br/>
 -> 구간에 대한 적분은 두 축을 그려 각 구간을 빼고 더해보면 쉽게 구할 수 있다.  
 
-eg. 두 배터리의 수명이 확률 분포 $ X $ , $ Y $ 이며 서로 연결되어 함수 $ f $ 의 관계를 가진다고 가정하자. 
-
-$ f(x,y) = 4xy e^{-(x^2+y^2)} $ at $x>0, y>0$, 0 otherwise
-
-이 때 두 배터리의 수명이 모두 $\sqrt (2) /2 $ 이상일 확률은 다음과 같다.
-
-$ P(X>\sqrt 2 /2, Y>\sqrt 2 /2)  = \int^{\infty}_{\sqrt 2 /2}   \int^{\infty}_{\sqrt 2 /2} 4xy e^{-(x^2+y^2)} dx dy = $ 적분 과정생략 $ = (e^{-1/2})^2 $
+eg. 두 배터리의 수명이 확률 분포 $ X $ , $ Y $ 이며 서로 연결되어 함수 $ f $ 의 관계를 가진다고 가정하자. <br/>
+- $ f(x,y) = 4xy e^{-(x^2+y^2)} $ at $x>0, y>0$, 0 otherwise <br/>
+- 이 때 두 배터리의 수명이 모두 $\sqrt (2) /2 $ 이상일 확률은 다음과 같다. <br/>
+$ P(X>\sqrt 2 /2, Y>\sqrt 2 /2)  $ <br/>
+$= \int^{\infty}_{\sqrt 2 /2}  \int^{\infty}_{\sqrt 2 /2} 4xy e^{-(x^2+y^2)} dx dy $<br/>
+ $ = $  적분 과정생략 $ = (e^{-1/2})^2 $
