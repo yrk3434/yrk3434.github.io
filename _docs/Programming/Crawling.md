@@ -1,10 +1,8 @@
 ---  
-title: Selenium
+title: Crawling
 category: Programming  
 order: 3  
 ---  
-
-# 셀레니움을 이용한 크롤링
 
 ## Reference
 - 인프런 강의: 현존 최강 크롤링 기술: Scrapy와 Selenium 정복<br/>
@@ -16,24 +14,34 @@ order: 3
 
 웹크롤링란 웹 사이트로부터 원하는 정보를 추출하는 행위다. 파이썬에서 beautifulsoup을 통해 크롤링을 할 수도 있지만, 동적 크롤링, 검색을 통한 웹페이지 크롤링 등을 하는 데에 한계가 있어 selenium을 이용해 크롤링하고자 한다.
 
+
+# Contents
+1. [셀레니움을 이용한 크롤링](#1-셀레니움을-이용한-크롤링) <br/>
+2. 동적크롤링 <br/>
+3. xpath <br/>
+4. [Scrapy를 이용한 크롤링](#4-scrapy를-이용한-크롤링) <br/>
+
 ---
 
-# 1. 크롬 드라이버 설치
+# 1. 셀레니움을 이용한 크롤링
+
+## 1.1 크롬 드라이버 설치
 [드라이버 설치 사이트 클릭](https://chromedriver.chromium.org/downloads)
 크롬 버전 확인 후 ChromeDriver exe 설치, 단 설치 경로를 기억할 것
 
 ---
 
-# 2. 크롬 드라이버 실행 & 크롤링 기본 구조
+## 1.2. 크롬 드라이버 실행 & 크롤링 기본 구조
 [네이버 부동산 뉴스 예제](https://land.naver.com/news/newsRead.nhn?type=headline&prsco_id=119&arti_id=0002494744)의 기사 제목 크롤링
 
-## 2.1. 드라이버 실행
+### 1.2.1. 드라이버 실행
+
 ```
 chromedriver = '.../chromedriver' # 드라이버 위치
 driver = webdriver.Chrome(chromedriver) #
 ```
 
-## 2.2. 사이트 & 크롤링 대상 입력
+### 1.2.2. 사이트 & 크롤링 대상 입력
 
 ```
 driver.get('https://land.naver.com/news/newsRead.nhn?type=headline&prsco_id=119&arti_id=0002494744') 
@@ -69,7 +77,7 @@ result = driver.find_elements_by_tag_name('h3')
 print(result[2].text)
 ```
 
-## 전체 코드
+### 전체 코드
 
 ```
 from selenium import webdriver
@@ -94,7 +102,7 @@ driver.quit() # 크롬 브라우저 닫기
 
 ---
 
-# 3. 크롤링 대상 찾기
+## 1.3. 크롤링 대상 찾기
 
 - Step1. Ctrl + Shift + C 또는
 more tools > develeopers tool > 마우스 커서 모양(Select an element in the page to inspect it) 클릭
@@ -110,7 +118,7 @@ more tools > develeopers tool > 마우스 커서 모양(Select an element in the
 
 ---
 
-# 4. 검색을 통한 크롤링 예제
+## 1.4. 검색을 통한 크롤링 예제
 
 - 네이버에서 날씨 검색을 통해 현재 온도 크롤링하기
 
@@ -129,7 +137,7 @@ more tools > develeopers tool > 마우스 커서 모양(Select an element in the
 time.sleep을 통해 검색 시간을 늦추는 이유는 타이핑이 채 되기도 전에 엔터를 치면 blank 값을 검색하기 때문이다.
 
 
-## 전체 코드
+### 전체 코드
 
 ```
 from selenium import webdriver
@@ -151,4 +159,122 @@ value=driver.find_element_by_class_name('todaytemp')
 print(value.text) # 오늘의 온도
 
 driver.quit() # 크롬 브라우저 닫기
+```
+
+---
+
+# 4. Scrapy를 이용한 크롤링
+
+## 4.1. 객체지향 프로그래밍
+
+- 절차지향 프로그래밍 vs 객체지향 프로그래밍([참고](https://brownbears.tistory.com/407#recentEntries))
+    - 두 개념이 반대는 아님
+    - 절차지향 프로그래밍은 데이터를 중심으로, 객체지향 프로그래밍은 기능을 중심으로 함수 구현
+
+- 객체지향 프로그래밍
+    - class: 설계도를 만듦
+    - object: 설계도 기반으로 사물1객체를 만듦
+    - call: 사물1 객체의 기능을 호출
+        - attribute(속성): 객체의 변수
+        - method(동작): 객체의 함수
+
+```
+class Quad: # 설계도
+    # attribute 선언
+    height = 0
+    width = 0
+    color = ''
+
+    # method 선언
+    def get_area(self):
+        return self.height * self.width
+
+# 객체
+quad1 = Quad()
+# 객체 속성 바꾸기 
+quad1.height = 4
+quad1.width = 3
+quad1.color = 'red'
+
+# 메소드 호출
+quad1.get_area()
+
+# 속성 확인
+dir(Quad) 
+```
+
+## 4.2. Scrapy
+
+-  scrapy 설치
+
+```
+# 아나콘다 프롬프트 or 터미널
+pip install scrapy
+```
+
+- 프로젝트 생성
+터미널에서 원하는 디렉토리를 current directory로 만든 후 다음을 실행
+
+```
+scrapy startporject ecommerce # scrapy startproject 프로젝트이름
+
+# scarpy -h # help, scrapy 명령어 설명
+
+mkdir ecommerce
+cd ecommerce # 위에서 생성한 프로젝트 디렉토리로 이동
+```
+
+미리 작성된 크롤링 템플릿 확인 가능
+
+```
+scrapy.cfg
+
+# ---- scarpy.cfg 내용 -----
+# Automatically created by: scrapy startproject
+#
+# For more information about the [deploy] section see:
+# https://scrapyd.readthedocs.io/en/latest/deploy.html
+
+# [settings]
+# default = ecommerce.settings
+
+# [deploy]
+#url = http://localhost:6800/
+# project = ecommerce
+```
+
+- 크롤러(Spider) 작성
+
+~\ecommerce\ecommerce 여기에 spider 폴더 생성되어 있음 -> 이 위치에서 스파이더 작성해야 함
+
+```
+# scrapy genspider <크롤러이름> <크롤링페이지주소> 
+scrapy genspider gmarket www.gmarket.co.kr # http 삭제하고 main 주소만!
+
+#---- 결과
+# Created spider 'gmarket' using template 'basic' in module:
+#  ecommerce.spiders.gmarket # 생성된 폴더 경로
+```
+
+<br/>
+~\ecommerce\ecommerce\spiders\gmarket.py 생성되어있음 <br/>
+gmarket.py 내용은 다음과 같다.
+
+```
+import scrapy
+
+
+class GmarketSpider(scrapy.Spider):
+    name = 'gmarket'
+    allowed_domains = ['www.gmarket.co.kr']
+    start_urls = ['http://www.gmarket.co.kr/']
+
+    def parse(self, response):
+        print(response.text) # pass를 다음 코드로 고치고 저장
+```
+
+- 크롤링 실행  <br/>
+gmarket 페이지의 html 파일이 터미널에 print 됨
+```
+scrapy crawl gmarket
 ```

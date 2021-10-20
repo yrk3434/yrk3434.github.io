@@ -6,9 +6,7 @@ order: 5
 
 # 페트병 생산
 
-이 포스팅은 PET 생산의 극히 일부만을 다룬다. 공정 단계에 대해 제대로 학습하고자 한다면 plastic engineering 관련 책을 읽길 바란다.
 
----
 
 ### Reference
 - [인젝션몰딩 - 위키피디아](https://en.wikipedia.org/wiki/Injection_moulding)
