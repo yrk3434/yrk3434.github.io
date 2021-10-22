@@ -165,6 +165,8 @@ driver.quit() # 크롬 브라우저 닫기
 
 # 4. Scrapy를 이용한 크롤링
 
+---
+
 ## 4.1. 객체지향 프로그래밍
 
 - 절차지향 프로그래밍 vs 객체지향 프로그래밍([참고](https://brownbears.tistory.com/407#recentEntries))
@@ -202,6 +204,8 @@ quad1.get_area()
 # 속성 확인
 dir(Quad) 
 ```
+
+---
 
 ## 4.2. Scrapy
 
@@ -280,6 +284,8 @@ gmarket 페이지의 html 파일이 터미널에 print 됨
 scrapy crawl gmarket
 ```
 
+---
+
 ## 4.3. 크롤러(Spider) 수정하기
 
 위의 과정대로 Test1.py라는 크롤러를 생성했다고 가정하자.
@@ -296,6 +302,8 @@ class Test1Spider(scrapy.Spider):
     def parse(self, response):
         print(response.url) # 크롤링 실행시 어떤 주소 실행되는지 보여줌
 ```
+
+---
 
 ## 4.4. Scrapy Shell - response 사용법 이해
 
@@ -397,9 +405,11 @@ response.xpath("//div[@class='best-list']/ul/li/a/text()")[0].re('(\w+)')
 # ['당일발송', '라꽁비에뜨', '버터', '꽃소금', '450g', '30개입', '특가']
 ```
 
-## 요약 및 적용
+---
 
-1. 터미널에 다음 실행
+## 4.5 요약 및 적용
+
+Step1. 터미널에 다음 실행
 
 ```
 cd scrapyproject
@@ -408,7 +418,7 @@ cd ecommerce\ecommerce
 scrapy genspider gmarket_best corners.gmarket.co.kr/Bestsellers
 ```
 
-2. 데이터 저장 함수
+Step2. 데이터 저장 함수
 
 - \ecommerce\ecommerce 폴더 하위에 자동생성된 items.py 파일 수정
 - \ecommerce\ecommerce\gmarket_best.py에서 크롤링한 내용을 전달받아 items.py에서 저장 수행 
@@ -424,7 +434,7 @@ class EcommerceItem(scrapy.Item):
     price = scrapy.Field()
 ```
 
-3. scrapyproject\ecommerce\ecommerce\spiders\gmarket_best.py 수정 후 저장
+Step3. scrapyproject\ecommerce\ecommerce\spiders\gmarket_best.py 수정 후 저장
 
 - dictionary처럼 아이템 지정 후 yield 저장
 
@@ -452,7 +462,7 @@ class GmarketBestSpider(scrapy.Spider):
 
 ```
 
-4. shell에 다음 실행
+Step4. shell에 다음 실행
 
 - scrapy crawl 크롤러명 -o 저장파일명 -t 저장포맷
 - 저장포맷 csv, xml, json 모두 가능
@@ -491,7 +501,7 @@ scrapy crawl gmarket_best -o gmarket_products.json -t json
 # {"title": "(\ub2f9\uc77c\ubc1c\uc1a1)\ub77c\uaf41\ube44\uc5d0\ub728 \ubc84\ud130 \uaf43\uc18c\uae08 450g 30\uac1c\uc785 {\ud2b9\uac00}", "price": "19,900\uc6d0"},
 ```
 
-5. 추가: 설정 바꾸기 scrapyproject\ecommerce\ecommerce\settings.py
+Step5. 추가: 설정 바꾸기 scrapyproject\ecommerce\ecommerce\settings.py
 
 - settings.py에 다음 코드를 추가
 
