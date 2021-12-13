@@ -15,8 +15,8 @@ order: 4
 3. [AARRR](#3-aarrr)
     - [Acquisition](#31-acquisition)
     - [Activation](#32-activation)
-    - Retention
-    - Revenue
+    - [Retention](#33-retention)
+    - [Revenue](#34-revenue)
     - Referral
 
 ---
@@ -168,3 +168,59 @@ AARRR은 특정 비지니스(서비스)에서의 약점을 찾기 위해 사용�
     - 개인화: Rule Base 추천 시스템/ 머신러닝
     - UI/UX: 전환율을 변화하는 데 도움 but 부정적인 변화일 수도 있음
     - 개입: 유저 타겟팅을 적절하게 한 후 이메일, 푸시 등 개입 but 잘못 사용하면 악영향(전체푸시 주의)
+
+## 3.3. Retention
+- activation에서 핵심가치를 경험한 사용자가 꾸준히 서비스를 이용
+- 재방문여부, 복리효과(부정적이든 긍정적이든)
+
+- 측정방법
+    - (1) Classic Retention: 특정일에 재접속한 유저 비율 / noise에 민감
+    - (2) Range Retention: 특정 기간동안 재접속한 유저 비율(기간 동안 얼마나 여러 번 접속했는지 여부는 고려 안 함)
+    - (3) Rolling Retention: N일 후 사용 기록 있는 유저 수/Day 0에 이용한 유저 수 / 시간이 흐름에 따라 값이 계속 변화
+
+- 측정 행위 기준: 항상 접속일 필요는 없음, 유의미한 행동 기준이면 됨
+    - ex. 구매 클릭, 페이지 5개 이상 클릭 등
+- 개선
+    - 초기 retention 하락 방지: activation 점검, 새 유저 유입 개선
+    - 서비스 장기간 이용 유지시키기: 유저와 소통, 휴면 고객 복귀 돕기
+- 주의사항
+    - 지표에 매몰되지 않기: 푸시, 이메일 남발 x
+    - key feature 기준으로 모니터링: 핵심기능(결제, 여러 페이지 방문 등) 모니터링, 유저가 당장 말고 필요할 때! 돌아올 수 있도록 함
+    - 코호트 분석 필요
+    - 경쟁사 등 외부요인 주의
+    - activation과 retention은 가장 먼저 개선해야 할 항목
+    
+## 3.4. Revenue
+- 소비자들이 이 서비스에 돈을 지불할 의사가 있는가? (우리의 비지니스 모델이 역할을 하는가?)
+
+- 지표
+    - ARPU(Average Revenue Per User) = Revenue / User
+        - 전반적인 상황 확인 시 유용
+        - User 범위(가입자? 결제자? 오늘 로그인한 유저?), Revenue(어느 기간의 매출?) 범위가 모호함
+        - 기간 지정 필요, 주로 monthly
+    - ARPPU(Average Revenue Per Paying User) = Revenue / Paying User
+    - ASP(Average Selling Price) = Revenue / # of units sold 
+- Lifetime Value(LTV) vs Lifetime Revenue(LTR)
+    - LTV
+        - CLV = (M-c)/(1-r+i) - AC <br/>
+        where <br/>
+        M: 1인당 평균 매출 <br/>
+        c: 1인당 평균 비용 <br/>
+        r: 고객 유지 비율 <br/>
+        i: 할인율<br/>
+        AC: 고객 획득 비용
+        - LTV = ARPU / CHURN <br/>
+        where <br/>
+        ARPU: 1인당 평균 매출 <br/>
+        CHRUN: 1인당 이탈비율
+        - 현실적으로 구하기 힘듦, 인당 매출은 일정하지 않고 인당 비용 계산 어려움 등 -> LTR 사용
+    - LTR
+        - 전체 기간(진입~이탈)동안 누적해서 발생시키는 매출
+        - CAC(Customer Acquisition Cost) + a < LTR 이어야 함
+- 가입 월 별/코호트 별 나눠서 매출 분석
+- RFM
+    - Recency: 얼마나 최근에 결제? 
+    - Frequency: 얼마나 자주 결제?
+    - Mnetary: 얼마나 많은 금액 결제?
+
+    > 각 항목 카테고리화, 고객 segmentation 후 고객 그룹 별 파악(heavy user, 새 고객, 떠난 VIP 등)
