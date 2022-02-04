@@ -22,7 +22,7 @@ comments: true
 8. [Value at Risk](#8.-Value-at-Risk)
 9. [연속시계열](#9.-연속시계열)
 
----
+------
 
 # 1. 기본 개념
 
@@ -88,13 +88,16 @@ $ Z_t $ : 시계열, $ t = 1, 2, 3,...$ , t는 시간 단위(일, 분기 등)
 표본 ACF, PACF 성질 [참고](http://feldman.faculty.pstat.ucsb.edu/174-03/lectures/l12.pdf)
 - Sample Autocovariance:
     - 모수(모집단 이용): $ \gamma_k = Cov(Z_t, Z_{t+k}) = E(Z_t -\mu )(Z_{t+k} -\mu ) $
-    - 추정치(sample 이용): $ \hat{\gamma}_k = \frac{1}{n} \Sigma^{n-k}_{t=1}(Z_t-\bar{Z})(Z_{t+k}-\bar{Z}) $ 
+    - 추정치(sample 이용): $ \hat{ \gamma_k } = \frac{1}{n} \Sigma^{n-k}_{t=1}(Z_t-\bar{Z})(Z_{t+k}-\bar{Z}) $ 
     - 샘플 크기가 크면 위 식에서 분모를 $n-k$ 가 $n$ 으로 해도 된다. (bias 무시 가능)
 
 - Sample Autocorrelation
-    - $ \hat{\rho}_k = \frac{ \gamma_k }{ \gamma_0 }/  = \frac{ \Sigma^{n-k}_{t=1} ( Z_t-\bar{Z} )( Z_{t+k} - \bar{Z} ) }{ \Sigma^{n}_{t=1} ( Z_t - \bar{Z} )^2 }   $
+    - $ \hat{ \rho_k } = \frac{ \gamma_k }{ \gamma_0 }/  = \frac{ \Sigma^{n-k}_{t=1} ( Z_t-\bar{Z} )( Z_{t+k} - \bar{Z} ) }{ \Sigma^{n}_{t=1} ( Z_t - \bar{Z} )^2 }   $
     - $ \rho_k = 0 $ 이면 $ Var(\hat{\rho}_k ) \approx \frac{1}{n}(1 + 2\rho_1^2 + 2\rho_2^2 + ... + 2\rho_m^2) $ for $k>m$ <br/> -> k차까지 계산 안하고 적당한 시점 m까지만 계산
     - white noise의 경우 $ \hat{\rho} = \frac{1}{n} $
+
+
+------
 
 
 # 2. 정상 시계열 모형
@@ -105,10 +108,12 @@ $ Z_t $ : 시계열, $ t = 1, 2, 3,...$ , t는 시간 단위(일, 분기 등)
 들어가기 전에: 용어 및 개념
 - $ B $ : 후행 연산자(backshift operator), ex. $ Z_{t-1} = B Z_t $
 - 특성방정식(Characteristic Equation): $f(B)Z_t = a_t $, $ a_t $는 white noise(error term) <br/> 
-여기서 $ B $ 에 관한식 $ f(B) $ 가 특성 다항식이다. <br/>
+여기서 $ B $ 에 관한식 $ f(B) $ 가 특성 방정식이다. <br/>
 ex. $ Z_t = \phi_1Z_{t-1} + a_t  \Leftrightarrow ( 1 - \phi_1 B )Z_t = a_t $ <br/> 
 $ ( 1 - \phi_1 B ) $ 가 특성방정식 <br/> 
-특성방정식 = 0 으로 두고 $ \phi_1 $ 의 해를 구하면 해당 시계열의 특성을 구할 수 있다.
+
+*특성방정식은 선형대수에서 방정식의 해가 존재할 조건을 구할 때 쓰인다. 예를 들어 이차방정식 $ ax^2+bx+c=0 $ 에서 근이 존재할 조건을 $ D = \sqrt{ b^2-4ac } $ 에서 찾는다. $ b^2-4ac >0 $ 이면 실근 2개, 0이면 실근 1개, 0보다 작으면 허근이 존재한다. 위 $ f(B) $ 역시 정상시계열이 존재하려면 B의 식의 판별식인 $ D $ 가 실근이 존재할 조건을 만족해야 한다.
+
 - demeaned process: AR 내용에서는 상수항을 제거한 계열을 가정하고 설명한다. <br/>
 상수항 제거계열도 평균이 0으로 바뀐 것 외에는 원계열과 동일한 성질을 갖는다. <br/>
     - 원계열: $ \dot{Z_t} = \phi_0 + \phi_1 \dot{ Z_{t-1} } + a_t $ <br/>
