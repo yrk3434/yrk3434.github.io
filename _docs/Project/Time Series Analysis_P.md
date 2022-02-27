@@ -47,7 +47,6 @@ $a_t$ 는 white noise 가정
   - d회 차분 
   - 비정상 계열, ACF 느리게 감소, 단위근이 있음 ( $1-B$ )
   - 그래프 또는 단위근 검정(Dickey Fuller test) 통해 비정상성 확인
-  
 > <center> $ (1-\phi_1 B + ... + \phi_{t-p} B^p)(1-B)^d y_t = (1-\theta_1 B...-\theta_{t-q} B^q )a_t $ </center>
 
 - 분산 안정화
@@ -93,7 +92,7 @@ $a_t$ 는 white noise 가정
 
 > <center> $ (1-\phi B )(1-B)y_t = (1-\theta_1 B)a_t $ </center>
 > <center> where $ a_t \sim N(0,\sigma_t^2) $ </center>
-> <center> \sigma_t^2 = \alpha_0 + \alpha_1 a_{t-1}^2 + \beta_1 \sigma_{t-1}^2 $ </center>
+> <center> $ \sigma_t^2 = \alpha_0 + \alpha_1 a_{t-1}^2 + \beta_1 \sigma_{t-1}^2 $ </center>
 
 - 참고. ARIMA의 차수 p,d,q  등 각 차수는 너무 크지 않은 것이 바람직
 - 참고. best 모델 선택 기준은 AIC
