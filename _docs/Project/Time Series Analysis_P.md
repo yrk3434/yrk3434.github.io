@@ -1,6 +1,6 @@
 ---
-title: Projcet
-category: Time Series Analysis(적용)
+title: Time Series Analysis(적용)
+category: Project
 order: 1
 use_math: true
 comments: true
