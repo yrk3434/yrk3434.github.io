@@ -89,7 +89,6 @@ $a_t$ 는 white noise 가정
 ## 종합
 
 - ex. ARIMA(1,1,1) + GARCH(1,1)이면
-
 > <center> $ (1-\phi B )(1-B)y_t = (1-\theta_1 B)a_t $ </center>
 > <center> where $ a_t \sim N(0,\sigma_t^2) $ </center>
 > <center> $ \sigma_t^2 = \alpha_0 + \alpha_1 a_{t-1}^2 + \beta_1 \sigma_{t-1}^2 $ </center>
