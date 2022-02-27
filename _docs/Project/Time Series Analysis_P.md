@@ -32,16 +32,16 @@ comments: true
 $a_t$ 는 white noise 가정
 
 - AR(p): ACF 서서히 감소, 시점 p에서 PACF 절단
-> $$y_t = \phi_1 y_{t-1} + ... + \phi_{t-p} y_{t-p} + a_t $$ 
-> $$ \Leftrightarrow  (1-\phi_1 B + ... + \phi_{t-p} B^p)y_t = a_t $$
+$$y_t = \phi_1 y_{t-1} + ... + \phi_{t-p} y_{t-p} + a_t $$ 
+$$ \Leftrightarrow  (1-\phi_1 B + ... + \phi_{t-p} B^p)y_t = a_t $$
 
 - MA(q): 시점 q에서 ACF 절단, PACF 서서히 감소
-> $$ y_t = a_t - \theta_1 a_{t-1}...-\theta_{t-q} a_{t-q} $$
-> $$ \Leftrightarrow y_t = (1-\theta_1 B...-\theta_{t-q} B^q )a_t  $$
+$$ y_t = a_t - \theta_1 a_{t-1}...-\theta_{t-q} a_{t-q} $$
+$$ \Leftrightarrow y_t = (1-\theta_1 B...-\theta_{t-q} B^q )a_t  $$
 
 - ARMA(p,q): 시점 p에서 PACF 절단, 시점 q에서 ACF 절단
-> $$y_t = \phi_1 y_{t-1} + ... + \phi_{t-p} y_{t-p} + a_t - \theta_1 a_{t-1}...-\theta_{t-q} a_{t-q}  $$ 
-> $$ \Leftrightarrow (1-\phi_1 B + ... + \phi_{t-p} B^p)y_t =
+$$y_t = \phi_1 y_{t-1} + ... + \phi_{t-p} y_{t-p} + a_t - \theta_1 a_{t-1}...-\theta_{t-q} a_{t-q}  $$ 
+$$ \Leftrightarrow (1-\phi_1 B + ... + \phi_{t-p} B^p)y_t =
 (1-\theta_1 B...-\theta_{t-q} B^q )a_t $$
 
 - ARIMA(p,d,q)
@@ -49,7 +49,7 @@ $a_t$ 는 white noise 가정
   - 비정상 계열, ACF 느리게 감소, 단위근이 있음 ( $1-B$ )
   - 그래프 또는 단위근 검정(Dickey Fuller test) 통해 비정상성 확인
 
-> $$ (1-\phi_1 B + ... + \phi_{t-p} B^p)(1-B)^d y_t = (1-\theta_1 B...-\theta_{t-q} B^q )a_t $$
+$$ (1-\phi_1 B + ... + \phi_{t-p} B^p)(1-B)^d y_t = (1-\theta_1 B...-\theta_{t-q} B^q )a_t $$
 
 - 분산 안정화
   - $ y_t $ 의 분산이 클 경우 box-cox 변환을 통해 분산 안정화 <br/> 
@@ -79,9 +79,9 @@ $a_t$ 는 white noise 가정
 - 오차항 $ a_t \sim N(0, \sigma_t^2) $
   -  즉 오차항의 분산이 시점에 따라 바뀌며 현재의 분산 즉 변동성은 과거 오차항 $ a_k $ 또는 과거 변동성 $ \sigma^2_k $에 의존
 - ARCH(p)
-> $$ \sigma^2_t =  \beta_0+\beta_1 \sigma^2_{t-1}+...+ \beta_{t-p} \sigma^2_{t-p} $$
+$$ \sigma^2_t =  \beta_0+\beta_1 \sigma^2_{t-1}+...+ \beta_{t-p} \sigma^2_{t-p} $$
 - GARCH(p,q)
-> $$ \sigma^2_t =  \alpha_0 + \alpha_1 a_{t-1} + ... +  \alpha_p a_{t-q} +  \beta_1 \sigma^2_{t-1}+...+ \beta_{t-p} \sigma^2_{t-p} $$
+$$ \sigma^2_t =  \alpha_0 + \alpha_1 a_{t-1} + ... +  \alpha_p a_{t-q} +  \beta_1 \sigma^2_{t-1}+...+ \beta_{t-p} \sigma^2_{t-p} $$
 - ex. GARCH(1,1): $ \sigma_t^2 = \alpha_0 + \alpha_1 a_{t-1}^2 + \beta_1 \sigma_{t-1}^2   $
 
 - 추가. 변동성 모형의 계수의 크기를 제한하거나(EGARCH) 양수의 shock이나 음수의 shock을 다르게 모델링(QGARCH)하는 등 다양한 옵션에 따라 여러 종류의 GARCH 모형이 있다.
@@ -89,7 +89,7 @@ $a_t$ 는 white noise 가정
 ## 종합
 
 - ex. ARIMA(1,1,1) + GARCH(1,1)이면
-> $$ (1-\phi B )(1-B)y_t = (1-\theta_1 B)a_t  $$
+$$ (1-\phi B )(1-B)y_t = (1-\theta_1 B)a_t  $$
 \begin{align*}
 where \; a_t \sim N(0,\sigma_t^2) 
 \end{align*}
