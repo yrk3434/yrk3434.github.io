@@ -88,11 +88,11 @@ $ Z_t $ : 시계열, $ t = 1, 2, 3,...$ , t는 시간 단위(일, 분기 등)
 표본 ACF, PACF 성질 [참고](http://feldman.faculty.pstat.ucsb.edu/174-03/lectures/l12.pdf)
 - Sample Autocovariance:
     - 모수(모집단 이용): $ \gamma_k = Cov(Z_t, Z_{t+k}) = E(Z_t -\mu )(Z_{t+k} -\mu ) $
-    - 추정치(sample 이용): $ \hat{ \gamma_k } = \frac{1}{n} \Sigma^{n-k}_{t=1}(Z_t-\bar{Z})(Z_{t+k}-\bar{Z}) $ 
+    - 추정치(sample 이용): $ \hat{ \gamma }_k = \frac{1}{n} \Sigma^{n-k}_{t=1} ( Z_t-\bar{Z} )( Z_{t+k} - \bar{Z} ) $ 
     - 샘플 크기가 크면 위 식에서 분모를 $n-k$ 가 $n$ 으로 해도 된다. (bias 무시 가능)
 
 - Sample Autocorrelation
-    - $ \hat{ \rho_k } = \frac{ \gamma_k }{ \gamma_0 }/  = \frac{ \Sigma^{n-k}_{t=1} ( Z_t-\bar{Z} )( Z_{t+k} - \bar{Z} ) }{ \Sigma^{n}_{t=1} ( Z_t - \bar{Z} )^2 }   $
+    - $ \hat{ \rho_k } = \frac{ \gamma_k }{ \gamma_0 }  = \frac{ \Sigma^{n-k}_{t=1} ( Z_t-\bar{Z} )( Z_{t+k} - \bar{Z} ) }{ \Sigma^{n}_{t=1} ( Z_t - \bar{Z} )^2 }   $
     - $ \rho_k = 0 $ 이면 $ Var(\hat{\rho}_k ) \approx \frac{1}{n}(1 + 2\rho_1^2 + 2\rho_2^2 + ... + 2\rho_m^2) $ for $k>m$ <br/> -> k차까지 계산 안하고 적당한 시점 m까지만 계산
     - white noise의 경우 $ \hat{\rho} = \frac{1}{n} $
 
@@ -112,22 +112,27 @@ $ Z_t $ : 시계열, $ t = 1, 2, 3,...$ , t는 시간 단위(일, 분기 등)
 ex. $ Z_t = \phi_1Z_{t-1} + a_t  \Leftrightarrow ( 1 - \phi_1 B )Z_t = a_t $ <br/> 
 $ ( 1 - \phi_1 B ) $ 가 특성방정식 <br/> 
 
-*특성방정식은 선형대수에서 방정식의 해가 존재할 조건을 구할 때 쓰인다. 예를 들어 이차방정식 $ ax^2+bx+c=0 $ 에서 근이 존재할 조건을 $ D = \sqrt{ b^2-4ac } $ 에서 찾는다. $ b^2-4ac >0 $ 이면 실근 2개, 0이면 실근 1개, 0보다 작으면 허근이 존재한다. 위 $ f(B) $ 역시 정상시계열이 존재하려면 B의 식의 판별식인 $ D $ 가 실근이 존재할 조건을 만족해야 한다.
+*특성방정식은 선형대수에서 방정식의 해가 존재할 조건을 구할 때 쓰인다. 예를 들어 이차방정식 $ ax^2+bx+c=0 $ 에서 근이 존재할 조건을 $ D = \sqrt{ b^2-4ac } $ 에서 찾는다. $ b^2-4ac >0 $ 이면 실근 2개, 0이면 실근 1개, 0보다 작으면 허근이 존재한다. 시계열분석에서는 AR 계열이 정상이려면 $ f(B) $ 의 식의 판별식인 $ D $ 가 실근이 존재할 조건을 만족해야 한다.
 
-- demeaned process: AR 내용에서는 상수항을 제거한 계열을 가정하고 설명한다. <br/>
-상수항 제거계열도 평균이 0으로 바뀐 것 외에는 원계열과 동일한 성질을 갖는다. <br/>
+- demeaned process: 평균을 0으로 수정한 계열, 다음 내용에서는 상수항을 제거한 AR 계열을 가정하고 설명한다. <br/>
+평균이 0인 것 외의 다른 성질에 대해서 상수항 제거계열은 원계열과 동일한 성질을 갖는다. <br/>
     - 원계열: $ \dot{Z_t} = \phi_0 + \phi_1 \dot{ Z_{t-1} } + a_t $ <br/>
     - 상수항 제거계열: <br/> 
     $ \dot{Z_t} - \mu = \phi_1 ( \dot{ Z_{t-1} } - \mu) + a_t $ <br/>
-    $ \Leftrightarrow Z_t = \phi_1Z_{t-1} + a_t  $ <br/>
-    
+    $ \Leftrightarrow Z_t = \phi_1 Z_{t-1} + a_t  $ <br/>
+-  Yule Walker Equation: 양변에 $Z_t$ 를 곱하고 기대값을 취해 ACF, PACF를 구하는 방법
+
 ## 2.1. AutoRegressive(AR) Process
-- 자기회귀계열은 변수를 과거값의 선형 관계로 표현하는 것이다.
+- 자기회귀계열은 변수를 과거값과 선형 관계로 표현하는 것이다.
 
 ### 2.1.1. AR(1)
 - $ Z_t = \phi_1Z_{t-1} + a_t $ , $ a_t $ 는 white noise
-- Yule 과정이라고도 부른다. (참고. Yule Walker Equation)
+- Yule 과정이라고도 부른다.
 - 정상성 조건: $ | \phi_1 | < 1 $ <br/>
+    - 위에서 설명한 특성방정식에 따라 $ Z_t = \phi_1Z_{t-1} + a_t  \Leftrightarrow ( 1 - \phi_1 B )Z_t = a_t $ <br/> 
+$ 1 - \phi_1 B = 0 $
+
+
 $ \because $ 정상계열이려면 시계열의 평균과 분산이 존재(발산하면 안 됨) <br/>
     - 평균 <br/>
     식 양변에 기댓값을 취하면, <br/>
@@ -136,8 +141,16 @@ $ \because $ 정상계열이려면 시계열의 평균과 분산이 존재(발�
     & white noise이므로 $ E(a_t) = 0 $
     - 분산 <br/>
     $ var(Z_t) = E(\phi_1Z_{t-1} + a_t)(\phi_1Z_{t-1} + a_t) = \phi_1^2E(Z_{t-1}^2)+2E(Z_{t-1}a_t) + E(a_t^2) $ <br/>
-    $ \sigma_z^2 = \phi_1^2 \sigma_z^2 + 0 + \sigma_a^2 $ , $ \because Z_{t-1}, a_t $ 는 uncorrelated이므로 $ E(Z_{t-1}a_t)= 0 $ <br/>
+    $ \sigma_z^2 = \phi_1^2 \sigma_z^2 + 0 + \sigma_a^2 $ , $ \because Z_{t-1}, a_t $ 는 서로 다른 시점의 항으로 uncorrelated -> $ E(Z_{t-1}a_t)= 0 $ <br/>
     $ \sigma_z^2 =\sigma_a^2/(1-\phi_1^2) $ 여기서 $ Z_t $ 의 분산인 $ \sigma_z^2 $ 이 존재하려면 <br/>
     $ 1-\phi_1^2 \neq 0   \Leftrightarrow  | \phi_1 | < 1  $
 
-
+- ACF: $ \gamma_k = \frac{\sigma^2_a}{1-\phi_1^2} \phi_1^k $ <br/>
+$ \because Z_t = \phi_1Z_{t-1} + a_t $ <br/>
+$ \Leftrightarrow  E(Z_{t-k} Z_t) = E(Z_{t-k} \phi_1Z_{t-1} ) + E(Z_{t-k} a_t )  $ <br/>
+$ \Leftrightarrow  \gamma_k = \phi_1 \gamma_{k-1} + 0  $ <br/>
+$ \Leftrightarrow  \gamma_k / \gamma_0 = \phi_1 \gamma_{k-1}  / \gamma_0   $ <br/>
+$ \Leftrightarrow  \rho_k = \phi_1 \rho_{k-1}  = ... = \phi_1^k \rho_0 = \phi_1^k \because \rho_0=1 $ <- Yule Walker 방정식 <br/>
+- PACF: <br/>
+$ \phi_{kk} = \rho_1 = \phi_1 $ for $ k=1 $ <br/> 
+$ \phi_{kk} =0 $ for $ k \geq 2 $
