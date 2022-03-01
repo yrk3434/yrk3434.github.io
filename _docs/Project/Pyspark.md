@@ -20,68 +20,21 @@ comments: true
 
 ## 1.1. 주요 함수
 
-- 스파크 세션 민들기
+|내용|함수|
+|:---:|:---:|
+|스파크 세션 민들기|spark = SparkSession.builder.appName('...').getOrCreate()|
+|데이터 조회|data.show()|
+|요약 통계량 조회|data.describe.show()|
+|행의 수 조회|data.count()|
+|조건 필터링|data.filter(...)|
+|그룹별 연산|data.groupBy(groupCol).agg(...)|
+|기존 컬럼으로 <br/>새 컬럼 만들기|data.withColumn('newCol', function('oldCol'))|
+|조건에 따라 연산|when, others|
+|칼럼 한 개 삭제|data.drop('col1')|
+|칼럼 두 개 삭제|data.drop(*('col1', 'col2'))|
+|parquet 파일 쓰기|data.write.parquet('...')|
+|parquet 파일 읽기|data_pq = spark.read.parquet('...')|
 
-```
-spark = SparkSession.builder.appName('spark-dataframe-demo').getOrCreate()
-```
-
-- 데이터 조회
-
-```
-data.show()
-```
-
-- 요약 통계량 조회
-
-```
-data.describe.show()
-```
-
-- 행의 수 조회
-
-```
-data.count()
-```
-
-- 조건 필터링
-
-```
-data.filter(...)
-```
-
-- 그룹별 연산
-
-```
- data.groupBy(groupCol).agg(...)
-```
-
-- 기존 컬럼으로 새 컬럼 만들기
-
-```
- data.withColumn('newCol', function('oldCol'))
-```
-
-- 조건에 따라 다른 연산: when, others
-
-
-- 칼럼 삭제
-
-```
-# 칼럼 한 개 삭제
-data.drop('col1')
-# 칼럼 두 개 이상 삭제
-data.drop(*('col1', 'col2'))
-```
-
-- parquet 파일 읽기, 쓰기
-```
-# 쓰기
-data.write.parquet('/kaggle/working/sale_train.parquet')
-
-# 읽기
-data_pq = spark.read.parquet('/kaggle/working/sale_train.parquet')
-```
 
 ## 1.2. 실습 목록
 - 주피터 노트북으로 실습 결과를 정리했다. 다음을 클릭.
