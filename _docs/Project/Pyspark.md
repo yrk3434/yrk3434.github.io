@@ -14,6 +14,7 @@ comments: true
 - pyspark를 이용한 전처리와 머신러닝을 실습한다.
 - 로컬에서 사용하려면 java, hadoop, spark를 설치하고 환경변수를 추가하면 되는데 이 과정은 다른 블로그를 참조하길 바란다.
 - Databricks(커뮤니티 에디션은 무료)나 캐글 주피터노트북을 이용하면 별다른 설정없이 pyspark를 사용할 수 있다.
+
 ------
 
 # 1. 전처리 실습
@@ -22,7 +23,7 @@ comments: true
 
 |내용|함수|
 |:---:|:---:|
-|스파크 세션 민들기|spark = SparkSession.builder.appName('...').getOrCreate()|
+|스파크 세션 만들기|spark = SparkSession.builder.appName('...').getOrCreate()|
 |데이터 조회|data.show()|
 |요약 통계량 조회|data.describe.show()|
 |행의 수 조회|data.count()|
